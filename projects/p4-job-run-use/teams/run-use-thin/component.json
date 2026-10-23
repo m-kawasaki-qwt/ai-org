@@ -1,0 +1,15 @@
+{
+  "kind": "team",
+  "id": "p4-job-run-use/teams/run-use-thin",
+  "parent": "p4-job-run-use",
+  "root": false,
+  "created_at": "2026-10-24T00:30:09+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p4-job-run-use/teams/run-use-thin/leader",
+    "worker-1": "p4-job-run-use/teams/run-use-thin/worker-1",
+    "reviewer": "p4-job-run-use/teams/run-use-thin/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T00:40:39+09:00"
+}

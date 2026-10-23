@@ -1,0 +1,8 @@
+- kind: "report"
+  from: "p4-job-run-use/pm"
+  ref: "3b3654"
+  msg: "log/msgs/3b3654.md"
+  summary: "# p4-job-run-use の結果"
+  at: "2026-10-24T00:41:55+09:00"
+  gchat: "sent"
+  read: false

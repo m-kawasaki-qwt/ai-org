@@ -1,0 +1,16 @@
+{
+  "kind": "project",
+  "id": "p4-job-run-use",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T00:29:13+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p4-job-run-use/pm",
+    "coordinator-run-use-thin": "p4-job-run-use/coordinator-run-use-thin"
+  },
+  "children": [
+    "p4-job-run-use/teams/run-use-thin"
+  ],
+  "closed_at": "2026-10-24T00:43:05+09:00"
+}

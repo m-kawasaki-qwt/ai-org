@@ -1,0 +1,82 @@
+2026-10-24T00:29:13+09:00 efa3be user component_new - p4-job-run-use
+2026-10-24T00:29:13+09:00 de2201 user assign - p4-job-run-use/pm position=pm occupation=- model=opus
+2026-10-24T00:29:14+09:00 2c700f user launch - p4-job-run-use/pm session=7fcade93-1f1b-4e9a-9c0d-db6d99679deb model=opus
+2026-10-24T00:29:23+09:00 cb5bfc user start p4-job-run-use/pm msg=log/msgs/cb5bfc.md
+2026-10-24T00:29:23+09:00 97899d user notify_sent p4-job-run-use/pm ref=cb5bfc via=orca
+2026-10-24T00:29:41+09:00 30b306 p4-job-run-use/pm notify_recv - ref=cb5bfc misdelivered=0 latency=18
+2026-10-24T00:29:41+09:00 678f5b p4-job-run-use/pm ack - ref=cb5bfc via=notify latency=18
+2026-10-24T00:30:09+09:00 9b1c0c p4-job-run-use/pm component_new - p4-job-run-use/teams/run-use-thin
+2026-10-24T00:30:10+09:00 84791f p4-job-run-use/pm assign - p4-job-run-use/coordinator-run-use-thin position=coordinator occupation=- model=opus
+2026-10-24T00:30:11+09:00 d2748e p4-job-run-use/pm launch - p4-job-run-use/coordinator-run-use-thin session=ad0d46dd-1e66-468e-9042-4047f2affbf7 model=opus
+2026-10-24T00:30:33+09:00 986d0b p4-job-run-use/pm start p4-job-run-use/coordinator-run-use-thin msg=log/msgs/986d0b.md
+2026-10-24T00:30:33+09:00 b33abe p4-job-run-use/pm notify_skipped p4-job-run-use/coordinator-run-use-thin ref=986d0b reason=waiting
+2026-10-24T00:30:42+09:00 8a41fb p4-job-run-use/coordinator-run-use-thin ack - ref=986d0b via=poll latency=9
+2026-10-24T00:33:15+09:00 4a0a6c p4-job-run-use/coordinator-run-use-thin report p4-job-run-use/pm msg=log/msgs/4a0a6c.md
+2026-10-24T00:33:15+09:00 125b41 p4-job-run-use/coordinator-run-use-thin notify_skipped p4-job-run-use/pm ref=4a0a6c reason=waiting
+2026-10-24T00:33:16+09:00 6a2c86 p4-job-run-use/pm ack - ref=4a0a6c via=poll latency=1
+2026-10-24T00:33:26+09:00 f55556 p4-job-run-use/pm wrap_up p4-job-run-use/coordinator-run-use-thin msg=log/msgs/f55556.md
+2026-10-24T00:33:26+09:00 cd2b0b p4-job-run-use/pm notify_skipped p4-job-run-use/coordinator-run-use-thin ref=f55556 reason=waiting
+2026-10-24T00:33:28+09:00 0fbeb7 p4-job-run-use/coordinator-run-use-thin ack - ref=f55556 via=poll latency=2
+2026-10-24T00:33:30+09:00 431085 p4-job-run-use/pm assign - p4-job-run-use/teams/run-use-thin/leader position=leader occupation=engineer model=opus
+2026-10-24T00:33:31+09:00 632f56 p4-job-run-use/pm launch - p4-job-run-use/teams/run-use-thin/leader session=8e4fdd93-759b-457e-83ab-d740a4d486b8 model=opus
+2026-10-24T00:33:43+09:00 3118b2 p4-job-run-use/coordinator-run-use-thin done p4-job-run-use/pm -
+2026-10-24T00:33:43+09:00 067fe3 p4-job-run-use/coordinator-run-use-thin notify_sent p4-job-run-use/pm ref=3118b2 via=orca
+2026-10-24T00:33:50+09:00 e6cc13 p4-job-run-use/pm start p4-job-run-use/teams/run-use-thin/leader msg=log/msgs/e6cc13.md
+2026-10-24T00:33:50+09:00 9e43ad p4-job-run-use/pm notify_sent p4-job-run-use/teams/run-use-thin/leader ref=e6cc13 via=orca
+2026-10-24T00:33:50+09:00 ac9f2f p4-job-run-use/teams/run-use-thin/leader ack - ref=e6cc13 via=poll latency=0
+2026-10-24T00:34:09+09:00 5c4be1 p4-job-run-use/teams/run-use-thin/leader notify_recv - ref=e6cc13 misdelivered=0 latency=19
+2026-10-24T00:34:09+09:00 b7ff80 p4-job-run-use/teams/run-use-thin/leader assign - p4-job-run-use/teams/run-use-thin/worker-1 position=worker occupation=engineer model=opus
+2026-10-24T00:34:09+09:00 d62602 p4-job-run-use/teams/run-use-thin/leader assign - p4-job-run-use/teams/run-use-thin/reviewer position=reviewer occupation=engineer model=sonnet
+2026-10-24T00:34:09+09:00 b29c83 p4-job-run-use/teams/run-use-thin/leader launch - p4-job-run-use/teams/run-use-thin/worker-1 session=b93bc6f4-36f1-4f58-91d3-5e350af297ec model=opus
+2026-10-24T00:34:20+09:00 d44a9d p4-job-run-use/teams/run-use-thin/leader start p4-job-run-use/teams/run-use-thin/worker-1 msg=log/msgs/d44a9d.md
+2026-10-24T00:34:20+09:00 249742 p4-job-run-use/teams/run-use-thin/leader notify_sent p4-job-run-use/teams/run-use-thin/worker-1 ref=d44a9d via=orca
+2026-10-24T00:34:26+09:00 2c71f8 p4-job-run-use/pm notify_recv - ref=3118b2 misdelivered=0 latency=43
+2026-10-24T00:34:26+09:00 2e044c p4-job-run-use/pm ack - ref=3118b2 via=notify latency=43
+2026-10-24T00:34:27+09:00 cd2903 p4-job-run-use/pm teardown p4-job-run-use/coordinator-run-use-thin report=reports/sessions/p4-job-run-use__coordinator-run-use-thin-ad0d46dd.yaml
+2026-10-24T00:34:35+09:00 d25e7b p4-job-run-use/teams/run-use-thin/worker-1 notify_recv - ref=d44a9d misdelivered=0 latency=15
+2026-10-24T00:34:35+09:00 47bdff p4-job-run-use/teams/run-use-thin/worker-1 ack - ref=d44a9d via=notify latency=15
+2026-10-24T00:37:17+09:00 82e0d6 p4-job-run-use/teams/run-use-thin/worker-1 review_request p4-job-run-use/teams/run-use-thin/reviewer msg=log/msgs/82e0d6.md
+2026-10-24T00:37:28+09:00 615c67 p4-job-run-use/teams/run-use-thin/leader launch - p4-job-run-use/teams/run-use-thin/reviewer session=05ac7e08-bf0c-43e3-aa96-9936a8f5ef18 model=sonnet
+2026-10-24T00:37:38+09:00 0b845a p4-job-run-use/teams/run-use-thin/leader start p4-job-run-use/teams/run-use-thin/reviewer msg=log/msgs/0b845a.md
+2026-10-24T00:37:38+09:00 d721fb p4-job-run-use/teams/run-use-thin/leader notify_sent p4-job-run-use/teams/run-use-thin/reviewer ref=0b845a via=orca
+2026-10-24T00:37:49+09:00 997265 p4-job-run-use/teams/run-use-thin/reviewer ack - ref=82e0d6 via=poll latency=32
+2026-10-24T00:37:49+09:00 2faba7 p4-job-run-use/teams/run-use-thin/reviewer ack - ref=0b845a via=poll latency=11
+2026-10-24T00:38:02+09:00 d3f333 p4-job-run-use/teams/run-use-thin/reviewer notify_recv - ref=0b845a misdelivered=0 latency=24
+2026-10-24T00:38:43+09:00 41c2df p4-job-run-use/teams/run-use-thin/reviewer review_ok p4-job-run-use/teams/run-use-thin/leader msg=log/msgs/41c2df.md
+2026-10-24T00:38:43+09:00 728688 p4-job-run-use/teams/run-use-thin/reviewer notify_skipped p4-job-run-use/teams/run-use-thin/leader ref=41c2df reason=waiting
+2026-10-24T00:38:49+09:00 7f3233 p4-job-run-use/teams/run-use-thin/leader ack - ref=41c2df via=poll latency=6
+2026-10-24T00:38:58+09:00 ded3b3 p4-job-run-use/teams/run-use-thin/leader wrap_up p4-job-run-use/teams/run-use-thin/worker-1 msg=log/msgs/ded3b3.md
+2026-10-24T00:38:58+09:00 1c018e p4-job-run-use/teams/run-use-thin/leader notify_skipped p4-job-run-use/teams/run-use-thin/worker-1 ref=ded3b3 reason=waiting
+2026-10-24T00:38:58+09:00 c7a08e p4-job-run-use/teams/run-use-thin/leader wrap_up p4-job-run-use/teams/run-use-thin/reviewer msg=log/msgs/c7a08e.md
+2026-10-24T00:38:58+09:00 802194 p4-job-run-use/teams/run-use-thin/leader notify_skipped p4-job-run-use/teams/run-use-thin/reviewer ref=c7a08e reason=waiting
+2026-10-24T00:38:59+09:00 98d73f p4-job-run-use/teams/run-use-thin/reviewer ack - ref=c7a08e via=poll latency=1
+2026-10-24T00:39:00+09:00 812636 p4-job-run-use/teams/run-use-thin/worker-1 ack - ref=ded3b3 via=poll latency=2
+2026-10-24T00:39:04+09:00 4a303c p4-job-run-use/teams/run-use-thin/reviewer done p4-job-run-use/teams/run-use-thin/leader -
+2026-10-24T00:39:04+09:00 dbc652 p4-job-run-use/teams/run-use-thin/reviewer notify_skipped p4-job-run-use/teams/run-use-thin/leader ref=4a303c reason=waiting
+2026-10-24T00:39:11+09:00 40b1f0 p4-job-run-use/teams/run-use-thin/leader ack - ref=4a303c via=poll latency=7
+2026-10-24T00:39:11+09:00 b67871 p4-job-run-use/teams/run-use-thin/worker-1 done p4-job-run-use/teams/run-use-thin/leader -
+2026-10-24T00:39:11+09:00 4b989a p4-job-run-use/teams/run-use-thin/worker-1 notify_sent p4-job-run-use/teams/run-use-thin/leader ref=b67871 via=orca
+2026-10-24T00:39:14+09:00 27e197 p4-job-run-use/teams/run-use-thin/leader ack - ref=b67871 via=poll latency=3
+2026-10-24T00:39:18+09:00 c48630 p4-job-run-use/teams/run-use-thin/leader teardown p4-job-run-use/teams/run-use-thin/worker-1 report=reports/sessions/p4-job-run-use__teams__run-use-thin__worker-1-b93bc6f4.yaml
+2026-10-24T00:39:18+09:00 610c76 p4-job-run-use/teams/run-use-thin/leader teardown p4-job-run-use/teams/run-use-thin/reviewer report=reports/sessions/p4-job-run-use__teams__run-use-thin__reviewer-05ac7e08.yaml
+2026-10-24T00:39:46+09:00 74b9f7 p4-job-run-use/teams/run-use-thin/leader report p4-job-run-use/pm msg=log/msgs/74b9f7.md
+2026-10-24T00:39:46+09:00 7437e1 p4-job-run-use/teams/run-use-thin/leader notify_skipped p4-job-run-use/pm ref=74b9f7 reason=waiting
+2026-10-24T00:39:49+09:00 4124a6 p4-job-run-use/pm ack - ref=74b9f7 via=poll latency=3
+2026-10-24T00:40:12+09:00 15e3a3 p4-job-run-use/pm wrap_up p4-job-run-use/teams/run-use-thin/leader msg=log/msgs/15e3a3.md
+2026-10-24T00:40:12+09:00 5a7612 p4-job-run-use/pm notify_skipped p4-job-run-use/teams/run-use-thin/leader ref=15e3a3 reason=waiting
+2026-10-24T00:40:19+09:00 3c23b3 p4-job-run-use/teams/run-use-thin/leader ack - ref=15e3a3 via=poll latency=7
+2026-10-24T00:40:29+09:00 7f3973 p4-job-run-use/teams/run-use-thin/leader done p4-job-run-use/pm -
+2026-10-24T00:40:29+09:00 8ed14d p4-job-run-use/teams/run-use-thin/leader notify_skipped p4-job-run-use/pm ref=7f3973 reason=waiting
+2026-10-24T00:40:35+09:00 7997ba p4-job-run-use/pm ack - ref=7f3973 via=poll latency=6
+2026-10-24T00:40:39+09:00 b44103 p4-job-run-use/pm teardown p4-job-run-use/teams/run-use-thin/leader report=reports/sessions/p4-job-run-use__teams__run-use-thin__leader-8e4fdd93.yaml
+2026-10-24T00:40:39+09:00 28cb25 p4-job-run-use/pm component_closed - p4-job-run-use/teams/run-use-thin
+2026-10-24T00:41:04+09:00 3b3654 p4-job-run-use/pm report user msg=log/msgs/3b3654.md
+2026-10-24T00:41:07+09:00 15e059 user ack - ref=3b3654 via=poll latency=3
+2026-10-24T00:41:55+09:00 044550 patrol patrol user sent=1 via=sent
+2026-10-24T00:42:41+09:00 45b4ed user wrap_up p4-job-run-use/pm msg=log/msgs/45b4ed.md
+2026-10-24T00:42:41+09:00 f568bd user notify_skipped p4-job-run-use/pm ref=45b4ed reason=waiting
+2026-10-24T00:42:48+09:00 5a32b0 p4-job-run-use/pm ack - ref=45b4ed via=poll latency=7
+2026-10-24T00:43:03+09:00 37b6c0 p4-job-run-use/pm done user -
+2026-10-24T00:43:05+09:00 3eedc2 user ack - ref=37b6c0 via=poll latency=2
+2026-10-24T00:43:05+09:00 cdc957 user teardown p4-job-run-use/pm report=reports/sessions/p4-job-run-use__pm-7fcade93.yaml
+2026-10-24T00:43:05+09:00 7d0eba user component_closed - p4-job-run-use
