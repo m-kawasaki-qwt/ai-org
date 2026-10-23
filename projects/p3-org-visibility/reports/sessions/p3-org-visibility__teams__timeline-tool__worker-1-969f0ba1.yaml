@@ -1,0 +1,72 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p3-org-visibility/teams/timeline-tool/worker-1"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p3-org-visibility/teams/timeline-tool/leader"
+  model_requested: "sonnet"
+  agent: "claude"
+  session_id: "969f0ba1-2762-4c5d-9eeb-33d1b2c045fa"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T13:27:12+09:00"
+  closed_at: "2026-10-23T13:35:04+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/969f0ba1-2762-4c5d-9eeb-33d1b2c045fa.jsonl"
+  started_at: "2026-10-23T13:27:21+09:00"
+  ended_at: "2026-10-23T13:34:55+09:00"
+  span_min: 7.6
+  model_effective:
+    claude-sonnet-5-5: 45
+  api_messages: 28
+  tokens:
+    input: 56
+    output: 20902
+    cache_read: 2671887
+    cache_write: 177570
+  tokens_total: 2870415
+  tool_calls:
+    Read: 3
+    Bash: 22
+    Write: 2
+    ToolSearch: 1
+    mcp__claude-in-chrome__tabs_context_mcp: 1
+  events_sent:
+    review_request: 3
+    done: 1
+  review_ng_count: 1
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/README.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p2-orca-run-use/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/hints/worker-1.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/result.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/timeline-tool/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/org_timeline.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00003.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00006.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00007.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/reports/sessions/tl__pm-abcd1234.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/reports/sessions/tl__teams__t__worker-1.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/test_org_timeline.py"
+self: |
+  asked: "events.log・本文・セッション報告から 1 枚の静的 HTML を書く tools/org_timeline.py を作る"
+  did:
+    - "tools/org_timeline.py を作り、p1・p2 の timeline.html を生成（ヘッドレス Chrome のスクリーンショットで目視）"
+    - "tools/tests/test_org_timeline.py と fixtures/tl を作り、unittest 16 件通過"
+    - "review_ng 1 件・rework 1 件（起動複数回の表示・文言・notify_ の扱い）を全部採って第 3 版まで直した"
+  outputs:
+    - "tools/org_timeline.py"
+    - "tools/tests/test_org_timeline.py"
+    - "tools/tests/fixtures/tl/"
+    - "projects/p1-org-status/timeline.html"
+    - "projects/p2-orca-run-use/timeline.html"
+  decided:
+    - { what: "時刻順 1 件 1 列。5 分以上空くと間隔の列を挟む", why: "時刻が偏り、比例配置だと重なるため" }
+    - { what: "assign・launch・teardown は帯の頭に畳み、component_new/closed は出さず、ack・notify_* は件数のみ", why: "全部出すと読めなくなるため" }
+    - { what: "本文は印から下の一覧の details へ anchor で飛ぶ", why: "JS 無しで、狭い列を崩さずに読むため" }
+  escalated: []
+  not_done:
+    - "実ブラウザ（Claude in Chrome）での確認。拡張が繋がらず、ヘッドレス Chrome のスクリーンショットで代用した"
+  unclear:
+    - "start の知らせが届いたとき、inbox は「新しいものは無い」と返した（wait で既に読んでいたため）"

@@ -1,0 +1,463 @@
+<!doctype html><html lang=ja><meta charset=utf-8><title>p2-orca-run-use timeline</title><style>
+body{font:13px/1.5 -apple-system,'Hiragino Sans',sans-serif;margin:16px;color:#1f2937;background:#fafafa}
+h1{font-size:18px;margin:0 0 4px}h2{font-size:15px;margin:24px 0 8px}
+.sub{color:#6b7280;margin-bottom:12px}
+.wrap{overflow-x:auto;border:1px solid #e5e7eb;background:#fff}
+table.tl{border-collapse:collapse}
+table.tl td,table.tl th{border-bottom:1px solid #f1f5f9;padding:2px 0;text-align:center;min-width:46px}
+table.tl th.t{font-weight:normal;font-size:10px;color:#6b7280;padding:4px 2px;vertical-align:bottom;border-bottom:1px solid #cbd5e1}
+th.gap,td.gap{min-width:30px;background:repeating-linear-gradient(135deg,#f8fafc,#f8fafc 4px,#eef2f7 4px,#eef2f7 8px);font-size:10px;color:#94a3b8}
+td.head{position:sticky;left:0;z-index:2;background:#fff;text-align:left;min-width:230px;max-width:230px;padding:4px 8px;border-right:2px solid #cbd5e1}
+.head b{font-size:12px}.head .pos{color:#6b7280;font-size:11px}
+.head .stat{font-size:11px;color:#374151}.bar{height:4px;background:#93c5fd;margin-top:1px}.bar.tok{background:#fcd34d}
+a.mark{display:inline-block;min-width:34px;padding:1px 3px;border-radius:4px;color:#fff;text-decoration:none;font-size:10px;line-height:1.3}
+a.mark b{font-size:12px;display:block}
+.rcv{display:inline-block;width:14px;height:14px;border:2px solid;border-radius:50%;box-sizing:border-box;opacity:.55}
+tr.row:hover td{background:#f8fafc}
+.ev{border:1px solid #e5e7eb;background:#fff;border-left:5px solid;margin:4px 0;padding:4px 8px}
+.ev:target{background:#fffbeb;outline:2px solid #f59e0b}
+.ev summary{cursor:pointer}.ev .k{font-weight:bold}
+pre{white-space:pre-wrap;background:#f8fafc;padding:8px;margin:6px 0;font-size:12px}
+.legend span{display:inline-block;margin-right:10px}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:3px}
+table.ss{border-collapse:collapse}table.ss td,table.ss th{border:1px solid #e5e7eb;padding:3px 8px;text-align:right}
+table.ss td:first-child,table.ss th:first-child{text-align:left}
+</style><body>
+<h1>p2-orca-run-use — 誰が・いつ・誰に・何を出したか</h1>
+<div class=sub>2026-10-23 12:18:18 〜 12:30:34（12.3 分）・人の報告 21 件・メンバー 5 人</div>
+<div class=legend><span><i style='background:#2563eb'></i>start</span><span><i style='background:#0891b2'></i>report</span><span><i style='background:#7c3aed'></i>review_request</span><span><i style='background:#dc2626'></i>review_ng</span><span><i style='background:#16a34a'></i>review_ok</span><span><i style='background:#ea580c'></i>rework</span><span><i style='background:#c026d3'></i>reassign</span><span><i style='background:#b91c1c'></i>blocked</span><span><i style='background:#d97706'></i>escalate</span><span><i style='background:#64748b'></i>wrap_up</span><span><i style='background:#475569'></i>done</span><span><i style='background:none;border:2px solid #888;border-radius:50%'></i>宛先（受け手の帯）</span></div>
+<h2>タイムライン（左→右が時刻順。印を押すと下の本文へ）</h2><div class=wrap><table class=tl>
+<tr><td class=head></td>
+<th class=t>10-23<br>12:18:27</th>
+<th class=t>12:19:38</th>
+<th class=t>12:20:34</th>
+<th class=t>12:20:37</th>
+<th class=t>12:21:31</th>
+<th class=t>12:23:23</th>
+<th class=t>12:23:57</th>
+<th class=t>12:24:30</th>
+<th class=t>12:25:07</th>
+<th class=t>12:25:22</th>
+<th class=t>12:25:53</th>
+<th class=t>12:26:01</th>
+<th class=t>12:26:02</th>
+<th class=t>12:26:14</th>
+<th class=t>12:26:46</th>
+<th class=t>12:27:50</th>
+<th class=t>12:28:17</th>
+<th class=t>12:28:41</th>
+<th class=t>12:29:36</th>
+<th class=t>12:29:46</th>
+<th class=t>12:30:04</th>
+</tr>
+<tr class=row><td class=head><b>user</b> <span class=pos>user</span>
+</td>
+<td><a class=mark href='#e-974bc8' style='background:#2563eb' title='start → pm'><b>▶</b>start</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class=rcv style='color:#0891b2' title='pm から report'></span></td>
+<td><a class=mark href='#e-65dcd4' style='background:#64748b' title='wrap_up → pm'><b>◼</b>wrap_up</a></td>
+<td><span class=rcv style='color:#475569' title='pm から done'></span></td>
+</tr>
+<tr class=row><td class=head><b>pm</b> <span class=pos>pm / opus</span>
+<div class=stat>⏱ 12.1 分 ・ tokens 2.61M</div><div class=bar style='width:100%'></div><div class='bar tok' style='width:64%'></div>
+<div class=stat>起動 12:18:18 → 終了 12:30:34</div>
+</td>
+<td><span class=rcv style='color:#2563eb' title='user から start'></span></td>
+<td><a class=mark href='#e-46c029' style='background:#2563eb' title='start → teams/run-use-fix/leader'><b>▶</b>start</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class=rcv style='color:#0891b2' title='teams/run-use-fix/leader から report'></span></td>
+<td><a class=mark href='#e-c5520c' style='background:#64748b' title='wrap_up → teams/run-use-fix/leader'><b>◼</b>wrap_up</a></td>
+<td><span class=rcv style='color:#475569' title='teams/run-use-fix/leader から done'></span></td>
+<td><a class=mark href='#e-7ad811' style='background:#0891b2' title='report → user'><b>●</b>report</a></td>
+<td><span class=rcv style='color:#64748b' title='user から wrap_up'></span></td>
+<td><a class=mark href='#e-6b9744' style='background:#475569' title='done → user'><b>◆</b>done</a></td>
+</tr>
+<tr class=row><td class=head><b>teams/run-use-fix/leader</b> <span class=pos>leader / opus</span>
+<div class=stat>⏱ 9.2 分 ・ tokens 4.05M</div><div class=bar style='width:76%'></div><div class='bar tok' style='width:100%'></div>
+<div class=stat>起動 12:19:24 → 終了 12:28:59</div>
+</td>
+<td></td>
+<td><span class=rcv style='color:#2563eb' title='pm から start'></span></td>
+<td><a class=mark href='#e-161ad1' style='background:#2563eb' title='start → teams/run-use-fix/worker-1'><b>▶</b>start</a></td>
+<td><a class=mark href='#e-1d9e38' style='background:#2563eb' title='start → teams/run-use-fix/reviewer'><b>▶</b>start</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class=rcv style='color:#16a34a' title='teams/run-use-fix/reviewer から review_ok'></span></td>
+<td><a class=mark href='#e-63b813' style='background:#ea580c' title='rework → teams/run-use-fix/worker-1'><b>↺</b>rework</a></td>
+<td></td>
+<td><span class=rcv style='color:#16a34a' title='teams/run-use-fix/reviewer から review_ok'></span></td>
+<td><a class=mark href='#e-be9424' style='background:#64748b' title='wrap_up → teams/run-use-fix/worker-1'><b>◼</b>wrap_up</a></td>
+<td><a class=mark href='#e-21e285' style='background:#64748b' title='wrap_up → teams/run-use-fix/reviewer'><b>◼</b>wrap_up</a></td>
+<td><span class=rcv style='color:#475569' title='teams/run-use-fix/worker-1 から done'></span></td>
+<td><span class=rcv style='color:#475569' title='teams/run-use-fix/reviewer から done'></span></td>
+<td><a class=mark href='#e-1f7fb5' style='background:#0891b2' title='report → pm'><b>●</b>report</a></td>
+<td><span class=rcv style='color:#64748b' title='pm から wrap_up'></span></td>
+<td><a class=mark href='#e-b5fc1c' style='background:#475569' title='done → pm'><b>◆</b>done</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class=row><td class=head><b>teams/run-use-fix/worker-1</b> <span class=pos>worker / sonnet</span>
+<div class=stat>⏱ 6.7 分 ・ tokens 2.71M ・ review_ng 1</div><div class=bar style='width:55%'></div><div class='bar tok' style='width:67%'></div>
+<div class=stat>起動 12:20:15 → 終了 12:27:10</div>
+</td>
+<td></td>
+<td></td>
+<td><span class=rcv style='color:#2563eb' title='teams/run-use-fix/leader から start'></span></td>
+<td></td>
+<td><a class=mark href='#e-a9a0a2' style='background:#7c3aed' title='review_request → teams/run-use-fix/reviewer'><b>?</b>r_request</a></td>
+<td><span class=rcv style='color:#dc2626' title='teams/run-use-fix/reviewer から review_ng'></span></td>
+<td><a class=mark href='#e-39bcd6' style='background:#7c3aed' title='review_request → teams/run-use-fix/reviewer'><b>?</b>r_request</a></td>
+<td></td>
+<td><span class=rcv style='color:#ea580c' title='teams/run-use-fix/leader から rework'></span></td>
+<td><a class=mark href='#e-3c4f5f' style='background:#7c3aed' title='review_request → teams/run-use-fix/reviewer'><b>?</b>r_request</a></td>
+<td></td>
+<td><span class=rcv style='color:#64748b' title='teams/run-use-fix/leader から wrap_up'></span></td>
+<td></td>
+<td><a class=mark href='#e-6239d4' style='background:#475569' title='done → teams/run-use-fix/leader'><b>◆</b>done</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class=row><td class=head><b>teams/run-use-fix/reviewer</b> <span class=pos>reviewer / opus</span>
+<div class=stat>⏱ 6.4 分 ・ tokens 3.02M ・ review_ng 1</div><div class=bar style='width:53%'></div><div class='bar tok' style='width:74%'></div>
+<div class=stat>起動 12:20:16 → 終了 12:27:11</div>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class=rcv style='color:#2563eb' title='teams/run-use-fix/leader から start'></span></td>
+<td><span class=rcv style='color:#7c3aed' title='teams/run-use-fix/worker-1 から review_request'></span></td>
+<td><a class=mark href='#e-04802d' style='background:#dc2626' title='review_ng → teams/run-use-fix/worker-1'><b>✕</b>r_ng</a></td>
+<td><span class=rcv style='color:#7c3aed' title='teams/run-use-fix/worker-1 から review_request'></span></td>
+<td><a class=mark href='#e-f863c1' style='background:#16a34a' title='review_ok → teams/run-use-fix/leader'><b>✓</b>r_ok</a></td>
+<td></td>
+<td><span class=rcv style='color:#7c3aed' title='teams/run-use-fix/worker-1 から review_request'></span></td>
+<td><a class=mark href='#e-91f052' style='background:#16a34a' title='review_ok → teams/run-use-fix/leader'><b>✓</b>r_ok</a></td>
+<td></td>
+<td><span class=rcv style='color:#64748b' title='teams/run-use-fix/leader から wrap_up'></span></td>
+<td></td>
+<td><a class=mark href='#e-aa246f' style='background:#475569' title='done → teams/run-use-fix/leader'><b>◆</b>done</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></div>
+<h2>セッションごとの時間とトークン</h2><table class=ss><tr><th>メンバー<th>職<th>時間(分)<th>tokens_total<th>備考<th>API 回数<th>review_ng
+<tr><td>pm<td>pm<td>12.1<td>2,608,026<td>
+<td>26<td>0
+<tr><td>teams/run-use-fix/leader<td>leader<td>9.2<td>4,053,924<td>
+<td>38<td>0
+<tr><td>teams/run-use-fix/worker-1<td>worker<td>6.7<td>2,706,908<td>
+<td>25<td>1
+<tr><td>teams/run-use-fix/reviewer<td>reviewer<td>6.4<td>3,019,721<td>
+<td>27<td>1
+</table>
+<h2>報告の一覧（時刻順。クリックで本文）</h2>
+<details class=ev id='e-974bc8' style='border-left-color:#2563eb'><summary><span style='color:#2563eb'>▶</span> 12:18:27 <span class=k>start</span> user → pm</summary><pre>&lt;!-- user → p2-orca-run-use/pm start 2026-10-23T12:18:27+09:00 --&gt;
+charter.md を読んで、PM として始めてください。結果がまとまったら report で user（この宛先）へ出してください。
+</pre></details>
+<details class=ev id='e-46c029' style='border-left-color:#2563eb'><summary><span style='color:#2563eb'>▶</span> 12:19:38 <span class=k>start</span> pm → teams/run-use-fix/leader</summary><pre>&lt;!-- p2-orca-run-use/pm → p2-orca-run-use/teams/run-use-fix/leader start 2026-10-23T12:19:38+09:00 --&gt;
+charter を読んで始めてください。レビュアーは作業者と同時に起こしてください（前回の試走で、後から起こす形にしたらレビューが約 10 分止まったため）。結果は完了条件 1〜8 に照らして report で PM へ。
+</pre></details>
+<details class=ev id='e-161ad1' style='border-left-color:#2563eb'><summary><span style='color:#2563eb'>▶</span> 12:20:34 <span class=k>start</span> teams/run-use-fix/leader → teams/run-use-fix/worker-1</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/leader → p2-orca-run-use/teams/run-use-fix/worker-1 start 2026-10-23T12:20:34+09:00 --&gt;
+charter とヒントを読んで始めてください。できたら review_request をレビュアー（p2-orca-run-use/teams/run-use-fix/reviewer）へ。レビュアーはもう起きています。判断が分かれる点（範囲が変わる・川崎さんの好みで決まる）が出たら、推奨付きの 2〜5 択で私（leader）へ escalate してください。
+</pre></details>
+<details class=ev id='e-1d9e38' style='border-left-color:#2563eb'><summary><span style='color:#2563eb'>▶</span> 12:20:37 <span class=k>start</span> teams/run-use-fix/leader → teams/run-use-fix/reviewer</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/leader → p2-orca-run-use/teams/run-use-fix/reviewer start 2026-10-23T12:20:37+09:00 --&gt;
+charter を読み、完了条件 1〜7 と調査ファイル（charter の出発点）を先に把握しておいてください。作業者（p2-orca-run-use/teams/run-use-fix/worker-1）から review_request が届いたら、完了条件の番号ごとに、根拠（調査ファイルの事実・SKILL.md の該当箇所・dev-tools の git status / diff --stat）付きで判定し、review_ng か review_ok を作業者へ。review_request が来るまでは wait で待ってください。
+</pre></details>
+<details class=ev id='e-a9a0a2' style='border-left-color:#7c3aed'><summary><span style='color:#7c3aed'>?</span> 12:21:31 <span class=k>review_request</span> teams/run-use-fix/worker-1 → teams/run-use-fix/reviewer</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/worker-1 → p2-orca-run-use/teams/run-use-fix/reviewer review_request 2026-10-23T12:21:31+09:00 --&gt;
+作業者 第1版。変更は SKILL.md と ticket-template.md の 2 つだけ（dev-tools: claude/plugins/dev-tools/skills/orca-multi-agent/）。調査ファイルは job/.claude/plans/tmp/2026-10-22-orca-multi-agent-run-use-handover.md（以下「調査」）。
+
+## 完了条件ごと
+1. 古い記述は消さず「2026-10-22 時点では〜」と併記。対応表（直した箇所 → 調査の事実）:
+   - B 71 行目「新しい端末は最初に run-use」→ 今は結び直さない（旧記述を引用して併記）／B 73-80 行目「run-use の使いどころ」: 通知先は端末 1 つ・run-use で付け替わる・宛先は Run（確認した事実 1・2・3）
+   - B 80 行目: 結ばない端末からの task-create/worker-start は「未確認」（まだ確かめていないこと 1）。だから依頼の直前に run-use する
+   - C 99 行目: inbox は結ばない端末から通る・各メッセージの項目（確認した事実 6）／--limit 無しの件数は「未確認」（まだ確かめていないこと 3）
+   - D 105-125 行目: 入口を inbox に（事実 6）。read がいつ 1 になるかは「未確認」と明記し、read だけに頼らず通知先確認と check で確かめる形にした（まだ確かめていないこと 2）
+   - D 139 行目: --peek が consumer_fenced で弾かれる（事実 5）。旧「届いているかの確認は --peek」を併記
+   - D 149 行目: 旧「run-use 無しで通る（2026-09-17 確認）」を残し、「2026-10-22 時点では consumer_fenced」と併記（事実 5）
+2. B 76-78 行目: run-use してよいのは「依頼する直前」「引き取るとき」だけ。それ以外はしない。
+3. D 105-135 行目: inbox → run-show で coordinator_handle → terminal show で connected。分岐 1（自分: check）・2（端末が無い: run-use → check）・3（別セッションが生きている: 触らない）に、打つ 1 行コマンドを置いた。
+4. ticket-template.md の Orca の表に「依頼元の端末」の行を追加。
+5. D 137 行目付近: 依頼していない戻りは、受けて処理し（--ack まで）、ユーザーに 1 行伝える。
+6. Run ID・「2 時間」・run-use-log.md・consumer_generation の具体値は入れていない。時間は「親 repo が決める」（D 分岐 3）。grep で確認済み。
+7. git status --short:
+    M claude/plugins/dev-tools/skills/orca-multi-agent/SKILL.md
+    M claude/plugins/dev-tools/skills/orca-multi-agent/ticket-template.md
+   git diff --stat:
+    SKILL.md | 49 +++++++++++++++++++---  / ticket-template.md | 1 +  （2 files changed, 44 insertions(+), 6 deletions(-)）
+   orca のコマンドは全部 1 行・単独。Orca では何も打っていない（調査の事実だけを根拠にした）。
+
+## 案から変えた所
+- 案 4 の「inbox で read が 0 のものを未処理」は、read の意味が未確認なので「候補」にし、通知先が自分なら check で確かめる形にした。
+- 案 5 に「起票ファイルが手元に無いときは worker_done の body を読むだけにしてユーザーに渡す」を足した（起票が無いのに処理を進めないため）。
+- 案 3 の「手動か automation か」は ticket-template の行の説明に入れた。
+
+## 申し送り（直していない）
+- worker-instructions.md と orca-worker スキルを grep したが、run-use・結び直しの記述は無かった（直す所なし）。
+</pre></details>
+<details class=ev id='e-04802d' style='border-left-color:#dc2626'><summary><span style='color:#dc2626'>✕</span> 12:23:23 <span class=k>review_ng</span> teams/run-use-fix/reviewer → teams/run-use-fix/worker-1</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/reviewer → p2-orca-run-use/teams/run-use-fix/worker-1 review_ng 2026-10-23T12:23:23+09:00 --&gt;
+## レビュアー 第1回（review_ng）
+
+対象: dev-tools の `claude/plugins/dev-tools/skills/orca-multi-agent/SKILL.md`・`ticket-template.md`（作業者 第1版、review_request a9a0a2）。
+
+判定: 2・4・6・7 は満たしている。1・3・5 に足りない所がある（重い順に 4 件）。
+
+1. **【条件 5】自分が依頼していない戻りの扱いが行き詰まる（SKILL.md 138 行目）。** 「`check` で受けて処理し（`--ack` まで）」の後に「依頼元のセッションがまだ生きているなら、そのセッションが処理する」とあり、どちらが処理するのかがぶつかっている。新しい決まりの下でこれが起きる典型は「A が依頼 → 後で B が別の依頼のために `run-use` → A の戻りが B に届く」で、このとき A は生きている。B が「A が処理する」と読んで手を出さないと、A は D の入口で通知先 B が生きているのを見て分岐 3（触らない）に入る。しかも A の `check` は `consumer_fenced` で弾かれる（調査「確認した事実」5）。結果、誰も `--ack` せず、同じ通知が B に流し込まれ続ける（調査の案 5 が避けたかったこと）。「起票ファイルが手元に無いときは body は読むだけ」も、`--ack` するのかが読めない。末尾の「報告が要るかをユーザーに聞く」も、案 5 の「1 行だけ伝える」より往復が増える。
+   → 通す形: 通知先になっている端末（＝届いた側）が必ず `--ack` まで処理する、と 1 本に決める。起票ファイルが読めれば「戻り」へ転記し、読めなければ body の要点をユーザーへ 1 行で渡す。「依頼元が処理する」の文は消す（依頼元に処理させたいなら、依頼元が分岐 2・3 の `run-use` で引き取る、と D の分岐側に書く）。
+
+2. **【条件 3】`inbox` の入口で未処理を取りこぼすおそれがある（108 行目の `--limit 20`、C の 99 行目「件数が多くて埋もれるときは `--limit` で絞る」）。** `orca orchestration inbox --help` で見ると、絞り込みは `--limit`・`--terminal`・`--full` だけで、種類や未読では絞れない。新しい順に返り、heartbeat も同じ列に並ぶ（2026-10-23 に `inbox --limit 30 --json` を打ったら 30 件中 20 件が heartbeat）。依頼先が動いている間は heartbeat が 1 分おきに積まれる（調査「まだ確かめていないこと」3）ので、20 件だと数十分より前の `worker_done` が画面から落ちる。C の「`--limit` で絞る」は向きが逆で、絞るほど古い未処理が落ちる。
+   → 通す形: 20 で固定しない。「最後に処理した時刻より前まで届く件数にする（足りなければ増やして打ち直す）」と書き、出力を `run_id`・`type`（`worker_done`・`question`・`escalation`）・`read` で見る、とする。C の文も同じ向きに直す。`--limit` 無しの件数が未確認なのは、今の書き方のままでよい。
+
+3. **【条件 3】分岐 2 に「通知先が無い（`coordinator_handle` が `null`）」が入っていない（125〜128 行目）。** `orca orchestration run-list --json` を見ると、今ある Run の半分以上で `coordinator_handle` が `null`。このときは `orca terminal show --terminal &lt;handle&gt;` を打てないので、今の分岐の書き方では、どこへ進むかが決まらない。（`terminal show` の `connected` という項目名は、2026-10-23 に実物で確かめた。合っている。）
+   → 通す形: 分岐 2 の条件に「`coordinator_handle` が `null`」を足す（`terminal show` は打たずに分岐 2 へ）。
+
+4. **【条件 1】D のコードブロックから `orca orchestration check --run &lt;run_id&gt; --peek --format --json` の行を消している（旧 97 行目）。** 条件 1 は「古い記述は消さず、2026-10-22 時点では〜と併記」。139 行目の箇条書きで旧記述に触れてはいるが、コマンドの行そのものは無くなっている。
+   → 通す形: その行を残し、「2026-10-22 時点では、通知先が自分のときだけ通る（結び付いていない端末では `consumer_fenced`）」と添える。139 行目の箇条書きを指す形でもよい。
+
+確かめたこと（問題なし）:
+- 条件 2: B（73〜80 行目）に、`run-use` してよいのは「依頼する直前」「引き取るとき」だけで、それ以外ではしないと書かれている。B のコードブロックの先頭が `run-use` のままなのも「依頼の直前」と合っている。
+- 条件 4: ticket-template.md の Orca の表に「依頼元の端末」の行がある。
+- 条件 6: Run の ID・「2 時間」・`consumer_generation`・`run-use-log` を grep したが、作業者が足した分には無い（31・84 行目の「job」は元からある記述）。分岐 3 に「何時間で引き取るかは親 repo が決める」とある。
+- 条件 7: dev-tools の `git status --short` は 2 ファイルだけ（SKILL.md・ticket-template.md）で、`diff --stat` は 44 insertions / 6 deletions。コードブロックの中に行継続・`&amp;&amp;`・`|`・`;` は無く、`orca` はどれも単独の 1 行。
+- 条件 1 の対応表（B 71・C 99・D 105〜125・139・149 行目 → 調査「確認した事実」1・2・3・5・6）は、中身と照らして合っている（上の 4 を除く）。
+</pre></details>
+<details class=ev id='e-39bcd6' style='border-left-color:#7c3aed'><summary><span style='color:#7c3aed'>?</span> 12:23:57 <span class=k>review_request</span> teams/run-use-fix/worker-1 → teams/run-use-fix/reviewer</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/worker-1 → p2-orca-run-use/teams/run-use-fix/reviewer review_request 2026-10-23T12:23:57+09:00 --&gt;
+作業者 第2版。review_ng 04802d の 4 件すべて採用して直した（SKILL.md のみ。ticket-template.md は変更なし）。
+
+1. 【条件 5】採る。D の「自分が依頼していない戻り」（138 行目）を「通知先になっている端末（届いた側）が必ず `--ack` まで処理する」の 1 本に統一。「依頼元が処理する」の文を削除。起票が読めれば「戻り」へ転記、読めなければ body の要点 1 行をユーザーへ。依頼元に処理させたいときは分岐 2・3 の `run-use` で引き取る、と書いた。「報告が要るかをユーザーに聞く」も削除。
+2. 【条件 3】採る。D の `--limit 20` は「例」とし、「最後に処理した時刻より前まで届く件数にする（足りなければ増やして打ち直す）」に変更（111 行目）。C の「`--limit` で絞る」は向きを逆に直した（99 行目）。
+3. 【条件 3】採る。D の `coordinator_handle` が `null` のとき `terminal show` を打たず分岐 2 へ（119 行目）。分岐 2 の条件にも `null` を追加（128 行目）。
+4. 【条件 1】採る。`check --run &lt;run_id&gt; --peek --format --json` の行をコードブロックで復活し、「旧記述では届いているかの確認に使った。2026-10-22 時点では通知先が自分のときだけ通る」と添えた（140〜144 行目）。
+
+git diff --stat: SKILL.md 55 行（+）・ticket-template.md 1 行、2 files changed, 50 insertions(+), 6 deletions(-)。git status は同じ 2 ファイルのみ。orca のコマンドは全部 1 行・単独。
+</pre></details>
+<details class=ev id='e-f863c1' style='border-left-color:#16a34a'><summary><span style='color:#16a34a'>✓</span> 12:24:30 <span class=k>review_ok</span> teams/run-use-fix/reviewer → teams/run-use-fix/leader</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/reviewer → p2-orca-run-use/teams/run-use-fix/leader review_ok 2026-10-23T12:24:30+09:00 --&gt;
+## レビュアー 第2回（review_ok）
+
+対象: 作業者 第2版（review_request 39bcd6）。第1回の指摘 4 件は、すべて直っている。
+
+完了条件ごとの判定（根拠）:
+
+1. **満たす。** B 71 行目（新しい端末は最初に `run-use` → 今は結び直さない。旧記述も引いて併記）、B「`run-use` の使いどころ」（調査「確認した事実」1・2・3）、C 99 行目（事実 6。`inbox` を `--limit` で絞らない向きに直った）、D の入口（事実 6）、D の `--peek` の行（事実 5。旧コマンドの行を残し「通知先が自分のときだけ通る」と添えた）、D 149 行目付近（旧「`run-use` 無しで通る（2026-09-17 確認）」を残し、2026-10-22 の `consumer_fenced` を併記）。調査の事実と食い違う所は無い。
+2. **満たす。** B に「依頼する直前」「引き取るとき」の 2 場面だけで、新しい端末の最初・戻りを確かめたいだけのときは `run-use` しない、と書いてある。
+3. **満たす。** D の入口: `inbox`（件数は最後に処理した時刻より前まで届くように）→ `run-show` の `coordinator_handle`（`null` なら分岐 2）→ `terminal show` の `connected`。分岐 1（`check` → 処理 → `--ack`）・2（`run-use` → `check`）・3（触らない。放置が長ければ引き取る）に、それぞれ 1 行のコマンドがある。`connected`・`coordinator_handle` の項目名は、2026-10-23 に `orca terminal show`・`orca orchestration run-list` の実物で確かめた。
+4. **満たす。** ticket-template.md の Orca の表に「依頼元の端末」（`ORCA_TERMINAL_HANDLE` と、手動か automation か）がある。
+5. **満たす。** 届いた側（通知先の端末）が必ず `--ack` まで処理する、の 1 本になった。依頼元の `check` が `consumer_fenced` になる理由も書いてある。起票が読めれば転記し、読めなければ要点 1 行をユーザーへ。
+6. **満たす。** Run の ID・「2 時間」・`consumer_generation`・`run-use-log` は、作業者が足した分に無い（grep）。分岐 3 に「何時間で引き取るかは親 repo が決める」とある。
+7. **満たす。** dev-tools の `git status --short` は `M SKILL.md`・`M ticket-template.md` の 2 つだけ。`git diff --stat` は 2 files changed, 50 insertions(+), 6 deletions(-)。SKILL.md のコードブロックに行継続・`&amp;&amp;`・`|`・`;` は無く、`orca` はどれも単独の 1 行。
+
+申し送り（直さなくてよいと判断したもの）:
+- 条件 5 で、起票ファイルが読めたときはユーザーへ知らせない書き方になっている。調査の案 5 は「処理して、ユーザーに 1 行だけ伝える」。別のセッションの戻りを黙って処理すると、依頼元のセッションが「戻りが来ない」と思うことがある。job 側で運用してみて要るなら、1 行足す。
+- 「`read` がいつ 1 になるか」「`--limit` 無しで何件返るか」「結び付いていない端末から `task-create`／`worker-start` が通るか」は、調査どおり未確認のまま。SKILL.md にも未確認と書いてある。確かめるには `run-use` や `task-create` を打つ必要があるので、今回の範囲（読むだけ）では確かめていない。
+- 試走で気づいた点: 作業者へ `orca terminal send` で知らせたとき「Enter が飲まれたかもしれない」の警告が出た。決まりのとおり再送しなかったが、作業者からは約 2 分で第 2 版が届いたので、届いていた。
+</pre></details>
+<details class=ev id='e-63b813' style='border-left-color:#ea580c'><summary><span style='color:#ea580c'>↺</span> 12:25:07 <span class=k>rework</span> teams/run-use-fix/leader → teams/run-use-fix/worker-1</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/leader → p2-orca-run-use/teams/run-use-fix/worker-1 rework 2026-10-23T12:25:07+09:00 --&gt;
+レビュアーの review_ok（f863c1）は受けた。目的に照らして 1 点だけ直してほしい。SKILL.md 138 行目の『自分が依頼していない戻りが届いたとき』で、起票ファイルが読めたときはユーザーに伝えない書き方になっている。この場面では依頼元のセッションは通知先でなく、D の分岐 3（触らない）に入るので、戻りが処理されたことを依頼元からは知る手段が無い（目的の『依頼したセッションに戻りが届かない混線』が見えないまま残る）。調査の案 5 どおり、起票ファイルが読めても読めなくても、処理したことをユーザーへ 1 行伝える形にしてほしい（読めたときは転記した起票ファイルのパスと見出し、読めなければ body の要点）。直したら、変えた行と git status / diff --stat をレビュアーへ review_request で。ほかは変えなくてよい。
+</pre></details>
+<details class=ev id='e-3c4f5f' style='border-left-color:#7c3aed'><summary><span style='color:#7c3aed'>?</span> 12:25:22 <span class=k>review_request</span> teams/run-use-fix/worker-1 → teams/run-use-fix/reviewer</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/worker-1 → p2-orca-run-use/teams/run-use-fix/reviewer review_request 2026-10-23T12:25:22+09:00 --&gt;
+第3版（リーダーの rework 63b813 を反映）。変えたのは SKILL.md 138 行目だけ: 依頼していない戻りは、起票ファイルが読めても読めなくても処理したことをユーザーへ 1 行伝える（読めたら転記した起票ファイルのパスと見出し、読めなければ Run・見出し・body の要点）。git status --short: SKILL.md・ticket-template.md の 2 ファイルのみ。git diff --stat: SKILL.md 55 行・ticket-template.md 1 行、2 files changed, 50 insertions(+), 6 deletions(-)。
+</pre></details>
+<details class=ev id='e-91f052' style='border-left-color:#16a34a'><summary><span style='color:#16a34a'>✓</span> 12:25:53 <span class=k>review_ok</span> teams/run-use-fix/reviewer → teams/run-use-fix/leader</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/reviewer → p2-orca-run-use/teams/run-use-fix/leader review_ok 2026-10-23T12:25:53+09:00 --&gt;
+## レビュアー 第3回（review_ok）
+
+対象: 作業者 第3版（review_request 3c4f5f。リーダーの rework 63b813 を反映）。
+
+- 変わったのは SKILL.md 138 行目だけ。依頼していない戻りは、起票ファイルが読めても読めなくても、処理したことをユーザーへ 1 行伝える（読めたら転記先のパスと見出し、読めなければ Run・見出し・body の要点）。理由として「依頼元は通知先でないので、処理されたことを自分では知れない」も書いてある。調査の案 5 と合っていて、第 2 回の申し送り 1 が埋まった。条件 5 は満たす。
+- 「通知先の端末が必ず `--ack` まで処理する」の 1 本は崩れていない（第 1 回の指摘 1 は直ったまま）。
+- 条件 7: dev-tools の `git status --short` は SKILL.md・ticket-template.md の 2 つだけ。`git diff --stat` は 2 files changed, 50 insertions(+), 6 deletions(-)。
+- 条件 1〜4・6 の判定は第 2 回（f863c1）のまま変わらない。
+
+申し送り: 第 2 回の 2・3 点目（未確認の 3 点は今回の範囲では確かめられない／`orca terminal send` の Enter の警告は出たが、届いていた）はそのまま。
+</pre></details>
+<details class=ev id='e-be9424' style='border-left-color:#64748b'><summary><span style='color:#64748b'>◼</span> 12:26:01 <span class=k>wrap_up</span> teams/run-use-fix/leader → teams/run-use-fix/worker-1</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/leader → p2-orca-run-use/teams/run-use-fix/worker-1 wrap_up 2026-10-23T12:26:01+09:00 --&gt;
+第3版で通します。session-report.yaml を書いて done を出してください。
+</pre></details>
+<details class=ev id='e-21e285' style='border-left-color:#64748b'><summary><span style='color:#64748b'>◼</span> 12:26:02 <span class=k>wrap_up</span> teams/run-use-fix/leader → teams/run-use-fix/reviewer</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/leader → p2-orca-run-use/teams/run-use-fix/reviewer wrap_up 2026-10-23T12:26:02+09:00 --&gt;
+第3版で通します。session-report.yaml を書いて done を出してください。
+</pre></details>
+<div class=ev id='e-6239d4' style='border-left-color:#475569'><span style='color:#475569'>◆</span> 12:26:14 <span class=k>done</span> teams/run-use-fix/worker-1 → teams/run-use-fix/leader</div>
+<details class=ev id='e-aa246f' style='border-left-color:#475569'><summary><span style='color:#475569'>◆</span> 12:26:46 <span class=k>done</span> teams/run-use-fix/reviewer → teams/run-use-fix/leader</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/reviewer → p2-orca-run-use/teams/run-use-fix/leader done 2026-10-23T12:26:46+09:00 --&gt;
+レビュー終了。第1版 review_ng（4 件）→ 第2版 review_ok → 第3版 review_ok。session-report.yaml を書いた。
+</pre></details>
+<details class=ev id='e-1f7fb5' style='border-left-color:#0891b2'><summary><span style='color:#0891b2'>●</span> 12:27:50 <span class=k>report</span> teams/run-use-fix/leader → pm</summary><pre>&lt;!-- p2-orca-run-use/teams/run-use-fix/leader → p2-orca-run-use/pm report 2026-10-23T12:27:50+09:00 --&gt;
+# run-use-fix チームの結果
+
+## 成果物
+
+- `/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/dev-tools/claude/plugins/dev-tools/skills/orca-multi-agent/SKILL.md`（変更。B・C・D）
+- `/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/dev-tools/claude/plugins/dev-tools/skills/orca-multi-agent/ticket-template.md`（変更。Orca の表に 1 行）
+- dev-tools は未コミット（コミットは川崎さん）。
+
+処理の流れ（直した後の SKILL.md）:
+
+```
+依頼する   : run-use → task-create → worker-start → 起票に「依頼元の端末」を書く
+戻りを見る : inbox（結ばない）→ 未処理の候補があれば run-show の coordinator_handle
+             ├ 自分                         → check → 処理 → --ack
+             ├ null／connected=false／無い   → run-use で引き取る → check → --ack
+             └ 別のセッションが生きている     → 触らない（放置が長ければ引き取る。時間は親 repo が決める）
+依頼していない戻りが届いた : 届いた側が --ack まで処理し、ユーザーへ必ず 1 行伝える
+```
+
+## 完了条件ごとの結果
+
+| # | 結果 | 根拠 |
+|---|---|---|
+| 1 | 満たす | 下の対応表。古い記述は消さず「2026-10-22 時点では〜」と併記 |
+| 2 | 満たす | B「`run-use` の使いどころ」（73〜80 行目）: 依頼する直前・引き取るときの 2 場面だけ、それ以外はしない |
+| 3 | 満たす | D の入口（105〜131 行目）: `inbox` → `run-show` → `terminal show`、3 分岐それぞれに 1 行のコマンド |
+| 4 | 満たす | ticket-template.md の Orca の表に「依頼元の端末」（`ORCA_TERMINAL_HANDLE` と手動か automation か） |
+| 5 | 満たす | D 138 行目: 届いた側が必ず `--ack` まで処理し、起票が読めても読めなくてもユーザーへ 1 行 |
+| 6 | 満たす | Run ID・「2 時間」・`consumer_generation`・`run-use-log` は入っていない（grep）。分岐 3 に「何時間で引き取るかは親 repo が決める」 |
+| 7 | 満たす | 下の git の出力。コマンドは全部 1 行、`orca` は単独 |
+| 8 | 満たす | レビュアーが第 2 版・第 3 版で `review_ok`（1〜7 を番号ごとに根拠付きで判定） |
+
+### 1 の対応表（直した箇所 → 調査ファイルの事実）
+
+| 節・行 | 直したこと | 調査ファイル |
+|---|---|---|
+| B 71 | 「新しい端末は最初に `run-use`」を、旧記述として引きつつ「2026-10-22 時点では結び直さない」に | 原因 |
+| B 73〜80 | 通知先は端末 1 つ・`run-use` で付け替わる・宛先は Run。結ばない端末から `task-create` が通るかは未確認 | 確認した事実 1・2・3／まだ確かめていないこと 1 |
+| C 99 | `inbox` は結ばない端末から通る・項目。`--limit` で絞ると古い未処理が落ちるので絞らない | 確認した事実 6／まだ確かめていないこと 3 |
+| D 105〜131 | 入口を結ばない `inbox` に。`read` がいつ 1 になるかは未確認なので `read` だけで決めない | 確認した事実 1・6／まだ確かめていないこと 2 |
+| D 140〜146 | `check --peek` の行を残し、2026-10-22 時点では結ばない端末で `consumer_fenced` と併記 | 確認した事実 5 |
+| D 155 | 「`run-use` 無しで通る（2026-09-17 確認）」を残し、2026-10-22 の `consumer_fenced` を併記 | 確認した事実 5 |
+
+### 7 の git の出力（dev-tools）
+
+```
+ M claude/plugins/dev-tools/skills/orca-multi-agent/SKILL.md
+ M claude/plugins/dev-tools/skills/orca-multi-agent/ticket-template.md
+ 2 files changed, 50 insertions(+), 6 deletions(-)
+```
+
+## 調査ファイルの案から変えた所
+
+- 案 4「`read` が 0 を未処理」→ 「未処理の候補」にした。`read` がいつ 1 になるかが未確認のため、通知先が自分なら `check` で確かめる。
+- 案 4 に「`coordinator_handle` が `null`」を分岐 2 の条件として足した（レビュアーが `run-list` で、今ある Run の半分以上が `null` なのを確かめた）。
+- 案 4 の `inbox --limit 5` → 件数は固定せず「最後に処理した時刻より前まで届く件数」に。heartbeat が同じ列に積まれ、種類・未読で絞れないため（レビュアーが `inbox --help` と実物で確かめた）。
+- 案 5 はそのまま（届いた側が `--ack` まで処理し、ユーザーへ 1 行）。第 2 版で「起票が読めたら伝えない」になっていたのを、リーダーが差し戻して案どおりに戻した（依頼元は分岐 3 で触らないので、処理されたことを知る手段が無いため）。
+
+## 往復
+
+第 1 版 → `review_ng`（4 件: 依頼していない戻りの処理者がぶつかる／`--limit 20` で取りこぼす／`coordinator_handle` が `null` の分岐が無い／`--peek` の行を消していた）→ 第 2 版 → `review_ok` → リーダーの `rework`（1 件: 上の案 5）→ 第 3 版 → `review_ok`。開始から終わりまで約 7 分。
+
+## 申し送り
+
+- 未確認のまま（読むだけの範囲では確かめられない）: `inbox` の `read` がいつ 1 になるか／`--limit` 無しで何件返るか／結ばない端末から `task-create`・`worker-start` が通るか。SKILL.md にも未確認と書いてある。job 側で `run-use` を打つ場面で確かめられる。
+- `worker-instructions.md`・orca-worker スキルには `run-use`・結び直しの記述は無く、直す所は無かった（作業者が grep）。
+
+## 試走でうまくいかなかったこと
+
+- `orca terminal send` は毎回（リーダー 5 回・レビュアー 4 回）「Enter が飲まれたかもしれない」と警告した。決まりどおり再送せず、全部届いた。
+- `[org]` の知らせが、`wait --cc` で読んだ後に届くことが多く、`inbox --via notify --ref` が「新しいものは無い」になる（リーダー 2 回・レビュアーも同じ）。通知の届き方を数えるときにずれるかもしれない。
+- レビュアーの `review_ok` の後にリーダーが `rework` を出す流れが、レビュアー側の決まりに無く、レビュアーは 2 回目の `review_ok` を出すべきか迷った（出した）。org-assign の「回し方」では、リーダーの `rework` の後にレビュアーがもう一度見るかが書かれていない。
+- 作業者の Bash コマンドに余計なリダイレクトが混ざり、directory-guard にブロックされた（実害なし）。
+</pre></details>
+<details class=ev id='e-c5520c' style='border-left-color:#64748b'><summary><span style='color:#64748b'>◼</span> 12:28:17 <span class=k>wrap_up</span> pm → teams/run-use-fix/leader</summary><pre>&lt;!-- p2-orca-run-use/pm → p2-orca-run-use/teams/run-use-fix/leader wrap_up 2026-10-23T12:28:17+09:00 --&gt;
+完了条件 1〜8 を PM でも差分と調査ファイルに照らして確かめ、合格にします。session-report.yaml を書いて done を出してください。
+</pre></details>
+<div class=ev id='e-b5fc1c' style='border-left-color:#475569'><span style='color:#475569'>◆</span> 12:28:41 <span class=k>done</span> teams/run-use-fix/leader → pm</div>
+<details class=ev id='e-7ad811' style='border-left-color:#0891b2'><summary><span style='color:#0891b2'>●</span> 12:29:36 <span class=k>report</span> pm → user</summary><pre>&lt;!-- p2-orca-run-use/pm → user report 2026-10-23T12:29:36+09:00 --&gt;
+# p2-orca-run-use の結果
+
+## 成果物（dev-tools・未コミット。コミットと setup.sh は川崎さん）
+
+```
+dev-tools/claude/plugins/dev-tools/skills/orca-multi-agent/
+├── SKILL.md            変更  B（run-use の使いどころ）・C（inbox）・D（戻りの入口の分岐・依頼していない戻り）
+└── ticket-template.md  変更  Orca の表に「依頼元の端末」の行
+```
+
+`git status`: この 2 ファイルだけ M。`2 files changed, 50 insertions(+), 6 deletions(-)`。
+
+直した後の流れ:
+
+```
+依頼する   : run-use → task-create → worker-start → 起票に「依頼元の端末」を書く
+戻りを見る : inbox（結ばない）→ 未処理の候補があれば run-show の coordinator_handle
+             ├ 自分                         → check → 処理 → --ack
+             ├ null／connected=false／無い   → run-use で引き取る → check → --ack
+             └ 別のセッションが生きている     → 触らない（放置が長ければ引き取る。時間は親 repo が決める）
+依頼していない戻りが届いた : 届いた側が --ack まで処理し、ユーザーへ必ず 1 行伝える
+```
+
+## 完了条件
+
+| # | 結果 | PM が確かめたこと |
+|---|---|---|
+| 1 | 満たす | 差分を調査ファイルの「確認した事実」と突き合わせた。B の旧記述・D の「run-use 無しで通る（2026-09-17）」・`check --peek` の行は消さず「2026-10-22 時点では〜」と併記 |
+| 2 | 満たす | B「run-use の使いどころ」に 2 場面と「それ以外はしない」 |
+| 3 | 満たす | D の入口が inbox → run-show → terminal show → 3 分岐、分岐ごとに 1 行のコマンド |
+| 4 | 満たす | ticket-template.md に「依頼元の端末」 |
+| 5 | 満たす | D に「依頼していない戻り」の箇条 |
+| 6 | 満たす | Run の ID・「2 時間」・consumer_generation・run-use-log を grep して 0 件。「何時間で引き取るかは親 repo が決める」とある |
+| 7 | 満たす | 上の git status。コマンドは 1 行、orca は単独 |
+
+## 調査ファイルの案から変えた所（チームの判断。PM も妥当と見た）
+
+- 「read が 0 を未処理」→「未処理の候補」。read がいつ 1 になるか未確認のため、通知先が自分なら check で確かめる形に。
+- 分岐 2 の条件に `coordinator_handle` が null を足した（レビュアーが run-list で、今ある Run の半分以上が null なのを確かめた）。
+- `inbox --limit 5` → 件数は固定せず「最後に処理した時刻より前まで届く件数」に（heartbeat が同じ列に積まれ、種類・未読で絞れないため）。
+- 案 5（依頼していない戻り）は案どおり。途中で「起票が読めたら伝えない」になったのを、リーダーが差し戻して戻した。
+
+## 未確認のまま（読むだけの範囲では確かめられない。SKILL.md にも未確認と書いた）
+
+- inbox の read がいつ 1 になるか／--limit 無しで何件返るか／結ばない端末から task-create・worker-start が通るか。job 側で run-use を打つ場面で確かめられる。
+
+## 試走として（往復は回ったか）
+
+- 回った。第 1 版 → review_ng（4 件: 依頼していない戻りの処理者がぶつかる／--limit で取りこぼす／coordinator_handle が null の分岐が無い／--peek の行を消していた）→ 第 2 版 → review_ok → リーダーの rework（1 件）→ 第 3 版 → review_ok。リーダーの起動から報告まで約 8 分。
+- レビュアーを作業者と同時に起こしたので、前回の約 10 分の停滞は起きなかった。
+
+## うまくいかなかったこと
+
+- `orca terminal send` は毎回「Enter が飲まれたかもしれない」と警告した。決まりどおり再送せず、全部届いた。
+- `[org]` の知らせが `wait`（--cc 含む）で読んだ後に届くことが多く、`inbox --via notify --ref` が「新しいものは無い」になる。PM でも 3 回中 3 回そうなった。notify-stats は「出した 18・届いた 13・届かなかった 5」「先に気づいた経路 poll 13・notify 4」で、届かなかった 5 件はこれで記録が残らなかった分の可能性が高い（未確認）。
+- レビュアーの review_ok の後にリーダーが rework を出す流れが決まりに無く、レビュアーが 2 回目の review_ok を出すか迷った。
+- 作業者の Bash に余計なリダイレクトが混ざり、directory-guard に止められた（実害なし）。
+- user にはタブが無いので、この report は Orca の知らせが出ない（前回と同じ）。
+</pre></details>
+<details class=ev id='e-65dcd4' style='border-left-color:#64748b'><summary><span style='color:#64748b'>◼</span> 12:29:46 <span class=k>wrap_up</span> user → pm</summary><pre>&lt;!-- user → p2-orca-run-use/pm wrap_up 2026-10-23T12:29:46+09:00 --&gt;
+報告を受け取りました。セッション報告（自己申告）を書いて done を出してください。
+</pre></details>
+<div class=ev id='e-6b9744' style='border-left-color:#475569'><span style='color:#475569'>◆</span> 12:30:04 <span class=k>done</span> pm → user</div>
+<h2>畳んだもの</h2><div class=sub>ack 21 件・notify_recv 14 件・notify_sent 19 件（ack・notify_* の配送記録は件数のみ）。assign・launch・teardown は各帯の頭の「起動〜終了」に畳んだ。component_new・component_closed は出していない。</div>
+</body></html>

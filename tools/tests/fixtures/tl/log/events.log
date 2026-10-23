@@ -1,0 +1,14 @@
+2026-10-23T10:00:00+09:00 a00001 user component_new - tl
+2026-10-23T10:00:01+09:00 a00002 user launch - tl/pm session=s1 model=opus
+2026-10-23T10:00:05+09:00 a00003 user start tl/pm msg=log/msgs/a00003.md
+2026-10-23T10:00:06+09:00 a00004 user notify_sent tl/pm ref=a00003 via=orca
+2026-10-23T10:00:09+09:00 a00005 tl/pm ack - ref=a00003 via=notify latency=4
+2026-10-23T10:01:00+09:00 a00006 tl/pm start tl/teams/t/leader msg=log/msgs/a00006.md
+2026-10-23T10:20:00+09:00 a00007 tl/teams/t/worker-1 review_request tl/teams/t/reviewer msg=log/msgs/a00007.md
+2026-10-23T10:20:30+09:00 a00008 tl/teams/t/reviewer review_ng tl/teams/t/worker-1
+2026-10-23T10:21:00+09:00 a00009 tl/pm launch - tl/teams/t/worker-1 session=s2 model=sonnet
+2026-10-23T10:21:10+09:00 a0000c tl/pm launch - tl/teams/t/worker-1 session=s3 model=sonnet
+2026-10-23T10:21:20+09:00 a0000d tl/teams/t/worker-1 done tl/teams/t/leader -
+2026-10-23T10:22:00+09:00 a0000a tl/pm teardown tl/teams/t/worker-1 report=reports/sessions/tl__teams__t__worker-1.yaml
+2026-10-23T10:23:00+09:00 a0000b tl/teams/t/ghost mystery_kind tl/pm
+2026-10-23T10:23:10+09:00 a0000e tl/pm notify_skipped - ref=a0000b reason=x

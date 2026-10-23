@@ -1,0 +1,12 @@
+machine:
+  id: "tl/teams/t/worker-1"
+  position: "worker"
+  model_requested: "sonnet"
+  span_min: 6.7
+  tokens:
+    input: 50
+  tokens_total: 2706908
+  api_messages: 25
+  review_ng_count: 1
+self: |
+  asked: "x"

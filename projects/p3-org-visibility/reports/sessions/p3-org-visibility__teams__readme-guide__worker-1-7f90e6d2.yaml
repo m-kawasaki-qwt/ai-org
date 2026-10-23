@@ -1,0 +1,66 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p3-org-visibility/teams/readme-guide/worker-1"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p3-org-visibility/teams/readme-guide/leader"
+  model_requested: "sonnet"
+  agent: "claude"
+  session_id: "7f90e6d2-4192-4ad5-ba74-d8de7bbca079"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T13:27:19+09:00"
+  closed_at: "2026-10-23T13:31:20+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/7f90e6d2-4192-4ad5-ba74-d8de7bbca079.jsonl"
+  started_at: "2026-10-23T13:27:28+09:00"
+  ended_at: "2026-10-23T13:31:20+09:00"
+  span_min: 3.9
+  model_effective:
+    claude-sonnet-5-5: 34
+  api_messages: 13
+  tokens:
+    input: 26
+    output: 10696
+    cache_read: 1156651
+    cache_write: 94085
+  tokens_total: 1261458
+  tool_calls:
+    Read: 5
+    Bash: 15
+    Write: 3
+    Edit: 1
+  events_sent:
+    review_request: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/README.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p2-orca-run-use/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/timeline-tool/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/org_timeline.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00003.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00006.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00007.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/reports/sessions/tl__pm-abcd1234.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/reports/sessions/tl__teams__t__worker-1.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/test_org_timeline.py"
+self: |
+  asked: "ai-org の README.md を、初めて触る人が上から順にたどって立ち上げ・状況確認・閉じ方まで行ける手引きに書き直す"
+  did:
+    - "dev-tools の org-project-new・org/README・orgctl.py（patrol・teardown・watch）と ai-org の tools/org_status.py・CLAUDE.md・policy.md・p1/p2 の実物を読んだ"
+    - "orgctl の各サブコマンドの --help と org_status.py を実際に動かして突き合わせた"
+    - "README を 0 表記〜6 コミットの 7 節で書いた"
+    - "review_request を出し、thread.md に第1版を追記した"
+  outputs:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/README.md"
+  decided:
+    - { what: "dev-tools のパス表記を $DEV_TOOLS_REPO_PATH に統一", why: "ヒントの「どちらかに揃える」に従い、環境変数が全セッションにあるため" }
+    - { what: "patrol を状況の節（3 章）に置いた", why: "立ち上げ後に裏で回すもので、見る道具の一つとして並べたほうが迷わない" }
+    - { what: "wrap_up の --body の文言例を自分で書いた", why: "SKILL.md に文言の指定が無かったため" }
+  escalated: []
+  not_done:
+    - "tools/org_timeline.py は未確認（別チームが作成中）。charter の形を前提に記載した"
+  unclear:
+    - "setup.sh が org のために直接何かをするかは読み取れなかった。orgctl と org-project-new が dev-tools プラグイン経由で入る点だけを根拠にした"

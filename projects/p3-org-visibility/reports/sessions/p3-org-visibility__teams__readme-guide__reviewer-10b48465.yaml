@@ -1,0 +1,63 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p3-org-visibility/teams/readme-guide/reviewer"
+  position: "reviewer"
+  occupation: "engineer"
+  boss: "p3-org-visibility/teams/readme-guide/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "10b48465-6c3f-4aa6-b7c2-d1ea8e374b49"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T13:29:02+09:00"
+  closed_at: "2026-10-23T13:31:20+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/10b48465-6c3f-4aa6-b7c2-d1ea8e374b49.jsonl"
+  started_at: "2026-10-23T13:29:11+09:00"
+  ended_at: "2026-10-23T13:31:16+09:00"
+  span_min: 2.1
+  model_effective:
+    claude-opus-5-5: 25
+  api_messages: 13
+  tokens:
+    input: 26
+    output: 8095
+    cache_read: 1101363
+    cache_write: 88457
+  tokens_total: 1197941
+  tool_calls:
+    Bash: 14
+    Write: 2
+  events_sent:
+    review_ok: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p2-orca-run-use/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/timeline-tool/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/org_timeline.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00003.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00006.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/msgs/a00007.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/reports/sessions/tl__pm-abcd1234.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/reports/sessions/tl__teams__t__worker-1.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/test_org_timeline.py"
+self: |
+  asked: "作業者が書いた ai-org の README.md（第1版）を charter の完了条件に照らしてレビューする"
+  did:
+    - "charter・review_request（8cffd1）・thread.md・README.md を読んだ"
+    - "orgctl の全サブコマンドの --help を打ち、README の引数がすべて実在することを確かめた"
+    - "orgctl.py の event・patrol・teardown・me() の実装と org-project-new の SKILL.md を読み、README の手順・webhook・コミットの行と突き合わせた"
+    - "watch・notify-stats・org_status.py を p2-orca-run-use に対して打ち、README の説明どおりの出力を確かめた"
+    - "review_ok（258cd4）をリーダーへ出し、thread.md に「レビュアー 第1回」を追記した"
+  outputs:
+    - "projects/p3-org-visibility/log/msgs/258cd4.md"
+    - "projects/p3-org-visibility/teams/readme-guide/thread.md（追記）"
+  decided:
+    - { what: "指摘なしで承認。軽い点 3 つ（ORG_ROOT の付け方の書き方・patrol は自分で止まる・org_timeline.py の最終形）は申し送りに回した", why: "どれも README のとおりに打てば動き、完了条件を外していないため" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "承認のときに thread.md へ追記するかは決まりに無い（指摘のときだけ書いてある）。記録のために追記した"
+    - "org_timeline.py に --help が無く、--help を打つとディレクトリとして扱われて例外で止まった（ファイルは作られなかった）"

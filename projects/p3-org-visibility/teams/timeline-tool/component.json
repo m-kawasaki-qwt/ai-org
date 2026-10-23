@@ -1,0 +1,15 @@
+{
+  "kind": "team",
+  "id": "p3-org-visibility/teams/timeline-tool",
+  "parent": "p3-org-visibility",
+  "root": false,
+  "created_at": "2026-10-23T13:26:22+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p3-org-visibility/teams/timeline-tool/leader",
+    "worker-1": "p3-org-visibility/teams/timeline-tool/worker-1",
+    "reviewer": "p3-org-visibility/teams/timeline-tool/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-23T13:36:04+09:00"
+}

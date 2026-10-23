@@ -8,3 +8,8 @@ projects/**/.claude/
 __pycache__/
 .env*
 .inbox_user
+.waiting
+.waiting_user
+.patrol.json
+.secrets/
+log/notify-outbox.log

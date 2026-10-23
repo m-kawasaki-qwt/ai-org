@@ -1,0 +1,145 @@
+2026-10-23T13:25:14+09:00 90a484 user component_new - p3-org-visibility
+2026-10-23T13:25:14+09:00 44161f user assign - p3-org-visibility/pm position=pm occupation=- model=opus
+2026-10-23T13:25:14+09:00 407935 user launch - p3-org-visibility/pm session=8512c441-caee-4fd7-b301-ad482f369d30 model=opus
+2026-10-23T13:25:23+09:00 081277 user start p3-org-visibility/pm msg=log/msgs/081277.md
+2026-10-23T13:25:23+09:00 e00ac6 user notify_sent p3-org-visibility/pm ref=081277 via=orca
+2026-10-23T13:25:42+09:00 8dd61e p3-org-visibility/pm notify_recv - ref=081277 misdelivered=0 latency=19
+2026-10-23T13:25:42+09:00 60ba27 p3-org-visibility/pm ack - ref=081277 via=notify latency=19
+2026-10-23T13:26:22+09:00 43ff4c p3-org-visibility/pm component_new - p3-org-visibility/teams/timeline-tool
+2026-10-23T13:26:22+09:00 90cce1 p3-org-visibility/pm component_new - p3-org-visibility/teams/readme-guide
+2026-10-23T13:26:22+09:00 35f94e p3-org-visibility/pm assign - p3-org-visibility/teams/timeline-tool/leader position=leader occupation=engineer model=opus
+2026-10-23T13:26:22+09:00 c5d6f6 p3-org-visibility/pm assign - p3-org-visibility/teams/readme-guide/leader position=leader occupation=engineer model=opus
+2026-10-23T13:26:23+09:00 45660d p3-org-visibility/pm launch - p3-org-visibility/teams/timeline-tool/leader session=e54a1b8a-3d49-44f4-8962-80def25b8f3f model=opus
+2026-10-23T13:26:23+09:00 016051 p3-org-visibility/pm launch - p3-org-visibility/teams/readme-guide/leader session=4d653d8e-6016-4112-b555-2d2988d4ab08 model=opus
+2026-10-23T13:26:39+09:00 78205d p3-org-visibility/pm start p3-org-visibility/teams/timeline-tool/leader msg=log/msgs/78205d.md
+2026-10-23T13:26:39+09:00 ee44fc p3-org-visibility/pm notify_sent p3-org-visibility/teams/timeline-tool/leader ref=78205d via=orca
+2026-10-23T13:26:39+09:00 a1e898 p3-org-visibility/pm start p3-org-visibility/teams/readme-guide/leader msg=log/msgs/a1e898.md
+2026-10-23T13:26:39+09:00 510928 p3-org-visibility/pm notify_sent p3-org-visibility/teams/readme-guide/leader ref=a1e898 via=orca
+2026-10-23T13:26:59+09:00 75205e p3-org-visibility/teams/readme-guide/leader notify_recv - ref=a1e898 misdelivered=0 latency=20
+2026-10-23T13:26:59+09:00 bc9a50 p3-org-visibility/teams/readme-guide/leader ack - ref=a1e898 via=notify latency=20
+2026-10-23T13:27:02+09:00 a335ce p3-org-visibility/teams/timeline-tool/leader notify_recv - ref=78205d misdelivered=0 latency=23
+2026-10-23T13:27:02+09:00 0b34e5 p3-org-visibility/teams/timeline-tool/leader ack - ref=78205d via=notify latency=23
+2026-10-23T13:27:07+09:00 3266f0 p3-org-visibility/teams/timeline-tool/leader assign - p3-org-visibility/teams/timeline-tool/worker-1 position=worker occupation=engineer model=sonnet
+2026-10-23T13:27:11+09:00 16cede p3-org-visibility/teams/timeline-tool/leader assign - p3-org-visibility/teams/timeline-tool/reviewer position=reviewer occupation=engineer model=opus
+2026-10-23T13:27:12+09:00 1d6ef8 p3-org-visibility/teams/timeline-tool/leader launch - p3-org-visibility/teams/timeline-tool/worker-1 session=969f0ba1-2762-4c5d-9eeb-33d1b2c045fa model=sonnet
+2026-10-23T13:27:19+09:00 fcebbf p3-org-visibility/teams/readme-guide/leader assign - p3-org-visibility/teams/readme-guide/worker-1 position=worker occupation=engineer model=sonnet
+2026-10-23T13:27:19+09:00 f93d70 p3-org-visibility/teams/readme-guide/leader assign - p3-org-visibility/teams/readme-guide/reviewer position=reviewer occupation=engineer model=opus
+2026-10-23T13:27:19+09:00 7036d7 p3-org-visibility/teams/readme-guide/leader launch - p3-org-visibility/teams/readme-guide/worker-1 session=7f90e6d2-4192-4ad5-ba74-d8de7bbca079 model=sonnet
+2026-10-23T13:27:24+09:00 75f23f p3-org-visibility/teams/timeline-tool/leader start p3-org-visibility/teams/timeline-tool/worker-1 msg=log/msgs/75f23f.md
+2026-10-23T13:27:24+09:00 9555c6 p3-org-visibility/teams/timeline-tool/leader notify_sent p3-org-visibility/teams/timeline-tool/worker-1 ref=75f23f via=orca
+2026-10-23T13:27:25+09:00 b12b30 p3-org-visibility/teams/timeline-tool/worker-1 ack - ref=75f23f via=poll latency=1
+2026-10-23T13:27:32+09:00 693250 p3-org-visibility/teams/readme-guide/leader start p3-org-visibility/teams/readme-guide/worker-1 msg=log/msgs/693250.md
+2026-10-23T13:27:32+09:00 8c3429 p3-org-visibility/teams/readme-guide/leader notify_sent p3-org-visibility/teams/readme-guide/worker-1 ref=693250 via=orca
+2026-10-23T13:27:51+09:00 ff7457 p3-org-visibility/teams/timeline-tool/worker-1 notify_recv - ref=75f23f misdelivered=0 latency=27
+2026-10-23T13:27:52+09:00 fad0dc p3-org-visibility/teams/readme-guide/worker-1 notify_recv - ref=693250 misdelivered=0 latency=20
+2026-10-23T13:27:52+09:00 a41625 p3-org-visibility/teams/readme-guide/worker-1 ack - ref=693250 via=notify latency=20
+2026-10-23T13:28:44+09:00 8cffd1 p3-org-visibility/teams/readme-guide/worker-1 review_request p3-org-visibility/teams/readme-guide/reviewer msg=log/msgs/8cffd1.md
+2026-10-23T13:29:02+09:00 993227 p3-org-visibility/teams/readme-guide/leader launch - p3-org-visibility/teams/readme-guide/reviewer session=10b48465-6c3f-4aa6-b7c2-d1ea8e374b49 model=opus
+2026-10-23T13:29:15+09:00 61724e p3-org-visibility/teams/readme-guide/leader start p3-org-visibility/teams/readme-guide/reviewer msg=log/msgs/61724e.md
+2026-10-23T13:29:15+09:00 7e770c p3-org-visibility/teams/readme-guide/leader notify_sent p3-org-visibility/teams/readme-guide/reviewer ref=61724e via=orca
+2026-10-23T13:29:16+09:00 aec90d p3-org-visibility/teams/readme-guide/reviewer ack - ref=8cffd1 via=poll latency=32
+2026-10-23T13:29:16+09:00 837e0e p3-org-visibility/teams/readme-guide/reviewer ack - ref=61724e via=poll latency=1
+2026-10-23T13:29:37+09:00 e3b7b3 p3-org-visibility/teams/readme-guide/reviewer notify_recv - ref=61724e misdelivered=0 latency=22
+2026-10-23T13:29:41+09:00 28755e p3-org-visibility/teams/timeline-tool/worker-1 review_request p3-org-visibility/teams/timeline-tool/reviewer msg=log/msgs/28755e.md
+2026-10-23T13:29:54+09:00 4c18e6 p3-org-visibility/teams/timeline-tool/leader launch - p3-org-visibility/teams/timeline-tool/reviewer session=8d87b16a-a22f-4857-b85d-2c70948e3793 model=opus
+2026-10-23T13:30:10+09:00 717cf9 p3-org-visibility/teams/timeline-tool/leader start p3-org-visibility/teams/timeline-tool/reviewer msg=log/msgs/717cf9.md
+2026-10-23T13:30:10+09:00 2a971e p3-org-visibility/teams/timeline-tool/leader notify_sent p3-org-visibility/teams/timeline-tool/reviewer ref=717cf9 via=orca
+2026-10-23T13:30:17+09:00 4d0205 p3-org-visibility/teams/timeline-tool/reviewer ack - ref=28755e via=poll latency=36
+2026-10-23T13:30:17+09:00 2601a2 p3-org-visibility/teams/timeline-tool/reviewer ack - ref=717cf9 via=poll latency=7
+2026-10-23T13:30:31+09:00 4847fe p3-org-visibility/teams/timeline-tool/reviewer notify_recv - ref=717cf9 misdelivered=0 latency=21
+2026-10-23T13:30:34+09:00 258cd4 p3-org-visibility/teams/readme-guide/reviewer review_ok p3-org-visibility/teams/readme-guide/leader msg=log/msgs/258cd4.md
+2026-10-23T13:30:34+09:00 0817ff p3-org-visibility/teams/readme-guide/reviewer notify_skipped p3-org-visibility/teams/readme-guide/leader ref=258cd4 reason=waiting
+2026-10-23T13:30:36+09:00 68383f p3-org-visibility/teams/readme-guide/leader ack - ref=258cd4 via=poll latency=2
+2026-10-23T13:31:01+09:00 9010bf p3-org-visibility/teams/readme-guide/leader wrap_up p3-org-visibility/teams/readme-guide/worker-1 msg=log/msgs/9010bf.md
+2026-10-23T13:31:01+09:00 185d82 p3-org-visibility/teams/readme-guide/leader notify_skipped p3-org-visibility/teams/readme-guide/worker-1 ref=9010bf reason=waiting
+2026-10-23T13:31:01+09:00 ca9ca1 p3-org-visibility/teams/readme-guide/leader wrap_up p3-org-visibility/teams/readme-guide/reviewer msg=log/msgs/ca9ca1.md
+2026-10-23T13:31:01+09:00 42b9ed p3-org-visibility/teams/readme-guide/leader notify_skipped p3-org-visibility/teams/readme-guide/reviewer ref=ca9ca1 reason=waiting
+2026-10-23T13:31:07+09:00 634506 p3-org-visibility/teams/readme-guide/reviewer ack - ref=ca9ca1 via=poll latency=6
+2026-10-23T13:31:08+09:00 db0db6 p3-org-visibility/teams/readme-guide/worker-1 ack - ref=9010bf via=poll latency=7
+2026-10-23T13:31:15+09:00 08832e p3-org-visibility/teams/readme-guide/worker-1 done p3-org-visibility/teams/readme-guide/leader -
+2026-10-23T13:31:15+09:00 09e3c0 p3-org-visibility/teams/readme-guide/worker-1 notify_skipped p3-org-visibility/teams/readme-guide/leader ref=08832e reason=waiting
+2026-10-23T13:31:15+09:00 2f6c24 p3-org-visibility/teams/readme-guide/reviewer done p3-org-visibility/teams/readme-guide/leader -
+2026-10-23T13:31:15+09:00 0fa6b4 p3-org-visibility/teams/readme-guide/reviewer notify_skipped p3-org-visibility/teams/readme-guide/leader ref=2f6c24 reason=waiting
+2026-10-23T13:31:16+09:00 f750c4 p3-org-visibility/teams/readme-guide/leader ack - ref=08832e via=poll latency=1
+2026-10-23T13:31:16+09:00 61e570 p3-org-visibility/teams/readme-guide/leader ack - ref=2f6c24 via=poll latency=1
+2026-10-23T13:31:20+09:00 ba9157 p3-org-visibility/teams/readme-guide/leader teardown p3-org-visibility/teams/readme-guide/worker-1 report=reports/sessions/p3-org-visibility__teams__readme-guide__worker-1-7f90e6d2.yaml
+2026-10-23T13:31:20+09:00 28f16c p3-org-visibility/teams/readme-guide/leader teardown p3-org-visibility/teams/readme-guide/reviewer report=reports/sessions/p3-org-visibility__teams__readme-guide__reviewer-10b48465.yaml
+2026-10-23T13:31:50+09:00 b589bb p3-org-visibility/teams/readme-guide/leader report p3-org-visibility/pm msg=log/msgs/b589bb.md
+2026-10-23T13:31:50+09:00 247f97 p3-org-visibility/teams/readme-guide/leader notify_skipped p3-org-visibility/pm ref=b589bb reason=waiting
+2026-10-23T13:31:53+09:00 a3f669 p3-org-visibility/pm ack - ref=b589bb via=poll latency=3
+2026-10-23T13:32:01+09:00 f315e9 p3-org-visibility/teams/timeline-tool/reviewer review_ok p3-org-visibility/teams/timeline-tool/leader msg=log/msgs/f315e9.md
+2026-10-23T13:32:01+09:00 82e986 p3-org-visibility/teams/timeline-tool/reviewer notify_skipped p3-org-visibility/teams/timeline-tool/leader ref=f315e9 reason=waiting
+2026-10-23T13:32:04+09:00 1cd772 p3-org-visibility/pm wrap_up p3-org-visibility/teams/readme-guide/leader msg=log/msgs/1cd772.md
+2026-10-23T13:32:04+09:00 9ddbbc p3-org-visibility/pm notify_skipped p3-org-visibility/teams/readme-guide/leader ref=1cd772 reason=waiting
+2026-10-23T13:32:06+09:00 524503 p3-org-visibility/teams/timeline-tool/leader ack - ref=f315e9 via=poll latency=5
+2026-10-23T13:32:13+09:00 fbb1cb p3-org-visibility/teams/readme-guide/leader ack - ref=1cd772 via=poll latency=9
+2026-10-23T13:32:28+09:00 c8fac0 p3-org-visibility/teams/readme-guide/leader done p3-org-visibility/pm -
+2026-10-23T13:32:28+09:00 995328 p3-org-visibility/teams/readme-guide/leader notify_skipped p3-org-visibility/pm ref=c8fac0 reason=waiting
+2026-10-23T13:32:28+09:00 181f97 p3-org-visibility/pm ack - ref=c8fac0 via=poll latency=0
+2026-10-23T13:32:32+09:00 86054e p3-org-visibility/pm teardown p3-org-visibility/teams/readme-guide/leader report=reports/sessions/p3-org-visibility__teams__readme-guide__leader-4d653d8e.yaml
+2026-10-23T13:32:32+09:00 a6989a p3-org-visibility/pm component_closed - p3-org-visibility/teams/readme-guide
+2026-10-23T13:32:38+09:00 8723ce p3-org-visibility/teams/timeline-tool/leader rework p3-org-visibility/teams/timeline-tool/worker-1 msg=log/msgs/8723ce.md
+2026-10-23T13:32:38+09:00 03c1d1 p3-org-visibility/teams/timeline-tool/leader notify_skipped p3-org-visibility/teams/timeline-tool/worker-1 ref=8723ce reason=waiting
+2026-10-23T13:32:43+09:00 eff9a3 p3-org-visibility/teams/timeline-tool/worker-1 ack - ref=8723ce via=poll latency=5
+2026-10-23T13:33:01+09:00 fa083d p3-org-visibility/teams/timeline-tool/worker-1 review_request p3-org-visibility/teams/timeline-tool/reviewer msg=log/msgs/fa083d.md
+2026-10-23T13:33:01+09:00 8d3aba p3-org-visibility/teams/timeline-tool/worker-1 notify_skipped p3-org-visibility/teams/timeline-tool/reviewer ref=fa083d reason=waiting
+2026-10-23T13:33:08+09:00 7399ae p3-org-visibility/teams/timeline-tool/reviewer ack - ref=fa083d via=poll latency=7
+2026-10-23T13:33:44+09:00 6acb52 p3-org-visibility/teams/timeline-tool/reviewer review_ng p3-org-visibility/teams/timeline-tool/worker-1 msg=log/msgs/6acb52.md
+2026-10-23T13:33:44+09:00 1289a9 p3-org-visibility/teams/timeline-tool/reviewer notify_skipped p3-org-visibility/teams/timeline-tool/worker-1 ref=6acb52 reason=waiting
+2026-10-23T13:33:53+09:00 841180 p3-org-visibility/teams/timeline-tool/worker-1 ack - ref=6acb52 via=poll latency=9
+2026-10-23T13:34:03+09:00 b44250 p3-org-visibility/teams/timeline-tool/worker-1 review_request p3-org-visibility/teams/timeline-tool/reviewer msg=log/msgs/b44250.md
+2026-10-23T13:34:03+09:00 e85593 p3-org-visibility/teams/timeline-tool/worker-1 notify_skipped p3-org-visibility/teams/timeline-tool/reviewer ref=b44250 reason=waiting
+2026-10-23T13:34:09+09:00 0192d7 p3-org-visibility/teams/timeline-tool/reviewer ack - ref=b44250 via=poll latency=6
+2026-10-23T13:34:27+09:00 dc84e7 p3-org-visibility/teams/timeline-tool/reviewer review_ok p3-org-visibility/teams/timeline-tool/leader msg=log/msgs/dc84e7.md
+2026-10-23T13:34:27+09:00 530b42 p3-org-visibility/teams/timeline-tool/reviewer notify_skipped p3-org-visibility/teams/timeline-tool/leader ref=dc84e7 reason=waiting
+2026-10-23T13:34:29+09:00 6af4f1 p3-org-visibility/teams/timeline-tool/leader ack - ref=dc84e7 via=poll latency=2
+2026-10-23T13:34:37+09:00 7cfa0f p3-org-visibility/teams/timeline-tool/leader wrap_up p3-org-visibility/teams/timeline-tool/worker-1 msg=log/msgs/7cfa0f.md
+2026-10-23T13:34:37+09:00 c3d0ef p3-org-visibility/teams/timeline-tool/leader notify_skipped p3-org-visibility/teams/timeline-tool/worker-1 ref=7cfa0f reason=waiting
+2026-10-23T13:34:37+09:00 83f3b8 p3-org-visibility/teams/timeline-tool/leader wrap_up p3-org-visibility/teams/timeline-tool/reviewer msg=log/msgs/83f3b8.md
+2026-10-23T13:34:37+09:00 ec07ba p3-org-visibility/teams/timeline-tool/leader notify_skipped p3-org-visibility/teams/timeline-tool/reviewer ref=83f3b8 reason=waiting
+2026-10-23T13:34:42+09:00 0595a6 p3-org-visibility/teams/timeline-tool/reviewer ack - ref=83f3b8 via=poll latency=5
+2026-10-23T13:34:45+09:00 ab5789 p3-org-visibility/teams/timeline-tool/worker-1 ack - ref=7cfa0f via=poll latency=8
+2026-10-23T13:34:51+09:00 3ae99b p3-org-visibility/teams/timeline-tool/worker-1 done p3-org-visibility/teams/timeline-tool/leader -
+2026-10-23T13:34:51+09:00 a36f4e p3-org-visibility/teams/timeline-tool/worker-1 notify_skipped p3-org-visibility/teams/timeline-tool/leader ref=3ae99b reason=waiting
+2026-10-23T13:34:56+09:00 f4c2d6 p3-org-visibility/teams/timeline-tool/reviewer done p3-org-visibility/teams/timeline-tool/leader -
+2026-10-23T13:34:56+09:00 2324bb p3-org-visibility/teams/timeline-tool/reviewer notify_skipped p3-org-visibility/teams/timeline-tool/leader ref=f4c2d6 reason=waiting
+2026-10-23T13:35:00+09:00 398dfa p3-org-visibility/teams/timeline-tool/leader ack - ref=3ae99b via=poll latency=9
+2026-10-23T13:35:00+09:00 611b04 p3-org-visibility/teams/timeline-tool/leader ack - ref=f4c2d6 via=poll latency=4
+2026-10-23T13:35:04+09:00 735156 p3-org-visibility/teams/timeline-tool/leader teardown p3-org-visibility/teams/timeline-tool/worker-1 report=reports/sessions/p3-org-visibility__teams__timeline-tool__worker-1-969f0ba1.yaml
+2026-10-23T13:35:04+09:00 45b999 p3-org-visibility/teams/timeline-tool/leader teardown p3-org-visibility/teams/timeline-tool/reviewer report=reports/sessions/p3-org-visibility__teams__timeline-tool__reviewer-8d87b16a.yaml
+2026-10-23T13:35:26+09:00 c76d01 p3-org-visibility/teams/timeline-tool/leader report p3-org-visibility/pm msg=log/msgs/c76d01.md
+2026-10-23T13:35:26+09:00 5a9ff7 p3-org-visibility/teams/timeline-tool/leader notify_skipped p3-org-visibility/pm ref=c76d01 reason=waiting
+2026-10-23T13:35:32+09:00 0f919e p3-org-visibility/pm ack - ref=c76d01 via=poll latency=6
+2026-10-23T13:35:43+09:00 d951b5 p3-org-visibility/pm wrap_up p3-org-visibility/teams/timeline-tool/leader msg=log/msgs/d951b5.md
+2026-10-23T13:35:43+09:00 27d05b p3-org-visibility/pm notify_skipped p3-org-visibility/teams/timeline-tool/leader ref=d951b5 reason=waiting
+2026-10-23T13:35:48+09:00 a08f37 p3-org-visibility/teams/timeline-tool/leader ack - ref=d951b5 via=poll latency=5
+2026-10-23T13:35:58+09:00 2a3d27 p3-org-visibility/teams/timeline-tool/leader done p3-org-visibility/pm -
+2026-10-23T13:35:58+09:00 79066b p3-org-visibility/teams/timeline-tool/leader notify_skipped p3-org-visibility/pm ref=2a3d27 reason=waiting
+2026-10-23T13:36:00+09:00 ca26e2 p3-org-visibility/pm ack - ref=2a3d27 via=poll latency=2
+2026-10-23T13:36:04+09:00 570322 p3-org-visibility/pm teardown p3-org-visibility/teams/timeline-tool/leader report=reports/sessions/p3-org-visibility__teams__timeline-tool__leader-e54a1b8a.yaml
+2026-10-23T13:36:04+09:00 2cf82b p3-org-visibility/pm component_closed - p3-org-visibility/teams/timeline-tool
+2026-10-23T13:36:14+09:00 49b384 p3-org-visibility/pm assign - p3-org-visibility/auditor position=auditor occupation=- model=opus
+2026-10-23T13:36:14+09:00 75e7e0 p3-org-visibility/pm launch - p3-org-visibility/auditor session=074c4759-a538-4fa1-ae55-b335e613e565 model=opus
+2026-10-23T13:36:32+09:00 711336 p3-org-visibility/pm start p3-org-visibility/auditor msg=log/msgs/711336.md
+2026-10-23T13:36:32+09:00 671ef2 p3-org-visibility/pm notify_skipped p3-org-visibility/auditor ref=711336 reason=waiting
+2026-10-23T13:36:38+09:00 145ee6 p3-org-visibility/auditor ack - ref=711336 via=poll latency=6
+2026-10-23T13:38:56+09:00 95df09 p3-org-visibility/auditor report p3-org-visibility/pm msg=log/msgs/95df09.md
+2026-10-23T13:38:56+09:00 0bd4f4 p3-org-visibility/auditor notify_skipped p3-org-visibility/pm ref=95df09 reason=waiting
+2026-10-23T13:39:06+09:00 7cdb4c p3-org-visibility/pm ack - ref=95df09 via=poll latency=10
+2026-10-23T13:39:13+09:00 347d6c p3-org-visibility/pm wrap_up p3-org-visibility/auditor msg=log/msgs/347d6c.md
+2026-10-23T13:39:13+09:00 f4d072 p3-org-visibility/pm notify_skipped p3-org-visibility/auditor ref=347d6c reason=waiting
+2026-10-23T13:39:19+09:00 9746aa p3-org-visibility/auditor ack - ref=347d6c via=poll latency=6
+2026-10-23T13:39:30+09:00 c2e10d p3-org-visibility/auditor done p3-org-visibility/pm -
+2026-10-23T13:39:30+09:00 034718 p3-org-visibility/auditor notify_skipped p3-org-visibility/pm ref=c2e10d reason=waiting
+2026-10-23T13:39:36+09:00 a2953b p3-org-visibility/pm ack - ref=c2e10d via=poll latency=6
+2026-10-23T13:39:40+09:00 d939e3 p3-org-visibility/pm teardown p3-org-visibility/auditor report=reports/sessions/p3-org-visibility__auditor-074c4759.yaml
+2026-10-23T13:40:09+09:00 b93761 p3-org-visibility/pm report user msg=log/msgs/b93761.md
+2026-10-23T13:40:15+09:00 a9ed6b user ack - ref=b93761 via=poll latency=6
+2026-10-23T13:40:55+09:00 6375a9 patrol patrol user sent=1 via=outbox
+2026-10-23T14:04:55+09:00 c9f2f9 user wrap_up p3-org-visibility/pm msg=log/msgs/c9f2f9.md
+2026-10-23T14:04:55+09:00 2165e8 user notify_skipped p3-org-visibility/pm ref=c9f2f9 reason=waiting
+2026-10-23T14:05:01+09:00 a32000 p3-org-visibility/pm ack - ref=c9f2f9 via=poll latency=6
+2026-10-23T14:05:20+09:00 cd557b p3-org-visibility/pm done user -
+2026-10-23T14:05:23+09:00 5d6ae5 user ack - ref=cd557b via=poll latency=3
+2026-10-23T14:05:27+09:00 b40b6b user teardown p3-org-visibility/pm report=reports/sessions/p3-org-visibility__pm-8512c441.yaml
+2026-10-23T14:05:27+09:00 5d6726 user component_closed - p3-org-visibility

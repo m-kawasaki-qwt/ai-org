@@ -1,0 +1,50 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p3-org-visibility/auditor"
+  position: "auditor"
+  occupation: null
+  boss: "p3-org-visibility/pm"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "074c4759-a538-4fa1-ae55-b335e613e565"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T13:36:14+09:00"
+  closed_at: "2026-10-23T13:39:40+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/074c4759-a538-4fa1-ae55-b335e613e565.jsonl"
+  started_at: "2026-10-23T13:36:22+09:00"
+  ended_at: "2026-10-23T13:39:30+09:00"
+  span_min: 3.1
+  model_effective:
+    claude-opus-5-5: 32
+  api_messages: 19
+  tokens:
+    input: 38
+    output: 13785
+    cache_read: 1919877
+    cache_write: 122028
+  tokens_total: 2055728
+  tool_calls:
+    Bash: 17
+    Write: 2
+  events_sent:
+    report: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window: []
+self: |
+  asked: "p1・p2・p3（2026-10-23）の組織の動き方を policy.md に照らし、雛形（dev-tools の org/）の改訂案を 5 件まで出す"
+  did:
+    - "p3 の events.log・timeline-tool と readme-guide の charter・thread・msgs、全 15 件のセッション報告の unclear、notify-stats を読んだ"
+    - "印の立ったもの（timeline-tool の rework・review_ng、p1 の PM の 2 回起動、Enter の警告、PM が短時間で通したこと）を、dev-tools の org/ の各立場の決まり・org-report・orgctl.py と照らした"
+    - "改訂案 5 件・観察 5 行・好みで決まる点 1 件（3 択）を report（95df09）で PM へ出した"
+  outputs:
+    - "projects/p3-org-visibility/log/msgs/95df09.md"
+  decided:
+    - { what: "p3 の timeline.html は作らなかった", why: "events.log と msgs を直接読めば足りた" }
+    - { what: "PM の確かめは『記録から追えない』とし、確かめなかったとは書かなかった", why: "会話ログは見る範囲の外で、未確認のため" }
+    - { what: "p1・p2 の unclear のうち、もう反映されているものは観察にとどめた", why: "雛形・orgctl で手当て済みで、p3 では繰り返していない" }
+  escalated:
+    - "PM が子の成果物をどこまで自分で確かめるか（A: wrap_up に 1 行書く〔推奨〕／B: 自分でも動かす／C: いまのまま）"
+  not_done: []
+  unclear:
+    - "監査役の『見るもの』にセッション報告の machine 欄（files_changed_in_window など）の正しさが入るかがはっきりしない。orgctl の記録の取り方の話として改訂案 5 に入れた"

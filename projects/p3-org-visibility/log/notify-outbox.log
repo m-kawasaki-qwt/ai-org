@@ -1,0 +1,8 @@
+2026-10-23T13:40:55+09:00 *ai-org p3-org-visibility*: p3-org-visibility/pm から report（b93761）
+# p3-org-visibility の結果
+A（時系列の見取り図）と B（README）ができ、監査役の改訂案 5 件をもらった。charter の完了条件 1〜5 をすべて満たす。
+## 完了条件ごと
+1. 時系列の HTML 2 つ（PM が ai-org の直下で作り直して確かめた。`http://`・`https://` は 0 件、script タグなし、本文は `<details>` で読める）:
+   - `/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/timeline.html`
+   - `/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p2-orca-run-use/timeline.html`
+---

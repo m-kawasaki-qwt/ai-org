@@ -1,0 +1,64 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p3-org-visibility/teams/timeline-tool/reviewer"
+  position: "reviewer"
+  occupation: "engineer"
+  boss: "p3-org-visibility/teams/timeline-tool/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "8d87b16a-a22f-4857-b85d-2c70948e3793"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T13:29:54+09:00"
+  closed_at: "2026-10-23T13:35:04+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/8d87b16a-a22f-4857-b85d-2c70948e3793.jsonl"
+  started_at: "2026-10-23T13:30:07+09:00"
+  ended_at: "2026-10-23T13:34:56+09:00"
+  span_min: 4.8
+  model_effective:
+    claude-opus-5-5: 46
+  api_messages: 25
+  tokens:
+    input: 50
+    output: 14098
+    cache_read: 2492694
+    cache_write: 109486
+  tokens_total: 2616328
+  tool_calls:
+    Bash: 22
+    Read: 4
+    Write: 1
+  events_sent:
+    review_ok: 2
+    review_ng: 1
+    done: 1
+  review_ng_count: 1
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p2-orca-run-use/timeline.html"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/result.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/readme-guide/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p3-org-visibility/teams/timeline-tool/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/org_timeline.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/tl/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/test_org_timeline.py"
+self: |
+  asked: "timeline-tool の作業者の成果物（tools/org_timeline.py・テスト・p1/p2 の timeline.html）を charter の完了条件に照らしてレビューする"
+  did:
+    - "第1版: p1・p2 のコピーで打ち直してバイト一致を確かめた。外部参照が 0 件、テストが 15 件 OK、ヘッドレス Chrome のスクリーンショットで表示を目視、本文の件数が msg= の数と合うことも確かめた。review_ok（f315e9）を出し、申し送りを 2 点書いた"
+    - "第2版（リーダーの rework を受けた直し）: rework の 3 点を確かめた。p3 のコピーで、notify_skipped が人の報告の列に出ることを見つけ、review_ng（6acb52）を 1 件出した"
+    - "第3版: 直ったことを確かめて review_ok（dc84e7）を出した"
+    - "thread.md に第1〜3回を追記"
+  outputs:
+    - "projects/p3-org-visibility/log/msgs/f315e9.md"
+    - "projects/p3-org-visibility/log/msgs/6acb52.md"
+    - "projects/p3-org-visibility/log/msgs/dc84e7.md"
+    - "projects/p3-org-visibility/teams/timeline-tool/thread.md（追記）"
+  decided:
+    - { what: "生成物の確認は repo のファイルを上書きせず、$TMPDIR のコピーで打ち直して cmp で比べた", why: "書いてよい場所は作業者の範囲で、レビュアーが成果物を書き換えないため" }
+    - { what: "notify_skipped を指摘にした", why: "p1・p2 には無いが、いまの orgctl が書く種類なので、次のプロジェクトから人の報告の列が崩れる（p3 では 31 件中 11 件）。目的の『1 枚で正しく掴める』に届かない" }
+    - { what: "p1 の pm のセッション報告が上書きされている件は指摘にせず申し送りにした", why: "原因は orgctl のファイル名の付け方で、ツールの側では取り戻せないため" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "承認のときにも thread.md に追記するかは決まりに書かれていない（指摘のときだけ書かれている）。今回は記録のために追記した"
+    - "ヘッドレス Chrome の file:// 読み込みは、サンドボックスの外で動かさないと $TMPDIR のファイルを読めず、repo のファイルを直接開いた"
