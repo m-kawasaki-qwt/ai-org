@@ -1,0 +1,91 @@
+2026-10-23T12:18:18+09:00 bb10c1 user component_new - p2-orca-run-use
+2026-10-23T12:18:18+09:00 310df9 user assign - p2-orca-run-use/pm position=pm occupation=- model=opus
+2026-10-23T12:18:18+09:00 2b9189 user launch - p2-orca-run-use/pm session=0775601b-6c7e-48ad-89ae-c97e57ed62b8 model=opus
+2026-10-23T12:18:27+09:00 974bc8 user start p2-orca-run-use/pm msg=log/msgs/974bc8.md
+2026-10-23T12:18:27+09:00 7fb6ea user notify_sent p2-orca-run-use/pm ref=974bc8 via=orca
+2026-10-23T12:18:45+09:00 37ef24 p2-orca-run-use/pm notify_recv - ref=974bc8 misdelivered=0 latency=18
+2026-10-23T12:18:45+09:00 e7f4e1 p2-orca-run-use/pm ack - ref=974bc8 via=notify latency=18
+2026-10-23T12:19:19+09:00 7e09d1 p2-orca-run-use/pm component_new - p2-orca-run-use/teams/run-use-fix
+2026-10-23T12:19:24+09:00 5b4fc0 p2-orca-run-use/pm assign - p2-orca-run-use/teams/run-use-fix/leader position=leader occupation=engineer model=opus
+2026-10-23T12:19:24+09:00 7a2849 p2-orca-run-use/pm launch - p2-orca-run-use/teams/run-use-fix/leader session=70bafeda-1b13-43c6-b0f4-819cbc767df0 model=opus
+2026-10-23T12:19:38+09:00 46c029 p2-orca-run-use/pm start p2-orca-run-use/teams/run-use-fix/leader msg=log/msgs/46c029.md
+2026-10-23T12:19:38+09:00 218c77 p2-orca-run-use/pm notify_sent p2-orca-run-use/teams/run-use-fix/leader ref=46c029 via=orca
+2026-10-23T12:20:05+09:00 edebbd p2-orca-run-use/teams/run-use-fix/leader notify_recv - ref=46c029 misdelivered=0 latency=27
+2026-10-23T12:20:05+09:00 4c4e0b p2-orca-run-use/teams/run-use-fix/leader ack - ref=46c029 via=notify latency=27
+2026-10-23T12:20:10+09:00 e27d4e p2-orca-run-use/teams/run-use-fix/leader assign - p2-orca-run-use/teams/run-use-fix/worker-1 position=worker occupation=engineer model=sonnet
+2026-10-23T12:20:11+09:00 bdea90 p2-orca-run-use/teams/run-use-fix/leader assign - p2-orca-run-use/teams/run-use-fix/reviewer position=reviewer occupation=engineer model=opus
+2026-10-23T12:20:15+09:00 d785a2 p2-orca-run-use/teams/run-use-fix/leader launch - p2-orca-run-use/teams/run-use-fix/worker-1 session=56151c49-32dc-46de-90d2-cadffafebf93 model=sonnet
+2026-10-23T12:20:16+09:00 3492d2 p2-orca-run-use/teams/run-use-fix/leader launch - p2-orca-run-use/teams/run-use-fix/reviewer session=f7de4d8b-4e78-4e35-af52-ab4d4049cbde model=opus
+2026-10-23T12:20:34+09:00 161ad1 p2-orca-run-use/teams/run-use-fix/leader start p2-orca-run-use/teams/run-use-fix/worker-1 msg=log/msgs/161ad1.md
+2026-10-23T12:20:34+09:00 da0da0 p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/teams/run-use-fix/worker-1 ref=161ad1 via=orca
+2026-10-23T12:20:37+09:00 1d9e38 p2-orca-run-use/teams/run-use-fix/leader start p2-orca-run-use/teams/run-use-fix/reviewer msg=log/msgs/1d9e38.md
+2026-10-23T12:20:37+09:00 09d58c p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/teams/run-use-fix/reviewer ref=1d9e38 via=orca
+2026-10-23T12:21:00+09:00 9786e0 p2-orca-run-use/teams/run-use-fix/reviewer ack - ref=1d9e38 via=poll latency=23
+2026-10-23T12:21:05+09:00 9cce90 p2-orca-run-use/teams/run-use-fix/worker-1 notify_recv - ref=161ad1 misdelivered=0 latency=31
+2026-10-23T12:21:05+09:00 a5379c p2-orca-run-use/teams/run-use-fix/worker-1 ack - ref=161ad1 via=notify latency=31
+2026-10-23T12:21:31+09:00 a9a0a2 p2-orca-run-use/teams/run-use-fix/worker-1 review_request p2-orca-run-use/teams/run-use-fix/reviewer msg=log/msgs/a9a0a2.md
+2026-10-23T12:21:31+09:00 497a4f p2-orca-run-use/teams/run-use-fix/worker-1 notify_sent p2-orca-run-use/teams/run-use-fix/reviewer ref=a9a0a2 via=orca
+2026-10-23T12:21:34+09:00 76e6bb p2-orca-run-use/teams/run-use-fix/reviewer ack - ref=a9a0a2 via=poll latency=3
+2026-10-23T12:21:40+09:00 8d3f96 p2-orca-run-use/teams/run-use-fix/reviewer notify_recv - ref=1d9e38 misdelivered=0 latency=63
+2026-10-23T12:22:13+09:00 d80b31 p2-orca-run-use/teams/run-use-fix/reviewer notify_recv - ref=a9a0a2 misdelivered=0 latency=42
+2026-10-23T12:23:23+09:00 04802d p2-orca-run-use/teams/run-use-fix/reviewer review_ng p2-orca-run-use/teams/run-use-fix/worker-1 msg=log/msgs/04802d.md
+2026-10-23T12:23:23+09:00 55c1af p2-orca-run-use/teams/run-use-fix/reviewer notify_sent p2-orca-run-use/teams/run-use-fix/worker-1 ref=04802d via=orca
+2026-10-23T12:23:28+09:00 a9ebcc p2-orca-run-use/teams/run-use-fix/worker-1 ack - ref=04802d via=poll latency=5
+2026-10-23T12:23:57+09:00 39bcd6 p2-orca-run-use/teams/run-use-fix/worker-1 review_request p2-orca-run-use/teams/run-use-fix/reviewer msg=log/msgs/39bcd6.md
+2026-10-23T12:23:57+09:00 02cea1 p2-orca-run-use/teams/run-use-fix/worker-1 notify_sent p2-orca-run-use/teams/run-use-fix/reviewer ref=39bcd6 via=orca
+2026-10-23T12:24:00+09:00 ff165e p2-orca-run-use/teams/run-use-fix/reviewer ack - ref=39bcd6 via=poll latency=3
+2026-10-23T12:24:30+09:00 f863c1 p2-orca-run-use/teams/run-use-fix/reviewer review_ok p2-orca-run-use/teams/run-use-fix/leader msg=log/msgs/f863c1.md
+2026-10-23T12:24:30+09:00 3e1da3 p2-orca-run-use/teams/run-use-fix/reviewer notify_sent p2-orca-run-use/teams/run-use-fix/leader ref=f863c1 via=orca
+2026-10-23T12:24:39+09:00 c04033 p2-orca-run-use/teams/run-use-fix/leader ack - ref=f863c1 via=poll latency=9
+2026-10-23T12:24:59+09:00 6ba379 p2-orca-run-use/teams/run-use-fix/leader notify_recv - ref=f863c1 misdelivered=0 latency=29
+2026-10-23T12:25:05+09:00 d1c8bf p2-orca-run-use/teams/run-use-fix/reviewer notify_recv - ref=39bcd6 misdelivered=0 latency=68
+2026-10-23T12:25:07+09:00 63b813 p2-orca-run-use/teams/run-use-fix/leader rework p2-orca-run-use/teams/run-use-fix/worker-1 msg=log/msgs/63b813.md
+2026-10-23T12:25:07+09:00 0ad8a8 p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/teams/run-use-fix/worker-1 ref=63b813 via=orca
+2026-10-23T12:25:13+09:00 711011 p2-orca-run-use/teams/run-use-fix/worker-1 ack - ref=63b813 via=poll latency=6
+2026-10-23T12:25:22+09:00 3c4f5f p2-orca-run-use/teams/run-use-fix/worker-1 review_request p2-orca-run-use/teams/run-use-fix/reviewer msg=log/msgs/3c4f5f.md
+2026-10-23T12:25:22+09:00 2e423b p2-orca-run-use/teams/run-use-fix/worker-1 notify_sent p2-orca-run-use/teams/run-use-fix/reviewer ref=3c4f5f via=orca
+2026-10-23T12:25:30+09:00 550456 p2-orca-run-use/teams/run-use-fix/reviewer ack - ref=3c4f5f via=poll latency=8
+2026-10-23T12:25:53+09:00 f5b938 p2-orca-run-use/teams/run-use-fix/reviewer notify_recv - ref=3c4f5f misdelivered=0 latency=31
+2026-10-23T12:25:53+09:00 91f052 p2-orca-run-use/teams/run-use-fix/reviewer review_ok p2-orca-run-use/teams/run-use-fix/leader msg=log/msgs/91f052.md
+2026-10-23T12:25:53+09:00 c5248b p2-orca-run-use/teams/run-use-fix/reviewer notify_sent p2-orca-run-use/teams/run-use-fix/leader ref=91f052 via=orca
+2026-10-23T12:25:57+09:00 b4159b p2-orca-run-use/teams/run-use-fix/leader ack - ref=91f052 via=poll latency=4
+2026-10-23T12:26:01+09:00 be9424 p2-orca-run-use/teams/run-use-fix/leader wrap_up p2-orca-run-use/teams/run-use-fix/worker-1 msg=log/msgs/be9424.md
+2026-10-23T12:26:01+09:00 b7e8b2 p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/teams/run-use-fix/worker-1 ref=be9424 via=orca
+2026-10-23T12:26:02+09:00 21e285 p2-orca-run-use/teams/run-use-fix/leader wrap_up p2-orca-run-use/teams/run-use-fix/reviewer msg=log/msgs/21e285.md
+2026-10-23T12:26:02+09:00 995e15 p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/teams/run-use-fix/reviewer ref=21e285 via=orca
+2026-10-23T12:26:06+09:00 1fc571 p2-orca-run-use/teams/run-use-fix/worker-1 ack - ref=be9424 via=poll latency=5
+2026-10-23T12:26:14+09:00 6239d4 p2-orca-run-use/teams/run-use-fix/worker-1 done p2-orca-run-use/teams/run-use-fix/leader -
+2026-10-23T12:26:14+09:00 68c9ce p2-orca-run-use/teams/run-use-fix/worker-1 notify_sent p2-orca-run-use/teams/run-use-fix/leader ref=6239d4 via=orca
+2026-10-23T12:26:30+09:00 576d29 p2-orca-run-use/teams/run-use-fix/reviewer ack - ref=21e285 via=poll latency=28
+2026-10-23T12:26:46+09:00 aa246f p2-orca-run-use/teams/run-use-fix/reviewer done p2-orca-run-use/teams/run-use-fix/leader msg=log/msgs/aa246f.md
+2026-10-23T12:26:46+09:00 e0ff8b p2-orca-run-use/teams/run-use-fix/reviewer notify_sent p2-orca-run-use/teams/run-use-fix/leader ref=aa246f via=orca
+2026-10-23T12:27:05+09:00 cd468c p2-orca-run-use/teams/run-use-fix/leader notify_recv - ref=6239d4 misdelivered=0 latency=51
+2026-10-23T12:27:05+09:00 a727c8 p2-orca-run-use/teams/run-use-fix/leader ack - ref=6239d4 via=notify latency=51
+2026-10-23T12:27:05+09:00 d10a10 p2-orca-run-use/teams/run-use-fix/leader ack - ref=aa246f via=inbox latency=19
+2026-10-23T12:27:06+09:00 65f365 p2-orca-run-use/teams/run-use-fix/leader notify_recv - ref=aa246f misdelivered=0 latency=20
+2026-10-23T12:27:10+09:00 ecb877 p2-orca-run-use/teams/run-use-fix/leader teardown p2-orca-run-use/teams/run-use-fix/worker-1 report=reports/sessions/p2-orca-run-use__teams__run-use-fix__worker-1-56151c49.yaml
+2026-10-23T12:27:11+09:00 c9a04b p2-orca-run-use/teams/run-use-fix/leader teardown p2-orca-run-use/teams/run-use-fix/reviewer report=reports/sessions/p2-orca-run-use__teams__run-use-fix__reviewer-f7de4d8b.yaml
+2026-10-23T12:27:50+09:00 1f7fb5 p2-orca-run-use/teams/run-use-fix/leader report p2-orca-run-use/pm msg=log/msgs/1f7fb5.md
+2026-10-23T12:27:50+09:00 a085cd p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/pm ref=1f7fb5 via=orca
+2026-10-23T12:27:57+09:00 be8373 p2-orca-run-use/pm ack - ref=1f7fb5 via=poll latency=7
+2026-10-23T12:28:08+09:00 06e335 p2-orca-run-use/pm notify_recv - ref=1f7fb5 misdelivered=0 latency=18
+2026-10-23T12:28:17+09:00 c5520c p2-orca-run-use/pm wrap_up p2-orca-run-use/teams/run-use-fix/leader msg=log/msgs/c5520c.md
+2026-10-23T12:28:17+09:00 749a4c p2-orca-run-use/pm notify_sent p2-orca-run-use/teams/run-use-fix/leader ref=c5520c via=orca
+2026-10-23T12:28:24+09:00 1192a3 p2-orca-run-use/teams/run-use-fix/leader ack - ref=c5520c via=poll latency=7
+2026-10-23T12:28:40+09:00 f6c284 p2-orca-run-use/teams/run-use-fix/leader notify_recv - ref=c5520c misdelivered=0 latency=23
+2026-10-23T12:28:41+09:00 b5fc1c p2-orca-run-use/teams/run-use-fix/leader done p2-orca-run-use/pm -
+2026-10-23T12:28:41+09:00 a13e99 p2-orca-run-use/teams/run-use-fix/leader notify_sent p2-orca-run-use/pm ref=b5fc1c via=orca
+2026-10-23T12:28:54+09:00 e2b6b0 p2-orca-run-use/pm ack - ref=b5fc1c via=poll latency=13
+2026-10-23T12:28:58+09:00 cbe213 p2-orca-run-use/pm notify_recv - ref=b5fc1c misdelivered=0 latency=17
+2026-10-23T12:28:59+09:00 0ced5b p2-orca-run-use/pm teardown p2-orca-run-use/teams/run-use-fix/leader report=reports/sessions/p2-orca-run-use__teams__run-use-fix__leader-70bafeda.yaml
+2026-10-23T12:28:59+09:00 4ab3f5 p2-orca-run-use/pm component_closed - p2-orca-run-use/teams/run-use-fix
+2026-10-23T12:29:36+09:00 7ad811 p2-orca-run-use/pm report user msg=log/msgs/7ad811.md
+2026-10-23T12:29:40+09:00 684762 user ack - ref=7ad811 via=poll latency=4
+2026-10-23T12:29:46+09:00 65dcd4 user wrap_up p2-orca-run-use/pm msg=log/msgs/65dcd4.md
+2026-10-23T12:29:46+09:00 b37803 user notify_sent p2-orca-run-use/pm ref=65dcd4 via=orca
+2026-10-23T12:29:50+09:00 2d371c p2-orca-run-use/pm ack - ref=65dcd4 via=poll latency=4
+2026-10-23T12:30:04+09:00 6b9744 p2-orca-run-use/pm done user -
+2026-10-23T12:30:26+09:00 f90d23 p2-orca-run-use/pm notify_recv - ref=65dcd4 misdelivered=0 latency=40
+2026-10-23T12:30:30+09:00 00b04e user ack - ref=6b9744 via=poll latency=26
+2026-10-23T12:30:34+09:00 93089e user teardown p2-orca-run-use/pm report=reports/sessions/p2-orca-run-use__pm-0775601b.yaml
+2026-10-23T12:30:34+09:00 77e571 user component_closed - p2-orca-run-use

@@ -1,0 +1,15 @@
+{
+  "kind": "team",
+  "id": "p2-orca-run-use/teams/run-use-fix",
+  "parent": "p2-orca-run-use",
+  "root": false,
+  "created_at": "2026-10-23T12:19:19+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p2-orca-run-use/teams/run-use-fix/leader",
+    "worker-1": "p2-orca-run-use/teams/run-use-fix/worker-1",
+    "reviewer": "p2-orca-run-use/teams/run-use-fix/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-23T12:28:59+09:00"
+}
