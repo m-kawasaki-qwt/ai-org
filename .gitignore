@@ -1,0 +1,10 @@
+# 起動中のメンバーの足場（orgctl assign が作り、teardown で消える）
+.heartbeat
+.inbox_offset
+*.tmp
+projects/**/system.md
+projects/**/CLAUDE.md
+projects/**/.claude/
+__pycache__/
+.env*
+.inbox_user

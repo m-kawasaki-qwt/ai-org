@@ -1,0 +1,5 @@
+2026-10-23T10:00:00+09:00 aaaaaa fx/teams/t/b report fx/pm msg=log/msgs/aaaaaa.md
+2026-10-23T10:05:00+09:00 bbbbbb fx/teams/t/b ack - ref=aaaaaa via=poll latency=1
+2026-10-23T10:10:00+09:00 cccccc fx/teams/t/c report fx/pm -
+2026-10-23T10:20:00+09:00 dddddd fx/teams/t/c done fx/pm -
+2026-10-23T10:30:00+09:00 eeeeee fx/teams/t/d done fx/pm -

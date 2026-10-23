@@ -1,0 +1,52 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p1-org-status/teams/status-tool/reviewer"
+  position: "reviewer"
+  occupation: "engineer"
+  boss: "p1-org-status/teams/status-tool/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "b1393dd9-b0d2-4e80-b87f-c4221f92dcc4"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T11:58:47+09:00"
+  closed_at: "2026-10-23T12:02:05+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/b1393dd9-b0d2-4e80-b87f-c4221f92dcc4.jsonl"
+  started_at: "2026-10-23T11:58:56+09:00"
+  ended_at: "2026-10-23T12:02:04+09:00"
+  span_min: 3.1
+  model_effective:
+    claude-opus-5-5: 27
+  api_messages: 15
+  tokens:
+    input: 30
+    output: 7529
+    cache_read: 1278909
+    cache_write: 88965
+  tokens_total: 1375433
+  tool_calls:
+    Bash: 16
+    Write: 2
+  events_sent:
+    review_ok: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/teams/status-tool/thread.md"
+self: |
+  asked: "作業者の tools/org_status.py と tests を、charter の完了条件 1〜5 に照らしてレビューする"
+  did:
+    - "charter・作業者の review_request・thread.md を読んだ"
+    - "orgctl.py の read_events・append_event・member_state・cmd_watch・teardown を読み、状態の決め方と 1 行報告の形を突き合わせた"
+    - "本物（projects/p1-org-status）に対してテキスト出力と --json を実行した。json.tool で読めることも確かめた。unittest は 7 件 OK。import は標準ライブラリだけだった"
+    - "thread.md に「レビュアー 第1回」を追記し、review_ok をリーダーへ出した（c47efc）"
+  outputs:
+    - "projects/p1-org-status/log/msgs/c47efc.md（review_ok の本文）"
+    - "projects/p1-org-status/teams/status-tool/thread.md（レビュアー 第1回を追記）"
+  decided:
+    - { what: "指摘なしで review_ok にした", why: "完了条件 1〜5 をすべて実行して確かめた。残ったのは orgctl の行番号のずれと、範囲外の入力（根っこ以外のディレクトリ）で落ちることだけで、どちらも軽微なので申し送りに回した" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "作業者の review_request（11:49:51）は、レビュアーが起動する（11:58:47）より前に出ていた。起動時の poll で ack され、latency が 550 秒と記録された。レビュアーを起動する前に依頼が出せてしまう順番になっている"
+    - "start の通知（ref 1059a3）を inbox --via notify で開いたときには、最初の inbox（poll）で既に ack 済みだったので「新しいものは無い」と出た。notify-stats の届いた割合に影響するかもしれない"
+    - "リーダーへ送った review_ok の Orca 通知で「no turn start was observed, so the Enter may have been swallowed」という警告が出た。--retry-request で再確認しても同じ警告だった（リーダーは wait で受け取ったとみられる）"

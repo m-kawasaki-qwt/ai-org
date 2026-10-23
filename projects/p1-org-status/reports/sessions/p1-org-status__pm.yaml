@@ -1,0 +1,76 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p1-org-status/pm"
+  position: "pm"
+  occupation: null
+  boss: "user"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "17ec7ea4-94ab-4129-91e5-324d133020ae"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T11:46:34+09:00"
+  closed_at: "2026-10-23T12:05:18+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/17ec7ea4-94ab-4129-91e5-324d133020ae.jsonl"
+  started_at: "2026-10-23T11:46:42+09:00"
+  ended_at: "2026-10-23T12:05:11+09:00"
+  span_min: 18.5
+  model_effective:
+    claude-opus-5-5: 61
+  api_messages: 31
+  tokens:
+    input: 62
+    output: 15874
+    cache_read: 2813450
+    cache_write: 115530
+  tokens_total: 2944916
+  tool_calls:
+    Bash: 32
+    Write: 3
+  events_sent:
+    component_new: 1
+    assign: 1
+    launch: 1
+    start: 1
+    report: 2
+    wrap_up: 1
+    teardown: 1
+    component_closed: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/teams/status-tool/charter.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/teams/status-tool/hints/worker-1.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/teams/status-tool/result.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/teams/status-tool/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/org_status.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/fx/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/test_org_status.py"
+self: |
+  asked: "p1-org-status の PM として、tools/org_status.py をチームに作らせ、プロジェクト → チーム → 報告 → 片づけが一周回るかを確かめて user へ報告する"
+  did:
+    - "charter.md を読み、補う点が無いことを確かめた（前の PM が直した charter のまま）"
+    - "チーム status-tool を作り、charter（完了条件 1〜6・範囲・編成）を書いた"
+    - "リーダー（engineer・opus）をアサイン・起動・attach し、start を出した"
+    - "watch で reviewer 未起動のまま review_request が約 10 分止まっているのに気づき、リーダーへ知らせた"
+    - "リーダーの報告を受け、完了条件 1〜5 を自分で実行して確かめた（出力・--json・unittest 7 件 OK・import）"
+    - "リーダーへ wrap_up を出し、done を受けてチームを teardown し、タブを閉じた"
+    - "結果と試走で分かったことをまとめて user へ report（803ffb）を出した"
+  outputs:
+    - "projects/p1-org-status/teams/status-tool/charter.md"
+    - "projects/p1-org-status/log/msgs/803ffb.md（user への最終報告）"
+    - "tools/org_status.py・tools/tests/（チームの成果物）"
+  decided:
+    - { what: "チームは 1 つ（status-tool）、子プロジェクトは作らない", why: "charter の範囲がチーム 1 つで、作業単位の大きさだったため" }
+    - { what: "チームの完了条件に「状態 4 種をそれぞれテスト」「orgctl のどこに合わせたかを報告に書く」「レビュアーの review_ok」を足した", why: "上の完了条件 4・5 を照らせる形にし、レビューの質を決めるため" }
+    - { what: "reviewer 未起動の停滞で、PM からリーダーへ report の種類で知らせた", why: "PM → リーダーの「確認・催促」に当たる種類が決まりに無く、report が一番近かった" }
+    - { what: "根っこ以外を渡すと落ちる等のツールの申し送りは、やり直させずに合格にした", why: "charter は根っこを渡す前提で、完了条件に影響しない" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "wait --cc が作業者 → レビュアーの review_request を拾わず、リーダーがレビュアーを起こすのが約 10 分遅れた"
+    - "「レビュアーは最初の review_request の後に起こす」だと、作業者は知らせる相手のタブが無く、リーダーが cc を拾えないと止まる"
+    - "orca terminal send が毎回「Enter が飲まれたかもしれない」と警告するが、実際は届いていた。--retry-request で再送しても同じ警告で、信じて再送すべきかの決まりが無い"
+    - "inbox --via notify --ref は、その件が wait で先に読まれていると「新しいものは無い」になるか、後から来た別の件を読む。知らせで届いた記録が残らない（9997e5・d9ba25 で起きた）"
+    - "PM → リーダーの催促・確認に使う種類が、event の種類の一覧に無い（report で代用した）"
+    - "入れ替え後の PM への引き継ぎが無かった。前の PM が何をしたか（charter.md を変えたこと）は、セッション報告の files_changed_in_window から推すしかなかった"
+    - "user にはタブが無く、user への report・wrap_up は Orca の知らせが出ない。user が気づく経路が決まりに書かれていない"

@@ -1,0 +1,84 @@
+2026-10-23T11:35:42+09:00 c5bd68 user component_new - p1-org-status
+2026-10-23T11:35:42+09:00 517989 user assign - p1-org-status/pm position=pm occupation=- model=opus
+2026-10-23T11:35:42+09:00 82953a user launch - p1-org-status/pm session=a8808d49-9778-4b06-b9a1-dadd431cb2de model=opus
+2026-10-23T11:35:51+09:00 3a1eb3 user start p1-org-status/pm msg=log/msgs/3a1eb3.md
+2026-10-23T11:35:51+09:00 3d3543 user notify_sent p1-org-status/pm ref=3a1eb3 via=orca
+2026-10-23T11:46:34+09:00 18d27d user teardown p1-org-status/pm report=reports/sessions/p1-org-status__pm.yaml
+2026-10-23T11:46:34+09:00 b66ffd user assign - p1-org-status/pm position=pm occupation=- model=opus
+2026-10-23T11:46:34+09:00 648005 user launch - p1-org-status/pm session=17ec7ea4-94ab-4129-91e5-324d133020ae model=opus
+2026-10-23T11:47:21+09:00 124a60 p1-org-status/pm ack - ref=3a1eb3 via=poll latency=690
+2026-10-23T11:47:21+09:00 374d9a p1-org-status/pm ack - ref=18d27d via=poll latency=47
+2026-10-23T11:47:40+09:00 855340 p1-org-status/pm component_new - p1-org-status/teams/status-tool
+2026-10-23T11:47:41+09:00 3633b2 p1-org-status/pm assign - p1-org-status/teams/status-tool/leader position=leader occupation=engineer model=opus
+2026-10-23T11:47:41+09:00 f1f362 p1-org-status/pm launch - p1-org-status/teams/status-tool/leader session=92ab2615-4a29-44ba-a1a2-d8017bae0f1c model=opus
+2026-10-23T11:47:54+09:00 2f7495 p1-org-status/pm start p1-org-status/teams/status-tool/leader msg=log/msgs/2f7495.md
+2026-10-23T11:47:54+09:00 e57ba7 p1-org-status/pm notify_sent p1-org-status/teams/status-tool/leader ref=2f7495 via=orca
+2026-10-23T11:48:05+09:00 8f4328 p1-org-status/teams/status-tool/leader ack - ref=2f7495 via=poll latency=11
+2026-10-23T11:48:13+09:00 5293f6 p1-org-status/teams/status-tool/leader notify_recv - ref=2f7495 misdelivered=0 latency=19
+2026-10-23T11:48:27+09:00 18fa75 p1-org-status/teams/status-tool/leader assign - p1-org-status/teams/status-tool/worker-1 position=worker occupation=engineer model=sonnet
+2026-10-23T11:48:37+09:00 319731 p1-org-status/teams/status-tool/leader assign - p1-org-status/teams/status-tool/reviewer position=reviewer occupation=engineer model=opus
+2026-10-23T11:48:37+09:00 c8687d p1-org-status/teams/status-tool/leader launch - p1-org-status/teams/status-tool/worker-1 session=8d66da14-f9c5-4c30-8729-3cd359672687 model=sonnet
+2026-10-23T11:48:50+09:00 aa6584 p1-org-status/teams/status-tool/leader start p1-org-status/teams/status-tool/worker-1 msg=log/msgs/aa6584.md
+2026-10-23T11:48:50+09:00 272a92 p1-org-status/teams/status-tool/leader notify_sent p1-org-status/teams/status-tool/worker-1 ref=aa6584 via=orca
+2026-10-23T11:49:17+09:00 cfbbd3 p1-org-status/teams/status-tool/worker-1 notify_recv - ref=aa6584 misdelivered=0 latency=27
+2026-10-23T11:49:17+09:00 cc2ed6 p1-org-status/teams/status-tool/worker-1 ack - ref=aa6584 via=notify latency=27
+2026-10-23T11:49:51+09:00 4d68b5 p1-org-status/teams/status-tool/worker-1 review_request p1-org-status/teams/status-tool/reviewer msg=log/msgs/4d68b5.md
+2026-10-23T11:58:46+09:00 447504 p1-org-status/pm report p1-org-status/teams/status-tool/leader msg=log/msgs/447504.md
+2026-10-23T11:58:46+09:00 617126 p1-org-status/pm notify_sent p1-org-status/teams/status-tool/leader ref=447504 via=orca
+2026-10-23T11:58:47+09:00 fd856e p1-org-status/teams/status-tool/leader launch - p1-org-status/teams/status-tool/reviewer session=b1393dd9-b0d2-4e80-b87f-c4221f92dcc4 model=opus
+2026-10-23T11:59:00+09:00 1059a3 p1-org-status/teams/status-tool/leader start p1-org-status/teams/status-tool/reviewer msg=log/msgs/1059a3.md
+2026-10-23T11:59:00+09:00 3572fc p1-org-status/teams/status-tool/leader notify_sent p1-org-status/teams/status-tool/reviewer ref=1059a3 via=orca
+2026-10-23T11:59:01+09:00 c46294 p1-org-status/teams/status-tool/reviewer ack - ref=4d68b5 via=poll latency=550
+2026-10-23T11:59:01+09:00 833460 p1-org-status/teams/status-tool/reviewer ack - ref=1059a3 via=poll latency=1
+2026-10-23T11:59:21+09:00 1a2d3f p1-org-status/teams/status-tool/reviewer notify_recv - ref=1059a3 misdelivered=0 latency=21
+2026-10-23T11:59:35+09:00 cd74b4 p1-org-status/teams/status-tool/leader notify_recv - ref=447504 misdelivered=0 latency=49
+2026-10-23T11:59:35+09:00 fc0747 p1-org-status/teams/status-tool/leader ack - ref=447504 via=notify latency=49
+2026-10-23T11:59:40+09:00 9997e5 p1-org-status/teams/status-tool/leader report p1-org-status/pm msg=log/msgs/9997e5.md
+2026-10-23T11:59:40+09:00 59f424 p1-org-status/teams/status-tool/leader notify_sent p1-org-status/pm ref=9997e5 via=orca
+2026-10-23T11:59:44+09:00 f96e59 p1-org-status/pm ack - ref=9997e5 via=poll latency=4
+2026-10-23T11:59:55+09:00 c47efc p1-org-status/teams/status-tool/reviewer review_ok p1-org-status/teams/status-tool/leader msg=log/msgs/c47efc.md
+2026-10-23T11:59:55+09:00 9ea828 p1-org-status/teams/status-tool/reviewer notify_sent p1-org-status/teams/status-tool/leader ref=c47efc via=orca
+2026-10-23T12:00:20+09:00 8b5aa0 p1-org-status/teams/status-tool/leader notify_recv - ref=c47efc misdelivered=0 latency=25
+2026-10-23T12:00:20+09:00 e50eaa p1-org-status/teams/status-tool/leader ack - ref=c47efc via=notify latency=25
+2026-10-23T12:00:50+09:00 4b45c1 p1-org-status/teams/status-tool/leader wrap_up p1-org-status/teams/status-tool/worker-1 msg=log/msgs/4b45c1.md
+2026-10-23T12:00:50+09:00 64e7ae p1-org-status/teams/status-tool/leader notify_sent p1-org-status/teams/status-tool/worker-1 ref=4b45c1 via=orca
+2026-10-23T12:00:50+09:00 d54a1d p1-org-status/teams/status-tool/leader wrap_up p1-org-status/teams/status-tool/reviewer msg=log/msgs/d54a1d.md
+2026-10-23T12:00:50+09:00 e31db4 p1-org-status/teams/status-tool/leader notify_sent p1-org-status/teams/status-tool/reviewer ref=d54a1d via=orca
+2026-10-23T12:00:54+09:00 c7f297 p1-org-status/teams/status-tool/reviewer ack - ref=d54a1d via=poll latency=4
+2026-10-23T12:00:56+09:00 a01d83 p1-org-status/teams/status-tool/worker-1 ack - ref=4b45c1 via=poll latency=6
+2026-10-23T12:01:02+09:00 cf3bc0 p1-org-status/teams/status-tool/worker-1 done p1-org-status/teams/status-tool/leader -
+2026-10-23T12:01:02+09:00 7fce07 p1-org-status/teams/status-tool/worker-1 notify_sent p1-org-status/teams/status-tool/leader ref=cf3bc0 via=orca
+2026-10-23T12:01:04+09:00 1e4821 p1-org-status/teams/status-tool/reviewer done p1-org-status/teams/status-tool/leader -
+2026-10-23T12:01:04+09:00 75feb5 p1-org-status/teams/status-tool/reviewer notify_sent p1-org-status/teams/status-tool/leader ref=1e4821 via=orca
+2026-10-23T12:01:36+09:00 c5de44 p1-org-status/teams/status-tool/worker-1 notify_recv - ref=4b45c1 misdelivered=0 latency=46
+2026-10-23T12:01:57+09:00 82a554 p1-org-status/teams/status-tool/leader notify_recv - ref=cf3bc0 misdelivered=0 latency=55
+2026-10-23T12:01:57+09:00 c07028 p1-org-status/teams/status-tool/leader ack - ref=cf3bc0 via=notify latency=55
+2026-10-23T12:01:57+09:00 5d159a p1-org-status/teams/status-tool/leader ack - ref=1e4821 via=inbox latency=53
+2026-10-23T12:01:57+09:00 492396 p1-org-status/teams/status-tool/leader notify_recv - ref=1e4821 misdelivered=0 latency=53
+2026-10-23T12:02:04+09:00 10cec3 p1-org-status/teams/status-tool/reviewer notify_recv - ref=d54a1d misdelivered=0 latency=74
+2026-10-23T12:02:05+09:00 c9efed p1-org-status/teams/status-tool/leader teardown p1-org-status/teams/status-tool/worker-1 report=reports/sessions/p1-org-status__teams__status-tool__worker-1.yaml
+2026-10-23T12:02:05+09:00 f528cd p1-org-status/teams/status-tool/leader teardown p1-org-status/teams/status-tool/reviewer report=reports/sessions/p1-org-status__teams__status-tool__reviewer.yaml
+2026-10-23T12:02:44+09:00 d9ba25 p1-org-status/teams/status-tool/leader report p1-org-status/pm msg=log/msgs/d9ba25.md
+2026-10-23T12:02:44+09:00 ba6ca8 p1-org-status/teams/status-tool/leader notify_sent p1-org-status/pm ref=d9ba25 via=orca
+2026-10-23T12:02:50+09:00 58789d p1-org-status/pm ack - ref=d9ba25 via=poll latency=6
+2026-10-23T12:02:54+09:00 b34cc6 p1-org-status/pm notify_recv - ref=9997e5 misdelivered=0 latency=194
+2026-10-23T12:03:05+09:00 f839b3 p1-org-status/pm wrap_up p1-org-status/teams/status-tool/leader msg=log/msgs/f839b3.md
+2026-10-23T12:03:05+09:00 ba5a24 p1-org-status/pm notify_sent p1-org-status/teams/status-tool/leader ref=f839b3 via=orca
+2026-10-23T12:03:23+09:00 f55365 p1-org-status/teams/status-tool/leader notify_recv - ref=f839b3 misdelivered=0 latency=18
+2026-10-23T12:03:23+09:00 40bceb p1-org-status/teams/status-tool/leader ack - ref=f839b3 via=notify latency=18
+2026-10-23T12:03:37+09:00 950902 p1-org-status/teams/status-tool/leader done p1-org-status/pm -
+2026-10-23T12:03:37+09:00 6f484f p1-org-status/teams/status-tool/leader notify_sent p1-org-status/pm ref=950902 via=orca
+2026-10-23T12:03:38+09:00 ef42c0 p1-org-status/pm notify_recv - ref=d9ba25 misdelivered=0 latency=54
+2026-10-23T12:03:38+09:00 26f7c6 p1-org-status/pm ack - ref=950902 via=inbox latency=1
+2026-10-23T12:03:43+09:00 55d440 p1-org-status/pm teardown p1-org-status/teams/status-tool/leader report=reports/sessions/p1-org-status__teams__status-tool__leader.yaml
+2026-10-23T12:03:43+09:00 3dff98 p1-org-status/pm component_closed - p1-org-status/teams/status-tool
+2026-10-23T12:04:24+09:00 803ffb p1-org-status/pm report user msg=log/msgs/803ffb.md
+2026-10-23T12:04:31+09:00 25d4e3 user ack - ref=803ffb via=poll latency=7
+2026-10-23T12:04:39+09:00 7e08e5 user wrap_up p1-org-status/pm msg=log/msgs/7e08e5.md
+2026-10-23T12:04:39+09:00 776109 user notify_sent p1-org-status/pm ref=7e08e5 via=orca
+2026-10-23T12:04:48+09:00 269bc4 p1-org-status/pm ack - ref=7e08e5 via=poll latency=9
+2026-10-23T12:05:06+09:00 43134c p1-org-status/pm notify_recv - ref=950902 misdelivered=0 latency=89
+2026-10-23T12:05:07+09:00 e74ae3 p1-org-status/pm notify_recv - ref=7e08e5 misdelivered=0 latency=28
+2026-10-23T12:05:10+09:00 22cff7 p1-org-status/pm done user -
+2026-10-23T12:05:18+09:00 9dc8c1 user teardown p1-org-status/pm report=reports/sessions/p1-org-status__pm.yaml
+2026-10-23T12:05:18+09:00 ee2559 user component_closed - p1-org-status

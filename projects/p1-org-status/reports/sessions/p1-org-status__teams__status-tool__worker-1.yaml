@@ -1,0 +1,58 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p1-org-status/teams/status-tool/worker-1"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p1-org-status/teams/status-tool/leader"
+  model_requested: "sonnet"
+  agent: "claude"
+  session_id: "8d66da14-f9c5-4c30-8729-3cd359672687"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-23T11:48:37+09:00"
+  closed_at: "2026-10-23T12:02:05+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/8d66da14-f9c5-4c30-8729-3cd359672687.jsonl"
+  started_at: "2026-10-23T11:48:47+09:00"
+  ended_at: "2026-10-23T12:01:40+09:00"
+  span_min: 12.9
+  model_effective:
+    claude-sonnet-5-5: 27
+  api_messages: 17
+  tokens:
+    input: 34
+    output: 9770
+    cache_read: 1579755
+    cache_write: 94109
+  tokens_total: 1683668
+  tool_calls:
+    Read: 3
+    Bash: 15
+    Write: 1
+  events_sent:
+    review_request: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p1-org-status/teams/status-tool/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/org_status.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/fixtures/fx/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/tools/tests/test_org_status.py"
+self: |
+  asked: "ai-org の tools/org_status.py を作り、組織の木と各メンバーの最後の報告・状態を出す"
+  did:
+    - "orgctl.py を読み、events.log・component.json・member.json の形と状態の決め方に合わせた"
+    - "tools/org_status.py（テキスト・--json）を実装し、本物の projects/p1-org-status に実行した"
+    - "unittest 7 件と見本（tools/tests/fixtures/fx）を作り、通した"
+    - "review_request を出し、thread.md に追記した"
+  outputs:
+    - "tools/org_status.py"
+    - "tools/tests/test_org_status.py"
+    - "tools/tests/fixtures/fx/"
+  decided:
+    - { what: "最後の報告は送り手が本人の行だけ数える", why: "orgctl の member_state と同じ。assign/launch/start は本人の報告ではない" }
+    - { what: "watch の「止まっている?／ループ?」は 4 種に無いので 動いている に畳んだ", why: "依頼の状態が 4 種のため" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "見本の id は根っこの親ディレクトリ基準（rel_id）なので、見本ディレクトリ名を id と揃える必要があった。決まりに明記が無く、最初のテストで失敗して気づいた"
+    - "テスト実行時にシェルの zoxide が書き込み拒否の警告を出す（サンドボックス。結果に影響なし）"
+    - "レビュアーへの知らせは handle が無く出せなかった（wait／inbox で拾う前提）"
