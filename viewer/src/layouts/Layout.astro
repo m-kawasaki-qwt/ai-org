@@ -1,0 +1,65 @@
+---
+import { snap } from '../lib/snap';
+const { title } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/', label: '一覧' },
+  { href: '/inbox', label: '受け箱', badge: snap.totals.unread_to_user },
+  { href: '/performance', label: 'パフォーマンス' },
+  { href: '/audit', label: '監査・unclear' },
+];
+const active = (h: string) => (h === '/' ? path === '/' || path.startsWith('/projects') : path.startsWith(h));
+---
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title} — ai-org</title>
+    <style is:global>
+      :root { --fg:#1d2330; --mute:#6b7280; --line:#e5e7eb; --bg:#f7f8fa; --acc:#2563eb; --warn:#b45309; --bad:#b91c1c; --ok:#15803d; }
+      * { box-sizing: border-box; }
+      body { margin:0; display:flex; min-height:100vh; font:14px/1.6 -apple-system,"Hiragino Sans",sans-serif; color:var(--fg); background:var(--bg); }
+      aside { width:200px; flex:none; background:#fff; border-right:1px solid var(--line); padding:16px 0; position:sticky; top:0; height:100vh; }
+      aside h1 { font-size:14px; margin:0 16px 12px; }
+      aside a { display:flex; justify-content:space-between; padding:8px 16px; color:var(--fg); text-decoration:none; }
+      aside a.on { background:#eff4ff; color:var(--acc); font-weight:600; }
+      .badge { background:var(--bad); color:#fff; border-radius:10px; padding:0 8px; font-size:12px; }
+      main { flex:1; padding:24px 32px; max-width:1100px; }
+      h2 { font-size:18px; margin:0 0 4px; } h3 { font-size:15px; margin:28px 0 8px; }
+      .lead { color:var(--mute); margin:0 0 16px; }
+      .stats { display:flex; gap:12px; flex-wrap:wrap; margin:12px 0 8px; }
+      .stat { background:#fff; border:1px solid var(--line); border-radius:8px; padding:10px 16px; min-width:120px; }
+      .stat b { display:block; font-size:24px; line-height:1.2; } .stat span { color:var(--mute); font-size:12px; }
+      .stat.alert b { color:var(--bad); }
+      table { border-collapse:collapse; width:100%; background:#fff; border:1px solid var(--line); border-radius:8px; }
+      th, .tag { white-space:nowrap; }
+      th,td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+      th { font-size:12px; color:var(--mute); font-weight:500; }
+      td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+      a { color:var(--acc); }
+      td.last { max-width:340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+      .mute { color:var(--mute); } .na { color:var(--mute); font-style:italic; }
+      .tag { display:inline-block; font-size:12px; padding:0 8px; border-radius:4px; background:#eef0f3; }
+      .tag.open { background:#dcfce7; color:var(--ok); } .tag.ng, .tag.review_ng, .tag.rework, .tag.reassign, .tag.blocked, .tag.escalate { background:#fee2e2; color:var(--bad); }
+      .tag.review_ok { background:#dcfce7; color:var(--ok); }
+      details { background:#fff; border:1px solid var(--line); border-radius:6px; margin:6px 0; padding:6px 12px; }
+      summary { cursor:pointer; }
+      pre { white-space:pre-wrap; background:var(--bg); padding:10px; border-radius:4px; margin:8px 0 4px; font:12px/1.5 ui-monospace,monospace; }
+      .band { display:flex; gap:2px; flex-wrap:wrap; margin:6px 0; }
+      .band i { width:10px; height:18px; background:#cbd5e1; border-radius:2px; display:block; }
+      .bar { background:#dbeafe; height:14px; border-radius:2px; min-width:1px; }
+      ul.tree { list-style:none; padding-left:20px; margin:4px 0; } ul.tree.root { padding-left:0; }
+      .unread { border-left:3px solid var(--bad); }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <h1>ai-org ビューア</h1>
+      {nav.map((n) => (
+        <a href={n.href} class={active(n.href) ? 'on' : ''}>
+          <span>{n.label}</span>{n.badge ? <span class="badge">{n.badge}</span> : null}
+        </a>
+      ))}
+    </aside>
+    <main><slot /></main>
+  </body>
+</html>

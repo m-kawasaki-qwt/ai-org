@@ -1,0 +1,22 @@
+---
+import { min, when } from '../lib/snap';
+const { c } = Astro.props;
+const k = c.counts;
+---
+<li>
+  <b>{c.id.split('/').slice(-1)[0]}</b> <span class="tag">{c.kind === 'project' ? 'プロジェクト' : 'チーム'}</span> <span class={`tag ${c.status}`}>{c.status}</span>
+  <span class="mute"> 往復 {k.round_trips}・作り直し {k.remakes}</span>
+  {c.purpose ? <div class="mute">{c.purpose}</div> : null}
+  <details>
+    <summary>メンバー {c.members.length} 人</summary>
+    <table>
+      <thead><tr><th>名前</th><th>立場</th><th>モデル</th><th>状態</th></tr></thead>
+      <tbody>
+        {c.members.map((m: any) => (
+          <tr><td>{m.name}</td><td>{m.position}{m.occupation ? `・${m.occupation}` : ''}</td><td>{m.model ?? '—'}</td><td>{m.state}{m.state_note ? `（${m.state_note}）` : ''}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </details>
+  {c.children.length ? <ul class="tree">{c.children.map((ch: any) => <Astro.self c={ch} />)}</ul> : null}
+</li>

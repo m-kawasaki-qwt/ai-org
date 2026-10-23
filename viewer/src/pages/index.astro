@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { snap, tok, min, when, cut, headline } from '../lib/snap';
+const t = snap.totals;
+---
+<Layout title="一覧">
+  <h2>プロジェクトの一覧</h2>
+  <p class="lead">開いている {t.projects_open}・未読 {t.unread_to_user}・判断待ち {t.escalations_open}。{t.unread_to_user > 0 ? '受け箱に川崎さん宛てがあります。' : '受け箱は空です。'}</p>
+  <div class="stats">
+    <div class="stat"><b>{t.projects_open}</b><span>開いている</span></div>
+    <a class={`stat ${t.unread_to_user ? 'alert' : ''}`} href="/inbox" style="text-decoration:none;color:inherit"><b>{t.unread_to_user}</b><span>未読 → 受け箱へ</span></a>
+    <div class={`stat ${t.escalations_open ? 'alert' : ''}`}><b>{t.escalations_open}</b><span>判断待ち</span></div>
+    <div class="stat"><b>{t.projects_closed}</b><span>閉じた</span></div>
+    <div class="stat"><b>{tok(t.tokens_total)}</b><span>トークン（報告のある分）</span></div>
+  </div>
+  <h3>プロジェクト（新しい順）</h3>
+  <table>
+    <thead><tr><th>プロジェクト</th><th>状態</th><th>期間</th><th class="n">トークン</th><th class="n">往復</th><th class="n">作り直し</th><th class="n">未読</th><th>いま／最後</th></tr></thead>
+    <tbody>
+      {snap.projects.map((p: any) => (
+        <tr>
+          <td><a href={`/projects/${p.id}`}>{p.id}</a><div class="mute">{p.purpose}</div></td>
+          <td><span class={`tag ${p.status}`}>{p.status === 'open' ? '開いている' : '閉じた'}</span></td>
+          <td>{min(p.duration_min)}<div class="mute">{when(p.created_at)}〜{when(p.closed_at)}</div></td>
+          <td class="n">{p.tokens_total === null ? <span class="na">—（片づけ前）</span> : tok(p.tokens_total)}{!p.metrics_complete && p.tokens_total !== null ? <div class="mute">一部のみ</div> : null}</td>
+          <td class="n">{p.counts.round_trips}</td>
+          <td class="n">{p.counts.remakes}</td>
+          <td class="n">{p.unread_to_user ? <a href="/inbox" class="badge" style="text-decoration:none">{p.unread_to_user}</a> : 0}</td>
+          <td class="last">{headline(p) ? <><span class={`tag ${headline(p).kind}`}>{headline(p).kind}</span> {cut(headline(p).summary, 60)}<div class="mute">{when(headline(p).ts)}</div></> : '—'}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Layout>

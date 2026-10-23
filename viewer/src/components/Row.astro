@@ -1,0 +1,12 @@
+---
+import { when, cut } from '../lib/snap';
+const { e, open } = Astro.props;
+---
+<details class={e.unread ? 'unread' : ''} open={open}>
+  <summary>
+    <span class="mute">{when(e.ts)}</span> <span class={`tag ${e.kind}`}>{e.kind}</span>
+    {e.from.split('/').slice(-1)[0]} → {e.to.split('/').slice(-1)[0]}：{cut(e.summary, 100)}
+  </summary>
+  {e.body ? <pre>{e.body}</pre> : <p class="mute">本文なし。</p>}
+  {e.msg ? <div class="mute">{e.msg}</div> : null}
+</details>

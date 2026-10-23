@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { snap, when, cut } from '../lib/snap';
+const items = snap.inbox;
+const unread = items.filter((i: any) => i.unread).length;
+const empty = (i: any) => i.kind === 'done' && !i.body && !i.unread;
+const main = items.filter((i: any) => !empty(i));
+const dones = items.filter(empty);
+---
+<Layout title="受け箱">
+  <h2>川崎さん宛ての受け箱</h2>
+  <p class="lead">未読 {unread}・読むもの {main.length} 件・既読の完了通知（本文なし）{dones.length} 件。判断待ち（escalate・blocked）は {snap.totals.escalations_open}。新しい順。</p>
+  {main.length === 0 ? <p class="mute">読むものはありません。</p> : null}
+  {main.map((i: any) => (
+    <details class={i.unread ? 'unread' : ''}>
+      <summary>
+        <span class={`tag ${i.kind}`}>{i.kind}</span> {i.summary === '-' ? '（完了の知らせ・本文なし）' : cut(i.summary, 100)}
+        <span class="mute"> — {i.project} / {i.from} / {when(i.at)}{i.unread ? '・未読' : ''}</span>
+      </summary>
+      {i.body ? <pre>{i.body}</pre> : <p class="mute">本文なし。</p>}
+      {i.msg ? <div class="mute">{i.msg}</div> : null}
+    </details>
+  ))}
+  {dones.length ? (
+    <details>
+      <summary class="mute">完了通知 {dones.length} 件（本文なし）</summary>
+      <table>
+        <tbody>
+          {dones.map((i: any) => (
+            <tr><td>{i.project}</td><td>{i.from}</td><td>{when(i.at)}{i.unread ? '・未読' : ''}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </details>
+  ) : null}
+</Layout>
