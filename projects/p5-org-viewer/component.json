@@ -1,0 +1,16 @@
+{
+  "kind": "project",
+  "id": "p5-org-viewer",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T01:15:20+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p5-org-viewer/pm",
+    "coordinator-viewer": "p5-org-viewer/coordinator-viewer"
+  },
+  "children": [
+    "p5-org-viewer/teams/viewer"
+  ],
+  "closed_at": "2026-10-24T01:32:13+09:00"
+}

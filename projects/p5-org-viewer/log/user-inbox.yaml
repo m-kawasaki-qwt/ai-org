@@ -1,0 +1,8 @@
+- kind: "report"
+  from: "p5-org-viewer/pm"
+  ref: "2140aa"
+  msg: "log/msgs/2140aa.md"
+  summary: "# p5-org-viewer の結果"
+  at: "2026-10-24T01:32:02+09:00"
+  gchat: "sent"
+  read: false

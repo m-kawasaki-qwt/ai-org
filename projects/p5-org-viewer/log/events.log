@@ -1,0 +1,130 @@
+2026-10-24T01:15:20+09:00 a6f0ca user component_new - p5-org-viewer
+2026-10-24T01:15:20+09:00 b685ca user assign - p5-org-viewer/pm position=pm occupation=- model=opus
+2026-10-24T01:15:20+09:00 73df9f user launch - p5-org-viewer/pm session=92edb217-bfe6-4016-bac5-91758e324c9a model=opus
+2026-10-24T01:15:29+09:00 c2dd54 user start p5-org-viewer/pm msg=log/msgs/c2dd54.md
+2026-10-24T01:15:29+09:00 44d0d2 user notify_sent p5-org-viewer/pm ref=c2dd54 via=orca
+2026-10-24T01:16:00+09:00 514714 p5-org-viewer/pm notify_recv - ref=c2dd54 misdelivered=0 latency=31
+2026-10-24T01:16:00+09:00 250b08 p5-org-viewer/pm ack - ref=c2dd54 via=notify latency=31
+2026-10-24T01:16:09+09:00 a235f3 p5-org-viewer/pm component_new - p5-org-viewer/teams/viewer
+2026-10-24T01:16:09+09:00 c39a26 p5-org-viewer/pm assign - p5-org-viewer/coordinator-viewer position=coordinator occupation=- model=opus
+2026-10-24T01:16:09+09:00 f3a8a8 p5-org-viewer/pm launch - p5-org-viewer/coordinator-viewer session=2d6b3d7c-e21d-4227-a22b-546e848f82b7 model=opus
+2026-10-24T01:16:23+09:00 372e05 p5-org-viewer/pm start p5-org-viewer/coordinator-viewer msg=log/msgs/372e05.md
+2026-10-24T01:16:23+09:00 9abad7 p5-org-viewer/pm notify_sent p5-org-viewer/coordinator-viewer ref=372e05 via=orca
+2026-10-24T01:16:28+09:00 846abc p5-org-viewer/coordinator-viewer notify_recv - ref=372e05 misdelivered=0 latency=5
+2026-10-24T01:16:28+09:00 2cb65d p5-org-viewer/coordinator-viewer ack - ref=372e05 via=notify latency=5
+2026-10-24T01:18:49+09:00 17b6a4 p5-org-viewer/coordinator-viewer report p5-org-viewer/pm msg=log/msgs/17b6a4.md
+2026-10-24T01:18:49+09:00 b7330d p5-org-viewer/coordinator-viewer notify_skipped p5-org-viewer/pm ref=17b6a4 reason=waiting
+2026-10-24T01:18:57+09:00 c544d5 p5-org-viewer/pm ack - ref=17b6a4 via=poll latency=8
+2026-10-24T01:19:02+09:00 af498c p5-org-viewer/pm wrap_up p5-org-viewer/coordinator-viewer msg=log/msgs/af498c.md
+2026-10-24T01:19:02+09:00 0938ab p5-org-viewer/pm notify_skipped p5-org-viewer/coordinator-viewer ref=af498c reason=waiting
+2026-10-24T01:19:06+09:00 dc94d1 p5-org-viewer/pm assign - p5-org-viewer/teams/viewer/leader position=leader occupation=engineer model=opus
+2026-10-24T01:19:06+09:00 ae5b4f p5-org-viewer/pm launch - p5-org-viewer/teams/viewer/leader session=6f1c1b6b-72a4-4cb9-b006-94dd90f9c634 model=opus
+2026-10-24T01:19:12+09:00 ec3639 p5-org-viewer/coordinator-viewer ack - ref=af498c via=poll latency=10
+2026-10-24T01:19:18+09:00 abd9db p5-org-viewer/pm start p5-org-viewer/teams/viewer/leader msg=log/msgs/abd9db.md
+2026-10-24T01:19:18+09:00 b91f3b p5-org-viewer/pm notify_sent p5-org-viewer/teams/viewer/leader ref=abd9db via=orca
+2026-10-24T01:19:22+09:00 da32e0 p5-org-viewer/coordinator-viewer done p5-org-viewer/pm -
+2026-10-24T01:19:22+09:00 d23a54 p5-org-viewer/coordinator-viewer notify_sent p5-org-viewer/pm ref=da32e0 via=orca
+2026-10-24T01:19:23+09:00 2cc61a p5-org-viewer/teams/viewer/leader notify_recv - ref=abd9db misdelivered=0 latency=5
+2026-10-24T01:19:23+09:00 0638ff p5-org-viewer/teams/viewer/leader ack - ref=abd9db via=notify latency=5
+2026-10-24T01:19:53+09:00 934fe8 p5-org-viewer/pm notify_recv - ref=da32e0 misdelivered=0 latency=31
+2026-10-24T01:19:53+09:00 50686a p5-org-viewer/pm ack - ref=da32e0 via=notify latency=31
+2026-10-24T01:19:53+09:00 e9d88f p5-org-viewer/pm teardown p5-org-viewer/coordinator-viewer report=reports/sessions/p5-org-viewer__coordinator-viewer-2d6b3d7c.yaml
+2026-10-24T01:21:23+09:00 ab0eaa p5-org-viewer/teams/viewer/leader assign - p5-org-viewer/teams/viewer/worker-export position=worker occupation=engineer model=opus
+2026-10-24T01:21:23+09:00 c01a3e p5-org-viewer/teams/viewer/leader assign - p5-org-viewer/teams/viewer/worker-viewer position=worker occupation=engineer model=sonnet
+2026-10-24T01:21:23+09:00 16b731 p5-org-viewer/teams/viewer/leader assign - p5-org-viewer/teams/viewer/reviewer position=reviewer occupation=engineer model=sonnet
+2026-10-24T01:21:23+09:00 d5639f p5-org-viewer/teams/viewer/leader launch - p5-org-viewer/teams/viewer/worker-export session=098dcfca-ec84-49ce-a87d-2b15c622a52f model=opus
+2026-10-24T01:21:23+09:00 6dbf6b p5-org-viewer/teams/viewer/leader launch - p5-org-viewer/teams/viewer/worker-viewer session=3cf48c51-bee9-4974-9171-ca816ee9b741 model=sonnet
+2026-10-24T01:21:39+09:00 8c5725 p5-org-viewer/teams/viewer/leader start p5-org-viewer/teams/viewer/worker-export msg=log/msgs/8c5725.md
+2026-10-24T01:21:39+09:00 9e81a7 p5-org-viewer/teams/viewer/leader notify_sent p5-org-viewer/teams/viewer/worker-export ref=8c5725 via=orca
+2026-10-24T01:21:39+09:00 2330fc p5-org-viewer/teams/viewer/leader start p5-org-viewer/teams/viewer/worker-viewer msg=log/msgs/2330fc.md
+2026-10-24T01:21:39+09:00 21198b p5-org-viewer/teams/viewer/leader notify_sent p5-org-viewer/teams/viewer/worker-viewer ref=2330fc via=orca
+2026-10-24T01:21:39+09:00 f55937 p5-org-viewer/teams/viewer/worker-export ack - ref=8c5725 via=poll latency=0
+2026-10-24T01:21:55+09:00 2cbdae p5-org-viewer/teams/viewer/worker-export notify_recv - ref=8c5725 misdelivered=0 latency=16
+2026-10-24T01:22:53+09:00 d354d1 p5-org-viewer/teams/viewer/worker-viewer notify_recv - ref=2330fc misdelivered=0 latency=74
+2026-10-24T01:22:53+09:00 5aa920 p5-org-viewer/teams/viewer/worker-viewer ack - ref=2330fc via=notify latency=74
+2026-10-24T01:25:02+09:00 7ce09d p5-org-viewer/teams/viewer/worker-export report p5-org-viewer/teams/viewer/leader msg=log/msgs/7ce09d.md
+2026-10-24T01:25:02+09:00 952ea8 p5-org-viewer/teams/viewer/worker-export notify_skipped p5-org-viewer/teams/viewer/leader ref=7ce09d reason=waiting
+2026-10-24T01:25:02+09:00 485bb5 p5-org-viewer/teams/viewer/leader ack - ref=7ce09d via=poll latency=0
+2026-10-24T01:25:06+09:00 28e68a p5-org-viewer/teams/viewer/leader report p5-org-viewer/teams/viewer/worker-viewer msg=log/msgs/28e68a.md
+2026-10-24T01:25:06+09:00 8ccffe p5-org-viewer/teams/viewer/leader notify_sent p5-org-viewer/teams/viewer/worker-viewer ref=28e68a via=orca
+2026-10-24T01:25:08+09:00 87b487 p5-org-viewer/teams/viewer/worker-viewer review_request p5-org-viewer/teams/viewer/reviewer msg=log/msgs/87b487.md
+2026-10-24T01:25:10+09:00 e503a9 p5-org-viewer/teams/viewer/worker-viewer ack - ref=28e68a via=poll latency=4
+2026-10-24T01:25:25+09:00 4f48a4 p5-org-viewer/teams/viewer/leader launch - p5-org-viewer/teams/viewer/reviewer session=11df580d-a532-4361-b359-72f886d7e429 model=sonnet
+2026-10-24T01:25:40+09:00 3c558c p5-org-viewer/teams/viewer/worker-viewer review_request p5-org-viewer/teams/viewer/reviewer msg=log/msgs/3c558c.md
+2026-10-24T01:25:40+09:00 f0102d p5-org-viewer/teams/viewer/leader start p5-org-viewer/teams/viewer/reviewer msg=log/msgs/f0102d.md
+2026-10-24T01:25:40+09:00 d5567e p5-org-viewer/teams/viewer/leader notify_sent p5-org-viewer/teams/viewer/reviewer ref=f0102d via=orca
+2026-10-24T01:25:40+09:00 fc2678 p5-org-viewer/teams/viewer/leader report p5-org-viewer/teams/viewer/worker-viewer msg=log/msgs/fc2678.md
+2026-10-24T01:25:40+09:00 669676 p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/teams/viewer/worker-viewer ref=fc2678 reason=waiting
+2026-10-24T01:25:47+09:00 2cdc43 p5-org-viewer/teams/viewer/reviewer ack - ref=87b487 via=poll latency=39
+2026-10-24T01:25:47+09:00 5ac334 p5-org-viewer/teams/viewer/reviewer ack - ref=3c558c via=poll latency=7
+2026-10-24T01:25:47+09:00 8fc460 p5-org-viewer/teams/viewer/reviewer ack - ref=f0102d via=poll latency=7
+2026-10-24T01:25:50+09:00 e9a975 p5-org-viewer/teams/viewer/worker-viewer ack - ref=fc2678 via=poll latency=10
+2026-10-24T01:25:57+09:00 a8034c p5-org-viewer/teams/viewer/reviewer notify_recv - ref=f0102d misdelivered=0 latency=17
+2026-10-24T01:26:15+09:00 5eb822 p5-org-viewer/teams/viewer/worker-export review_request p5-org-viewer/teams/viewer/reviewer msg=log/msgs/5eb822.md
+2026-10-24T01:26:15+09:00 eed6a2 p5-org-viewer/teams/viewer/worker-export notify_sent p5-org-viewer/teams/viewer/reviewer ref=5eb822 via=orca
+2026-10-24T01:26:35+09:00 aa3336 p5-org-viewer/teams/viewer/reviewer review_ng p5-org-viewer/teams/viewer/worker-viewer msg=log/msgs/aa3336.md
+2026-10-24T01:26:35+09:00 5a2e53 p5-org-viewer/teams/viewer/reviewer notify_skipped p5-org-viewer/teams/viewer/worker-viewer ref=aa3336 reason=waiting
+2026-10-24T01:26:36+09:00 71ecc3 p5-org-viewer/teams/viewer/reviewer notify_recv - ref=5eb822 misdelivered=0 latency=21
+2026-10-24T01:26:36+09:00 f89cfc p5-org-viewer/teams/viewer/reviewer ack - ref=5eb822 via=notify latency=21
+2026-10-24T01:26:42+09:00 642de6 p5-org-viewer/teams/viewer/worker-viewer ack - ref=aa3336 via=poll latency=7
+2026-10-24T01:26:50+09:00 22d537 p5-org-viewer/teams/viewer/reviewer review_ok p5-org-viewer/teams/viewer/leader msg=log/msgs/22d537.md
+2026-10-24T01:26:50+09:00 08f305 p5-org-viewer/teams/viewer/reviewer notify_skipped p5-org-viewer/teams/viewer/leader ref=22d537 reason=waiting
+2026-10-24T01:26:54+09:00 d787ec p5-org-viewer/teams/viewer/leader ack - ref=22d537 via=poll latency=4
+2026-10-24T01:27:09+09:00 f407da p5-org-viewer/teams/viewer/worker-viewer review_request p5-org-viewer/teams/viewer/reviewer msg=log/msgs/f407da.md
+2026-10-24T01:27:09+09:00 697667 p5-org-viewer/teams/viewer/worker-viewer notify_skipped p5-org-viewer/teams/viewer/reviewer ref=f407da reason=waiting
+2026-10-24T01:27:12+09:00 c2a469 p5-org-viewer/teams/viewer/reviewer ack - ref=f407da via=poll latency=3
+2026-10-24T01:27:25+09:00 b8283e p5-org-viewer/teams/viewer/reviewer review_ok p5-org-viewer/teams/viewer/leader msg=log/msgs/b8283e.md
+2026-10-24T01:27:25+09:00 326dd3 p5-org-viewer/teams/viewer/reviewer notify_skipped p5-org-viewer/teams/viewer/leader ref=b8283e reason=waiting
+2026-10-24T01:27:31+09:00 fce59b p5-org-viewer/teams/viewer/leader ack - ref=b8283e via=poll latency=6
+2026-10-24T01:28:06+09:00 02a83f p5-org-viewer/teams/viewer/leader rework p5-org-viewer/teams/viewer/worker-viewer msg=log/msgs/02a83f.md
+2026-10-24T01:28:06+09:00 4c996b p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/teams/viewer/worker-viewer ref=02a83f reason=waiting
+2026-10-24T01:28:09+09:00 2b5616 p5-org-viewer/teams/viewer/worker-viewer ack - ref=02a83f via=poll latency=3
+2026-10-24T01:28:50+09:00 403aad p5-org-viewer/teams/viewer/worker-viewer review_request p5-org-viewer/teams/viewer/reviewer msg=log/msgs/403aad.md
+2026-10-24T01:28:50+09:00 75d4e8 p5-org-viewer/teams/viewer/worker-viewer notify_skipped p5-org-viewer/teams/viewer/reviewer ref=403aad reason=waiting
+2026-10-24T01:28:55+09:00 b79b12 p5-org-viewer/teams/viewer/reviewer ack - ref=403aad via=poll latency=5
+2026-10-24T01:29:11+09:00 ab626d p5-org-viewer/teams/viewer/reviewer review_ok p5-org-viewer/teams/viewer/leader msg=log/msgs/ab626d.md
+2026-10-24T01:29:11+09:00 5d2480 p5-org-viewer/teams/viewer/reviewer notify_skipped p5-org-viewer/teams/viewer/leader ref=ab626d reason=waiting
+2026-10-24T01:29:11+09:00 f9b976 p5-org-viewer/teams/viewer/leader ack - ref=ab626d via=poll latency=0
+2026-10-24T01:29:27+09:00 94fa32 p5-org-viewer/teams/viewer/leader wrap_up p5-org-viewer/teams/viewer/worker-export msg=log/msgs/94fa32.md
+2026-10-24T01:29:27+09:00 ff93f0 p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/teams/viewer/worker-export ref=94fa32 reason=waiting
+2026-10-24T01:29:27+09:00 0196f5 p5-org-viewer/teams/viewer/leader wrap_up p5-org-viewer/teams/viewer/worker-viewer msg=log/msgs/0196f5.md
+2026-10-24T01:29:27+09:00 e26fbd p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/teams/viewer/worker-viewer ref=0196f5 reason=waiting
+2026-10-24T01:29:27+09:00 b6e59b p5-org-viewer/teams/viewer/leader wrap_up p5-org-viewer/teams/viewer/reviewer msg=log/msgs/b6e59b.md
+2026-10-24T01:29:27+09:00 af1942 p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/teams/viewer/reviewer ref=b6e59b reason=waiting
+2026-10-24T01:29:30+09:00 a0d6a1 p5-org-viewer/teams/viewer/worker-export ack - ref=94fa32 via=poll latency=3
+2026-10-24T01:29:30+09:00 2cdd2d p5-org-viewer/teams/viewer/worker-viewer ack - ref=0196f5 via=poll latency=3
+2026-10-24T01:29:31+09:00 bd57bc p5-org-viewer/teams/viewer/reviewer ack - ref=b6e59b via=poll latency=4
+2026-10-24T01:29:39+09:00 118922 p5-org-viewer/teams/viewer/worker-viewer done p5-org-viewer/teams/viewer/leader -
+2026-10-24T01:29:39+09:00 ad90e9 p5-org-viewer/teams/viewer/worker-viewer notify_skipped p5-org-viewer/teams/viewer/leader ref=118922 reason=waiting
+2026-10-24T01:29:40+09:00 322034 p5-org-viewer/teams/viewer/leader ack - ref=118922 via=poll latency=1
+2026-10-24T01:29:41+09:00 da7c27 p5-org-viewer/teams/viewer/reviewer done p5-org-viewer/teams/viewer/leader -
+2026-10-24T01:29:41+09:00 150a17 p5-org-viewer/teams/viewer/reviewer notify_sent p5-org-viewer/teams/viewer/leader ref=da7c27 via=orca
+2026-10-24T01:29:42+09:00 159078 p5-org-viewer/teams/viewer/leader ack - ref=da7c27 via=poll latency=1
+2026-10-24T01:29:44+09:00 06c01a p5-org-viewer/teams/viewer/worker-export done p5-org-viewer/teams/viewer/leader -
+2026-10-24T01:29:44+09:00 194adc p5-org-viewer/teams/viewer/worker-export notify_sent p5-org-viewer/teams/viewer/leader ref=06c01a via=orca
+2026-10-24T01:29:45+09:00 b21e4d p5-org-viewer/teams/viewer/leader ack - ref=06c01a via=poll latency=1
+2026-10-24T01:29:48+09:00 d526fa p5-org-viewer/teams/viewer/leader teardown p5-org-viewer/teams/viewer/worker-export report=reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml
+2026-10-24T01:29:48+09:00 5b3c88 p5-org-viewer/teams/viewer/leader teardown p5-org-viewer/teams/viewer/worker-viewer report=reports/sessions/p5-org-viewer__teams__viewer__worker-viewer-3cf48c51.yaml
+2026-10-24T01:29:48+09:00 f1eabe p5-org-viewer/teams/viewer/leader teardown p5-org-viewer/teams/viewer/reviewer report=reports/sessions/p5-org-viewer__teams__viewer__reviewer-11df580d.yaml
+2026-10-24T01:30:02+09:00 980b2d p5-org-viewer/teams/viewer/leader notify_recv - ref=da7c27 misdelivered=0 latency=21
+2026-10-24T01:30:27+09:00 146e61 p5-org-viewer/teams/viewer/leader report p5-org-viewer/pm msg=log/msgs/146e61.md
+2026-10-24T01:30:27+09:00 fce69c p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/pm ref=146e61 reason=waiting
+2026-10-24T01:30:35+09:00 d4f17f p5-org-viewer/pm ack - ref=146e61 via=poll latency=8
+2026-10-24T01:30:49+09:00 cf9712 p5-org-viewer/pm wrap_up p5-org-viewer/teams/viewer/leader msg=log/msgs/cf9712.md
+2026-10-24T01:30:49+09:00 52adc6 p5-org-viewer/pm notify_skipped p5-org-viewer/teams/viewer/leader ref=cf9712 reason=waiting
+2026-10-24T01:30:49+09:00 592a90 p5-org-viewer/teams/viewer/leader ack - ref=cf9712 via=poll latency=0
+2026-10-24T01:31:02+09:00 11324c p5-org-viewer/teams/viewer/leader done p5-org-viewer/pm -
+2026-10-24T01:31:02+09:00 377d49 p5-org-viewer/teams/viewer/leader notify_skipped p5-org-viewer/pm ref=11324c reason=waiting
+2026-10-24T01:31:11+09:00 f652a7 p5-org-viewer/pm ack - ref=11324c via=poll latency=9
+2026-10-24T01:31:14+09:00 6e71cc p5-org-viewer/pm teardown p5-org-viewer/teams/viewer/leader report=reports/sessions/p5-org-viewer__teams__viewer__leader-6f1c1b6b.yaml
+2026-10-24T01:31:39+09:00 2140aa p5-org-viewer/pm report user msg=log/msgs/2140aa.md
+2026-10-24T01:31:44+09:00 3bb04f user ack - ref=2140aa via=poll latency=5
+2026-10-24T01:31:57+09:00 ba4c08 user wrap_up p5-org-viewer/pm msg=log/msgs/ba4c08.md
+2026-10-24T01:31:57+09:00 6bf406 user notify_skipped p5-org-viewer/pm ref=ba4c08 reason=waiting
+2026-10-24T01:32:02+09:00 6e55e8 patrol patrol user sent=1 via=sent
+2026-10-24T01:32:02+09:00 85d873 p5-org-viewer/pm ack - ref=ba4c08 via=poll latency=5
+2026-10-24T01:32:12+09:00 c0072d p5-org-viewer/pm done user -
+2026-10-24T01:32:13+09:00 c2ce80 user ack - ref=c0072d via=poll latency=1
+2026-10-24T01:32:13+09:00 24c3fe user component_closed - p5-org-viewer/teams/viewer
+2026-10-24T01:32:13+09:00 e8dd7b user teardown p5-org-viewer/pm report=reports/sessions/p5-org-viewer__pm-92edb217.yaml
+2026-10-24T01:32:13+09:00 7cabe3 user component_closed - p5-org-viewer

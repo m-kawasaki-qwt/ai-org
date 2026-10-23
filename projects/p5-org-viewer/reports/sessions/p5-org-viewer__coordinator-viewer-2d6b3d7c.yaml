@@ -1,0 +1,61 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p5-org-viewer/coordinator-viewer"
+  position: "coordinator"
+  occupation: null
+  boss: "p5-org-viewer/pm"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "2d6b3d7c-e21d-4227-a22b-546e848f82b7"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T01:16:09+09:00"
+  closed_at: "2026-10-24T01:19:53+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/2d6b3d7c-e21d-4227-a22b-546e848f82b7.jsonl"
+  started_at: "2026-10-24T01:16:17+09:00"
+  ended_at: "2026-10-24T01:19:25+09:00"
+  span_min: 3.1
+  model_effective:
+    claude-opus-5-5: 43
+  api_messages: 21
+  tokens:
+    input: 42
+    output: 15276
+    cache_read: 2126920
+    cache_write: 119020
+  tokens_total: 2261258
+  tool_calls:
+    Bash: 18
+    Write: 6
+    Edit: 2
+  events_sent:
+    report: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/charter.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/packs/leader.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/packs/reviewer.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/packs/worker-export.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/packs/worker-viewer.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/thread.md"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "viewer チーム（orgctl export ＋ Astro ビューア）の編成案と、一人ずつの文脈パックを作る"
+  did:
+    - "PM の start・チームの charter・context.yaml・orgctl.py の記録まわり・tools の 2 本・policy.md・ai-org-plan.md の決まったこと・p1〜p4 の記録を読んだ"
+    - "編成案（leader opus／worker-export opus／worker-viewer sonnet／reviewer sonnet）を出した"
+    - "packs/ に 4 枚を書き、report（17b6a4）で PM へ返した"
+  outputs:
+    - "projects/p5-org-viewer/teams/viewer/packs/leader.md"
+    - "projects/p5-org-viewer/teams/viewer/packs/worker-export.md"
+    - "projects/p5-org-viewer/teams/viewer/packs/worker-viewer.md"
+    - "projects/p5-org-viewer/teams/viewer/packs/reviewer.md"
+  decided:
+    - { what: "全員 job を丸ごと deny にした", why: "組織内の道具で事業の文脈が要らない" }
+    - { what: "worker-viewer を sonnet にした", why: "スキーマが先に固まり、描くだけの作業になるため" }
+    - { what: "未読の数え方・監査の改訂案の拾い方・開いているプロジェクトのトークンを、リーダーが決める点として leader.md に書いた", why: "記録の側に決まった形が無く、スキーマで決める必要がある" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "context.yaml の allow が job だけで、題材が組織そのもの（ai-org・dev-tools の org/）のときに読む先の行が無い。今回は charter の範囲を根拠に ai-org・dev-tools を読ませた"
+    - "PM の start が届いたとき、最初の inbox（--via 無し）では『新しいものは無い』と出て、--ref を付けると読めた。通知より先に打ったためか、未確認"

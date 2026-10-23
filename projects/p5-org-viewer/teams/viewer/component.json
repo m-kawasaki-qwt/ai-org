@@ -1,0 +1,16 @@
+{
+  "kind": "team",
+  "id": "p5-org-viewer/teams/viewer",
+  "parent": "p5-org-viewer",
+  "root": false,
+  "created_at": "2026-10-24T01:16:09+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p5-org-viewer/teams/viewer/leader",
+    "worker-export": "p5-org-viewer/teams/viewer/worker-export",
+    "worker-viewer": "p5-org-viewer/teams/viewer/worker-viewer",
+    "reviewer": "p5-org-viewer/teams/viewer/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T01:32:13+09:00"
+}

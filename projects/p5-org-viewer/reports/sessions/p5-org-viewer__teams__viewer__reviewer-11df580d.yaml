@@ -1,0 +1,65 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p5-org-viewer/teams/viewer/reviewer"
+  position: "reviewer"
+  occupation: "engineer"
+  boss: "p5-org-viewer/teams/viewer/leader"
+  model_requested: "sonnet"
+  agent: "claude"
+  session_id: "11df580d-a532-4361-b359-72f886d7e429"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T01:25:25+09:00"
+  closed_at: "2026-10-24T01:29:48+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/11df580d-a532-4361-b359-72f886d7e429.jsonl"
+  started_at: "2026-10-24T01:25:36+09:00"
+  ended_at: "2026-10-24T01:29:43+09:00"
+  span_min: 4.1
+  model_effective:
+    claude-sonnet-5-5: 46
+  api_messages: 19
+  tokens:
+    input: 38
+    output: 11339
+    cache_read: 1943831
+    cache_write: 122267
+  tokens_total: 2077475
+  tool_calls:
+    Read: 14
+    Bash: 17
+    Write: 1
+  events_sent:
+    review_ng: 1
+    review_ok: 3
+    done: 1
+  review_ng_count: 1
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v1b.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v2.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v3.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/1-projects.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/2-project-detail.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/3-inbox.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/4-performance.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/5-audit.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/thread.md"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "viewer チームの成果物（orgctl export とスキーマ・Astro ビューア・README）を完了条件 1〜4 に照らしてレビューする"
+  did:
+    - "export を本体の projects/ に向けて実行し、--check・既存コード無変更（+409/-0）・NOISE_KINDS 流用・記録への書き込みなしを確認して review_ok"
+    - "ビューア第 1 版（実物の snapshot.json）を build とスクリーンショットで見て review_ng 3 件（unclear の全件展開・受け箱の本文なし done・一覧の絶対パス折り返し）"
+    - "第 2 版・リーダーの rework を受けた第 3 版を、スクリーンショットと build で確かめて review_ok"
+  outputs:
+    - "thread.md の「レビュアー 第1〜4回」"
+    - "log/msgs の review_ng（aa3336）・review_ok（22d537・b8283e・ab626d）"
+  decided:
+    - { what: "手書きデータ版（87b487）は判定せず、実物の snapshot.json 版を第 1 回とした", why: "リーダーの start の指示" }
+    - { what: "export とビューアの review_ok を別々に出した", why: "担当の作業者が別で、export は先に確かめ終わったため" }
+    - { what: "受け箱の未読が畳みに隠れる点は、第 2 版では申し送りに留めた", why: "完了条件の文言には直接当たらず、リーダーが rework で拾ったため結果的に直った" }
+  escalated: []
+  not_done:
+    - "dev 起動（astro dev）での表示は確かめていない（build と作業者のスクリーンショットで確認）"
+  unclear:
+    - "review_request が 2 通（手書き版と実物補足）続けて来たため、どれを判定対象にするかはリーダーの start を読むまで分からなかった"
+    - "review_ok を承認したあとにリーダーが rework を出す流れで、承認が目的に届いていなかった（受け箱の未読が畳みの中に隠れる点は私の申し送りには書いたが、指摘にはしなかった）。承認の基準に「画面の数字が指す先が初期表示で見えるか」を入れるべきだった"
+    - "npm の既定キャッシュ権限が壊れている環境では README の npm install が通らない可能性（作業者の報告より。自分では未確認）"

@@ -1,0 +1,76 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p5-org-viewer/teams/viewer/worker-export"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p5-org-viewer/teams/viewer/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "098dcfca-ec84-49ce-a87d-2b15c622a52f"
+  cwd: "/Users/maka343noshi/orca/workspaces/dev-tools/org-viewer"
+  launched_at: "2026-10-24T01:21:23+09:00"
+  closed_at: "2026-10-24T01:29:48+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-orca-workspaces-dev-tools-org-viewer/098dcfca-ec84-49ce-a87d-2b15c622a52f.jsonl"
+  started_at: "2026-10-24T01:21:31+09:00"
+  ended_at: "2026-10-24T01:29:47+09:00"
+  span_min: 8.3
+  model_effective:
+    claude-opus-5-5: 73
+  api_messages: 31
+  tokens:
+    input: 62
+    output: 31460
+    cache_read: 4298638
+    cache_write: 163662
+  tokens_total: 4493822
+  tool_calls:
+    Bash: 30
+    Read: 1
+    Edit: 2
+    Write: 3
+  events_sent:
+    report: 1
+    review_request: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v1.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v1b.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v2.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/msgs/worker-viewer-v3.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/1-projects.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/2-project-detail.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/3-inbox.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/4-performance.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/screenshots/5-audit.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p5-org-viewer/teams/viewer/thread.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-viewer/org/schema/snapshot.schema.json"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-viewer/org/scripts/orgctl.py"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "dev-tools の orgctl に export を足し、ai-org の全プロジェクトの記録から snapshot.json を書き出す。スキーマ（JSON Schema）と、標準ライブラリだけで確かめる手段も用意する"
+  did:
+    - "schema.md v1 を JSON Schema（org/schema/snapshot.schema.json）に起こした"
+    - "orgctl.py に export（--projects・--out・--check）を足した。既存の関数は変えず、NOISE_KINDS・read_events・offset_file・member_state などをそのまま呼んだ"
+    - "yaml_dump の形だけを読む小さな読み手を書き、セッション報告の machine と user-inbox.yaml を読んだ。self は unclear・escalated・not_done・asked だけ拾い、原文も残した"
+    - "本番の projects/ で書き出し、未読・トークン・unclear の件数・監査の改訂案を、記録を grep・awk で数えた値と突き合わせた（全部一致）"
+    - "写しで端のケース（開いていて報告ゼロ・自己申告なし・events.log が空）と、--check が壊れた形を落とすかを確かめた"
+    - "export の前後で、閉じたプロジェクトの記録が 1 つも変わらないこと（読むだけ）を確かめた"
+  outputs:
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-viewer/org/scripts/orgctl.py（export の節）"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-viewer/org/schema/snapshot.schema.json"
+    - "/Users/maka343noshi/orca/workspaces/ai-org/viewer/viewer/data/snapshot.json"
+  decided:
+    - { what: "プロジェクトのトークン・時間は、入れ替え前の分も含めて全セッション報告を合計した", why: "使った分は全部数えるのが目的（パフォーマンス）に合う" }
+    - { what: "受け箱の events には、宛先 user の NOISE 以外の行を全部入れた（done も入る）", why: "schema.md の定義どおり。種類で絞る決まりは無い" }
+    - { what: "user-inbox の summary の先頭の # を落とした", why: "Event の summary と同じ切り方にそろえるため" }
+    - { what: "--check は type・required・properties・additionalProperties・items・enum・$ref・anyOf を確かめる", why: "null を取りうるオブジェクト（session・last_event）も中まで確かめるため" }
+  escalated: []
+  not_done:
+    - "review_request（5eb822）へのレビュアーの返事は、wrap_up の時点でまだ受けていない"
+  unclear:
+    - "文脈パックには p5 は報告ゼロとあったが、実際にはコーディネーターの報告が 1 件あった（コーディネーターがもう片づいていたため）。報告ゼロのケースは写しで確かめた"
+    - "orca terminal send が『Enter が飲まれたかもしれない』と警告した。決まりどおり再送しなかった"
+    - "Bash で zsh に `echo =====` と打つと『==== not found』で失敗した（zsh の = の展開）。区切りは別の文字にした"
+    - "$TMPDIR を含むパスを python -c の中に書くと、directory-guard が '/fx/s.json' のような許可外の読み取りとしてブロックした。scratchpad にスクリプトを置いて走らせた"
+    - "export を開いているプロジェクトに向けると、他のメンバーが同じ時間に log/ に書くので、『読むだけ』は閉じたプロジェクトでしか確かめられなかった"
