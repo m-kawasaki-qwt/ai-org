@@ -1,0 +1,60 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p11-issue-list/teams/issues/worker-1"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p11-issue-list/teams/issues/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "937be0ce-430d-4390-9135-1b08fdfbb1f8"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T19:17:55+09:00"
+  closed_at: "2026-10-24T19:52:43+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/937be0ce-430d-4390-9135-1b08fdfbb1f8.jsonl"
+  exists: false
+  events_sent:
+    report: 1
+    review_request: 5
+    done: 1
+  review_ng_count: 3
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/issues.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/build.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/extract.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/issues_def.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/extract.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.tsv"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "閉じた p1〜p9 の記録から AI 組織の問題・課題を抜き出し、同じ中身を 1 件にまとめ、直ったかを照合して issues.md にする（直し方は書かない・数はスクリプト）"
+  did:
+    - "抜き出しのスクリプト extract.py を書き、セッション報告・msgs の節と札・review_ng/rework/nudge の本文・user-inbox・監査役の出力 2 種・job の README から 1 行 1 件の中間ファイルと件数表を作った"
+    - "網羅の段で review_ng 1 回（user-inbox・notify-outbox の漏れ、「未確認」の節の漏れ）を受けて直し、承認を得た"
+    - "431 行を 68 件に寄せ、150 行は 11 の理由で入れなかった（issues_def.py に判断、build.py が数え・並べ・対応表を書く）"
+    - "dev-tools main の PR のマージ時刻と各プロジェクトの開始・終了時刻を突き合わせ、直った 15・不明 39・印なし 14 を決めた"
+    - "本体の段で review_ng 2 回（job の README の書き足しで数がずれた・全員待ちとループ?の食い違い・監査の件の 0 プロジェクト・npm の直し方の混入・回数と状態の食い違い／p1・p2 の監査の扱い）を受けて直した"
+  outputs:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/issues.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/extract.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/issues_def.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/build.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/extract.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.md"
+  decided:
+    - { what: "「申し送り」「残る不明点」「未確認」の節と、見出しでない「申し送り:」の札も候補として抜いた", why: "「うまくいかなかったこと」だけだと、同じ性質の記録が見出しの言い方の違いで漏れるため。問題でないものは対応表で入れない理由を書いた" }
+    - { what: "並びはプロジェクト数で、同数は記録の数 → 新しい順", why: "同じ人が unclear と報告の両方に書くと記録の数が膨らむため、広がりを先にした" }
+    - { what: "監査役の出力・p9 の監査・job の控えは参照元に足すが数えない（ほかの出どころが無い件だけ数える）", why: "同じ出来事を別の出どころが書いたもので、二重に数えないため" }
+    - { what: "対応表は抜き出しの id で書き、build.py が行数と参照元の指紋で突き合わせて、漏れ・二重があれば止まる形にした", why: "手で数えた数を載せないため" }
+    - { what: "直しの記録はあるがコミット自身が「まだ混ざる」と注記している件（files_changed）は不明にした", why: "「迷ったら不明」の方針" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "レビュアーがまだ assign されておらず、orgctl が review_request の宛先にできなかった（「宛先がいない」）。リーダーへ report で同じ本文を出し、レビュアーが起きてから出し直した"
+    - "job の README が作業の途中（19:41）に書き足され（p10 の行）、回し直すと数と参照元の行がずれた。git の管理外なので版を固定できず、読んだ版の指紋を残す形にした"
+    - "「プロジェクト数」を、記録が置かれているプロジェクトで数えた。p3・p6 の記録が p1・p5 のことを書いている件（セッション報告の上書き・p5 の撮影）は、出来事のプロジェクトと数えたプロジェクトがずれる"
+    - "起動した直後の inbox で start を読み、あとから来た知らせの inbox --via notify --ref が「新しいものは無い」になった（一覧の 5 番と同じ形）"

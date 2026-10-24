@@ -1,0 +1,64 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p11-issue-list/coordinator"
+  position: "coordinator"
+  occupation: null
+  boss: "p11-issue-list/pm"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "c99aa88d-838d-4f2b-a619-189b2901d53c"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T19:14:02+09:00"
+  closed_at: "2026-10-24T19:18:41+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/c99aa88d-838d-4f2b-a619-189b2901d53c.jsonl"
+  started_at: "2026-10-24T19:14:09+09:00"
+  ended_at: "2026-10-24T19:18:40+09:00"
+  span_min: 4.5
+  model_effective:
+    claude-opus-5-5: 41
+  api_messages: 21
+  tokens:
+    input: 42
+    output: 17558
+    cache_read: 2049388
+    cache_write: 111146
+  tokens_total: 2178134
+  tool_calls:
+    Bash: 19
+    Write: 5
+    Edit: 2
+  events_sent:
+    report: 2
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/leader.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/reviewer.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/worker.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/charter.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/hints/worker-1.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/viewer/.astro/dev.json"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/viewer/.astro/types.d.ts"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/viewer/data/snapshot.json"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "p11-issue-list（閉じた p1〜p9 の問題・課題の一覧）の切り方・編成・文脈パックを PM に返す"
+  did:
+    - "材料の量と形（セッション報告 56 本・msgs 226 本・「うまくいかなかったこと」の見出しの揺れ・監査 2 種・job の控え・dev-tools の main のマージ状況）を確かめた"
+    - "チーム issues 1 つ・作業者 1 人・抜き出しのあとにレビュアーが網羅だけを見る段を挟む編成で返した（f6503b）"
+    - "leader・worker・reviewer の 3 本のパックを書いた"
+    - "PM の合意を受け、網羅の段を指摘回数の上限とは別勘定にパックを直した（05b249）"
+  outputs:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/leader.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/worker.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/reviewer.md"
+  decided:
+    - { what: "作業者を 2 人に分けず 1 人にし、網羅の確かめは 1 回目の review_request で挟む", why: "質を決めるのは同じ中身を 1 件にする判断で、1 人が全体を見ないとぶれる。抜き出しはスクリプトでほぼ済み、分けると p9 の監査で出た受け持ちの線の食い違いを招く" }
+    - { what: "「直った」は直した記録（main にマージ済み）かつその後のプロジェクトで再発なしの両方、片方なら不明。印なし＝起きている、の 3 状態", why: "PM の挙げた崩れる前提（雛形が変わった＝直ったの短絡）を、照らせる形にするため" }
+    - { what: "deny に p10 のディレクトリと ~/.claude/projects/（会話ログ）を足した", why: "p10 は範囲外、材料はセッション報告の self だけで会話ログは要らない" }
+    - { what: "レビュアーの抜き取りは乱数で選び種を書く", why: "選び方を作業者に寄せないため" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "orca terminal send が「Enter が飲まれたかもしれない」と警告した（05b249 の知らせ）。手順どおり再送しなかった"

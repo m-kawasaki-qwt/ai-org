@@ -1,0 +1,83 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p11-issue-list/pm"
+  position: "pm"
+  occupation: null
+  boss: "user"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "b7d1e04a-f757-4341-ae69-4dc1716bb770"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T19:13:37+09:00"
+  closed_at: "2026-10-24T19:55:15+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/b7d1e04a-f757-4341-ae69-4dc1716bb770.jsonl"
+  started_at: "2026-10-24T19:13:48+09:00"
+  ended_at: "2026-10-24T19:55:15+09:00"
+  span_min: 41.5
+  model_effective:
+    claude-opus-5-5: 64
+  api_messages: 42
+  tokens:
+    input: 86
+    output: 15903
+    cache_read: 4033810
+    cache_write: 109092
+  tokens_total: 4158891
+  tool_calls:
+    Bash: 38
+    Write: 4
+  events_sent:
+    assign: 2
+    launch: 2
+    start: 2
+    report: 2
+    component_new: 1
+    wrap_up: 2
+    teardown: 2
+    component_closed: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/charter.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/issues.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/leader.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/reviewer.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/worker.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/build.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/extract.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/issues_def.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/charter.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/hints/worker-1.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/extract.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/viewer/.astro/dev.json"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/viewer/.astro/types.d.ts"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/viewer/data/snapshot.json"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "閉じた p1〜p9 の記録から、AI 組織の問題・課題の一覧 issues.md を作る（直し方は書かない）"
+  did:
+    - "charter を読み、補う点が無いことを確かめた"
+    - "コーディネーターに相談し、1 チーム（作業者 1・レビュアー 1）で、まとめの前に網羅のレビューを挟む編成で合意した"
+    - "チーム issues の charter を書いた（コーディネーターの返しを取り込み、完了条件を 11 箇条にした）。リーダーを assign・起動した"
+    - "コーディネーターを wrap_up・teardown した"
+    - "チームの report を受け、issues.md を読み、build.py の再実行で一字一致することを確かめた。参照元 6 か所を乱数で開き、直し方の混入を grep で確かめた"
+    - "チームを wrap_up・teardown し、user へ report を出した"
+  outputs:
+    - "projects/p11-issue-list/issues.md"
+    - "projects/p11-issue-list/scripts/"
+    - "projects/p11-issue-list/teams/issues/charter.md"
+    - "projects/p11-issue-list/log/msgs/2a6974.md"
+  decided:
+    - { what: "子プロジェクトを作らず、チーム 1 つにした", why: "材料は 56 本＋226 本で 1 人の文脈に入る。同じ中身を 1 件にまとめる判断は、1 人がやるほうがぶれない" }
+    - { what: "網羅の段の往復は、指摘の回数の上限とは別に数えることにした", why: "網羅のレビューで回数を使うと、本体の指摘が 1 回しか残らない" }
+    - { what: "3 番の題が中身より狭い点は rework にせず、注記にした", why: "数と参照元に影響しない。川崎さんが選ぶときに読めば分かる" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "検収のとき、Bash の 1 回だけ cd を含めて打ち、セッションの作業ディレクトリが projects/p11-issue-list に移った。害は無かったが、パスの原則に反した"
+    - "検収で build.py を回したので、scripts/__pycache__/ ができた（チームの作業でもできていた）。残すかどうかは根っこの側の判断"

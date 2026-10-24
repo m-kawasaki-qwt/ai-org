@@ -1,0 +1,131 @@
+2026-10-24T19:13:37+09:00 2bbebf user component_new - p11-issue-list
+2026-10-24T19:13:37+09:00 ae9adf user assign - p11-issue-list/pm position=pm occupation=- model=opus
+2026-10-24T19:13:37+09:00 f1120c user launch - p11-issue-list/pm session=b7d1e04a-f757-4341-ae69-4dc1716bb770 model=opus
+2026-10-24T19:13:50+09:00 31cbe2 user start p11-issue-list/pm msg=log/msgs/31cbe2.md
+2026-10-24T19:13:50+09:00 00d4f3 user notify_sent p11-issue-list/pm ref=31cbe2 via=orca
+2026-10-24T19:14:02+09:00 2c5375 p11-issue-list/pm assign - p11-issue-list/coordinator position=coordinator occupation=- model=opus
+2026-10-24T19:14:02+09:00 1785e8 p11-issue-list/pm launch - p11-issue-list/coordinator session=c99aa88d-838d-4f2b-a619-189b2901d53c model=opus
+2026-10-24T19:14:29+09:00 b1b18c p11-issue-list/pm start p11-issue-list/coordinator msg=log/msgs/b1b18c.md
+2026-10-24T19:14:29+09:00 dc5be2 p11-issue-list/pm notify_skipped p11-issue-list/coordinator ref=b1b18c reason=waiting
+2026-10-24T19:14:31+09:00 e1d0a2 p11-issue-list/pm ack - ref=31cbe2 via=poll latency=41
+2026-10-24T19:14:34+09:00 86cc9c p11-issue-list/pm notify_recv - ref=31cbe2 misdelivered=0 latency=44
+2026-10-24T19:14:35+09:00 b963aa p11-issue-list/coordinator ack - ref=b1b18c via=poll latency=6
+2026-10-24T19:16:52+09:00 f6503b p11-issue-list/coordinator report p11-issue-list/pm msg=log/msgs/f6503b.md
+2026-10-24T19:16:52+09:00 153f71 p11-issue-list/coordinator notify_skipped p11-issue-list/pm ref=f6503b reason=waiting
+2026-10-24T19:16:57+09:00 62e518 p11-issue-list/pm ack - ref=f6503b via=poll latency=5
+2026-10-24T19:17:22+09:00 bf0509 p11-issue-list/pm report p11-issue-list/coordinator msg=log/msgs/bf0509.md
+2026-10-24T19:17:22+09:00 846cf1 p11-issue-list/pm notify_skipped p11-issue-list/coordinator ref=bf0509 reason=waiting
+2026-10-24T19:17:22+09:00 ca0526 p11-issue-list/pm component_new - p11-issue-list/teams/issues
+2026-10-24T19:17:25+09:00 3b9aa4 p11-issue-list/coordinator ack - ref=bf0509 via=poll latency=3
+2026-10-24T19:17:26+09:00 d38fd9 p11-issue-list/pm assign - p11-issue-list/teams/issues/leader position=leader occupation=- model=sonnet
+2026-10-24T19:17:26+09:00 ef3caf p11-issue-list/pm launch - p11-issue-list/teams/issues/leader session=a986a4bb-e10e-4daa-adb6-e01bf11c2531 model=sonnet
+2026-10-24T19:17:35+09:00 05b249 p11-issue-list/coordinator report p11-issue-list/pm msg=log/msgs/05b249.md
+2026-10-24T19:17:35+09:00 a7e9e6 p11-issue-list/coordinator notify_sent p11-issue-list/pm ref=05b249 via=orca
+2026-10-24T19:17:37+09:00 796fa5 p11-issue-list/pm start p11-issue-list/teams/issues/leader msg=log/msgs/796fa5.md
+2026-10-24T19:17:37+09:00 cabe53 p11-issue-list/pm notify_sent p11-issue-list/teams/issues/leader ref=796fa5 via=orca
+2026-10-24T19:17:50+09:00 a4790a p11-issue-list/teams/issues/leader notify_recv - ref=796fa5 misdelivered=0 latency=13
+2026-10-24T19:17:50+09:00 93f575 p11-issue-list/teams/issues/leader ack - ref=796fa5 via=notify latency=13
+2026-10-24T19:17:53+09:00 e3480a p11-issue-list/teams/issues/leader assign - p11-issue-list/teams/issues/worker-1 position=worker occupation=engineer model=opus
+2026-10-24T19:17:55+09:00 497340 p11-issue-list/teams/issues/leader launch - p11-issue-list/teams/issues/worker-1 session=937be0ce-430d-4390-9135-1b08fdfbb1f8 model=opus
+2026-10-24T19:18:07+09:00 ffae2c p11-issue-list/teams/issues/leader start p11-issue-list/teams/issues/worker-1 msg=log/msgs/ffae2c.md
+2026-10-24T19:18:07+09:00 18484c p11-issue-list/teams/issues/leader notify_sent p11-issue-list/teams/issues/worker-1 ref=ffae2c via=orca
+2026-10-24T19:18:11+09:00 864d98 p11-issue-list/pm notify_recv - ref=05b249 misdelivered=0 latency=36
+2026-10-24T19:18:11+09:00 dae6fd p11-issue-list/pm ack - ref=05b249 via=notify latency=36
+2026-10-24T19:18:12+09:00 1753cc p11-issue-list/teams/issues/worker-1 ack - ref=ffae2c via=poll latency=5
+2026-10-24T19:18:16+09:00 ea345f p11-issue-list/pm wrap_up p11-issue-list/coordinator msg=log/msgs/ea345f.md
+2026-10-24T19:18:16+09:00 3f5e2a p11-issue-list/pm notify_skipped p11-issue-list/coordinator ref=ea345f reason=waiting
+2026-10-24T19:18:20+09:00 ab2b98 p11-issue-list/coordinator ack - ref=ea345f via=poll latency=4
+2026-10-24T19:18:21+09:00 5fa916 p11-issue-list/teams/issues/worker-1 notify_recv - ref=ffae2c misdelivered=0 latency=14
+2026-10-24T19:18:32+09:00 8081cd p11-issue-list/coordinator done p11-issue-list/pm -
+2026-10-24T19:18:32+09:00 776ab0 p11-issue-list/coordinator notify_skipped p11-issue-list/pm ref=8081cd reason=waiting
+2026-10-24T19:18:39+09:00 1860a4 p11-issue-list/pm ack - ref=8081cd via=poll latency=7
+2026-10-24T19:18:41+09:00 ccebb4 p11-issue-list/pm teardown p11-issue-list/coordinator report=reports/sessions/p11-issue-list__coordinator-c99aa88d.yaml
+2026-10-24T19:23:25+09:00 f4a6be p11-issue-list/teams/issues/worker-1 report p11-issue-list/teams/issues/leader msg=log/msgs/f4a6be.md
+2026-10-24T19:23:25+09:00 a4da2a p11-issue-list/teams/issues/worker-1 notify_skipped p11-issue-list/teams/issues/leader ref=f4a6be reason=waiting
+2026-10-24T19:23:33+09:00 5d5065 p11-issue-list/teams/issues/leader ack - ref=f4a6be via=poll latency=8
+2026-10-24T19:23:38+09:00 3f02d6 p11-issue-list/teams/issues/leader assign - p11-issue-list/teams/issues/reviewer position=reviewer occupation=- model=opus
+2026-10-24T19:23:40+09:00 48dbff p11-issue-list/teams/issues/leader launch - p11-issue-list/teams/issues/reviewer session=65ee1bb5-3b21-482e-b868-3907c7f8aff7 model=opus
+2026-10-24T19:23:50+09:00 5f1755 p11-issue-list/teams/issues/leader start p11-issue-list/teams/issues/reviewer msg=log/msgs/5f1755.md
+2026-10-24T19:23:50+09:00 e6461b p11-issue-list/teams/issues/leader notify_sent p11-issue-list/teams/issues/reviewer ref=5f1755 via=orca
+2026-10-24T19:23:54+09:00 61eea0 p11-issue-list/teams/issues/reviewer ack - ref=5f1755 via=poll latency=4
+2026-10-24T19:24:07+09:00 6a6169 p11-issue-list/teams/issues/reviewer notify_recv - ref=5f1755 misdelivered=0 latency=17
+2026-10-24T19:24:22+09:00 a43d4f p11-issue-list/teams/issues/leader start p11-issue-list/teams/issues/worker-1 msg=log/msgs/a43d4f.md
+2026-10-24T19:24:22+09:00 90350c p11-issue-list/teams/issues/leader notify_skipped p11-issue-list/teams/issues/worker-1 ref=a43d4f reason=waiting
+2026-10-24T19:24:29+09:00 c626c2 p11-issue-list/teams/issues/worker-1 ack - ref=a43d4f via=poll latency=7
+2026-10-24T19:24:33+09:00 c4eb01 p11-issue-list/teams/issues/worker-1 review_request p11-issue-list/teams/issues/reviewer msg=log/msgs/c4eb01.md
+2026-10-24T19:24:33+09:00 4b3807 p11-issue-list/teams/issues/worker-1 notify_sent p11-issue-list/teams/issues/reviewer ref=c4eb01 via=orca
+2026-10-24T19:24:50+09:00 dcc247 p11-issue-list/teams/issues/reviewer notify_recv - ref=c4eb01 misdelivered=0 latency=17
+2026-10-24T19:24:50+09:00 76f147 p11-issue-list/teams/issues/reviewer ack - ref=c4eb01 via=notify latency=17
+2026-10-24T19:27:14+09:00 aa4bad p11-issue-list/teams/issues/reviewer review_ng p11-issue-list/teams/issues/worker-1 msg=log/msgs/aa4bad.md
+2026-10-24T19:27:14+09:00 b8f5c2 p11-issue-list/teams/issues/reviewer notify_skipped p11-issue-list/teams/issues/worker-1 ref=aa4bad reason=waiting
+2026-10-24T19:27:24+09:00 d98b40 p11-issue-list/teams/issues/worker-1 ack - ref=aa4bad via=poll latency=10
+2026-10-24T19:28:19+09:00 320159 p11-issue-list/teams/issues/worker-1 review_request p11-issue-list/teams/issues/reviewer msg=log/msgs/320159.md
+2026-10-24T19:28:19+09:00 31afa6 p11-issue-list/teams/issues/worker-1 notify_skipped p11-issue-list/teams/issues/reviewer ref=320159 reason=waiting
+2026-10-24T19:28:26+09:00 b4e99f p11-issue-list/teams/issues/reviewer ack - ref=320159 via=poll latency=7
+2026-10-24T19:28:49+09:00 f25a86 p11-issue-list/teams/issues/reviewer review_ok p11-issue-list/teams/issues/worker-1 msg=log/msgs/f25a86.md
+2026-10-24T19:28:49+09:00 613b1c p11-issue-list/teams/issues/reviewer notify_skipped p11-issue-list/teams/issues/worker-1 ref=f25a86 reason=waiting
+2026-10-24T19:28:53+09:00 031af1 p11-issue-list/teams/issues/worker-1 ack - ref=f25a86 via=poll latency=4
+2026-10-24T19:41:13+09:00 1db04c p11-issue-list/teams/issues/worker-1 review_request p11-issue-list/teams/issues/reviewer msg=log/msgs/1db04c.md
+2026-10-24T19:41:13+09:00 ad403d p11-issue-list/teams/issues/worker-1 notify_skipped p11-issue-list/teams/issues/reviewer ref=1db04c reason=waiting
+2026-10-24T19:41:20+09:00 1863ee p11-issue-list/teams/issues/reviewer ack - ref=1db04c via=poll latency=7
+2026-10-24T19:46:07+09:00 3cdad7 p11-issue-list/teams/issues/reviewer review_ng p11-issue-list/teams/issues/worker-1 msg=log/msgs/3cdad7.md
+2026-10-24T19:46:07+09:00 1c64fe p11-issue-list/teams/issues/reviewer notify_skipped p11-issue-list/teams/issues/worker-1 ref=3cdad7 reason=waiting
+2026-10-24T19:46:08+09:00 08c2e4 p11-issue-list/teams/issues/worker-1 ack - ref=3cdad7 via=poll latency=1
+2026-10-24T19:48:16+09:00 a3229b p11-issue-list/teams/issues/worker-1 review_request p11-issue-list/teams/issues/reviewer msg=log/msgs/a3229b.md
+2026-10-24T19:48:16+09:00 dbdfba p11-issue-list/teams/issues/worker-1 notify_skipped p11-issue-list/teams/issues/reviewer ref=a3229b reason=waiting
+2026-10-24T19:48:18+09:00 8a78ce p11-issue-list/teams/issues/reviewer ack - ref=a3229b via=poll latency=2
+2026-10-24T19:50:05+09:00 36359d p11-issue-list/teams/issues/reviewer review_ng p11-issue-list/teams/issues/worker-1 msg=log/msgs/36359d.md
+2026-10-24T19:50:05+09:00 d87e3c p11-issue-list/teams/issues/reviewer notify_skipped p11-issue-list/teams/issues/worker-1 ref=36359d reason=waiting
+2026-10-24T19:50:11+09:00 61d0c7 p11-issue-list/teams/issues/worker-1 ack - ref=36359d via=poll latency=6
+2026-10-24T19:50:36+09:00 fa6595 p11-issue-list/teams/issues/worker-1 review_request p11-issue-list/teams/issues/reviewer msg=log/msgs/fa6595.md
+2026-10-24T19:50:36+09:00 dc148b p11-issue-list/teams/issues/worker-1 notify_skipped p11-issue-list/teams/issues/reviewer ref=fa6595 reason=waiting
+2026-10-24T19:50:43+09:00 150e4d p11-issue-list/teams/issues/reviewer ack - ref=fa6595 via=poll latency=7
+2026-10-24T19:51:27+09:00 ddd45d p11-issue-list/teams/issues/reviewer review_ok p11-issue-list/teams/issues/leader msg=log/msgs/ddd45d.md
+2026-10-24T19:51:27+09:00 7031a3 p11-issue-list/teams/issues/reviewer notify_skipped p11-issue-list/teams/issues/leader ref=ddd45d reason=waiting
+2026-10-24T19:51:36+09:00 3f26dc p11-issue-list/teams/issues/leader ack - ref=ddd45d via=poll latency=9
+2026-10-24T19:52:04+09:00 908486 p11-issue-list/teams/issues/leader wrap_up p11-issue-list/teams/issues/worker-1 msg=log/msgs/908486.md
+2026-10-24T19:52:04+09:00 0807a9 p11-issue-list/teams/issues/leader notify_skipped p11-issue-list/teams/issues/worker-1 ref=908486 reason=waiting
+2026-10-24T19:52:04+09:00 196f4c p11-issue-list/teams/issues/leader wrap_up p11-issue-list/teams/issues/reviewer msg=log/msgs/196f4c.md
+2026-10-24T19:52:04+09:00 83776e p11-issue-list/teams/issues/leader notify_skipped p11-issue-list/teams/issues/reviewer ref=196f4c reason=waiting
+2026-10-24T19:52:05+09:00 1d38c6 p11-issue-list/teams/issues/reviewer ack - ref=196f4c via=poll latency=1
+2026-10-24T19:52:10+09:00 fcdab1 p11-issue-list/teams/issues/worker-1 ack - ref=908486 via=poll latency=6
+2026-10-24T19:52:23+09:00 bed7a8 p11-issue-list/teams/issues/reviewer done p11-issue-list/teams/issues/leader -
+2026-10-24T19:52:23+09:00 2e7f66 p11-issue-list/teams/issues/reviewer notify_skipped p11-issue-list/teams/issues/leader ref=bed7a8 reason=waiting
+2026-10-24T19:52:25+09:00 80ad79 p11-issue-list/teams/issues/leader ack - ref=bed7a8 via=poll latency=2
+2026-10-24T19:52:32+09:00 440e75 p11-issue-list/teams/issues/worker-1 done p11-issue-list/teams/issues/leader -
+2026-10-24T19:52:32+09:00 19839f p11-issue-list/teams/issues/worker-1 notify_skipped p11-issue-list/teams/issues/leader ref=440e75 reason=waiting
+2026-10-24T19:52:41+09:00 ec0625 p11-issue-list/teams/issues/leader ack - ref=440e75 via=poll latency=9
+2026-10-24T19:52:44+09:00 6affc2 p11-issue-list/teams/issues/leader teardown p11-issue-list/teams/issues/worker-1 report=reports/sessions/p11-issue-list__teams__issues__worker-1-937be0ce.yaml
+2026-10-24T19:52:44+09:00 079b79 p11-issue-list/teams/issues/leader teardown p11-issue-list/teams/issues/reviewer report=reports/sessions/p11-issue-list__teams__issues__reviewer-65ee1bb5.yaml
+2026-10-24T19:53:16+09:00 fcd9c2 p11-issue-list/teams/issues/leader report p11-issue-list/pm msg=log/msgs/fcd9c2.md
+2026-10-24T19:53:16+09:00 b92cc7 p11-issue-list/teams/issues/leader notify_skipped p11-issue-list/pm ref=fcd9c2 reason=waiting
+2026-10-24T19:53:26+09:00 9efa17 p11-issue-list/pm ack - ref=fcd9c2 via=poll latency=10
+2026-10-24T19:53:53+09:00 914a9a p11-issue-list/pm wrap_up p11-issue-list/teams/issues/leader msg=log/msgs/914a9a.md
+2026-10-24T19:53:53+09:00 d7ed93 p11-issue-list/pm notify_skipped p11-issue-list/teams/issues/leader ref=914a9a reason=waiting
+2026-10-24T19:53:59+09:00 6cfdaf p11-issue-list/teams/issues/leader ack - ref=914a9a via=poll latency=6
+2026-10-24T19:54:12+09:00 e33285 p11-issue-list/teams/issues/leader done p11-issue-list/pm -
+2026-10-24T19:54:12+09:00 e58a03 p11-issue-list/teams/issues/leader notify_skipped p11-issue-list/pm ref=e33285 reason=waiting
+2026-10-24T19:54:16+09:00 f3778d p11-issue-list/pm ack - ref=e33285 via=poll latency=4
+2026-10-24T19:54:19+09:00 e7021c p11-issue-list/pm teardown p11-issue-list/teams/issues/leader report=reports/sessions/p11-issue-list__teams__issues__leader-a986a4bb.yaml
+2026-10-24T19:54:19+09:00 1e316a p11-issue-list/pm component_closed - p11-issue-list/teams/issues
+2026-10-24T19:54:39+09:00 2a6974 p11-issue-list/pm report user msg=log/msgs/2a6974.md
+2026-10-24T19:54:41+09:00 2b8843 user ack - ref=2a6974 via=poll latency=2
+2026-10-24T19:55:00+09:00 ac10aa user wrap_up p11-issue-list/pm msg=log/msgs/ac10aa.md
+2026-10-24T19:55:00+09:00 dd02a7 user notify_skipped p11-issue-list/pm ref=ac10aa reason=waiting
+2026-10-24T19:55:02+09:00 63f5c1 p11-issue-list/pm ack - ref=ac10aa via=poll latency=2
+2026-10-24T19:55:14+09:00 ef1e43 p11-issue-list/pm done user -
+2026-10-24T19:55:15+09:00 2390a1 user teardown p11-issue-list/pm report=reports/sessions/p11-issue-list__pm-b7d1e04a.yaml
+2026-10-24T19:55:16+09:00 a4f59e user assign - p11-issue-list/auditor position=auditor occupation=- model=opus
+2026-10-24T19:55:16+09:00 0b8af9 user launch - p11-issue-list/auditor session=3ab702a1-fb94-4aea-8261-3313d29aebe3 model=opus
+2026-10-24T19:55:26+09:00 bdbf0f user start p11-issue-list/auditor msg=log/msgs/bdbf0f.md
+2026-10-24T19:55:26+09:00 4b308e user notify_sent p11-issue-list/auditor ref=bdbf0f via=orca
+2026-10-24T19:55:28+09:00 47e6b0 p11-issue-list/auditor ack - ref=bdbf0f via=poll latency=2
+2026-10-24T19:55:42+09:00 8e75ff p11-issue-list/auditor notify_recv - ref=bdbf0f misdelivered=0 latency=16
+2026-10-24T19:55:58+09:00 7cd7e6 patrol patrol user sent=1 via=sent
+2026-10-24T19:56:37+09:00 54222f p11-issue-list/auditor report user msg=log/msgs/54222f.md
+2026-10-24T19:56:44+09:00 6a0e24 user wrap_up p11-issue-list/auditor msg=log/msgs/6a0e24.md
+2026-10-24T19:56:44+09:00 c92f37 user notify_sent p11-issue-list/auditor ref=6a0e24 via=orca
+2026-10-24T19:56:44+09:00 0466e7 p11-issue-list/auditor ack - ref=6a0e24 via=poll latency=0
+2026-10-24T19:56:53+09:00 a64713 p11-issue-list/auditor done user -
+2026-10-24T19:56:54+09:00 c13b96 user teardown p11-issue-list/auditor report=reports/sessions/p11-issue-list__auditor-3ab702a1.yaml
+2026-10-24T19:56:54+09:00 3be8e0 user component_closed - p11-issue-list

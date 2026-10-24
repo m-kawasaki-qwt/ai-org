@@ -1,0 +1,125 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p11-issue-list/teams/issues/leader"
+  position: "leader"
+  occupation: null
+  boss: "p11-issue-list/pm"
+  model_requested: "sonnet"
+  agent: "claude"
+  session_id: "a986a4bb-e10e-4daa-adb6-e01bf11c2531"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T19:17:26+09:00"
+  closed_at: "2026-10-24T19:54:19+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/a986a4bb-e10e-4daa-adb6-e01bf11c2531.jsonl"
+  started_at: "2026-10-24T19:17:33+09:00"
+  ended_at: "2026-10-24T19:54:16+09:00"
+  span_min: 36.7
+  model_effective:
+    claude-sonnet-5-5: 65
+  api_messages: 43
+  tokens:
+    input: 86
+    output: 12526
+    cache_read: 4450770
+    cache_write: 134781
+  tokens_total: 4598163
+  tool_calls:
+    Read: 2
+    Bash: 43
+    Write: 3
+  events_sent:
+    assign: 2
+    launch: 2
+    start: 3
+    wrap_up: 2
+    teardown: 2
+    report: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/.inbox_user"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/.patrol.json"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/.waited_user"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/events.log"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/0e68a0.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/12adc9.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/15e2dc.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/1698c7.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/1bbe73.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/4f3399.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/58e395.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/6bd641.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/6c3b34.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/73daa7.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/75e2d0.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/7dab3e.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/9a1626.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/9c3b66.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/a00e9a.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/a9c4b3.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/acfa59.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/b91484.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/d13000.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/d93390.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/e369ea.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/e3de66.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/msgs/e50a01.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/log/user-inbox.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/packs/viewer-ideas/reviewer-kawasaki.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/packs/viewer-ideas/worker-research.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/report.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/audit/p10-viewer-ideas.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__auditor-291e84b9.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__coordinator-b305fe87.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__pm-52fa013b.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__teams__viewer-ideas__leader-096d31af.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__teams__viewer-ideas__reviewer-kawasaki-cbcd8d26.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__teams__viewer-ideas__worker-records-fcb4ed2e.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/reports/sessions/p10-viewer-ideas__teams__viewer-ideas__worker-research-94b3e8e6.yaml"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/charter.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/evidence.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/hints/worker-records.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/hints/worker-research.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/research.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/result.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/screenshots/home-1800.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/screenshots/p10-1800.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/screenshots/p8-1800.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/screenshots/p9-1800.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/screenshots/rules-1800.png"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/scripts/annot.mjs"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/scripts/checks.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/scripts/count_records.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/scripts/gaps.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/scripts/output.txt"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p10-viewer-ideas/teams/viewer-ideas/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/issues.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/leader.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/packs/issues/reviewer.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/build.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/extract.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/issues_def.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/hints/worker-1.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/extract.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.tsv"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "チーム issues のリーダーとして、作業者 1・レビュアー 1 を組み、AI 組織の問題一覧 issues.md を完成させて PM へ報告する"
+  did:
+    - "charter・パック・材料を読み、作業者 worker-1（opus）を組んで起動"
+    - "作業者の 1 回目 review_request が宛先不在で report になったため、レビュアー（opus）を起動して本文を渡した"
+    - "レビュアーの承認後、上位 5 件の参照元 16 か所を原文と突き合わせた"
+    - "作業者とレビュアーを wrap_up・teardown し、PM へ report を出した"
+  outputs:
+    - "projects/p11-issue-list/issues.md（作業者が作成）"
+  decided:
+    - { what: "レビュアーは作業者の最初の review_request の後に起動した", why: "それまで見るものが無いため（手順どおり）" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "レビュアー未起動のとき、作業者の review_request が宛先不在で report になる。リーダーが本文を中継する手順が決まりに無い"
+    - "assign の --occupation に reviewer を渡すと雛形が無く失敗した（職種なしで通る）"

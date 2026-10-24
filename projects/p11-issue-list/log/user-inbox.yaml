@@ -1,0 +1,8 @@
+- kind: "report"
+  from: "p11-issue-list/pm"
+  ref: "2a6974"
+  msg: "log/msgs/2a6974.md"
+  summary: "# p11-issue-list の結果"
+  at: "2026-10-24T19:55:58+09:00"
+  gchat: "sent"
+  read: false

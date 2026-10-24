@@ -1,0 +1,16 @@
+{
+  "kind": "team",
+  "id": "p11-issue-list/teams/issues",
+  "title": null,
+  "parent": "p11-issue-list",
+  "root": false,
+  "created_at": "2026-10-24T19:17:22+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p11-issue-list/teams/issues/leader",
+    "worker-1": "p11-issue-list/teams/issues/worker-1",
+    "reviewer": "p11-issue-list/teams/issues/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T19:54:19+09:00"
+}

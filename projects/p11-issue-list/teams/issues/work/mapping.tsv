@@ -1,0 +1,432 @@
+id	ref	source	issue_no	issue_key	excluded_reason
+E001	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:70	session	36	cc_miss	
+E002	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:71	session	11	reviewer_no_tab	
+E003	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:72	session	1	enter_warn	
+E004	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:73	session	5	notify_ref_empty	
+E005	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:74	session	68	no_nudge_kind	
+E006	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:75	session	54	pm_replace_handover	
+E007	projects/p1-org-status/reports/sessions/p1-org-status__pm.yaml:76	session	17	user_no_tab	
+E008	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__leader.yaml:66	session	36	cc_miss	
+E009	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__leader.yaml:67	session	11	reviewer_no_tab	
+E010	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__leader.yaml:68	session	1	enter_warn	
+E011	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__leader.yaml:69	session	5	notify_ref_empty	
+E012	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__leader.yaml:70	session	5	notify_ref_empty	
+E013	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__reviewer.yaml:50	session	11	reviewer_no_tab	
+E014	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__reviewer.yaml:51	session	5	notify_ref_empty	
+E015	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__reviewer.yaml:52	session	1	enter_warn	
+E016	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__worker-1.yaml:56	session	40	rel_id_doc	
+E017	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__worker-1.yaml:57	session			本人が影響なしと書いた環境の挙動（問題として上げていない）
+E018	projects/p1-org-status/reports/sessions/p1-org-status__teams__status-tool__worker-1.yaml:58	session	11	reviewer_no_tab	
+E019	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__pm-0775601b.yaml:67	session	5	notify_ref_empty	
+E020	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__pm-0775601b.yaml:68	session	1	enter_warn	
+E021	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__pm-0775601b.yaml:69	session	29	rework_after_ok_flow	
+E022	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__pm-0775601b.yaml:70	session	17	user_no_tab	
+E023	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__leader-70bafeda.yaml:65	session	1	enter_warn	
+E024	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__leader-70bafeda.yaml:66	session	5	notify_ref_empty	
+E025	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__leader-70bafeda.yaml:67	session	29	rework_after_ok_flow	
+E026	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__reviewer-f7de4d8b.yaml:58	session	1	enter_warn	
+E027	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__reviewer-f7de4d8b.yaml:59	session	29	rework_after_ok_flow	
+E028	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__reviewer-f7de4d8b.yaml:60	session	5	notify_ref_empty	
+E029	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__worker-1-56151c49.yaml:56	session			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E030	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__worker-1-56151c49.yaml:58	session	1	enter_warn	
+E031	projects/p2-orca-run-use/reports/sessions/p2-orca-run-use__teams__run-use-fix__worker-1-56151c49.yaml:59	session			作業者の打ち間違いを directory-guard が止めたもの（本人が実害なしと申告）
+E032	projects/p3-org-visibility/reports/sessions/p3-org-visibility__auditor-074c4759.yaml:50	session	64	audit_scope_machine	
+E033	projects/p3-org-visibility/reports/sessions/p3-org-visibility__pm-8512c441.yaml:83	session	1	enter_warn	
+E034	projects/p3-org-visibility/reports/sessions/p3-org-visibility__pm-8512c441.yaml:84	session	4	zsh_var	
+E035	projects/p3-org-visibility/reports/sessions/p3-org-visibility__pm-8512c441.yaml:85	session	62	pm_check_not_recorded	
+E036	projects/p3-org-visibility/reports/sessions/p3-org-visibility__pm-8512c441.yaml:86	session	61	notify_skip_new	
+E037	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__readme-guide__leader-4d653d8e.yaml:76	session	1	enter_warn	
+E038	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__readme-guide__leader-4d653d8e.yaml:77	session	63	leader_report_no_unclear	
+E039	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__readme-guide__reviewer-10b48465.yaml:62	session	51	thread_on_ok	
+E040	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__readme-guide__reviewer-10b48465.yaml:63	session	66	timeline_help	
+E041	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__readme-guide__worker-1-7f90e6d2.yaml:64	session	52	parallel_dependency	
+E042	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__readme-guide__worker-1-7f90e6d2.yaml:66	session			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E043	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__timeline-tool__leader-e54a1b8a.yaml:74	session			本人が影響なしと書いた環境の挙動（問題として上げていない）
+E044	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__timeline-tool__reviewer-8d87b16a.yaml:63	session	51	thread_on_ok	
+E045	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__timeline-tool__reviewer-8d87b16a.yaml:64	session	6	sandbox_browser	
+E046	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__timeline-tool__worker-1-969f0ba1.yaml:70	session	67	chrome_ext	
+E047	projects/p3-org-visibility/reports/sessions/p3-org-visibility__teams__timeline-tool__worker-1-969f0ba1.yaml:72	session	5	notify_ref_empty	
+E048	projects/p4-job-run-use/reports/sessions/p4-job-run-use__coordinator-run-use-thin-ad0d46dd.yaml:58	session	7	digest_id_fail	
+E049	projects/p4-job-run-use/reports/sessions/p4-job-run-use__coordinator-run-use-thin-ad0d46dd.yaml:59	session	59	deny_overlap	
+E050	projects/p4-job-run-use/reports/sessions/p4-job-run-use__coordinator-run-use-thin-ad0d46dd.yaml:60	session	20	deny_read_only	
+E051	projects/p4-job-run-use/reports/sessions/p4-job-run-use__coordinator-run-use-thin-ad0d46dd.yaml:61	session	9	inbox_before_start	
+E052	projects/p4-job-run-use/reports/sessions/p4-job-run-use__pm-7fcade93.yaml:71	session	13	pack_facts_wrong	
+E053	projects/p4-job-run-use/reports/sessions/p4-job-run-use__pm-7fcade93.yaml:72	session	60	sandbox_pipe	
+E054	projects/p4-job-run-use/reports/sessions/p4-job-run-use__pm-7fcade93.yaml:73	session	1	enter_warn	
+E055	projects/p4-job-run-use/reports/sessions/p4-job-run-use__teams__run-use-thin__leader-8e4fdd93.yaml:63	session	13	pack_facts_wrong	
+E056	projects/p4-job-run-use/reports/sessions/p4-job-run-use__teams__run-use-thin__reviewer-05ac7e08.yaml:49	session	14	deny_blocks_verify	
+E057	projects/p4-job-run-use/reports/sessions/p4-job-run-use__teams__run-use-thin__worker-1-b93bc6f4.yaml:60	session	13	pack_facts_wrong	
+E058	projects/p4-job-run-use/reports/sessions/p4-job-run-use__teams__run-use-thin__worker-1-b93bc6f4.yaml:61	session	14	deny_blocks_verify	
+E059	projects/p5-org-viewer/reports/sessions/p5-org-viewer__coordinator-viewer-2d6b3d7c.yaml:60	session	39	ctx_org_subject	
+E060	projects/p5-org-viewer/reports/sessions/p5-org-viewer__coordinator-viewer-2d6b3d7c.yaml:61	session	9	inbox_before_start	
+E061	projects/p5-org-viewer/reports/sessions/p5-org-viewer__pm-92edb217.yaml:81	session	4	zsh_var	
+E062	projects/p5-org-viewer/reports/sessions/p5-org-viewer__pm-92edb217.yaml:82	session	19	wait_cc_returns	
+E063	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__leader-6f1c1b6b.yaml:77	session	13	pack_facts_wrong	
+E064	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__leader-6f1c1b6b.yaml:78	session	28	handwritten_first	
+E065	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__leader-6f1c1b6b.yaml:79	session			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E066	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__reviewer-11df580d.yaml:61	session	10	reviewer_partial_check	
+E067	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__reviewer-11df580d.yaml:63	session	28	handwritten_first	
+E068	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__reviewer-11df580d.yaml:64	session	8	approval_missed_purpose	
+E069	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__reviewer-11df580d.yaml:65	session	23	npm_cache	
+E070	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml:70	session	3	worker_no_reply	
+E071	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml:72	session	13	pack_facts_wrong	
+E072	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml:73	session	1	enter_warn	
+E073	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml:74	session	58	zsh_eq	
+E074	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml:75	session	12	guard_false_block	
+E075	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-export-098dcfca.yaml:76	session			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E076	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-viewer-3cf48c51.yaml:89	session			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E077	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-viewer-3cf48c51.yaml:91	session	23	npm_cache	
+E078	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-viewer-3cf48c51.yaml:92	session	6	sandbox_browser	
+E079	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-viewer-3cf48c51.yaml:93	session	12	guard_false_block	
+E080	projects/p5-org-viewer/reports/sessions/p5-org-viewer__teams__viewer__worker-viewer-3cf48c51.yaml:94	session	28	handwritten_first	
+E081	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-org-build-b422e51c.yaml:66	session	9	inbox_before_start	
+E082	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-org-build-b422e51c.yaml:67	session	7	digest_id_fail	
+E083	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-org-build-b422e51c.yaml:68	session	20	deny_read_only	
+E084	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-org-build-b422e51c.yaml:69	session	1	enter_warn	
+E085	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-uiux-research-057eafed.yaml:64	session	7	digest_id_fail	
+E086	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-uiux-research-057eafed.yaml:65	session	9	inbox_before_start	
+E087	projects/p6-org-build/reports/sessions/p6-org-build__coordinator-uiux-research-057eafed.yaml:66	session	47	occupation_missing	
+E088	projects/p6-org-build/reports/sessions/p6-org-build__pm-16bc79bc.yaml:86	session	19	wait_cc_returns	
+E089	projects/p6-org-build/reports/sessions/p6-org-build__pm-16bc79bc.yaml:87	session	7	digest_id_fail	
+E090	projects/p6-org-build/reports/sessions/p6-org-build__pm-16bc79bc.yaml:88	session	47	occupation_missing	
+E091	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__leader-15cbc271.yaml:72	session	12	guard_false_block	
+E092	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__leader-15cbc271.yaml:73	session	10	reviewer_partial_check	
+E093	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__reviewer-b8082b46.yaml:73	session	10	reviewer_partial_check	
+E094	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__reviewer-b8082b46.yaml:75	session	48	persona_dedupe	
+E095	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__worker-norms-7bbd0aab.yaml:91	session	57	sent_text_unknown	
+E096	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__worker-norms-7bbd0aab.yaml:93	session	49	org_path_long	
+E097	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__worker-norms-7bbd0aab.yaml:94	session	6	sandbox_browser	
+E098	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__worker-norms-7bbd0aab.yaml:95	session	3	worker_no_reply	
+E099	projects/p6-org-build/reports/sessions/p6-org-build__teams__org-build__worker-orgctl-34b67ded.yaml:80	session			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E100	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__leader-00fa4e8f.yaml:65	session	10	reviewer_partial_check	
+E101	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__leader-00fa4e8f.yaml:66	session			本人が影響なしと書いた環境の挙動（問題として上げていない）
+E102	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__leader-00fa4e8f.yaml:67	session	4	zsh_var	
+E103	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__reviewer-77f133a5.yaml:55	session	10	reviewer_partial_check	
+E104	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__reviewer-77f133a5.yaml:56	session	10	reviewer_partial_check	
+E105	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__reviewer-77f133a5.yaml:58	session	10	reviewer_partial_check	
+E106	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__worker-1-833d6b72.yaml:70	session			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E107	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__worker-1-833d6b72.yaml:71	session	50	webfetch_js	
+E108	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__worker-1-833d6b72.yaml:73	session	11	reviewer_no_tab	
+E109	projects/p6-org-build/reports/sessions/p6-org-build__teams__uiux-research__worker-1-833d6b72.yaml:74	session	50	webfetch_js	
+E110	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:65	session	15	coord_old_norms	
+E111	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:66	session	43	pack_before_charter	
+E112	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:67	session	44	loop_event_kinds	
+E113	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:68	session	34	coord_end_and_return	
+E114	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:69	session	7	digest_id_fail	
+E115	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:70	session	45	team_packs_dir	
+E116	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__coordinator-d243a674.yaml:71	session	34	coord_end_and_return	
+E117	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__pm-1c125b2e.yaml:72	session	15	coord_old_norms	
+E118	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__pm-1c125b2e.yaml:73	session	33	agree_same_kind	
+E119	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__pm-1c125b2e.yaml:74	session	18	naming_multi	
+E120	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__teams__coordinator-flow__leader-e917435e.yaml:67	session	33	agree_same_kind	
+E121	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__teams__coordinator-flow__worker-1-32df2698.yaml:73	session	3	worker_no_reply	
+E122	projects/p7-coordinator-role/reports/sessions/p7-coordinator-role__teams__coordinator-flow__worker-1-32df2698.yaml:74	session	35	deny_tmp	
+E123	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__coordinator-087f6e79.yaml:68	session	18	naming_multi	
+E124	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__coordinator-087f6e79.yaml:69	session	32	review_count_stages	
+E125	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__pm-129ad682.yaml:415	session	1	enter_warn	
+E126	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__pm-129ad682.yaml:416	session	56	child_charter_fix	
+E127	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__leader-18b4f46a.yaml:406	session	24	all_wait_stall	
+E128	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__leader-18b4f46a.yaml:407	session	25	screen_check_server	
+E129	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__leader-18b4f46a.yaml:408	session	26	screen_probe_limits	
+E130	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__leader-18b4f46a.yaml:409	session	27	checklist_tap_size	
+E131	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-export-baf05c27.yaml:388	session	38	export_check_out	
+E132	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-kawasaki-d30b4812.yaml:396	session	22	no_live_states	
+E133	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-kawasaki-d30b4812.yaml:398	session	32	review_count_stages	
+E134	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-kawasaki-d30b4812.yaml:399	session	27	checklist_tap_size	
+E135	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-kawasaki-d30b4812.yaml:400	session	25	screen_check_server	
+E136	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-export-fff11e32.yaml:395	session			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E137	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-export-fff11e32.yaml:397	session	3	worker_no_reply	
+E138	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-export-fff11e32.yaml:398	session	14	deny_blocks_verify	
+E139	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-ui-6155b5d5.yaml:432	session	3	worker_no_reply	
+E140	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-ui-6155b5d5.yaml:434	session	25	screen_check_server	
+E141	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-ui-6155b5d5.yaml:435	session	26	screen_probe_limits	
+E142	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-ui-6155b5d5.yaml:436	session	26	screen_probe_limits	
+E143	projects/p8-viewer-rebuild/reports/sessions/p8-viewer-rebuild__teams__viewer__worker-ui-6155b5d5.yaml:437	session	22	no_live_states	
+E144	projects/p9-org-watch/reports/sessions/p9-org-watch__auditor-272c70db.yaml:48	session	42	audit_ref_format	
+E145	projects/p9-org-watch/reports/sessions/p9-org-watch__coordinator-37d1062a.yaml:63	session	15	coord_old_norms	
+E146	projects/p9-org-watch/reports/sessions/p9-org-watch__coordinator-37d1062a.yaml:64	session			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E147	projects/p9-org-watch/reports/sessions/p9-org-watch__coordinator-37d1062a.yaml:65	session	1	enter_warn	
+E148	projects/p9-org-watch/reports/sessions/p9-org-watch__pm-f743150d.yaml:68	session			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E149	projects/p9-org-watch/reports/sessions/p9-org-watch__pm-f743150d.yaml:70	session	41	closer_line_p9	
+E150	projects/p9-org-watch/reports/sessions/p9-org-watch__pm-f743150d.yaml:71	session	55	pm_patrol_real	
+E151	projects/p9-org-watch/reports/sessions/p9-org-watch__pm-f743150d.yaml:72	session	1	enter_warn	
+E152	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__leader-36cfe0d2.yaml:66	session	21	duty_unassigned_p9	
+E153	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__leader-36cfe0d2.yaml:67	session	1	enter_warn	
+E154	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__reviewer-512bbb7a.yaml:57	session			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E155	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__reviewer-512bbb7a.yaml:59	session	21	duty_unassigned_p9	
+E156	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__reviewer-512bbb7a.yaml:60	session	4	zsh_var	
+E157	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-audit-6bc5c166.yaml:58	session			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E158	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-audit-6bc5c166.yaml:59	session			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E159	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-audit-6bc5c166.yaml:61	session	30	close_seq_where	
+E160	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-watch-f06de01a.yaml:67	session			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E161	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-watch-f06de01a.yaml:69	session			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E162	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-watch-f06de01a.yaml:70	session	31	same_file_two	
+E163	projects/p9-org-watch/reports/sessions/p9-org-watch__teams__watch__worker-watch-f06de01a.yaml:71	session	31	same_file_two	
+E164	projects/p1-org-status/log/msgs/803ffb.md:45	msg:節A	36	cc_miss	
+E165	projects/p1-org-status/log/msgs/803ffb.md:46	msg:節A	11	reviewer_no_tab	
+E166	projects/p1-org-status/log/msgs/803ffb.md:47	msg:節A	1	enter_warn	
+E167	projects/p1-org-status/log/msgs/803ffb.md:48	msg:節A	5	notify_ref_empty	
+E168	projects/p1-org-status/log/msgs/803ffb.md:49	msg:節A	54	pm_replace_handover	
+E169	projects/p1-org-status/log/msgs/803ffb.md:50	msg:節A	40	rel_id_doc	
+E170	projects/p1-org-status/log/msgs/c47efc.md:12	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E171	projects/p1-org-status/log/msgs/c47efc.md:13	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E172	projects/p1-org-status/log/msgs/c47efc.md:14	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E173	projects/p1-org-status/log/msgs/d9ba25.md:34	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E174	projects/p1-org-status/log/msgs/d9ba25.md:35	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E175	projects/p1-org-status/log/msgs/d9ba25.md:39	msg:節A	36	cc_miss	
+E176	projects/p1-org-status/log/msgs/d9ba25.md:40	msg:節A	11	reviewer_no_tab	
+E177	projects/p1-org-status/log/msgs/d9ba25.md:41	msg:節A	1	enter_warn	
+E178	projects/p1-org-status/log/msgs/d9ba25.md:42	msg:節A	5	notify_ref_empty	
+E179	projects/p1-org-status/log/msgs/d9ba25.md:43	msg:節A	40	rel_id_doc	
+E180	projects/p2-orca-run-use/log/msgs/04802d.md:4	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E181	projects/p2-orca-run-use/log/msgs/04802d.md:6	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E182	projects/p2-orca-run-use/log/msgs/04802d.md:8	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E183	projects/p2-orca-run-use/log/msgs/04802d.md:11	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E184	projects/p2-orca-run-use/log/msgs/04802d.md:14	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E185	projects/p2-orca-run-use/log/msgs/04802d.md:17	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E186	projects/p2-orca-run-use/log/msgs/04802d.md:21	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E187	projects/p2-orca-run-use/log/msgs/04802d.md:22	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E188	projects/p2-orca-run-use/log/msgs/04802d.md:23	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E189	projects/p2-orca-run-use/log/msgs/04802d.md:24	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E190	projects/p2-orca-run-use/log/msgs/04802d.md:25	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E191	projects/p2-orca-run-use/log/msgs/1f7fb5.md:66	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E192	projects/p2-orca-run-use/log/msgs/1f7fb5.md:67	msg:節B			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E193	projects/p2-orca-run-use/log/msgs/1f7fb5.md:71	msg:節A	1	enter_warn	
+E194	projects/p2-orca-run-use/log/msgs/1f7fb5.md:72	msg:節A	5	notify_ref_empty	
+E195	projects/p2-orca-run-use/log/msgs/1f7fb5.md:73	msg:節A	29	rework_after_ok_flow	
+E196	projects/p2-orca-run-use/log/msgs/1f7fb5.md:74	msg:節A			作業者の打ち間違いを directory-guard が止めたもの（本人が実害なしと申告）
+E197	projects/p2-orca-run-use/log/msgs/63b813.md:2	event:rework	8	approval_missed_purpose	
+E198	projects/p2-orca-run-use/log/msgs/7ad811.md:46	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E199	projects/p2-orca-run-use/log/msgs/7ad811.md:50	msg:節A			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E200	projects/p2-orca-run-use/log/msgs/7ad811.md:51	msg:節A			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E201	projects/p2-orca-run-use/log/msgs/7ad811.md:55	msg:節A	1	enter_warn	
+E202	projects/p2-orca-run-use/log/msgs/7ad811.md:56	msg:節A	5	notify_ref_empty	
+E203	projects/p2-orca-run-use/log/msgs/7ad811.md:57	msg:節A	29	rework_after_ok_flow	
+E204	projects/p2-orca-run-use/log/msgs/7ad811.md:58	msg:節A			作業者の打ち間違いを directory-guard が止めたもの（本人が実害なしと申告）
+E205	projects/p2-orca-run-use/log/msgs/7ad811.md:59	msg:節A	17	user_no_tab	
+E206	projects/p2-orca-run-use/log/msgs/91f052.md:11	msg:札B			同じ本文の中で前の回の指摘・警告を言い直したもの
+E207	projects/p2-orca-run-use/log/msgs/a9a0a2.md:30	msg:節B			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E208	projects/p2-orca-run-use/log/msgs/f863c1.md:17	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E209	projects/p2-orca-run-use/log/msgs/f863c1.md:18	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E210	projects/p2-orca-run-use/log/msgs/f863c1.md:19	msg:札B	1	enter_warn	
+E211	projects/p3-org-visibility/log/msgs/258cd4.md:21	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E212	projects/p3-org-visibility/log/msgs/258cd4.md:22	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E213	projects/p3-org-visibility/log/msgs/258cd4.md:23	msg:節B	52	parallel_dependency	
+E214	projects/p3-org-visibility/log/msgs/6acb52.md:2	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E215	projects/p3-org-visibility/log/msgs/6acb52.md:4	event:review_ng	16	noise_kinds_tools	
+E216	projects/p3-org-visibility/log/msgs/8723ce.md:2	event:rework	8	approval_missed_purpose	
+E217	projects/p3-org-visibility/log/msgs/8cffd1.md:21	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E218	projects/p3-org-visibility/log/msgs/8cffd1.md:22	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E219	projects/p3-org-visibility/log/msgs/95df09.md:8	auditor	62	pm_check_not_recorded	
+E220	projects/p3-org-visibility/log/msgs/95df09.md:12	auditor	63	leader_report_no_unclear	
+E221	projects/p3-org-visibility/log/msgs/95df09.md:16	auditor	51	thread_on_ok	
+E222	projects/p3-org-visibility/log/msgs/95df09.md:20	auditor	16	noise_kinds_tools	
+E223	projects/p3-org-visibility/log/msgs/95df09.md:24	auditor	65	files_changed_mix	
+E224	projects/p3-org-visibility/log/msgs/95df09.md:30	auditor			監査役の照合（p1・p2 の件が p3 で繰り返していない）。直ったかの照合の根拠に使った
+E225	projects/p3-org-visibility/log/msgs/95df09.md:31	auditor	1	enter_warn	
+E226	projects/p3-org-visibility/log/msgs/95df09.md:32	auditor			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E227	projects/p3-org-visibility/log/msgs/95df09.md:33	auditor			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E228	projects/p3-org-visibility/log/msgs/95df09.md:34	auditor	5	notify_ref_empty	
+E229	projects/p3-org-visibility/log/msgs/95df09.md:38	auditor			直し方の選択肢（監査役の「好みで決まる点」。直し方は書かない）
+E230	projects/p3-org-visibility/log/msgs/95df09.md:39	auditor			直し方の選択肢（監査役の「好みで決まる点」。直し方は書かない）
+E231	projects/p3-org-visibility/log/msgs/95df09.md:40	auditor			直し方の選択肢（監査役の「好みで決まる点」。直し方は書かない）
+E232	projects/p3-org-visibility/log/msgs/95df09.md:41	auditor			直し方の選択肢（監査役の「好みで決まる点」。直し方は書かない）
+E233	projects/p3-org-visibility/log/msgs/b589bb.md:48	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E234	projects/p3-org-visibility/log/msgs/b589bb.md:49	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E235	projects/p3-org-visibility/log/msgs/b93761.md:34	msg:節A	1	enter_warn	
+E236	projects/p3-org-visibility/log/msgs/b93761.md:35	msg:節A	4	zsh_var	
+E237	projects/p3-org-visibility/log/msgs/b93761.md:36	msg:節A			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E238	projects/p3-org-visibility/log/msgs/c76d01.md:31	msg:節B	53	session_overwrite	
+E239	projects/p3-org-visibility/log/msgs/c76d01.md:32	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E240	projects/p3-org-visibility/log/msgs/dc84e7.md:11	msg:札B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E241	projects/p3-org-visibility/log/msgs/dc84e7.md:12	msg:札B			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E242	projects/p3-org-visibility/log/msgs/f315e9.md:13	msg:札B	53	session_overwrite	
+E243	projects/p3-org-visibility/log/msgs/f315e9.md:14	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E244	projects/p3-org-visibility/log/msgs/f315e9.md:15	msg:札B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E245	projects/p4-job-run-use/log/msgs/3b3654.md:34	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E246	projects/p4-job-run-use/log/msgs/3b3654.md:35	msg:節B	14	deny_blocks_verify	
+E247	projects/p4-job-run-use/log/msgs/3b3654.md:36	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E248	projects/p4-job-run-use/log/msgs/3b3654.md:40	msg:節A	13	pack_facts_wrong	
+E249	projects/p4-job-run-use/log/msgs/74b9f7.md:32	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E250	projects/p4-job-run-use/log/msgs/74b9f7.md:33	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E251	projects/p4-job-run-use/log/msgs/74b9f7.md:37	msg:節B	14	deny_blocks_verify	
+E252	projects/p5-org-viewer/log/msgs/02a83f.md:4	event:rework	8	approval_missed_purpose	
+E253	projects/p5-org-viewer/log/msgs/02a83f.md:6	event:rework			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E254	projects/p5-org-viewer/log/msgs/02a83f.md:8	event:rework			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E255	projects/p5-org-viewer/log/msgs/02a83f.md:12	event:rework			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E256	projects/p5-org-viewer/log/msgs/146e61.md:28	msg:節B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E257	projects/p5-org-viewer/log/msgs/146e61.md:29	msg:節B	23	npm_cache	
+E258	projects/p5-org-viewer/log/msgs/146e61.md:30	msg:節B	6	sandbox_browser	
+E259	projects/p5-org-viewer/log/msgs/146e61.md:31	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E260	projects/p5-org-viewer/log/msgs/146e61.md:32	msg:節B	16	noise_kinds_tools	
+E261	projects/p5-org-viewer/log/msgs/146e61.md:36	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E262	projects/p5-org-viewer/log/msgs/146e61.md:37	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E263	projects/p5-org-viewer/log/msgs/146e61.md:41	msg:節A	28	handwritten_first	
+E264	projects/p5-org-viewer/log/msgs/146e61.md:42	msg:節A	8	approval_missed_purpose	
+E265	projects/p5-org-viewer/log/msgs/146e61.md:43	msg:節A	1	enter_warn	
+E266	projects/p5-org-viewer/log/msgs/146e61.md:44	msg:節A	12	guard_false_block	
+E267	projects/p5-org-viewer/log/msgs/17b6a4.md:32	msg:節A	16	noise_kinds_tools	
+E268	projects/p5-org-viewer/log/msgs/17b6a4.md:33	msg:節A	39	ctx_org_subject	
+E269	projects/p5-org-viewer/log/msgs/2140aa.md:29	msg:節B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E270	projects/p5-org-viewer/log/msgs/2140aa.md:30	msg:節B	23	npm_cache	
+E271	projects/p5-org-viewer/log/msgs/2140aa.md:31	msg:節B	6	sandbox_browser	
+E272	projects/p5-org-viewer/log/msgs/2140aa.md:32	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E273	projects/p5-org-viewer/log/msgs/2140aa.md:33	msg:節B	16	noise_kinds_tools	
+E274	projects/p5-org-viewer/log/msgs/2140aa.md:37	msg:節A	28	handwritten_first	
+E275	projects/p5-org-viewer/log/msgs/2140aa.md:38	msg:節A	8	approval_missed_purpose	
+E276	projects/p5-org-viewer/log/msgs/2140aa.md:39	msg:節A	1	enter_warn	
+E277	projects/p5-org-viewer/log/msgs/2140aa.md:40	msg:節A	12	guard_false_block	
+E278	projects/p5-org-viewer/log/msgs/2140aa.md:41	msg:節A	39	ctx_org_subject	
+E279	projects/p5-org-viewer/log/msgs/22d537.md:11	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E280	projects/p5-org-viewer/log/msgs/87b487.md:20	msg:節A	23	npm_cache	
+E281	projects/p5-org-viewer/log/msgs/87b487.md:21	msg:節A	6	sandbox_browser	
+E282	projects/p5-org-viewer/log/msgs/87b487.md:22	msg:節A			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E283	projects/p5-org-viewer/log/msgs/aa3336.md:4	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E284	projects/p5-org-viewer/log/msgs/aa3336.md:6	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E285	projects/p5-org-viewer/log/msgs/aa3336.md:7	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E286	projects/p5-org-viewer/log/msgs/aa3336.md:8	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E287	projects/p5-org-viewer/log/msgs/ab626d.md:10	msg:札B			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E288	projects/p5-org-viewer/log/msgs/b8283e.md:10	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E289	projects/p5-org-viewer/log/msgs/b8283e.md:11	msg:札B	23	npm_cache	
+E290	projects/p5-org-viewer/log/msgs/b8283e.md:12	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E291	projects/p5-org-viewer/log/msgs/b8283e.md:13	msg:札B			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E292	projects/p6-org-build/log/msgs/25786e.md:64	msg:節B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E293	projects/p6-org-build/log/msgs/25786e.md:65	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E294	projects/p6-org-build/log/msgs/25786e.md:66	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E295	projects/p6-org-build/log/msgs/25786e.md:67	msg:節B	48	persona_dedupe	
+E296	projects/p6-org-build/log/msgs/25786e.md:73	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E297	projects/p6-org-build/log/msgs/25786e.md:74	msg:節B	49	org_path_long	
+E298	projects/p6-org-build/log/msgs/25786e.md:80	msg:節A	6	sandbox_browser	
+E299	projects/p6-org-build/log/msgs/25786e.md:81	msg:節A	3	worker_no_reply	
+E300	projects/p6-org-build/log/msgs/25786e.md:82	msg:節A	12	guard_false_block	
+E301	projects/p6-org-build/log/msgs/4d8609.md:79	msg:節A	6	sandbox_browser	
+E302	projects/p6-org-build/log/msgs/4d8609.md:80	msg:節A	7	digest_id_fail	
+E303	projects/p6-org-build/log/msgs/4d8609.md:81	msg:節A	3	worker_no_reply	
+E304	projects/p6-org-build/log/msgs/4d8609.md:82	msg:節A	12	guard_false_block	
+E305	projects/p6-org-build/log/msgs/4d8609.md:83	msg:節A	10	reviewer_partial_check	
+E306	projects/p6-org-build/log/msgs/4d8609.md:84	msg:節A	1	enter_warn	
+E307	projects/p6-org-build/log/msgs/4d8609.md:85	msg:節A			作業中で待っただけ（p6 の PM が止まりではないと書いている。job の控えの p6 の記述は「全員が wait に入って止まり…」の起きたことに書いた）
+E308	projects/p6-org-build/log/msgs/c4cc0d.md:18	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E309	projects/p6-org-build/log/msgs/c4cc0d.md:19	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E310	projects/p6-org-build/log/msgs/dd1184.md:28	msg:節B	46	p5_single_shot	
+E311	projects/p6-org-build/log/msgs/dd1184.md:29	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E312	projects/p6-org-build/log/msgs/dd1184.md:30	msg:節B	46	p5_single_shot	
+E313	projects/p6-org-build/log/msgs/dd1184.md:31	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E314	projects/p6-org-build/log/msgs/dd1184.md:35	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E315	projects/p6-org-build/log/msgs/dd1184.md:36	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E316	projects/p6-org-build/log/msgs/dd1184.md:40	msg:節A	10	reviewer_partial_check	
+E317	projects/p6-org-build/log/msgs/dd1184.md:41	msg:節A			本人が影響なしと書いた環境の挙動（問題として上げていない）
+E318	projects/p7-coordinator-role/log/msgs/2e8018.md:44	msg:節B	35	deny_tmp	
+E319	projects/p7-coordinator-role/log/msgs/2e8018.md:45	msg:節B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E320	projects/p7-coordinator-role/log/msgs/2e8018.md:49	msg:節A	1	enter_warn	
+E321	projects/p7-coordinator-role/log/msgs/2e8018.md:50	msg:節A			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E322	projects/p7-coordinator-role/log/msgs/2e8018.md:54	msg:節B	33	agree_same_kind	
+E323	projects/p7-coordinator-role/log/msgs/4d25e4.md:36	msg:節A			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E324	projects/p7-coordinator-role/log/msgs/4d25e4.md:38	msg:節A	43	pack_before_charter	
+E325	projects/p7-coordinator-role/log/msgs/4d25e4.md:39	msg:節A	44	loop_event_kinds	
+E326	projects/p7-coordinator-role/log/msgs/4d25e4.md:40	msg:節A	34	coord_end_and_return	
+E327	projects/p7-coordinator-role/log/msgs/4d25e4.md:41	msg:節A	7	digest_id_fail	
+E328	projects/p7-coordinator-role/log/msgs/4d25e4.md:42	msg:節A	45	team_packs_dir	
+E329	projects/p7-coordinator-role/log/msgs/4d25e4.md:43	msg:節A	34	coord_end_and_return	
+E330	projects/p7-coordinator-role/log/msgs/891118.md:66	msg:節A	35	deny_tmp	
+E331	projects/p7-coordinator-role/log/msgs/be01fb.md:45	msg:節A	15	coord_old_norms	
+E332	projects/p7-coordinator-role/log/msgs/be01fb.md:46	msg:節A	33	agree_same_kind	
+E333	projects/p7-coordinator-role/log/msgs/be01fb.md:47	msg:節A	35	deny_tmp	
+E334	projects/p7-coordinator-role/log/msgs/be01fb.md:48	msg:節A	1	enter_warn	
+E335	projects/p8-viewer-rebuild/log/msgs/176526.md:2	event:nudge	24	all_wait_stall	
+E336	projects/p8-viewer-rebuild/log/msgs/3df696.md:86	msg:節B	22	no_live_states	
+E337	projects/p8-viewer-rebuild/log/msgs/3df696.md:87	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E338	projects/p8-viewer-rebuild/log/msgs/3df696.md:88	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E339	projects/p8-viewer-rebuild/log/msgs/3df696.md:89	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E340	projects/p8-viewer-rebuild/log/msgs/3df696.md:90	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E341	projects/p8-viewer-rebuild/log/msgs/3df696.md:94	msg:節A	24	all_wait_stall	
+E342	projects/p8-viewer-rebuild/log/msgs/3df696.md:95	msg:節A	25	screen_check_server	
+E343	projects/p8-viewer-rebuild/log/msgs/3df696.md:96	msg:節A	26	screen_probe_limits	
+E344	projects/p8-viewer-rebuild/log/msgs/3df696.md:97	msg:節A	27	checklist_tap_size	
+E345	projects/p8-viewer-rebuild/log/msgs/3df696.md:98	msg:節A	32	review_count_stages	
+E346	projects/p8-viewer-rebuild/log/msgs/3df696.md:99	msg:節A	38	export_check_out	
+E347	projects/p8-viewer-rebuild/log/msgs/3df696.md:103	msg:節B	22	no_live_states	
+E348	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:4	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E349	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:6	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E350	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:8	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E351	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:13	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E352	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:18	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E353	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:23	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E354	projects/p8-viewer-rebuild/log/msgs/5f8f8f.md:28	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E355	projects/p8-viewer-rebuild/log/msgs/931330.md:4	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E356	projects/p8-viewer-rebuild/log/msgs/931330.md:6	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E357	projects/p8-viewer-rebuild/log/msgs/931330.md:8	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E358	projects/p8-viewer-rebuild/log/msgs/931330.md:10	event:review_ng	27	checklist_tap_size	
+E359	projects/p8-viewer-rebuild/log/msgs/931330.md:16	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E360	projects/p8-viewer-rebuild/log/msgs/931330.md:21	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E361	projects/p8-viewer-rebuild/log/msgs/a5676d.md:51	msg:節B	22	no_live_states	
+E362	projects/p8-viewer-rebuild/log/msgs/a5676d.md:52	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E363	projects/p8-viewer-rebuild/log/msgs/b20186.md:64	msg:節B	22	no_live_states	
+E364	projects/p8-viewer-rebuild/log/msgs/b20186.md:65	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E365	projects/p8-viewer-rebuild/log/msgs/b20186.md:66	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E366	projects/p8-viewer-rebuild/log/msgs/b20186.md:67	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E367	projects/p8-viewer-rebuild/log/msgs/b20186.md:71	msg:節A	24	all_wait_stall	
+E368	projects/p8-viewer-rebuild/log/msgs/b20186.md:72	msg:節A	25	screen_check_server	
+E369	projects/p8-viewer-rebuild/log/msgs/b20186.md:73	msg:節A	26	screen_probe_limits	
+E370	projects/p8-viewer-rebuild/log/msgs/b20186.md:74	msg:節A	27	checklist_tap_size	
+E371	projects/p8-viewer-rebuild/log/msgs/b20186.md:75	msg:節A	32	review_count_stages	
+E372	projects/p8-viewer-rebuild/log/msgs/b20186.md:76	msg:節A	38	export_check_out	
+E373	projects/p8-viewer-rebuild/log/msgs/b20186.md:77	msg:節A	1	enter_warn	
+E374	projects/p8-viewer-rebuild/log/msgs/b87e1b.md:22	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E375	projects/p8-viewer-rebuild/log/msgs/b87e1b.md:23	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E376	projects/p8-viewer-rebuild/log/msgs/b87e1b.md:24	msg:節B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E377	projects/p9-org-watch/log/msgs/26be36.md:30	msg:節B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E378	projects/p9-org-watch/log/msgs/26be36.md:31	msg:節B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E379	projects/p9-org-watch/log/msgs/26be36.md:32	msg:節B	37	plan_table_stale	
+E380	projects/p9-org-watch/log/msgs/26be36.md:36	msg:節A	21	duty_unassigned_p9	
+E381	projects/p9-org-watch/log/msgs/26be36.md:37	msg:節A	31	same_file_two	
+E382	projects/p9-org-watch/log/msgs/26be36.md:38	msg:節A	30	close_seq_where	
+E383	projects/p9-org-watch/log/msgs/26be36.md:39	msg:節A	1	enter_warn	
+E384	projects/p9-org-watch/log/msgs/26be36.md:43	msg:節B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E385	projects/p9-org-watch/log/msgs/26be36.md:44	msg:節B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E386	projects/p9-org-watch/log/msgs/299393.md:15	msg:札B	41	closer_line_p9	
+E387	projects/p9-org-watch/log/msgs/299393.md:16	msg:札B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E388	projects/p9-org-watch/log/msgs/299393.md:17	msg:札B	21	duty_unassigned_p9	
+E389	projects/p9-org-watch/log/msgs/299393.md:18	msg:札B			これからの段取り・マージ待ちの申し送り（起きたことではない）
+E390	projects/p9-org-watch/log/msgs/5904f6.md:11	msg:札B	37	plan_table_stale	
+E391	projects/p9-org-watch/log/msgs/635d9b.md:45	msg:節B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E392	projects/p9-org-watch/log/msgs/635d9b.md:46	msg:節B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E393	projects/p9-org-watch/log/msgs/635d9b.md:47	msg:節B	37	plan_table_stale	
+E394	projects/p9-org-watch/log/msgs/635d9b.md:51	msg:節A	21	duty_unassigned_p9	
+E395	projects/p9-org-watch/log/msgs/635d9b.md:52	msg:節A	31	same_file_two	
+E396	projects/p9-org-watch/log/msgs/635d9b.md:53	msg:節A	30	close_seq_where	
+E397	projects/p9-org-watch/log/msgs/635d9b.md:54	msg:節A	1	enter_warn	
+E398	projects/p9-org-watch/log/msgs/63bb4d.md:2	auditor			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E399	projects/p9-org-watch/log/msgs/6eccb0.md:13	msg:札B	21	duty_unassigned_p9	
+E400	projects/p9-org-watch/log/msgs/6eccb0.md:14	msg:札B			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E401	projects/p9-org-watch/log/msgs/6eccb0.md:15	msg:札B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E402	projects/p9-org-watch/log/msgs/6eccb0.md:16	msg:札B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E403	projects/p9-org-watch/log/msgs/cc2161.md:4	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E404	projects/p9-org-watch/log/msgs/cc2161.md:6	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E405	projects/p9-org-watch/log/msgs/cc2161.md:8	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E406	projects/p9-org-watch/log/msgs/cc2161.md:10	event:review_ng	21	duty_unassigned_p9	
+E407	projects/p9-org-watch/log/msgs/cc2161.md:14	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E408	projects/p9-org-watch/log/msgs/cc2161.md:15	event:review_ng			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E409	projects/p9-org-watch/log/msgs/e930ae.md:19	msg:札B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E410	projects/p9-org-watch/log/msgs/e930ae.md:20	msg:札B			未実施・〔仮〕の申告（範囲の外、またはこれから実地で確かめるもの）
+E411	projects/p9-org-watch/log/msgs/f08c2f.md:4	event:review_ng			何も起きなかった・確かめて通ったことの行（review_ng の「確かめたこと」・判定の要約・「特になし」など）
+E412	projects/p9-org-watch/log/msgs/f08c2f.md:6	event:review_ng			成果物の中身への指摘・申し送り・未確認点（組織の動き方の問題ではない）
+E413	projects/p9-org-watch/log/msgs/f08c2f.md:8	event:review_ng	42	audit_ref_format	
+E414	projects/p9-org-watch/log/msgs/f08c2f.md:10	event:review_ng	30	close_seq_where	
+E415	projects/p8-viewer-rebuild/log/user-inbox.yaml:1	user_inbox:stuck	24	all_wait_stall	
+E416	projects/p9-org-watch/reports/audit/p9-org-watch.md:5	audit	41	closer_line_p9	
+E417	projects/p9-org-watch/reports/audit/p9-org-watch.md:9	audit	21	duty_unassigned_p9	
+E418	projects/p9-org-watch/reports/audit/p9-org-watch.md:13	audit	31	same_file_two	
+E419	projects/p9-org-watch/reports/audit/p9-org-watch.md:17	audit	55	pm_patrol_real	
+E420	job:company/system/ai-org/README.md:28	job_readme	24	all_wait_stall	
+E421	job:company/system/ai-org/README.md:36	job_readme	24	all_wait_stall	
+E422	job:company/system/ai-org/README.md:38	job_readme	2	no_audit_p4_p8	
+E423	job:company/system/ai-org/README.md:53	job_readme	33	agree_same_kind	
+E424	job:company/system/ai-org/README.md:59	job_readme	22	no_live_states	
+E425	projects/p1-org-status/log/events.log:84	events:no_auditor			閉じたときは監査役がいなかったが、記録は p3 の監査役が照らした（p3-org-visibility/charter.md:18・log/msgs/95df09.md:30）
+E426	projects/p2-orca-run-use/log/events.log:91	events:no_auditor			閉じたときは監査役がいなかったが、記録は p3 の監査役が照らした（p3-org-visibility/charter.md:18・log/msgs/95df09.md:30）
+E427	projects/p4-job-run-use/log/events.log:82	events:no_auditor	2	no_audit_p4_p8	
+E428	projects/p5-org-viewer/log/events.log:130	events:no_auditor	2	no_audit_p4_p8	
+E429	projects/p6-org-build/log/events.log:207	events:no_auditor	2	no_audit_p4_p8	
+E430	projects/p7-coordinator-role/log/events.log:84	events:no_auditor	2	no_audit_p4_p8	
+E431	projects/p8-viewer-rebuild/log/events.log:153	events:no_auditor	2	no_audit_p4_p8	

@@ -1,0 +1,51 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p11-issue-list/teams/issues/reviewer"
+  position: "reviewer"
+  occupation: null
+  boss: "p11-issue-list/teams/issues/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "65ee1bb5-3b21-482e-b868-3907c7f8aff7"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T19:23:40+09:00"
+  closed_at: "2026-10-24T19:52:44+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/65ee1bb5-3b21-482e-b868-3907c7f8aff7.jsonl"
+  exists: false
+  events_sent:
+    review_ng: 3
+    review_ok: 2
+    done: 1
+  review_ng_count: 3
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/issues.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/build.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/extract.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/scripts/issues_def.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/thread.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/counts.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/extract.tsv"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/work/mapping.tsv"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "p11 の issues チームのレビュアーとして、抜き出しの網羅（完了条件 8）と issues.md 本体（完了条件 1〜7・9・10）を見る"
+  did:
+    - "網羅の段: extract.py の写しを scratchpad で回して一致を確かめた。セッション報告の項目数を別の経路で数えた。event 11 本の有無、参照元 418 行の照合、msgs の取りこぼし候補 119 行の読み込みもした"
+    - "網羅の段で review_ng 1 回（user-inbox.yaml・notify-outbox.log の扱い、p2 の「未確認のまま」の節）。直しを確かめて review_ok"
+    - "本体: 抜き出しから写しで回して一字一致を確かめた。回数は自分のスクリプトで数え直した。直し方の混入は全件を読んで確かめた。参照元は乱数の種 73915 で 12 本を抜き取った。直ったの根拠のコミットとマージ時刻の前後を確かめ、入れなかった行も全部読んだ"
+    - "本体で review_ng 2 回（1 回目 5 点: job の README の版ずれと p10 の行、全員待ちの件の事実の食い違い、0 プロジェクトの件、直し方の混入 1 か所、回数と状態の食い違い。2 回目 1 点: 監査の件の p1・p2）。第5版を review_ok（リーダーへ）"
+  outputs:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p11-issue-list/teams/issues/thread.md（レビュアー 第1〜5回を追記）"
+    - "log/msgs: aa4bad・f25a86・3cdad7・36359d・ddd45d（review_ng・review_ok の本文）"
+  decided:
+    - { what: "網羅の段の review_ok は作業者宛て、本体の review_ok はリーダー宛てにした", why: "網羅の段はリーダーの start が「結果は作業者へ」と指定した。本体はレビュアーの手順（review_ok はリーダーへ）と、リーダーが完了条件 11 を確かめるのに要るため" }
+    - { what: "作業者の作ったファイルは触らず、scripts を写して出力先だけ scratchpad に変えて回した", why: "extract.py・build.py は work/ と issues.md に書き出すので、そのまま回すと作業者の成果物を上書きする" }
+    - { what: "「記録の数」が同じ人の unclear と報告の節を別に数えるのは、指摘にしなかった", why: "作り方に明記されていて、並びの 1 つ目の鍵のプロジェクト数には効かないため" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "網羅の段の review_ok の宛先が、リーダーの start（作業者へ）とレビュアーの手順（リーダーへ）とで食い違った。リーダーの指定に従った"
+    - "job の README は git の管理外で外から書き足されるので、レビューの途中（19:41）に版が変わり、抜き出しから回すと数が合わなくなった。材料が動くときにレビュアーの「回して数が合う」をどの時点の版で見るかは、決まりに無い"
+    - "orgctl の inbox --via notify --ref が、先に inbox で読んだ件だと「新しいものは無い」になった（起動直後の start 5f1755）"

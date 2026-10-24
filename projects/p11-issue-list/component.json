@@ -1,0 +1,18 @@
+{
+  "kind": "project",
+  "id": "p11-issue-list",
+  "title": "課題の一覧",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T19:13:37+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p11-issue-list/pm",
+    "coordinator": "p11-issue-list/coordinator",
+    "auditor": "p11-issue-list/auditor"
+  },
+  "children": [
+    "p11-issue-list/teams/issues"
+  ],
+  "closed_at": "2026-10-24T19:56:54+09:00"
+}
