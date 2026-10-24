@@ -36,8 +36,8 @@ const rm = p.by_project.reduce((a: number, r: any) => a + r.remakes, 0);
   {p.sessions.map((s: any) => (
     <details>
       <summary>{s.member_id} <span class="mute">— {s.position}・{s.model}・{min(s.span_min)}・{tok(s.tokens_total)}</span></summary>
-      <p class="mute">API メッセージ {s.api_messages ?? '—'}・review_ng {s.review_ng_count}・送信 {Object.entries(s.events_sent).map(([k, v]) => `${k}×${v}`).join(' ') || '—'}</p>
-      {s.tokens ? <p class="mute">input {tok(s.tokens.input)}・output {tok(s.tokens.output)}・cache_read {tok(s.tokens.cache_read)}・cache_write {tok(s.tokens.cache_write)}</p> : null}
+      <div class="body"><p class="mute">API メッセージ {s.api_messages ?? '—'}・review_ng {s.review_ng_count}・送信 {Object.entries(s.events_sent).map(([k, v]) => `${k}×${v}`).join(' ') || '—'}</p>
+      {s.tokens ? <p class="mute">input {tok(s.tokens.input)}・output {tok(s.tokens.output)}・cache_read {tok(s.tokens.cache_read)}・cache_write {tok(s.tokens.cache_write)}</p> : null}</div>
     </details>
   ))}
 </Layout>

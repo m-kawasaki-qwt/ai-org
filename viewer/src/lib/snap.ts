@@ -47,3 +47,35 @@ export function headline(p: any): any | null {
   }
   return msgs.length ? msgs[msgs.length - 1] : null;
 }
+
+import { marked } from 'marked';
+
+// 本文（Markdown）を整形して出す。本文の 1 行目のコメント（<!-- from → to kind ts -->）は外す
+export function md(s: string | null | undefined): string {
+  if (!s) return '';
+  return marked.parse(s.replace(/^<!--.*?-->\s*/s, ''), { async: false }) as string;
+}
+
+// 期間を 1 行で: 「16 分・10-24 01:15」
+export function span(p: any): string {
+  return `${min(p.duration_min)}・${when(p.created_at)}`;
+}
+
+// プロジェクトの全メンバー（木を平らに）
+export function allMembers(c: any): any[] {
+  return [...c.members.map((m: any) => ({ ...m, comp: c })), ...c.children.flatMap(allMembers)];
+}
+
+// 立場ごとの色（時系列の図の帯）
+export const POS_COLOR: Record<string, string> = {
+  user: '#c084fc', pm: '#7aa2ff', coordinator: '#22d3ee', auditor: '#f472b6', leader: '#fbbf24', worker: '#4ade80', reviewer: '#fb923c',
+};
+// 種類ごとの色（時系列の図の点と線）
+export function kindColor(k: string): string {
+  if (['review_ng', 'rework', 'reassign', 'blocked', 'escalate'].includes(k)) return '#f87171';
+  if (['review_ok', 'done'].includes(k)) return '#4ade80';
+  if (k === 'report') return '#7aa2ff';
+  if (k === 'review_request') return '#fb923c';
+  if (['start', 'wrap_up'].includes(k)) return '#9ca3af';
+  return '#6b7280';
+}

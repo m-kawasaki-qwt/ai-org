@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { snap, when, cut } from '../lib/snap';
+import { snap, when, cut, md } from '../lib/snap';
 const items = snap.inbox;
 const unread = items.filter((i: any) => i.unread).length;
 const empty = (i: any) => i.kind === 'done' && !i.body && !i.unread;
@@ -17,20 +17,22 @@ const dones = items.filter(empty);
         <span class={`tag ${i.kind}`}>{i.kind}</span> {i.summary === '-' ? '（完了の知らせ・本文なし）' : cut(i.summary, 100)}
         <span class="mute"> — {i.project} / {i.from} / {when(i.at)}{i.unread ? '・未読' : ''}</span>
       </summary>
-      {i.body ? <pre>{i.body}</pre> : <p class="mute">本文なし。</p>}
-      {i.msg ? <div class="mute">{i.msg}</div> : null}
+      <div class="body">
+        {i.body ? <div class="md" set:html={md(i.body)} /> : <p class="mute">本文なし。</p>}
+        {i.msg ? <div class="mute small">{i.msg}</div> : null}
+      </div>
     </details>
   ))}
   {dones.length ? (
     <details>
       <summary class="mute">完了通知 {dones.length} 件（本文なし）</summary>
-      <table>
+      <div class="body"><table>
         <tbody>
           {dones.map((i: any) => (
             <tr><td>{i.project}</td><td>{i.from}</td><td>{when(i.at)}{i.unread ? '・未読' : ''}</td></tr>
           ))}
         </tbody>
-      </table>
+      </table></div>
     </details>
   ) : null}
 </Layout>

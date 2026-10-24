@@ -1,32 +1,46 @@
 ---
+// 一覧に載せるもの（なぜ詳細ではなく一覧か）:
+//  名前と状態 … どれが動いていて、どれが終わったかを一目で選ぶため
+//  要対応     … 川崎さんの番（未読・判断待ち）があるプロジェクトを最初に見つけるため
+//  期間       … 動いているものが長引いていないかを見るため（1 行に収める）
+//  往復・作り直し … 進め方に問題がありそうなものを見つけるため
+//  トークン   … 費用の大きいものを見つけるため
+// 目的の文・最後の報告などの詳細は、詳細ページに回す。
 import Layout from '../layouts/Layout.astro';
-import { snap, tok, min, when, cut, headline } from '../lib/snap';
+import { snap, tok, min, when } from '../lib/snap';
 const t = snap.totals;
+const todo = (p: any) => p.unread_to_user + (p.counts.escalate ?? 0);
 ---
 <Layout title="一覧">
-  <h2>プロジェクトの一覧</h2>
-  <p class="lead">開いている {t.projects_open}・未読 {t.unread_to_user}・判断待ち {t.escalations_open}。{t.unread_to_user > 0 ? '受け箱に川崎さん宛てがあります。' : '受け箱は空です。'}</p>
+  <h2>プロジェクト</h2>
+  <p class="lead">
+    {t.unread_to_user > 0 ? <a href="/inbox">川崎さん宛てが {t.unread_to_user} 件あります →</a> : '川崎さんの番はありません。'}
+  </p>
   <div class="stats">
-    <div class="stat"><b>{t.projects_open}</b><span>開いている</span></div>
-    <a class={`stat ${t.unread_to_user ? 'alert' : ''}`} href="/inbox" style="text-decoration:none;color:inherit"><b>{t.unread_to_user}</b><span>未読 → 受け箱へ</span></a>
+    <a class={`stat ${t.unread_to_user ? 'alert' : ''}`} href="/inbox"><b>{t.unread_to_user}</b><span>未読（受け箱）</span></a>
     <div class={`stat ${t.escalations_open ? 'alert' : ''}`}><b>{t.escalations_open}</b><span>判断待ち</span></div>
+    <div class="stat"><b>{t.projects_open}</b><span>動いている</span></div>
     <div class="stat"><b>{t.projects_closed}</b><span>閉じた</span></div>
-    <div class="stat"><b>{tok(t.tokens_total)}</b><span>トークン（報告のある分）</span></div>
+    <a class="stat" href="/performance"><b>{tok(t.tokens_total)}</b><span>トークン（合計）</span></a>
   </div>
-  <h3>プロジェクト（新しい順）</h3>
+  <h3>新しい順</h3>
   <table>
-    <thead><tr><th>プロジェクト</th><th>状態</th><th>期間</th><th class="n">トークン</th><th class="n">往復</th><th class="n">作り直し</th><th class="n">未読</th><th>いま／最後</th></tr></thead>
+    <thead>
+      <tr>
+        <th>名前</th><th>状態</th><th class="n">要対応</th><th>期間</th>
+        <th class="n">往復</th><th class="n">作り直し</th><th class="n hide-md">トークン</th>
+      </tr>
+    </thead>
     <tbody>
       {snap.projects.map((p: any) => (
-        <tr>
-          <td><a href={`/projects/${p.id}`}>{p.id}</a><div class="mute">{p.purpose}</div></td>
-          <td><span class={`tag ${p.status}`}>{p.status === 'open' ? '開いている' : '閉じた'}</span></td>
-          <td>{min(p.duration_min)}<div class="mute">{when(p.created_at)}〜{when(p.closed_at)}</div></td>
-          <td class="n">{p.tokens_total === null ? <span class="na">—（片づけ前）</span> : tok(p.tokens_total)}{!p.metrics_complete && p.tokens_total !== null ? <div class="mute">一部のみ</div> : null}</td>
+        <tr class="link" onclick={`location.href='/projects/${p.id}'`}>
+          <td><a href={`/projects/${p.id}`}><b>{p.title}</b></a> <span class="mute small hide-md">{p.id}</span></td>
+          <td><span class={`tag ${p.status}`}>{p.status === 'open' ? '動いている' : '閉じた'}</span></td>
+          <td class="n">{todo(p) ? <span class="badge">{todo(p)}</span> : <span class="mute">—</span>}</td>
+          <td class="nowrap">{min(p.duration_min)} <span class="mute small">{when(p.created_at)}〜</span></td>
           <td class="n">{p.counts.round_trips}</td>
-          <td class="n">{p.counts.remakes}</td>
-          <td class="n">{p.unread_to_user ? <a href="/inbox" class="badge" style="text-decoration:none">{p.unread_to_user}</a> : 0}</td>
-          <td class="last">{headline(p) ? <><span class={`tag ${headline(p).kind}`}>{headline(p).kind}</span> {cut(headline(p).summary, 60)}<div class="mute">{when(headline(p).ts)}</div></> : '—'}</td>
+          <td class="n" style={p.counts.remakes ? 'color:var(--warn)' : ''}>{p.counts.remakes}</td>
+          <td class="n hide-md">{p.tokens_total === null ? <span class="na">—</span> : tok(p.tokens_total)}</td>
         </tr>
       ))}
     </tbody>

@@ -2,51 +2,55 @@
 import Layout from '../../layouts/Layout.astro';
 import Row from '../../components/Row.astro';
 import Tree from '../../components/Tree.astro';
-import { snap, tok, min, when, cut, headline, isEmptyDone } from '../../lib/snap';
+import Swimlane from '../../components/Swimlane.astro';
+import { snap, tok, min, when, cut, headline, isEmptyDone, md, allMembers } from '../../lib/snap';
 export function getStaticPaths() {
   return snap.projects.map((p: any) => ({ params: { id: p.id }, props: { p } }));
 }
 const { p } = Astro.props;
-const members = (function walk(c: any): any[] { return [...c.members, ...c.children.flatMap(walk)]; })(p.tree);
-const active = members.filter((m) => m.state === '進んでいる');
-const lifecycle = p.timeline.filter((e: any) => e.group === 'lifecycle');
+const members = allMembers(p.tree);
+const active = members.filter((m: any) => m.state === '進んでいる');
 const messages = p.timeline.filter((e: any) => e.group === 'message' && !isEmptyDone(e));
-const doneCount = p.timeline.filter(isEmptyDone).length;
 const head = headline(p);
-// プロジェクトの層（PM と user の間）と、チームごと
 const top = messages.filter((e: any) => !e.component || e.component === p.id);
 const teamIds = [...new Set(messages.filter((e: any) => e.component && e.component !== p.id).map((e: any) => e.component))] as string[];
-const byTeam = teamIds.map((id) => ({ id, events: messages.filter((e: any) => e.component === id) }));
+const byTeam = teamIds.map((id) => ({ id, title: (function f(c: any): any { return c.id === id ? c : c.children.map(f).find(Boolean); })(p.tree)?.title ?? id, events: messages.filter((e: any) => e.component === id) }));
 const c = p.counts;
 ---
-<Layout title={p.id}>
-  <h2>{p.id}</h2>
-  <p class="lead">
-    {p.status === 'open' ? '開いている' : '閉じた'}・{p.purpose}
-  </p>
+<Layout title={p.title}>
+  <h2>{p.title} <span class={`tag ${p.status}`}>{p.status === 'open' ? '動いている' : '閉じた'}</span></h2>
+  <p class="lead small">{p.id}・{min(p.duration_min)}・{when(p.created_at)}〜{p.closed_at ? when(p.closed_at) : ''}</p>
+
   <div class="stats">
-    <div class="stat" style="min-width:300px"><b style="font-size:16px">{head ? `${head.kind}: ${cut(head.summary, 50)}` : '—'}</b><span>いま／最後（{when(head?.ts)}）{head?.body ? ' — 下の時系列で本文を開ける' : ''}</span></div>
-    <div class="stat"><b>{active.length}</b><span>動いているメンバー{active.length ? '：' + active.map((m: any) => m.name).join('・') : ''}</span></div>
+    <div class="stat"><b>{active.length}</b><span>動いているメンバー</span></div>
+    <div class="stat"><b>{members.length}</b><span>関わったメンバー</span></div>
     <div class="stat"><b>{c.round_trips}</b><span>往復</span></div>
-    <div class={`stat ${c.remakes ? 'alert' : ''}`}><b>{c.remakes}</b><span>作り直し（NG {c.review_ng}・やり直し {c.rework}・入替 {c.reassign}）</span></div>
-    <div class="stat"><b>{p.tokens_total === null ? '—' : tok(p.tokens_total)}</b><span>{p.tokens_total === null ? '片づけ前' : 'トークン' + (p.metrics_complete ? '' : '（一部）')}</span></div>
-    <div class="stat"><b>{min(p.duration_min)}</b><span>期間</span></div>
+    <div class={`stat ${c.remakes ? 'alert' : ''}`}><b>{c.remakes}</b><span>作り直し（指摘 {c.review_ng}・差し戻し {c.rework}）</span></div>
+    <div class="stat"><b>{p.tokens_total === null ? '—' : tok(p.tokens_total)}</b><span>トークン</span></div>
   </div>
 
-  <h3>コンポーネントの木とメンバー</h3>
-  <ul class="tree root"><Tree c={p.tree} /></ul>
 
-  <h3>時系列</h3>
-  <p class="mute">節目（{lifecycle.length} 件）は帯に畳み、やりとり（{messages.length} 件）は、プロジェクトの層を並べ、チームごとに畳む。帯にカーソルで詳細。</p>
-  <div class="band">
-    {lifecycle.map((e: any) => <i title={`${when(e.ts)} ${e.kind} ${e.summary}`}></i>)}
-  </div>
-  {top.map((e: any) => <Row e={e} open={head && e.n === head.n} />)}
+  <h3>誰がどう動いたか</h3>
+  <Swimlane p={p} />
+
+  <h3>{p.status === 'closed' ? '結果' : 'いまの最後の報告'}</h3>
+  {head ? (
+    <details>
+      <summary><span class={`tag ${head.kind}`}>{head.kind}</span> <b>{p.status === 'closed' ? '結果' : 'いまの最後の報告'}</b> <span class="mute small">{when(head.ts)}・{cut(head.summary, 60)}</span></summary>
+      <div class="body md" set:html={md(head.body)} />
+    </details>
+  ) : null}
+
+  <h3>組織の形</h3>
+  <Tree c={p.tree} />
+
+  <h3>やりとりの中身</h3>
+  <p class="mute small">プロジェクトの層（PM と川崎さん・チーム間）のやりとりを並べ、チームの中のやりとりはチームごとに畳む。</p>
+  {top.map((e: any) => <Row e={e} />)}
   {byTeam.map((t) => (
     <details>
-      <summary><b>{t.id.split('/').slice(-1)[0]}</b> <span class="mute">— やりとり {t.events.length} 件</span></summary>
-      {t.events.map((e: any) => <Row e={e} />)}
+      <summary><b>{t.title}</b> <span class="mute small">チームの中のやりとり {t.events.length} 件</span></summary>
+      <div class="body">{t.events.map((e: any) => <Row e={e} />)}</div>
     </details>
   ))}
-  {doneCount ? <p class="mute">本文なしの完了通知（done）{doneCount} 件は省略。</p> : null}
 </Layout>

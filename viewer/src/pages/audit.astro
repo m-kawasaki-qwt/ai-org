@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { snap, when } from '../lib/snap';
+import { snap, when, md } from '../lib/snap';
 const props = snap.audit_proposals;
 const unclear = snap.unclear;
 const grp = (key: (u: any) => string) => {
@@ -22,10 +22,10 @@ const byPosition = grp((u) => u.position).map(([k, v]: any) => [k, v.length]);
       {r.proposals.map((x: any) => (
         <details>
           <summary>{x.number !== null ? `${x.number}. ` : ''}<b>{x.title}</b>{x.target ? <span class="mute"> — {x.target}</span> : null}</summary>
-          <pre>{x.body}</pre>
+          <div class="body md" set:html={md(x.body)} />
         </details>
       ))}
-      <details><summary class="mute">報告の全文（観察を含む）</summary><pre>{r.report_body}</pre></details>
+      <details><summary class="mute">報告の全文（観察を含む）</summary><div class="body md" set:html={md(r.report_body)} /></details>
     </>
   ))}
   <h3>unclear（セッション報告から）</h3>
@@ -40,14 +40,14 @@ const byPosition = grp((u) => u.position).map(([k, v]: any) => [k, v.length]);
   {byProject.map(([id, items]: any) => (
     <details>
       <summary><b>{id}</b> <span class="mute">— {items.length} 件</span></summary>
-      <table>
+      <div class="body"><table>
         <thead><tr><th>誰</th><th>分からなかった点</th></tr></thead>
         <tbody>
           {items.map((u: any) => (
             <tr><td>{u.position}<div class="mute">{u.member_id.replace(id + '/', '')}</div></td><td>{u.text}<div class="mute">{u.report}</div></td></tr>
           ))}
         </tbody>
-      </table>
+      </table></div>
     </details>
   ))}
 </Layout>

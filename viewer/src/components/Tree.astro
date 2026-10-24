@@ -1,22 +1,38 @@
 ---
-import { min, when } from '../lib/snap';
-const { c } = Astro.props;
+import { POS_COLOR, tok, min } from '../lib/snap';
+const { c, depth = 0 } = Astro.props;
 const k = c.counts;
+const stateColor = (s: string) => (s === '進んでいる' ? 'var(--ok)' : s.startsWith('止まって') || s.startsWith('ループ') ? 'var(--bad)' : 'var(--mute)');
 ---
-<li>
-  <b>{c.id.split('/').slice(-1)[0]}</b> <span class="tag">{c.kind === 'project' ? 'プロジェクト' : 'チーム'}</span> <span class={`tag ${c.status}`}>{c.status}</span>
-  <span class="mute"> 往復 {k.round_trips}・作り直し {k.remakes}</span>
-  {c.purpose ? <div class="mute">{c.purpose}</div> : null}
-  <details>
-    <summary>メンバー {c.members.length} 人</summary>
-    <table>
-      <thead><tr><th>名前</th><th>立場</th><th>モデル</th><th>状態</th></tr></thead>
-      <tbody>
-        {c.members.map((m: any) => (
-          <tr><td>{m.name}</td><td>{m.position}{m.occupation ? `・${m.occupation}` : ''}</td><td>{m.model ?? '—'}</td><td>{m.state}{m.state_note ? `（${m.state_note}）` : ''}</td></tr>
-        ))}
-      </tbody>
-    </table>
-  </details>
-  {c.children.length ? <ul class="tree">{c.children.map((ch: any) => <Astro.self c={ch} />)}</ul> : null}
-</li>
+<div class="comp" style={`margin-left:${depth * 22}px`}>
+  <div class="comp-head">
+    <span class="tag">{c.kind === 'project' ? 'プロジェクト' : 'チーム'}</span>
+    <b>{c.title}</b>
+    <span class={`tag ${c.status}`}>{c.status === 'open' ? '開いている' : '閉じた'}</span>
+    <span class="mute small">往復 {k.round_trips}・作り直し {k.remakes}</span>
+  </div>
+  <div class="members">
+    {c.members.map((m: any) => (
+      <div class="member" title={`${m.id}\n${m.state}${m.state_note ? '（' + m.state_note + '）' : ''}`}>
+        <i style={`background:${POS_COLOR[m.position] ?? '#6b7280'}`}></i>
+        <div>
+          <div><b>{m.name}</b> <span class="mute small">{m.position}{m.occupation ? `・${m.occupation}` : ''}</span></div>
+          <div class="small mute">
+            {m.model ?? '—'}
+            {m.session ? <>・{min(m.session.span_min)}・{tok(m.session.tokens_total)}</> : null}
+            ・<span style={`color:${stateColor(m.state)}`}>{m.state}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+{c.children.map((ch: any) => <Astro.self c={ch} depth={depth + 1} />)}
+
+<style>
+  .comp { border-left:2px solid var(--line); padding:6px 0 10px 12px; margin-bottom:6px; }
+  .comp-head { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
+  .members { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; }
+  .member { display:flex; gap:10px; align-items:flex-start; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+  .member i { width:10px; height:10px; border-radius:50%; margin-top:6px; flex:none; }
+</style>
