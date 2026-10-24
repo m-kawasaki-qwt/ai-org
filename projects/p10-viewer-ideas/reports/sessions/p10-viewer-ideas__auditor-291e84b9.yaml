@@ -1,0 +1,50 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p10-viewer-ideas/auditor"
+  position: "auditor"
+  occupation: null
+  boss: "user"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "291e84b9-bf6a-4f25-85ca-eade6cfe5b92"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T19:40:52+09:00"
+  closed_at: "2026-10-24T19:43:33+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/291e84b9-bf6a-4f25-85ca-eade6cfe5b92.jsonl"
+  started_at: "2026-10-24T19:41:00+09:00"
+  ended_at: "2026-10-24T19:43:33+09:00"
+  span_min: 2.5
+  model_effective:
+    claude-opus-5-5: 28
+  api_messages: 17
+  tokens:
+    input: 36
+    output: 9517
+    cache_read: 1721003
+    cache_write: 119495
+  tokens_total: 1850051
+  tool_calls:
+    Bash: 17
+    Write: 2
+  events_sent:
+    report: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window: []
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "p10-viewer-ideas を閉じる前に、組織の動き方を方針に照らして監査し、起きたことと参照元を audit.md に書く"
+  did:
+    - "policy.md・charter・events.log 全行・msgs 18 件・セッション報告 6 件・パック・thread.md・notify-stats を読んだ"
+    - "unclear が重なった所（画面を作るかの二択）と、申し送りが 4 段続いた所（叩き台 2 の前提）を深く読み、dev-tools の立場・職種の規範と突き合わせた"
+    - "audit.md に 5 件書き、user へ report（12adc9）"
+  outputs:
+    - "projects/p10-viewer-ideas/auditor/audit.md"
+  decided:
+    - { what: "指摘を 5 件にし、重い順に並べた", why: "複数の立場の unclear・申し送りに同じ事が出たものを重いとした" }
+    - { what: "作業者の review_request がレビュアーの起動より先に出た件は指摘にしなかった", why: "リーダーの start で拾われ、やりとりは止まっていない" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "notify-stats の「届かなかった 2 件」がどの知らせかは出力に無く、events.log の notify_sent と notify_recv の突き合わせで特定した（自分宛ての d93390 は inbox --via notify で「新しいものは無い」と出て、受信が記録されたかは確かめていない）"
+    - "抜き取りは 3 件まで〔仮〕とあるが、このプロジェクトには指摘の上限・作り直し・停止・ループ・誤配の印が無く、印が無いものだけで 5 件になった。印の無いものの抜き取りの数え方が決まりから読み取れなかった"

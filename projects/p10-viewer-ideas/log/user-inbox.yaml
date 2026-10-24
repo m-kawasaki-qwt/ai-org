@@ -1,0 +1,8 @@
+- kind: "report"
+  from: "p10-viewer-ideas/pm"
+  ref: "58e395"
+  msg: "log/msgs/58e395.md"
+  summary: "# p10-viewer-ideas の結果（PM → 川崎さん）"
+  at: "2026-10-24T19:40:58+09:00"
+  gchat: "sent"
+  read: false

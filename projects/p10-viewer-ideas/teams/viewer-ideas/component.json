@@ -1,0 +1,17 @@
+{
+  "kind": "team",
+  "id": "p10-viewer-ideas/teams/viewer-ideas",
+  "title": null,
+  "parent": "p10-viewer-ideas",
+  "root": false,
+  "created_at": "2026-10-24T19:19:13+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p10-viewer-ideas/teams/viewer-ideas/leader",
+    "worker-records": "p10-viewer-ideas/teams/viewer-ideas/worker-records",
+    "worker-research": "p10-viewer-ideas/teams/viewer-ideas/worker-research",
+    "reviewer-kawasaki": "p10-viewer-ideas/teams/viewer-ideas/reviewer-kawasaki"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T19:39:51+09:00"
+}

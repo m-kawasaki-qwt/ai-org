@@ -1,0 +1,61 @@
+# count_records.py
+| プロジェクト | 名前 | 時間(分) | トークン(M) | セッション | やりとり | 差し戻し | やり直し | 入れ替え | 直し計 | 判断の依頼 | 止まっている | 人の手（手続き以外） | 迷った点 | 結果→終わりの指示(分) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| p1-org-status | 最初の試走 | 29.6 | 9.3 | 4 | 18 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 18 | 0.2 |
+| p2-orca-run-use | run-use の直し | 12.3 | 12.4 | 4 | 21 | 1 | 1 | 0 | 2 | 0 | 0 | 0 | 12 | 0.2 |
+| p3-org-visibility | 見える化 | 40.2 | 20.1 | 8 | 37 | 1 | 1 | 0 | 2 | 0 | 0 | 0 | 14 | 24.8 |
+| p4-job-run-use | job の run-use 整理 | 13.9 | 12.5 | 5 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 1.6 |
+| p5-org-viewer | ビューア構築 | 16.9 | 25.2 | 6 | 34 | 1 | 1 | 0 | 2 | 0 | 0 | 0 | 19 | 0.3 |
+| p6-org-build | 組織に 3 つ足す | 40.4 | 41.4 | 10 | 51 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 23 | 0.2 |
+| p7-coordinator-role | チームコーディネーターの役割の改め | 15.7 | 15.6 | 5 | 21 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 13 | 0.3 |
+| p8-viewer-rebuild | ビューアの作り直し | 63.1 | 62.5 | 7 | 40 | 2 | 0 | 0 | 2 | 0 | 0 | 1 | 18 | 0.4 |
+| p9-org-watch | 見張りと閉じるときの監査 | 28.7 | 34.1 | 7 | 38 | 2 | 0 | 0 | 2 | 0 | 0 | 0 | 15 | 0.2 |
+
+- p1-org-status: 人の手=['11:46 assign p1-org-status/pm', '11:46 launch p1-org-status/pm', '11:46 teardown p1-org-status/pm'] 画面に定義の無い種類=[] トークン欠け=0
+- p8-viewer-rebuild: 人の手=['16:30 nudge p8-viewer-rebuild/teams/viewer/leader'] 画面に定義の無い種類=['nudge'] トークン欠け=0
+
+時間: 中央値 28.7 分・最小 12.3・最大 63.1
+トークン: 中央値 20.1M・最小 9.3M・最大 62.5M・合計 232.9M
+中央値との比（時間・トークン）: p1 1.0倍/0.5倍・p2 0.4倍/0.6倍・p3 1.4倍/1.0倍・p4 0.5倍/0.6倍・p5 0.6倍/1.3倍・p6 1.4倍/2.1倍・p7 0.5倍/0.8倍・p8 2.2倍/3.1倍・p9 1.0倍/1.7倍
+直しの回数の種類: [0, 2]
+直し: 合計 10・あったプロジェクト 5/9
+判断の依頼（escalate）: 合計 0・止まっている（blocked）: 合計 0
+迷った点: 合計 142
+人の手（手続き以外）: 合計 4・あったプロジェクト 2/9
+
+# gaps.py
+p1-org-status	 10.7 分	前: 11:35:51 user start pm	破った: 11:46:34 user teardown pm
+p1-org-status	  8.9 分	前: 11:49:51 teams/status-tool/worker-1 review_request teams/status-tool/reviewer	破った: 11:58:46 pm report teams/status-tool/leader
+p3-org-visibility	 24.8 分	前: 13:40:09 pm report user	破った: 14:04:55 user wrap_up pm
+p6-org-build	  5.9 分	前: 13:26:12 teams/org-build/leader report pm	破った: 13:32:08 teams/uiux-research/worker-1 review_request teams/uiux-research/reviewer
+p6-org-build	  9.1 分	前: 13:35:15 teams/uiux-research/worker-1 done teams/uiux-research/leader	破った: 13:44:22 teams/uiux-research/leader teardown teams/uiux-research/worker-1
+p7-coordinator-role	  5.0 分	前: 15:12:10 teams/coordinator-flow/leader start teams/coordinator-flow/worker-1	破った: 15:17:13 teams/coordinator-flow/worker-1 review_request teams/coordinator-flow/reviewer
+p8-viewer-rebuild	 15.6 分	前: 15:54:14 teams/viewer/reviewer-export review_ok teams/viewer/leader	破った: 16:09:51 teams/viewer/worker-ui review_request teams/viewer/reviewer-kawasaki
+p8-viewer-rebuild	  5.3 分	前: 16:09:51 teams/viewer/worker-ui review_request teams/viewer/reviewer-kawasaki	破った: 16:15:07 teams/viewer/reviewer-kawasaki review_ng teams/viewer/worker-ui
+p8-viewer-rebuild	  7.3 分	前: 16:15:07 teams/viewer/reviewer-kawasaki review_ng teams/viewer/worker-ui	破った: 16:22:23 teams/viewer/worker-ui review_request teams/viewer/reviewer-kawasaki
+
+5 分以上の静かな間: 9 件
+
+# checks.py
+## 1. 写しの古さ（snapshot の書き出し 2026-10-24T19:14:58+09:00・確かめた時刻 2026-10-24T19:28:37）
+- p10-viewer-ideas: 写しの後に増えた行 21（全 28 行）・写しのメンバー 2 人／記録のメンバー 6 人・最後の行 19:24:08 teardown
+- p11-issue-list: 写しの後に増えた行 21（全 28 行）・写しのメンバー 2 人／記録のメンバー 5 人・最後の行 19:28:19 review_request
+
+## 2. 結果の報告（PM → 川崎さん）の本文
+- p1-org-status（803ffb）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 False・worktree の言及 False・Summary に保留の語 False・本文 3008 字
+- p2-orca-run-use（7ad811）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 False・worktree の言及 False・Summary に保留の語 False・本文 2576 字
+- p3-org-visibility（b93761）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 False・worktree の言及 False・Summary に保留の語 False・本文 2917 字
+- p4-job-run-use（3b3654）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 False・worktree の言及 False・Summary に保留の語 False・本文 2373 字
+- p5-org-viewer（2140aa）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 False・worktree の言及 True・Summary に保留の語 False・本文 2780 字
+- p6-org-build（4d8609）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 True・worktree の言及 True・Summary に保留の語 True・本文 4342 字
+- p7-coordinator-role（be01fb）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 True・worktree の言及 True・Summary に保留の語 False・本文 3480 字
+- p8-viewer-rebuild（b20186）: 完了条件の言及 True・完了条件ごとの表 True・PR の言及 True・worktree の言及 True・Summary に保留の語 False・本文 4075 字
+- p9-org-watch（635d9b）: 完了条件の言及 True・完了条件ごとの表 False・PR の言及 True・worktree の言及 True・Summary に保留の語 False・本文 3743 字
+
+## 3. snapshot にあって画面が読んでいない項目
+- schema_version: 画面のコードに出てこない（件数・値 1）
+- noise_kinds: 画面のコードに出てこない（件数・値 5）
+- totals: 画面のコードに出てこない（件数・値 8）
+- inbox: 画面のコードに出てこない（件数・値 21）
+- audit_findings: 画面のコードに出てこない（件数・値 1）
+- totals: {'projects_open': 2, 'projects_closed': 9, 'unread_to_user': 3, 'escalations_open': 0, 'tokens_total': 232946476, 'unclear_count': 142, 'audit_proposal_count': 5, 'audit_finding_count': 4}

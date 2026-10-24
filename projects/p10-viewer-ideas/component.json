@@ -1,0 +1,18 @@
+{
+  "kind": "project",
+  "id": "p10-viewer-ideas",
+  "title": "ビューアの改善点",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T19:13:37+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p10-viewer-ideas/pm",
+    "coordinator": "p10-viewer-ideas/coordinator",
+    "auditor": "p10-viewer-ideas/auditor"
+  },
+  "children": [
+    "p10-viewer-ideas/teams/viewer-ideas"
+  ],
+  "closed_at": "2026-10-24T19:43:34+09:00"
+}
