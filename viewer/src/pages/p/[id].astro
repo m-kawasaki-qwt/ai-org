@@ -1,0 +1,300 @@
+---
+// プロジェクト: 結論の 1 文・数字 3 つ・時系列の図・本文のパネル（design.md の画面 2）
+import Layout from '../../layouts/Layout.astro';
+import Panel from '../../components/Panel.astro';
+import { snap, NOW, md, mdInline, when, hm, tok, min } from '../../lib/snap';
+import {
+  ms, who, posOf, kindOf, flatten, compName, runsOf, endOf, stalls, openStalls, stallText, stallNote,
+  decisions, roundTrips, reviewLoops, averages, lastReportToUser, lastMessage, POS_LABEL, gist,
+} from '../../lib/model';
+
+export function getStaticPaths() {
+  return snap.projects.map((p: any) => ({ params: { id: p.id }, props: { p } }));
+}
+const { p } = Astro.props as any;
+
+const end = endOf(p, NOW);
+const runs = runsOf(p);
+const dec = decisions(p);
+const nowSt = openStalls(p, NOW);
+const allSt = stalls(p, NOW);
+const rts = roundTrips(p);
+const loops = reviewLoops(p, NOW);
+const avg = averages(snap.projects, p.id);
+const result = p.status === 'closed' ? lastReportToUser(p) : null;
+const msgs: any[] = p.timeline.filter((e: any) => e.group === 'message');
+const tplE = (e: any) => `tpl-e-${e.id}`;
+const STATUS = dec.length ? ['wait', '判断待ち'] : p.status === 'open' ? ['run', '動いている'] : ['done', '終わった'];
+
+// 結論の 1 文と、その本文（報告の表題は ID を含むので使わず、本文から結果の 1 文を取り出す）
+let lead = '', leadCls = '', leadEv: any = null;
+if (dec.length) { leadEv = dec[0]; const l = gist(leadEv.body); lead = `判断待ち: ${who(leadEv.from)} から${kindOf(leadEv.kind).label}${l ? '「' + l + '」' : ''}`; leadCls = 'warn'; }
+else if (nowSt.length) { leadEv = nowSt[0].ev; lead = `止まっているかも: ${stallText(nowSt[0])}`; leadCls = 'danger'; }
+else if (p.status === 'open') { const l = lastMessage(p); leadEv = l; lead = `止まっているものは無い（最後の動き ${Math.round((NOW - ms(l?.ts ?? p.created_at)) / 60000)} 分前）`; }
+else { leadEv = result; const l = result ? gist(result.body) : ''; lead = result ? (l ? `終わった — ${l}` : '終わった — 結果の報告あり') : '終わった'; leadCls = 'done'; }
+const initial = leadEv ? tplE(leadEv) : '';
+
+// 数字 3 つ（閉じたプロジェクトの平均と比べる）
+const nums = [
+  { k: p.status === 'open' ? 'これまで' : 'かかった時間', v: min(p.duration_min), a: avg.duration !== null ? min(avg.duration) : null },
+  { k: 'トークン', v: tok(p.tokens_total), a: avg.tokens !== null ? tok(avg.tokens) : null },
+  { k: '直し', v: `${p.counts.remakes} 回`, a: avg.remakes !== null ? `${avg.remakes.toFixed(1)} 回` : null },
+];
+
+// 帯の行（入れ子）
+const comps = flatten(p.tree);
+const POS_ORDER = ['pm', 'coordinator', 'auditor', 'leader', 'worker', 'reviewer'];
+const sortM = (ms_: any[]) => [...ms_].sort((a, b) => POS_ORDER.indexOf(posOf(a.id)) - POS_ORDER.indexOf(posOf(b.id)) || a.id.localeCompare(b.id));
+const rows: any[] = [];
+const memberOf: Record<string, string> = { user: 'user' };
+const memberTpl: any[] = [];
+const toRun = (r: any) => ({ a: r.assigned_at ? ms(r.assigned_at) : null, l: r.launched_at ? ms(r.launched_at) : null, c: r.closed_at ? ms(r.closed_at) : null });
+const addMember = (m: any, depth: number, ancestors: string[], comp: any) => {
+  const key = 'm:' + m.id;
+  const tpl = `tpl-m-${memberTpl.length}`;
+  memberTpl.push({ m, comp, tpl, runs: runs.get(m.id) ?? [] });
+  memberOf[m.id] = key;
+  rows.push({ key, type: 'member', label: who(m.id), mid: m.id, depth, tpl, runs: (runs.get(m.id) ?? []).map(toRun), ancestors });
+};
+rows.push({ key: 'user', type: 'user', label: '川崎さん', depth: 0, ancestors: [] });
+rows.push({ key: 'c:' + p.tree.id, type: 'head', label: 'プロジェクト全体', depth: 0, ancestors: [] });
+for (const m of sortM(p.tree.members)) addMember(m, 1, [], p.tree);
+const countMembers = (c: any): number => c.members.length + c.children.reduce((s: number, x: any) => s + countMembers(x), 0);
+const walk = (c: any, depth: number, anc: string[]) => {
+  const key = 'c:' + c.id;
+  const span: [number, number] = [ms(c.created_at), c.closed_at ? ms(c.closed_at) : end];
+  rows.push({ key, type: 'head', label: `チーム ${compName(c)}`, sub: `${hm(c.created_at)}〜${c.closed_at ? hm(c.closed_at) : ''}`, depth, ancestors: anc, collapsible: true, span, count: countMembers(c) });
+  const inner = [...anc, key];
+  for (const m of sortM(c.members)) addMember(m, depth + 1, inner, c);
+  for (const ch of c.children) walk(ch, depth + 1, inner);
+};
+for (const c of p.tree.children) walk(c, 0, []);
+// 木に無いのにやりとりに出るメンバー
+for (const e of msgs) for (const id of [e.from, e.to]) {
+  if (id === '-' || memberOf[id]) continue;
+  const m = { id, name: id.split('/').slice(-1)[0], position: posOf(id), occupation: null, model: null, state: '', session: null };
+  addMember(m, 1, [], null);
+}
+
+const lifeTimes = p.timeline.filter((e: any) => e.group === 'lifecycle').map((e: any) => ms(e.ts));
+const msgTimes = [...new Set(msgs.map((e) => ms(e.ts)))].sort((a, b) => a - b);
+const start = ms(p.created_at);
+const times = [...new Set([start, end, ...lifeTimes, ...msgTimes])].filter((t) => t >= start && t <= end).sort((a, b) => a - b);
+const compOf = (id: string | null) => comps.find((c: any) => c.id === id);
+// 同じ送り手が同じ時刻に同じ種類を複数へ出したものは 1 つの印にまとめる（矢印を複数出す）
+const groups: any[][] = [];
+for (const e of msgs) {
+  const g = groups[groups.length - 1];
+  if (g && g[0].from === e.from && g[0].ts === e.ts && g[0].kind === e.kind) g.push(e);
+  else groups.push([e]);
+}
+const tplG = (g: any[]) => (g.length > 1 ? `tpl-g-${g[0].id}` : tplE(g[0]));
+const msgIndex = new Map(msgs.map((e, i) => [e.id, i]));
+const data = {
+  start, end, times, msgTimes, rows, memberOf,
+  events: groups.map((g) => ({
+    t: ms(g[0].ts), from: g[0].from, tos: g.map((e) => e.to), glyph: kindOf(g[0].kind).glyph, role: kindOf(g[0].kind).role,
+    tpl: tplG(g), evs: g.map(tplE),
+    title: `${hm(g[0].ts)} ${who(g[0].from)} → ${g.map((e) => who(e.to)).join('・')} ${kindOf(g[0].kind).label}`,
+  })),
+  stalls: allSt.map((s) => ({ member: s.member, from: s.from, to: s.to, note: stallNote(s) })),
+  loops: loops.map((l) => ({ member: l.member, from: l.from, to: l.to, label: `直し ${l.nth.join('・')} 回目` })),
+  rts: rts.map((r) => ({ a: r.a, b: r.b, from: ms(r.events[0].ts), to: ms(r.events[r.events.length - 1].ts), n: r.events.length })),
+};
+const legend = ['start', 'report', 'review_request', 'review_ok', 'review_ng', 'rework', 'reassign', 'escalate', 'blocked', 'wrap_up', 'done'];
+const usedKinds = new Set(msgs.map((e) => e.kind));
+const stateWord = (s: string) => s || '—';
+---
+<Layout title={p.title ?? p.id}>
+  <div class="with-panel">
+    <div class="main-col">
+      <div class="ph">
+        <span class="pname">{p.title ?? p.id}</span>
+        <span class={`badge ${STATUS[0]}`}>{STATUS[1]}</span>
+        <span class="muted pdate">{when(p.created_at)}〜{p.closed_at ? hm(p.closed_at) : ''}</span>
+      </div>
+      <h1 class={`lead ${leadCls}`}>
+        {lead}
+        {leadEv && <button type="button" class="btn lead-btn" data-panel={tplE(leadEv)}>▶ 本文</button>}
+      </h1>
+      <p class="purpose"><span class="muted">目的:</span> <span set:html={mdInline(p.purpose)} /></p>
+      <p class="nums">
+        {nums.map((n) => (
+          <span class="num"><span class="muted">{n.k}</span> <b>{n.v}</b>{n.a && <span class="muted">（終わった {avg.n} 件の平均 {n.a}）</span>}</span>
+        ))}
+      </p>
+
+      <h2>誰がどう動き、誰と誰がやりとりしたか</h2>
+      <ul class="legend" aria-label="図の読み方">
+        {legend.filter((k) => usedKinds.has(k) || ['start', 'report'].includes(k)).map((k) => (
+          <li><span class={`lg-dot r-${kindOf(k).role}`} aria-hidden="true">{kindOf(k).glyph}</span>{kindOf(k).label}</li>
+        ))}
+        <li><span class="lg-run" aria-hidden="true"></span>起動していた</li>
+        <li><span class="lg-un" aria-hidden="true"></span>未起動</li>
+        {allSt.length > 0 && <li><span class="lg-stall" aria-hidden="true"></span>待ち・止まっていた所</li>}
+        {loops.length > 0 && <li><span class="lg-loop" aria-hidden="true"></span>直し（差し戻しから承認まで）</li>}
+        {rts.length > 0 && <li><span class="lg-rt" aria-hidden="true">⌐¬</span>相談の往復</li>}
+        <li><span class="lg-gap" aria-hidden="true"></span>5 分以上の空白（詰めた）</li>
+      </ul>
+      <p class="hint muted">印を押すと本文、名前を押すとメンバーの中身、▼ でチームを畳めます。</p>
+      <div class="tl">
+        <div class="tl-labels"></div>
+        <div class="tl-plot"></div>
+      </div>
+      <script id="tl-data" type="application/json" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+    </div>
+    <Panel initial={initial} empty="図の印を押すと、ここに本文が出ます。" />
+  </div>
+
+  {msgs.map((e, i) => (
+    <template id={tplE(e)} data-prev={i > 0 ? tplE(msgs[i - 1]) : undefined} data-next={i < msgs.length - 1 ? tplE(msgs[i + 1]) : undefined}>
+      <div class="t-title">
+        <h2><span class={`k-chip r-${kindOf(e.kind).role}`}>{kindOf(e.kind).glyph} {kindOf(e.kind).label}</span> {who(e.from)} → {who(e.to)}</h2>
+      </div>
+      <div class="t-body">
+        <p class="p-meta">{when(e.ts)}{e.component && compOf(e.component) && compOf(e.component).kind === 'team' ? `・チーム ${compName(compOf(e.component))}` : ''}</p>
+        {e.body ? <div class="md" set:html={md(e.body)} /> : e.summary && e.summary !== '-' ? <div class="md"><p set:html={mdInline(e.summary)} /></div> : <p class="muted">本文はありません。</p>}
+        {e.msg && <p class="p-src">元の記録: {e.msg}</p>}
+      </div>
+    </template>
+  ))}
+  {groups.filter((g) => g.length > 1).map((g) => {
+    const i0 = msgIndex.get(g[0].id)!, i1 = msgIndex.get(g[g.length - 1].id)!;
+    return (
+      <template id={tplG(g)} data-prev={i0 > 0 ? tplE(msgs[i0 - 1]) : undefined} data-next={i1 < msgs.length - 1 ? tplE(msgs[i1 + 1]) : undefined}>
+        <div class="t-title">
+          <h2><span class={`k-chip r-${kindOf(g[0].kind).role}`}>{kindOf(g[0].kind).glyph} {kindOf(g[0].kind).label} ×{g.length}</span> {who(g[0].from)} → {g.map((e) => who(e.to)).join('・')}</h2>
+        </div>
+        <div class="t-body">
+          <p class="p-meta">{when(g[0].ts)}・同じ時刻に {g.length} 人へ</p>
+          {g.map((e) => (
+            <section class="g-one">
+              <h3>{who(e.to)} へ</h3>
+              {e.body ? <div class="md" set:html={md(e.body)} /> : e.summary && e.summary !== '-' ? <div class="md"><p set:html={mdInline(e.summary)} /></div> : <p class="muted">本文はありません。</p>}
+              {e.msg && <p class="p-src">元の記録: {e.msg}</p>}
+            </section>
+          ))}
+        </div>
+      </template>
+    );
+  })}
+  {memberTpl.map(({ m, comp, tpl, runs: rs }) => {
+    const s = m.session;
+    const self = s?.self;
+    return (
+      <template id={tpl}>
+        <div class="t-title"><h2>{who(m.id)}</h2></div>
+        <div class="t-body">
+          <p class="p-meta">{POS_LABEL[posOf(m.id)] ?? m.position}{m.occupation ? `・職種 ${m.occupation}` : ''}{m.model ? `・${m.model}` : ''}・{stateWord(m.state)}{comp && comp.kind === 'team' ? `・チーム ${compName(comp)}` : ''}</p>
+          <dl class="kv">
+            <dt>起動</dt>
+            <dd>{rs.length ? rs.map((r: any, i: number) => <div>{rs.length > 1 ? `${i + 1} 回目 ` : ''}{r.launched_at ? `${hm(r.launched_at)}〜${r.closed_at ? hm(r.closed_at) : '（動いている）'}` : '未起動'}</div>) : '—'}</dd>
+            <dt>時間</dt><dd>{s ? min(s.span_min) : '—（片づけ前）'}{s && rs.length > 1 ? '（最後の起動の分）' : ''}</dd>
+            <dt>トークン</dt><dd>{s ? tok(s.tokens_total) : '—（片づけ前）'}</dd>
+          </dl>
+          {self?.asked && <><h3>受けた依頼</h3><div class="md"><p set:html={mdInline(self.asked)} /></div></>}
+          {self?.unclear?.length > 0 && <><h3>迷った点（{self.unclear.length}）</h3><ul class="md">{self.unclear.map((u: string) => <li set:html={mdInline(u)} />)}</ul></>}
+          {self?.escalated?.length > 0 && <><h3>上げたこと</h3><ul class="md">{self.escalated.map((u: string) => <li set:html={mdInline(u)} />)}</ul></>}
+          {self?.not_done?.length > 0 && <><h3>やらなかったこと</h3><ul class="md">{self.not_done.map((u: string) => <li set:html={mdInline(u)} />)}</ul></>}
+          {s?.report && <p class="p-src">元の記録: {s.report}</p>}
+          {!s && <p class="muted">セッション報告はまだありません（片づけのときに書かれます）。</p>}
+        </div>
+      </template>
+    );
+  })}
+</Layout>
+
+<script>
+  import '../../scripts/timeline.ts';
+</script>
+
+<style>
+  .ph { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .pname { font-size: var(--fs-h); font-weight: 700; }
+  .pdate { font-size: var(--fs-s); font-variant-numeric: tabular-nums; }
+  h1.lead { font-size: var(--fs-big); margin: 10px 0 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  h1.lead.warn { color: var(--warn); }
+  h1.lead.danger { color: var(--danger); }
+  .lead-btn { font-size: var(--fs); font-weight: 400; }
+  .purpose { margin: 4px 0; max-width: 40em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .nums { display: flex; flex-wrap: wrap; gap: 4px 24px; margin: 6px 0 0; }
+  .num { white-space: nowrap; }
+  .num b { font-variant-numeric: tabular-nums; }
+
+  .legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 0; font-size: var(--fs-s); }
+  .legend li { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .lg-dot { display: inline-grid; place-items: center; width: 17px; height: 17px; border-radius: 50%; color: var(--bg); font-size: 10px; font-weight: 700; }
+  .lg-run { width: 24px; height: 8px; border-radius: 2px; background: #7d8899; }
+  .lg-un { width: 24px; height: 10px; border-radius: 2px; border: 1.5px dashed #7d8899; }
+  .lg-stall { width: 24px; height: 14px; background: repeating-linear-gradient(45deg, rgba(242, 192, 99, .25) 0 2px, transparent 2px 6px); outline: 1px solid var(--warn); }
+  .lg-loop { width: 24px; height: 14px; border-radius: 3px; background: rgba(245, 138, 138, .18); border: 1px solid rgba(245, 138, 138, .6); }
+  .lg-rt { color: var(--text); font-weight: 700; }
+  .lg-gap { width: 18px; height: 14px; background: repeating-linear-gradient(-45deg, #2e333d 0 2px, transparent 2px 6px); }
+  .hint { font-size: var(--fs-s); margin: 6px 0; }
+
+  .tl { display: grid; grid-template-columns: 232px minmax(0, 1fr); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .tl-labels { border-right: 1px solid var(--line); background: var(--surface); }
+  .tl-plot { overflow-x: auto; min-width: 0; }
+
+  :global(.r-start) { --c: var(--k-start); } :global(.r-report) { --c: var(--k-report); } :global(.r-request) { --c: var(--k-request); }
+  :global(.r-ok) { --c: var(--ok); } :global(.r-danger) { --c: var(--danger); } :global(.r-warn) { --c: var(--warn); } :global(.r-muted) { --c: #8b93a0; }
+  .lg-dot { background: var(--c); }
+  :global(.k-chip) { background: var(--c); }
+  :global(.k-chip) { display: inline-block; padding: 0 8px; border-radius: 10px; color: var(--bg); font-size: var(--fs-s); line-height: 22px; vertical-align: 2px; font-weight: 700; }
+
+  :global(.lab) { display: flex; align-items: center; gap: 6px; width: 100%; border: 0; background: none; text-align: left; padding-right: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; border-bottom: 1px solid var(--line); position: relative; }
+  :global(.lab[style*="--depth"])::before { content: ''; position: absolute; left: calc(var(--depth) * 14px - 6px); top: 0; bottom: -1px; border-left: 2px solid var(--line); }
+  :global(.lab-axis) { color: var(--muted); font-size: var(--fs-s); align-items: flex-end; padding: 0 8px 6px !important; }
+  :global(.lab-m) { color: var(--accent); }
+  :global(.lab-m .u) { text-decoration: underline; text-underline-offset: 3px; overflow: hidden; text-overflow: ellipsis; }
+  :global(.lab-m:hover) { background: var(--surface2); }
+  :global(.lab-h) { background: var(--surface2); font-weight: 700; color: var(--text); }
+  :global(button.lab-h) { color: var(--text); }
+  :global(button.lab-h:hover .nm) { text-decoration: underline; }
+  :global(.lab-h .tw) { color: var(--accent); width: 1em; flex: none; }
+  :global(.lab-h .sub) { color: var(--muted); font-weight: 400; font-size: var(--fs-s); }
+  :global(.lab-h .nm) { overflow: hidden; text-overflow: ellipsis; }
+  :global(.lab-user) { color: var(--text); font-weight: 700; }
+  :global(.lab:focus-visible) { outline-offset: -2px; }
+
+  .tl-plot :global(svg) { display: block; }
+  .tl-plot :global(.ax) { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .tl-plot :global(.gapt) { fill: var(--text); }
+  .tl-plot :global(.tick), .tl-plot :global(.axis) { stroke: var(--line); }
+  .tl-plot :global(.sep) { stroke: var(--line); stroke-width: 1; }
+  .tl-plot :global(.gap-line) { stroke: #2e333d; stroke-width: 2; }
+  .tl-plot :global(.row-head) { fill: var(--surface2); }
+  .tl-plot :global(.box) { fill: none; stroke: #4a5160; stroke-width: 1; }
+  .tl-plot :global(.run) { fill: #7d8899; }
+  .tl-plot :global(.run.user) { fill: #5d6676; }
+  .tl-plot :global(.span) { fill: #7d8899; }
+  .tl-plot :global(.unlaunched) { fill: none; stroke: #7d8899; stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .tl-plot :global(.note-s) { fill: var(--muted); font-size: 10px; }
+  .tl-plot :global(.run-n) { fill: var(--text); font-size: 11px; font-weight: 700; }
+  .tl-plot :global(.run-cut) { stroke: var(--text); stroke-width: 2; }
+  .tl-plot :global(.loop) { fill: rgba(245, 138, 138, .16); stroke: rgba(245, 138, 138, .6); }
+  .tl-plot :global(.loop-t) { fill: var(--danger); font-weight: 700; }
+  .tl-plot :global(.hatch-bg) { fill: rgba(242, 192, 99, .12); }
+  .tl-plot :global(.hatch-line) { stroke: rgba(242, 192, 99, .55); stroke-width: 2; }
+  .tl-plot :global(.stall) { stroke: var(--warn); stroke-width: 1; }
+  .tl-plot :global(.note-bg) { fill: var(--bg); stroke: var(--warn); }
+  .tl-plot :global(.note-t) { fill: var(--warn); font-size: 12px; font-weight: 700; }
+  .tl-plot :global(.ln) { stroke: var(--c); fill: var(--c); stroke-width: 1.6; opacity: .9; }
+  .tl-plot :global(.mk) { cursor: pointer; outline: none; }
+  .tl-plot :global(.mk .hit) { fill: transparent; }
+  .tl-plot :global(.mk .ring) { fill: none; stroke: transparent; stroke-width: 2.5; }
+  .tl-plot :global(.mk .dot) { fill: var(--c); stroke: var(--bg); stroke-width: 1.5; }
+  .tl-plot :global(.mk .gl) { fill: #15171c; font-size: 11px; font-weight: 800; pointer-events: none; }
+  .tl-plot :global(.mk:hover .ring) { stroke: var(--muted); }
+  .tl-plot :global(.mk:focus-visible .ring) { stroke: var(--accent); }
+  .tl-plot :global(.mk.sel .ring) { stroke: var(--text); }
+  .tl-plot :global(.rt) { fill: none; stroke: var(--text); stroke-width: 1.5; }
+  .tl-plot :global(.rt-t) { fill: var(--text); font-size: 12px; font-weight: 700; }
+  .tl-plot :global(svg.has-sel .ln:not(.sel)), .tl-plot :global(svg.has-sel .mk:not(.sel) .dot) { opacity: .3; }
+  .tl-plot :global(.ln.sel) { stroke-width: 3.5; opacity: 1; }
+
+  :global(dl.kv) { display: grid; grid-template-columns: 5em 1fr; gap: 4px 12px; margin: 0 0 8px; }
+  :global(dl.kv dt) { color: var(--muted); }
+  :global(dl.kv dd) { margin: 0; font-variant-numeric: tabular-nums; }
+  :global(.panel h3) { margin: 16px 0 6px; }
+</style>

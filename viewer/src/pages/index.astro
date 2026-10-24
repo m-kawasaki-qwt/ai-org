@@ -1,48 +1,111 @@
 ---
-// 一覧に載せるもの（なぜ詳細ではなく一覧か）:
-//  名前と状態 … どれが動いていて、どれが終わったかを一目で選ぶため
-//  要対応     … 川崎さんの番（未読・判断待ち）があるプロジェクトを最初に見つけるため
-//  期間       … 動いているものが長引いていないかを見るため（1 行に収める）
-//  往復・作り直し … 進め方に問題がありそうなものを見つけるため
-//  トークン   … 費用の大きいものを見つけるため
-// 目的の文・最後の報告などの詳細は、詳細ページに回す。
+// いま（ホーム）: 判断待ち・止まっているかもしれないもの・プロジェクトの一覧（design.md の画面 1）
 import Layout from '../layouts/Layout.astro';
-import { snap, tok, min, when } from '../lib/snap';
-const t = snap.totals;
-const todo = (p: any) => p.unread_to_user + (p.counts.escalate ?? 0);
+import { snap, NOW, day } from '../lib/snap';
+import { decisions, openStalls, stallText, who, kindOf, ms } from '../lib/model';
+
+const projects: any[] = [...snap.projects].sort((a, b) => ms(b.created_at) - ms(a.created_at));
+const ago = (ts: string | number) => {
+  const m = Math.round((NOW - (typeof ts === 'number' ? ts : ms(ts))) / 60000);
+  return m < 60 ? `${m} 分` : `${(m / 60).toFixed(1)} 時間`;
+};
+
+const rows = projects.map((p) => {
+  const dec = decisions(p);
+  const st = openStalls(p, NOW);
+  const status = dec.length ? 'wait' : p.status === 'open' ? 'run' : 'done';
+  const note = dec.length ? `判断待ち ${dec.length}` : st.length ? `止まっているかも ${st.length}` : p.counts.remakes ? `直し ${p.counts.remakes} 回` : '—';
+  return { p, dec, st, status, note, noteCls: dec.length ? 'warn' : st.length ? 'danger' : p.counts.remakes ? 'plain' : 'muted' };
+});
+const allDec = rows.flatMap((r) => r.dec.map((e) => ({ p: r.p, e })));
+const allSt = rows.flatMap((r) => r.st.map((s) => ({ p: r.p, s })));
+const STATUS = { wait: '判断待ち', run: '動いている', done: '終わった' } as const;
+const open = rows.filter((r) => r.p.status === 'open');
+const closed = rows.filter((r) => r.p.status !== 'open');
 ---
-<Layout title="一覧">
+<Layout title="いま">
+  <section class="kps">
+    <div class={`kp ${allDec.length ? 'on warn' : ''}`}>
+      <h1>{allDec.length ? `あなたの判断待ち ${allDec.length} 件` : 'あなたの判断待ちはありません'}</h1>
+      {allDec.length > 0 && (
+        <ul class="kp-list">
+          {allDec.map(({ p, e }) => (
+            <li><a class="kp-row" href={`/p/${p.id}/#e-${e.id}`}>
+              <span class="c-name">{p.title ?? p.id}</span>
+              <span class="c-what">{who(e.from)} から{kindOf(e.kind).label}</span>
+              <span class="c-sum">{e.summary}</span>
+              <span class="c-min">{ago(e.ts)}待ち</span>
+              <span class="c-go" aria-hidden="true">▶</span>
+            </a></li>
+          ))}
+        </ul>
+      )}
+    </div>
+    <div class={`kp ${allSt.length ? 'on danger' : ''}`}>
+      <h1>{allSt.length ? `止まっているかもしれないもの ${allSt.length} 件` : '止まっているものはありません'}</h1>
+      {allSt.length > 0 && (
+        <ul class="kp-list">
+          {allSt.map(({ p, s }) => (
+            <li><a class="kp-row" href={`/p/${p.id}/#e-${s.ev.id}`}>
+              <span class="c-name">{p.title ?? p.id}</span>
+              <span class="c-sum">{stallText(s)}</span>
+              <span class="c-min">{ago(s.from)}前から</span>
+              <span class="c-go" aria-hidden="true">▶</span>
+            </a></li>
+          ))}
+        </ul>
+      )}
+      {allSt.length === 0 && <p class="muted kp-sub">動いているプロジェクト {open.length} 件の中で、未起動の相手への依頼・PM やリーダーの動き無し・返事の無いレビュー依頼はありません。</p>}
+    </div>
+  </section>
+
   <h2>プロジェクト</h2>
-  <p class="lead">
-    {t.unread_to_user > 0 ? <a href="/inbox">川崎さん宛てが {t.unread_to_user} 件あります →</a> : '川崎さんの番はありません。'}
-  </p>
-  <div class="stats">
-    <a class={`stat ${t.unread_to_user ? 'alert' : ''}`} href="/inbox"><b>{t.unread_to_user}</b><span>未読（受け箱）</span></a>
-    <div class={`stat ${t.escalations_open ? 'alert' : ''}`}><b>{t.escalations_open}</b><span>判断待ち</span></div>
-    <div class="stat"><b>{t.projects_open}</b><span>動いている</span></div>
-    <div class="stat"><b>{t.projects_closed}</b><span>閉じた</span></div>
-    <a class="stat" href="/performance"><b>{tok(t.tokens_total)}</b><span>トークン（合計）</span></a>
-  </div>
-  <h3>新しい順</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>名前</th><th>状態</th><th class="n">要対応</th><th>期間</th>
-        <th class="n">往復</th><th class="n">作り直し</th><th class="n hide-md">トークン</th>
-      </tr>
-    </thead>
-    <tbody>
-      {snap.projects.map((p: any) => (
-        <tr class="link" onclick={`location.href='/projects/${p.id}'`}>
-          <td><a href={`/projects/${p.id}`}><b>{p.title}</b></a> <span class="mute small hide-md">{p.id}</span></td>
-          <td><span class={`tag ${p.status}`}>{p.status === 'open' ? '動いている' : '閉じた'}</span></td>
-          <td class="n">{todo(p) ? <span class="badge">{todo(p)}</span> : <span class="mute">—</span>}</td>
-          <td class="nowrap">{min(p.duration_min)} <span class="mute small">{when(p.created_at)}〜</span></td>
-          <td class="n">{p.counts.round_trips}</td>
-          <td class="n" style={p.counts.remakes ? 'color:var(--warn)' : ''}>{p.counts.remakes}</td>
-          <td class="n hide-md">{p.tokens_total === null ? <span class="na">—</span> : tok(p.tokens_total)}</td>
-        </tr>
+  {[{ label: '動いているもの', list: open }, { label: '終わったもの', list: closed }].map((g) => g.list.length > 0 && (
+    <section class="plist" aria-label={g.label}>
+      <h3>{g.label}（{g.list.length}）</h3>
+      <div class="prow phead" aria-hidden="true">
+        <span>名前</span><span>状態</span><span>気にすること</span><span>日付</span><span></span>
+      </div>
+      {g.list.map((r) => (
+        <a class="prow" href={`/p/${r.p.id}/`}>
+          <span class="c-name"><span class="u">{r.p.title ?? r.p.id}</span></span>
+          <span><span class={`badge ${r.status}`}>{STATUS[r.status as keyof typeof STATUS]}</span></span>
+          <span class={`c-note ${r.noteCls}`}>{r.note}</span>
+          <span class="c-day">{day(r.p.created_at)}</span>
+          <span class="c-go" aria-hidden="true">▶</span>
+        </a>
       ))}
-    </tbody>
-  </table>
+    </section>
+  ))}
 </Layout>
+
+<style>
+  .kps { display: grid; grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); gap: 16px; }
+  .kp { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; min-width: 0; }
+  .kp h1 { font-size: 24px; margin: 0; color: var(--muted); font-weight: 600; }
+  .kp.on h1 { font-weight: 800; }
+  .kp.warn { border-color: var(--warn); box-shadow: inset 4px 0 0 var(--warn); }
+  .kp.warn h1 { color: var(--warn); }
+  .kp.danger { border-color: var(--danger); box-shadow: inset 4px 0 0 var(--danger); }
+  .kp.danger h1 { color: var(--danger); }
+  .kp-sub { margin: 8px 0 0; font-size: var(--fs-s); max-width: 40em; }
+  .kp-list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+  .kp-row { display: grid; grid-template-columns: minmax(0, 10em) auto minmax(0, 1fr) auto 16px; gap: 12px; align-items: center; min-height: 36px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface2); color: var(--text); text-decoration: none; }
+  .kp-row:hover { border-color: var(--accent); }
+  .kp-row > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .kp-row .c-name { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .kp-row .c-min { color: var(--muted); font-size: var(--fs-s); }
+  .c-go { color: var(--accent); }
+
+  .plist { max-width: 980px; }
+  .prow { display: grid; grid-template-columns: minmax(0, 1fr) 7em 11em 4em 16px; gap: 16px; align-items: center; min-height: 40px; padding: 4px 12px; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+  a.prow:hover { background: var(--surface); }
+  a.prow:hover .u { text-decoration-thickness: 2px; }
+  .prow > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .prow .u { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .phead { min-height: 28px; color: var(--muted); font-size: var(--fs-s); border-bottom-color: var(--line); }
+  .c-note.warn { color: var(--warn); font-weight: 600; }
+  .c-note.danger { color: var(--danger); font-weight: 600; }
+  .c-note.muted { color: var(--muted); }
+  .c-day { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+</style>
