@@ -1,0 +1,144 @@
+2026-10-24T17:27:37+09:00 c9ca80 user component_new - p9-org-watch
+2026-10-24T17:27:37+09:00 a6304e user assign - p9-org-watch/pm position=pm occupation=- model=opus
+2026-10-24T17:27:37+09:00 65c1dc user launch - p9-org-watch/pm session=f743150d-e552-4271-86ae-449ef5643e76 model=opus
+2026-10-24T17:27:45+09:00 b688e8 user start p9-org-watch/pm msg=log/msgs/b688e8.md
+2026-10-24T17:27:45+09:00 a9c77f user notify_sent p9-org-watch/pm ref=b688e8 via=orca
+2026-10-24T17:27:57+09:00 3aa913 p9-org-watch/pm assign - p9-org-watch/coordinator position=coordinator occupation=- model=opus
+2026-10-24T17:27:57+09:00 98ac89 p9-org-watch/pm launch - p9-org-watch/coordinator session=37d1062a-086b-4ca9-93f9-88e223b7990b model=opus
+2026-10-24T17:28:00+09:00 1d5fe9 p9-org-watch/pm notify_recv - ref=b688e8 misdelivered=0 latency=15
+2026-10-24T17:28:00+09:00 54c47a p9-org-watch/pm ack - ref=b688e8 via=notify latency=15
+2026-10-24T17:28:24+09:00 9012bd p9-org-watch/pm start p9-org-watch/coordinator msg=log/msgs/9012bd.md
+2026-10-24T17:28:24+09:00 8278e8 p9-org-watch/pm notify_skipped p9-org-watch/coordinator ref=9012bd reason=waiting
+2026-10-24T17:28:27+09:00 df43ae p9-org-watch/coordinator ack - ref=9012bd via=poll latency=3
+2026-10-24T17:31:57+09:00 e2b582 p9-org-watch/coordinator report p9-org-watch/pm msg=log/msgs/e2b582.md
+2026-10-24T17:31:57+09:00 e9d7f2 p9-org-watch/coordinator notify_skipped p9-org-watch/pm ref=e2b582 reason=waiting
+2026-10-24T17:32:06+09:00 9052b5 p9-org-watch/pm ack - ref=e2b582 via=poll latency=9
+2026-10-24T17:32:27+09:00 544cc1 p9-org-watch/pm report p9-org-watch/coordinator msg=log/msgs/544cc1.md
+2026-10-24T17:32:27+09:00 9510da p9-org-watch/pm notify_skipped p9-org-watch/coordinator ref=544cc1 reason=waiting
+2026-10-24T17:32:30+09:00 00b2bc p9-org-watch/coordinator ack - ref=544cc1 via=poll latency=3
+2026-10-24T17:32:33+09:00 a2064a p9-org-watch/pm component_new - p9-org-watch/teams/watch
+2026-10-24T17:32:33+09:00 41567f p9-org-watch/pm assign - p9-org-watch/teams/watch/leader position=leader occupation=- model=opus
+2026-10-24T17:32:33+09:00 735ca6 p9-org-watch/pm launch - p9-org-watch/teams/watch/leader session=36cfe0d2-2518-4a8e-894a-9ed5091b5f4d model=opus
+2026-10-24T17:32:44+09:00 2e8bd2 p9-org-watch/pm start p9-org-watch/teams/watch/leader msg=log/msgs/2e8bd2.md
+2026-10-24T17:32:44+09:00 887b7e p9-org-watch/pm notify_sent p9-org-watch/teams/watch/leader ref=2e8bd2 via=orca
+2026-10-24T17:32:52+09:00 0c2fd0 p9-org-watch/coordinator report p9-org-watch/pm msg=log/msgs/0c2fd0.md
+2026-10-24T17:32:52+09:00 311d24 p9-org-watch/coordinator notify_sent p9-org-watch/pm ref=0c2fd0 via=orca
+2026-10-24T17:33:00+09:00 67c3f2 p9-org-watch/teams/watch/leader notify_recv - ref=2e8bd2 misdelivered=0 latency=16
+2026-10-24T17:33:00+09:00 9af8ea p9-org-watch/teams/watch/leader ack - ref=2e8bd2 via=notify latency=16
+2026-10-24T17:33:20+09:00 60d8c4 p9-org-watch/pm notify_recv - ref=0c2fd0 misdelivered=0 latency=28
+2026-10-24T17:33:20+09:00 7207e0 p9-org-watch/pm ack - ref=0c2fd0 via=notify latency=28
+2026-10-24T17:33:23+09:00 6aaf3b p9-org-watch/pm wrap_up p9-org-watch/coordinator msg=log/msgs/6aaf3b.md
+2026-10-24T17:33:23+09:00 eadd34 p9-org-watch/pm notify_sent p9-org-watch/coordinator ref=6aaf3b via=orca
+2026-10-24T17:33:27+09:00 f7e182 p9-org-watch/teams/watch/leader assign - p9-org-watch/teams/watch/worker-watch position=worker occupation=engineer model=opus
+2026-10-24T17:33:27+09:00 163209 p9-org-watch/teams/watch/leader assign - p9-org-watch/teams/watch/worker-audit position=worker occupation=engineer model=sonnet
+2026-10-24T17:33:27+09:00 3313ae p9-org-watch/teams/watch/leader assign - p9-org-watch/teams/watch/reviewer position=reviewer occupation=engineer model=opus
+2026-10-24T17:33:27+09:00 0962cf p9-org-watch/teams/watch/leader launch - p9-org-watch/teams/watch/worker-watch session=f06de01a-90b8-4c09-bcca-848e0e5b674f model=opus
+2026-10-24T17:33:27+09:00 6d7b85 p9-org-watch/teams/watch/leader launch - p9-org-watch/teams/watch/worker-audit session=6bc5c166-c5f5-4d33-a744-535b48cc9ded model=sonnet
+2026-10-24T17:33:28+09:00 9e0ee0 p9-org-watch/coordinator ack - ref=6aaf3b via=poll latency=5
+2026-10-24T17:33:44+09:00 34de0a p9-org-watch/teams/watch/leader start p9-org-watch/teams/watch/worker-watch msg=log/msgs/34de0a.md
+2026-10-24T17:33:44+09:00 99fcdd p9-org-watch/teams/watch/leader notify_sent p9-org-watch/teams/watch/worker-watch ref=34de0a via=orca
+2026-10-24T17:33:44+09:00 64a1bc p9-org-watch/teams/watch/leader start p9-org-watch/teams/watch/worker-audit msg=log/msgs/64a1bc.md
+2026-10-24T17:33:44+09:00 07e9bf p9-org-watch/teams/watch/leader notify_sent p9-org-watch/teams/watch/worker-audit ref=64a1bc via=orca
+2026-10-24T17:33:44+09:00 77b213 p9-org-watch/coordinator notify_recv - ref=6aaf3b misdelivered=0 latency=21
+2026-10-24T17:33:45+09:00 ef34a4 p9-org-watch/coordinator done p9-org-watch/pm -
+2026-10-24T17:33:45+09:00 1c1ee3 p9-org-watch/coordinator notify_sent p9-org-watch/pm ref=ef34a4 via=orca
+2026-10-24T17:33:57+09:00 0057ed p9-org-watch/pm ack - ref=ef34a4 via=poll latency=12
+2026-10-24T17:34:00+09:00 257673 p9-org-watch/pm teardown p9-org-watch/coordinator report=reports/sessions/p9-org-watch__coordinator-37d1062a.yaml
+2026-10-24T17:34:03+09:00 d94524 p9-org-watch/pm notify_recv - ref=ef34a4 misdelivered=0 latency=18
+2026-10-24T17:34:08+09:00 c5f2ed p9-org-watch/teams/watch/worker-watch notify_recv - ref=34de0a misdelivered=0 latency=24
+2026-10-24T17:34:08+09:00 236c51 p9-org-watch/teams/watch/worker-watch ack - ref=34de0a via=notify latency=24
+2026-10-24T17:34:31+09:00 4928b7 p9-org-watch/teams/watch/worker-audit notify_recv - ref=64a1bc misdelivered=0 latency=47
+2026-10-24T17:34:31+09:00 aba950 p9-org-watch/teams/watch/worker-audit ack - ref=64a1bc via=notify latency=47
+2026-10-24T17:35:38+09:00 e7eb08 p9-org-watch/teams/watch/worker-audit review_request p9-org-watch/teams/watch/reviewer msg=log/msgs/e7eb08.md
+2026-10-24T17:35:49+09:00 dc1930 p9-org-watch/teams/watch/leader launch - p9-org-watch/teams/watch/reviewer session=512bbb7a-723c-4386-8c14-6fc58e052a63 model=opus
+2026-10-24T17:36:03+09:00 3cadd4 p9-org-watch/teams/watch/leader start p9-org-watch/teams/watch/reviewer msg=log/msgs/3cadd4.md
+2026-10-24T17:36:03+09:00 9331ae p9-org-watch/teams/watch/leader notify_sent p9-org-watch/teams/watch/reviewer ref=3cadd4 via=orca
+2026-10-24T17:36:05+09:00 18659d p9-org-watch/teams/watch/reviewer ack - ref=e7eb08 via=poll latency=27
+2026-10-24T17:36:05+09:00 258b7f p9-org-watch/teams/watch/reviewer ack - ref=3cadd4 via=poll latency=2
+2026-10-24T17:36:31+09:00 87eb78 p9-org-watch/teams/watch/reviewer notify_recv - ref=3cadd4 misdelivered=0 latency=28
+2026-10-24T17:38:04+09:00 f08c2f p9-org-watch/teams/watch/reviewer review_ng p9-org-watch/teams/watch/worker-audit msg=log/msgs/f08c2f.md
+2026-10-24T17:38:04+09:00 9c9fb1 p9-org-watch/teams/watch/reviewer notify_skipped p9-org-watch/teams/watch/worker-audit ref=f08c2f reason=waiting
+2026-10-24T17:38:10+09:00 9c4138 p9-org-watch/teams/watch/worker-audit ack - ref=f08c2f via=poll latency=6
+2026-10-24T17:38:58+09:00 6bc6a5 p9-org-watch/teams/watch/worker-audit review_request p9-org-watch/teams/watch/reviewer msg=log/msgs/6bc6a5.md
+2026-10-24T17:38:58+09:00 f0a71f p9-org-watch/teams/watch/worker-audit notify_skipped p9-org-watch/teams/watch/reviewer ref=6bc6a5 reason=waiting
+2026-10-24T17:39:08+09:00 c486f4 p9-org-watch/teams/watch/reviewer ack - ref=6bc6a5 via=poll latency=10
+2026-10-24T17:39:46+09:00 299393 p9-org-watch/teams/watch/reviewer review_ok p9-org-watch/teams/watch/leader msg=log/msgs/299393.md
+2026-10-24T17:39:46+09:00 3a248f p9-org-watch/teams/watch/reviewer notify_skipped p9-org-watch/teams/watch/leader ref=299393 reason=waiting
+2026-10-24T17:39:49+09:00 6a0d9d p9-org-watch/teams/watch/leader ack - ref=299393 via=poll latency=3
+2026-10-24T17:43:42+09:00 279a7d p9-org-watch/teams/watch/worker-watch review_request p9-org-watch/teams/watch/reviewer msg=log/msgs/279a7d.md
+2026-10-24T17:43:42+09:00 52dfd0 p9-org-watch/teams/watch/worker-watch notify_skipped p9-org-watch/teams/watch/reviewer ref=279a7d reason=waiting
+2026-10-24T17:43:50+09:00 428cb7 p9-org-watch/teams/watch/reviewer ack - ref=279a7d via=poll latency=8
+2026-10-24T17:46:29+09:00 cc2161 p9-org-watch/teams/watch/reviewer review_ng p9-org-watch/teams/watch/worker-watch msg=log/msgs/cc2161.md
+2026-10-24T17:46:29+09:00 55a1ac p9-org-watch/teams/watch/reviewer notify_skipped p9-org-watch/teams/watch/worker-watch ref=cc2161 reason=waiting
+2026-10-24T17:46:35+09:00 c23398 p9-org-watch/teams/watch/worker-watch ack - ref=cc2161 via=poll latency=6
+2026-10-24T17:48:27+09:00 e930ae p9-org-watch/teams/watch/worker-watch review_request p9-org-watch/teams/watch/reviewer msg=log/msgs/e930ae.md
+2026-10-24T17:48:27+09:00 54050e p9-org-watch/teams/watch/worker-watch notify_skipped p9-org-watch/teams/watch/reviewer ref=e930ae reason=waiting
+2026-10-24T17:48:33+09:00 ec72f5 p9-org-watch/teams/watch/reviewer ack - ref=e930ae via=poll latency=6
+2026-10-24T17:49:23+09:00 6eccb0 p9-org-watch/teams/watch/reviewer review_ok p9-org-watch/teams/watch/leader msg=log/msgs/6eccb0.md
+2026-10-24T17:49:23+09:00 ba8a1a p9-org-watch/teams/watch/reviewer notify_skipped p9-org-watch/teams/watch/leader ref=6eccb0 reason=waiting
+2026-10-24T17:49:27+09:00 afb154 p9-org-watch/teams/watch/leader ack - ref=6eccb0 via=poll latency=4
+2026-10-24T17:49:43+09:00 a92788 p9-org-watch/teams/watch/leader start p9-org-watch/teams/watch/worker-audit msg=log/msgs/a92788.md
+2026-10-24T17:49:43+09:00 4986d5 p9-org-watch/teams/watch/leader notify_skipped p9-org-watch/teams/watch/worker-audit ref=a92788 reason=waiting
+2026-10-24T17:49:44+09:00 2a8b20 p9-org-watch/teams/watch/worker-audit ack - ref=a92788 via=poll latency=1
+2026-10-24T17:50:06+09:00 9be5f1 p9-org-watch/teams/watch/worker-audit review_request p9-org-watch/teams/watch/reviewer msg=log/msgs/9be5f1.md
+2026-10-24T17:50:06+09:00 aed17b p9-org-watch/teams/watch/worker-audit notify_skipped p9-org-watch/teams/watch/reviewer ref=9be5f1 reason=waiting
+2026-10-24T17:50:07+09:00 bde62b p9-org-watch/teams/watch/reviewer ack - ref=9be5f1 via=poll latency=1
+2026-10-24T17:50:27+09:00 5904f6 p9-org-watch/teams/watch/reviewer review_ok p9-org-watch/teams/watch/leader msg=log/msgs/5904f6.md
+2026-10-24T17:50:27+09:00 b57145 p9-org-watch/teams/watch/reviewer notify_skipped p9-org-watch/teams/watch/leader ref=5904f6 reason=waiting
+2026-10-24T17:50:29+09:00 97dc50 p9-org-watch/teams/watch/leader ack - ref=5904f6 via=poll latency=2
+2026-10-24T17:50:39+09:00 6b837d p9-org-watch/teams/watch/leader wrap_up p9-org-watch/teams/watch/worker-watch msg=log/msgs/6b837d.md
+2026-10-24T17:50:39+09:00 da908d p9-org-watch/teams/watch/leader notify_skipped p9-org-watch/teams/watch/worker-watch ref=6b837d reason=waiting
+2026-10-24T17:50:39+09:00 7e3499 p9-org-watch/teams/watch/leader wrap_up p9-org-watch/teams/watch/worker-audit msg=log/msgs/7e3499.md
+2026-10-24T17:50:39+09:00 60b2c3 p9-org-watch/teams/watch/leader notify_skipped p9-org-watch/teams/watch/worker-audit ref=7e3499 reason=waiting
+2026-10-24T17:50:39+09:00 ca9ce0 p9-org-watch/teams/watch/leader wrap_up p9-org-watch/teams/watch/reviewer msg=log/msgs/ca9ce0.md
+2026-10-24T17:50:39+09:00 9b0e28 p9-org-watch/teams/watch/leader notify_skipped p9-org-watch/teams/watch/reviewer ref=ca9ce0 reason=waiting
+2026-10-24T17:50:40+09:00 abbc38 p9-org-watch/teams/watch/worker-watch ack - ref=6b837d via=poll latency=1
+2026-10-24T17:50:43+09:00 1e22c2 p9-org-watch/teams/watch/reviewer ack - ref=ca9ce0 via=poll latency=4
+2026-10-24T17:50:46+09:00 051eb1 p9-org-watch/teams/watch/worker-audit ack - ref=7e3499 via=poll latency=7
+2026-10-24T17:51:05+09:00 75ccd2 p9-org-watch/teams/watch/worker-audit done p9-org-watch/teams/watch/leader msg=log/msgs/75ccd2.md
+2026-10-24T17:51:05+09:00 2050a2 p9-org-watch/teams/watch/worker-audit notify_skipped p9-org-watch/teams/watch/leader ref=75ccd2 reason=waiting
+2026-10-24T17:51:06+09:00 38b264 p9-org-watch/teams/watch/reviewer done p9-org-watch/teams/watch/leader -
+2026-10-24T17:51:06+09:00 525bf3 p9-org-watch/teams/watch/reviewer notify_skipped p9-org-watch/teams/watch/leader ref=38b264 reason=waiting
+2026-10-24T17:51:07+09:00 3eb2a9 p9-org-watch/teams/watch/worker-watch done p9-org-watch/teams/watch/leader -
+2026-10-24T17:51:07+09:00 cdf1c7 p9-org-watch/teams/watch/worker-watch notify_skipped p9-org-watch/teams/watch/leader ref=3eb2a9 reason=waiting
+2026-10-24T17:51:12+09:00 9379e6 p9-org-watch/teams/watch/leader ack - ref=75ccd2 via=poll latency=7
+2026-10-24T17:51:12+09:00 042a41 p9-org-watch/teams/watch/leader ack - ref=38b264 via=poll latency=6
+2026-10-24T17:51:12+09:00 de00e1 p9-org-watch/teams/watch/leader ack - ref=3eb2a9 via=poll latency=5
+2026-10-24T17:51:16+09:00 f4dfc3 p9-org-watch/teams/watch/leader teardown p9-org-watch/teams/watch/worker-watch report=reports/sessions/p9-org-watch__teams__watch__worker-watch-f06de01a.yaml
+2026-10-24T17:51:17+09:00 7ce7f9 p9-org-watch/teams/watch/leader teardown p9-org-watch/teams/watch/worker-audit report=reports/sessions/p9-org-watch__teams__watch__worker-audit-6bc5c166.yaml
+2026-10-24T17:51:17+09:00 2e69d0 p9-org-watch/teams/watch/leader teardown p9-org-watch/teams/watch/reviewer report=reports/sessions/p9-org-watch__teams__watch__reviewer-512bbb7a.yaml
+2026-10-24T17:52:03+09:00 26be36 p9-org-watch/teams/watch/leader report p9-org-watch/pm msg=log/msgs/26be36.md
+2026-10-24T17:52:03+09:00 2d7b62 p9-org-watch/teams/watch/leader notify_skipped p9-org-watch/pm ref=26be36 reason=waiting
+2026-10-24T17:52:11+09:00 9e203c p9-org-watch/pm ack - ref=26be36 via=poll latency=8
+2026-10-24T17:52:31+09:00 e4536d p9-org-watch/pm wrap_up p9-org-watch/teams/watch/leader msg=log/msgs/e4536d.md
+2026-10-24T17:52:31+09:00 2cbbd5 p9-org-watch/pm notify_skipped p9-org-watch/teams/watch/leader ref=e4536d reason=waiting
+2026-10-24T17:52:36+09:00 ff3dd0 p9-org-watch/teams/watch/leader ack - ref=e4536d via=poll latency=5
+2026-10-24T17:52:48+09:00 c825b8 p9-org-watch/teams/watch/leader done p9-org-watch/pm -
+2026-10-24T17:52:48+09:00 da0ee1 p9-org-watch/teams/watch/leader notify_skipped p9-org-watch/pm ref=c825b8 reason=waiting
+2026-10-24T17:52:54+09:00 4e4c43 p9-org-watch/pm ack - ref=c825b8 via=poll latency=6
+2026-10-24T17:52:58+09:00 a00a8c p9-org-watch/pm teardown p9-org-watch/teams/watch/leader report=reports/sessions/p9-org-watch__teams__watch__leader-36cfe0d2.yaml
+2026-10-24T17:52:58+09:00 bbb6a8 p9-org-watch/pm component_closed - p9-org-watch/teams/watch
+2026-10-24T17:53:27+09:00 635d9b p9-org-watch/pm report user msg=log/msgs/635d9b.md
+2026-10-24T17:53:27+09:00 72e993 user ack - ref=635d9b via=poll latency=0
+2026-10-24T17:53:35+09:00 8e21a7 patrol patrol user sent=1 via=dry
+2026-10-24T17:53:41+09:00 199334 user wrap_up p9-org-watch/pm msg=log/msgs/199334.md
+2026-10-24T17:53:41+09:00 258adc user notify_skipped p9-org-watch/pm ref=199334 reason=waiting
+2026-10-24T17:53:50+09:00 e39343 p9-org-watch/pm ack - ref=199334 via=poll latency=9
+2026-10-24T17:54:01+09:00 017a9b p9-org-watch/pm done user -
+2026-10-24T17:54:05+09:00 0e17e3 user teardown p9-org-watch/pm report=reports/sessions/p9-org-watch__pm-f743150d.yaml
+2026-10-24T17:54:05+09:00 61bdd0 user assign - p9-org-watch/auditor position=auditor occupation=- model=opus
+2026-10-24T17:54:05+09:00 a217d4 user launch - p9-org-watch/auditor session=272c70db-7e0d-4552-8d66-70d41e4499f0 model=opus
+2026-10-24T17:54:16+09:00 42793b user start p9-org-watch/auditor msg=log/msgs/42793b.md
+2026-10-24T17:54:16+09:00 a5e1cc user notify_sent p9-org-watch/auditor ref=42793b via=orca
+2026-10-24T17:54:19+09:00 83ae74 p9-org-watch/auditor ack - ref=42793b via=poll latency=3
+2026-10-24T17:54:33+09:00 937c10 p9-org-watch/auditor notify_recv - ref=42793b misdelivered=0 latency=17
+2026-10-24T17:54:47+09:00 d94994 user ack - ref=017a9b via=poll latency=46
+2026-10-24T17:55:46+09:00 63bb4d p9-org-watch/auditor report user msg=log/msgs/63bb4d.md
+2026-10-24T17:55:50+09:00 f88bc9 user ack - ref=63bb4d via=poll latency=4
+2026-10-24T17:56:00+09:00 b98a15 user wrap_up p9-org-watch/auditor msg=log/msgs/b98a15.md
+2026-10-24T17:56:00+09:00 c485ec user notify_skipped p9-org-watch/auditor ref=b98a15 reason=waiting
+2026-10-24T17:56:09+09:00 d6240c p9-org-watch/auditor ack - ref=b98a15 via=poll latency=9
+2026-10-24T17:56:18+09:00 5e4e6c p9-org-watch/auditor done user -
+2026-10-24T17:56:18+09:00 a6fe1e patrol patrol user sent=1 via=sent
+2026-10-24T17:56:20+09:00 7077d0 user teardown p9-org-watch/auditor report=reports/sessions/p9-org-watch__auditor-272c70db.yaml
+2026-10-24T17:56:20+09:00 23fbad user component_closed - p9-org-watch

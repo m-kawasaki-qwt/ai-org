@@ -1,0 +1,48 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p9-org-watch/auditor"
+  position: "auditor"
+  occupation: null
+  boss: "user"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "272c70db-7e0d-4552-8d66-70d41e4499f0"
+  cwd: "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org"
+  launched_at: "2026-10-24T17:54:05+09:00"
+  closed_at: "2026-10-24T17:56:20+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-ghq-github-com-qwt-m-kawasaki-qwt-ai-org/272c70db-7e0d-4552-8d66-70d41e4499f0.jsonl"
+  started_at: "2026-10-24T17:54:13+09:00"
+  ended_at: "2026-10-24T17:56:18+09:00"
+  span_min: 2.1
+  model_effective:
+    claude-opus-5-5: 30
+  api_messages: 15
+  tokens:
+    input: 32
+    output: 8189
+    cache_read: 1476304
+    cache_write: 109791
+  tokens_total: 1594316
+  tool_calls:
+    Bash: 16
+    Write: 2
+  events_sent:
+    report: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window: []
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "p9-org-watch を閉じる前の監査（プロジェクト全体、PM・コーディネーター・チーム watch）を audit.md に書き report で返す"
+  did:
+    - "policy.md・events.log・log/msgs の主な本文・reports/sessions 6 本の unclear と not_done・charter（根っことチーム）・パック・ヒント・notify-stats を読んだ"
+    - "review_ng 2 件・作り直しの start（a92788）・各報告の unclear を深く読み、4 件を audit.md に書いた"
+    - "user へ report を出した"
+  outputs:
+    - "projects/p9-org-watch/auditor/audit.md"
+  decided:
+    - { what: "指摘を 4 件にした（閉じる側の書き違い・プラン 22 の書き手の食い違い・同じファイルの同時編集・本物の projects への patrol --dry）", why: "いずれも参照元が示せて、振り方・完了条件の書き方・範囲の線にかかわる。知らせの届き方は notify-stats で誤配・不達が 0 件だったので指摘にしなかった" }
+  escalated: []
+  not_done: []
+  unclear:
+    - "position.md の参照元の形は 1 行に `<ファイルと行>`・`<hash>` だが、hash にイベントの行番号やメッセージの行を添えたいとき、括弧で添えた形が audit_findings の refs でどう割れるかは確かめていない"

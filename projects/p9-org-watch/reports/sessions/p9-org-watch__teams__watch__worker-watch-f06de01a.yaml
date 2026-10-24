@@ -1,0 +1,71 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p9-org-watch/teams/watch/worker-watch"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p9-org-watch/teams/watch/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "f06de01a-90b8-4c09-bcca-848e0e5b674f"
+  cwd: "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch"
+  launched_at: "2026-10-24T17:33:27+09:00"
+  closed_at: "2026-10-24T17:51:16+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-orca-workspaces-dev-tools-org-watch/f06de01a-90b8-4c09-bcca-848e0e5b674f.jsonl"
+  started_at: "2026-10-24T17:33:36+09:00"
+  ended_at: "2026-10-24T17:51:07+09:00"
+  span_min: 17.5
+  model_effective:
+    claude-opus-5-5: 139
+  api_messages: 67
+  tokens:
+    input: 136
+    output: 67985
+    cache_read: 12022547
+    cache_write: 228947
+  tokens_total: 12319615
+  tool_calls:
+    Bash: 46
+    Read: 8
+    Edit: 22
+    Write: 5
+  events_sent:
+    review_request: 2
+    done: 1
+  review_ng_count: 1
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p9-org-watch/teams/watch/thread.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/claude/plugins/dev-tools/skills/org-project-new/SKILL.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/docs/todo/ai-org-plan.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/org/README.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/org/positions/auditor/position.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/org/schema/snapshot.schema.json"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/org/scripts/orgctl.py"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "p9-org-watch のチーム watch の完了条件 1・2・3（全員待ちを patrol が知らせる・watch が待っている人と止まり・ループを出し分ける・全プロジェクトを 1 回見る形と automation の定義）"
+  did:
+    - "orgctl の watch・patrol・wait を直した: 待っている人（wait の中・打ち直しの合間）を『待っている（誰の何を）』にし、全員待ちをプロジェクトに 1 通（誰が誰を待っているか・出ていないもの）知らせる。同じ詰まりは 1 行報告が出るまで出し直さない"
+    - "patrol --projects <dir> --once --exit N を足した（閉じたプロジェクトは飛ばす。automation の precheck 用）"
+    - "README に見張りの節（判定・知らせ・automation の定義と登録手順）、org-project-new の 5 を常駐の前後で分けた、プランの決まったこと 22 に見張りの補足を併記した"
+    - "p8 の 16:30 を記録から作り直すスクリプトと、仮のプロジェクトのテスト（27 項目）を scratchpad に作って確かめた。Google Chat の ai-org へ［試し］を 1 回送った"
+    - "review_ng 第1回の 3 件（同じ詰まりの出し直し・受けたままの人を『待っている』と書く・プランの補足）を直した"
+  outputs:
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/org/scripts/orgctl.py"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/org/README.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/claude/plugins/dev-tools/skills/org-project-new/SKILL.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-watch/docs/todo/ai-org-plan.md"
+    - "/private/tmp/claude-501/-Users-maka343noshi-orca-workspaces-dev-tools-org-watch/f06de01a-90b8-4c09-bcca-848e0e5b674f/scratchpad/rebuild_p8.py"
+    - "/private/tmp/claude-501/-Users-maka343noshi-orca-workspaces-dev-tools-org-watch/f06de01a-90b8-4c09-bcca-848e0e5b674f/scratchpad/test_watch.py"
+  decided:
+    - { what: "待っているかの判定に .waited（wait を抜けた時刻）を足し、2 分は打ち直しの合間として待っているに数える", why: ".waiting は wait を抜けると消えるので、9 分ごとの打ち直しの合間に PM が『ループ?』に戻るため。event の知らせの判定（.waiting）は変えない" }
+    - { what: "全員待ちに数える『ターンを終えて止まっている』は、止まっている?（10 分）と同じ閾値にした", why: "5 分にすると、長いツール実行中の人を止まりと数えて誤報が出る" }
+    - { what: "ボールがユーザーにあるだけの全員待ちは知らせない", why: "ユーザー宛ての report・escalate は patrol の 1. で既に知らせている" }
+    - { what: "常駐は automation の precheck で patrol を回し、--exit 1 で常に見送りにする形", why: "automation は Claude を起こす仕組みで、スクリプトだけで回すには precheck しか無い（job の見張り番と同じ使い方）" }
+    - { what: "projects_dir に ORG_CLAUDE_PROJECTS の差し替えを足した（受け持ちの関数の外）", why: "~/.claude/projects に書けないので、試しで会話ログの更新時刻を置くため。既定は変わらない" }
+  escalated: []
+  not_done:
+    - "automation の登録（範囲の外。根っこのセッションが川崎さんの承認を取って行う）"
+  unclear:
+    - "Orca の automation で --workspace path:<ai-org> が既存の作業ツリーを指せるか・--workspace-mode が要るかは、help の範囲でしか確かめていない（登録の前に既存の 1 本と見比べる、と README に書いた）"
+    - "orgctl.py を worker-audit と同時に直す決まりで、Edit が『読んだあとに変わった』と出続けた。1 度、Python で読み書きして置き換えた（数ミリ秒で、相手の差分は消えていないことを diff で確かめた）。同じファイルを並べて直すときの手順（関数ごとに分けるなど）が決まりに無い"
+    - "受け持ちの関数を『〜だけ』と切られていたが、試しのために小物（projects_dir）に 1 か所手を入れる必要があった。受け持ちの外を触ってよいかの線引きが決まりに無い"

@@ -1,0 +1,18 @@
+{
+  "kind": "project",
+  "id": "p9-org-watch",
+  "title": "見張りと閉じるときの監査",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T17:27:37+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p9-org-watch/pm",
+    "coordinator": "p9-org-watch/coordinator",
+    "auditor": "p9-org-watch/auditor"
+  },
+  "children": [
+    "p9-org-watch/teams/watch"
+  ],
+  "closed_at": "2026-10-24T17:56:20+09:00"
+}
