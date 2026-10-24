@@ -1,0 +1,8 @@
+- kind: "report"
+  from: "p6-org-build/pm"
+  ref: "4d8609"
+  msg: "log/msgs/4d8609.md"
+  summary: "# p6-org-build の結果（組織に 3 つ足す）"
+  at: "2026-10-24T13:55:36+09:00"
+  gchat: "sent"
+  read: false

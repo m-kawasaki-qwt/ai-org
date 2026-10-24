@@ -1,0 +1,19 @@
+{
+  "kind": "project",
+  "id": "p6-org-build",
+  "title": "組織に 3 つ足す",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T13:15:43+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p6-org-build/pm",
+    "coordinator-uiux-research": "p6-org-build/coordinator-uiux-research",
+    "coordinator-org-build": "p6-org-build/coordinator-org-build"
+  },
+  "children": [
+    "p6-org-build/teams/uiux-research",
+    "p6-org-build/teams/org-build"
+  ],
+  "closed_at": "2026-10-24T13:56:05+09:00"
+}

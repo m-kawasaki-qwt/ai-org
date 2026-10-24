@@ -1,0 +1,17 @@
+{
+  "kind": "team",
+  "id": "p6-org-build/teams/org-build",
+  "title": null,
+  "parent": "p6-org-build",
+  "root": false,
+  "created_at": "2026-10-24T13:17:13+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p6-org-build/teams/org-build/leader",
+    "worker-orgctl": "p6-org-build/teams/org-build/worker-orgctl",
+    "worker-norms": "p6-org-build/teams/org-build/worker-norms",
+    "reviewer": "p6-org-build/teams/org-build/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T13:55:26+09:00"
+}

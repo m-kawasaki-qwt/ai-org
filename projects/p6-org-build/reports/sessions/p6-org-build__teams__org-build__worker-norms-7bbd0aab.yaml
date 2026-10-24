@@ -1,0 +1,95 @@
+# セッション報告（machine は orgctl teardown が会話ログ・1 行報告・ディレクトリから抜いた。self は本人の自己申告）
+machine:
+  id: "p6-org-build/teams/org-build/worker-norms"
+  position: "worker"
+  occupation: "engineer"
+  boss: "p6-org-build/teams/org-build/leader"
+  model_requested: "opus"
+  agent: "claude"
+  session_id: "7bbd0aab-b818-44ec-ab9b-b564ed2aefb9"
+  cwd: "/Users/maka343noshi/orca/workspaces/dev-tools/org-build"
+  launched_at: "2026-10-24T13:22:00+09:00"
+  closed_at: "2026-10-24T13:53:38+09:00"
+  log: "/Users/maka343noshi/.claude/projects/-Users-maka343noshi-orca-workspaces-dev-tools-org-build/7bbd0aab-b818-44ec-ab9b-b564ed2aefb9.jsonl"
+  started_at: "2026-10-24T13:22:13+09:00"
+  ended_at: "2026-10-24T13:53:25+09:00"
+  span_min: 31.2
+  model_effective:
+    claude-opus-5-5: 123
+  api_messages: 57
+  tokens:
+    input: 114
+    output: 50094
+    cache_read: 8084148
+    cache_write: 182296
+  tokens_total: 8316652
+  tool_calls:
+    Bash: 48
+    Write: 10
+    Edit: 9
+  events_sent:
+    review_request: 2
+    report: 1
+    done: 1
+  review_ng_count: 0
+  files_changed_in_window:
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/research/checklist.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/research/feedback-map.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/research/principles.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/research/sources.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/research/tools/png_contrast.py"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/teams/org-build/feedback-map.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/teams/org-build/msgs/start-norms-2.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/teams/org-build/thread.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/claude/plugins/dev-tools/skills/org-project-new/SKILL.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/docs/todo/ai-org-plan.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/README.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/screen-check.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/ui/checklist.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/ui/principles.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/ui/sources.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/ui/tools/png_contrast.py"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/ui/tools/screen-probe.mjs"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/context.yaml"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/occupations/ui-designer/occupation.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/personas/end-user.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/personas/kawasaki.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/personas/sales.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/positions/coordinator/position.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/positions/leader/position.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/positions/pm/position.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/positions/reviewer/position.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/scripts/orgctl.py"
+  files_changed_note: "起動から片づけまでに更新されたファイル。兄弟のコンポーネントは除くが、同じ時間帯に動いた他のメンバーの変更も混ざる（誰が書いたかまでは分からない）"
+self: |
+  asked: "org-build の雛形・規範の文面（ペルソナ 3 つ・立場とコーディネーターの受け口・ui-designer・org-project-new・README・プラン・対応表）を作る"
+  did:
+    - "org/personas/ に kawasaki・end-user・sales を書いた（形を揃え、kawasaki はフィードバックの言葉で、end-user・sales は観点だけで具体はパックに）"
+    - "撮って判定する手順を org/common/screen-check.md 1 か所にまとめ、レビュアー・リーダー・PM・コーディネーターの規範から参照させた"
+    - "research を org/common/ui/ に写して正にし、ui-designer の職種（design.md に B を先に書く手順）を書いた"
+    - "画像に写らない値を読む org/common/ui/tools/screen-probe.mjs を書き、欠陥を仕込んだ HTML で拾えることを確かめた"
+    - "org-project-new・README・プランの「立場と職種」に書き足し、対応表（24 行）を teams/org-build/feedback-map.md に置いた"
+    - "仮の repo で assign --occupation ui-designer --persona（複数・存在しない名前）を打って確かめた"
+  outputs:
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/personas/"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/screen-check.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/common/ui/"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/occupations/ui-designer/occupation.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/positions/{reviewer,leader,pm,coordinator}/position.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/org/README.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/claude/plugins/dev-tools/skills/org-project-new/SKILL.md"
+    - "/Users/maka343noshi/orca/workspaces/dev-tools/org-build/docs/todo/ai-org-plan.md"
+    - "/Users/maka343noshi/ghq/github.com.qwt/m-kawasaki-qwt/ai-org/projects/p6-org-build/teams/org-build/feedback-map.md"
+  decided:
+    - { what: "撮って判定する手順を common/skills ではなく common/screen-check.md に置き、システムプロンプトに入れず参照させた", why: "assign はスキルの本文を全員のシステムプロンプトに連結するので、画面の無いチームまで重くなる" }
+    - { what: "ペルソナのファイルの先頭を H1 にせず「**目線:**」の 1 行にした", why: "orgctl が「# ペルソナ: <名前>」の見出しを付けるので二重になる" }
+    - { what: "撮る・値を読む道具 screen-probe.mjs を足した", why: "cursor・はみ出し・フォーカスは画像に写らず、研究チームの申し送り 1 を各メンバーが毎回書き直さずに済むように" }
+    - { what: "レビュアーは指摘の上限 4 回目でもペルソナの判定が通らなければ承認せず escalate", why: "p5 の「承認 → リーダーが rework」の筋をレビュアーの段で止めるため" }
+    - { what: "checklist の B の答え方を「design.md に書いた答え」に直して写した", why: "リーダーの決定（design.md に書く・charter には書かない）と合わせるため" }
+  escalated: []
+  not_done:
+    - "context.yaml の occupations に ui-designer の行（worker-orgctl の担当。文案を 1b9273 で送った。入ったかは未確認）"
+  unclear:
+    - "規範からの org/ の参照が「orgctl のパスから scripts/orgctl.py を外した所」という辿り方になった。orgctl の「あなたについて」に雛形の場所が出ていれば短く書ける（coordinator にだけ台帳の行がある）"
+    - "Chromium はサンドボックスの中で起動しない（mach port の権限）。p5 の「サンドボックスの外」は localhost の理由だけで書かれていたので、文脈パックの撮り方の注意は理由が足りなかった"
+    - "前半の review_request へのレビュアーの承認は自分宛てに来ず、thread.md で知った（review_ok はリーダー宛て）。作業者が承認を知る経路が thread.md だけ"

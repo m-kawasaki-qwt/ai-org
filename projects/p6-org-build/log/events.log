@@ -1,0 +1,207 @@
+2026-10-24T13:15:43+09:00 59597b user component_new - p6-org-build
+2026-10-24T13:15:43+09:00 3dc02f user assign - p6-org-build/pm position=pm occupation=- model=opus
+2026-10-24T13:15:43+09:00 4d9846 user launch - p6-org-build/pm session=16bc79bc-e7f3-4c90-92f2-26cfd1f6f776 model=opus
+2026-10-24T13:16:02+09:00 49792b user start p6-org-build/pm msg=log/msgs/49792b.md
+2026-10-24T13:16:02+09:00 51f2c5 user notify_sent p6-org-build/pm ref=49792b via=orca
+2026-10-24T13:16:27+09:00 93b342 p6-org-build/pm notify_recv - ref=49792b misdelivered=0 latency=25
+2026-10-24T13:16:27+09:00 393a52 p6-org-build/pm ack - ref=49792b via=notify latency=25
+2026-10-24T13:17:13+09:00 0e59d9 p6-org-build/pm component_new - p6-org-build/teams/uiux-research
+2026-10-24T13:17:13+09:00 c751ff p6-org-build/pm component_new - p6-org-build/teams/org-build
+2026-10-24T13:17:13+09:00 8acc88 p6-org-build/pm assign - p6-org-build/coordinator-uiux-research position=coordinator occupation=- model=opus
+2026-10-24T13:17:13+09:00 2c5788 p6-org-build/pm assign - p6-org-build/coordinator-org-build position=coordinator occupation=- model=opus
+2026-10-24T13:17:13+09:00 eac8c1 p6-org-build/pm launch - p6-org-build/coordinator-uiux-research session=057eafed-f189-4122-bdc4-276ac8a99d28 model=opus
+2026-10-24T13:17:13+09:00 bf97e4 p6-org-build/pm launch - p6-org-build/coordinator-org-build session=b422e51c-714f-4f7e-96c0-37c9b8d41af3 model=opus
+2026-10-24T13:17:32+09:00 11bdf9 p6-org-build/pm start p6-org-build/coordinator-uiux-research msg=log/msgs/11bdf9.md
+2026-10-24T13:17:32+09:00 362e00 p6-org-build/pm notify_sent p6-org-build/coordinator-uiux-research ref=11bdf9 via=orca
+2026-10-24T13:17:32+09:00 740ed0 p6-org-build/pm start p6-org-build/coordinator-org-build msg=log/msgs/740ed0.md
+2026-10-24T13:17:32+09:00 c9b29b p6-org-build/pm notify_sent p6-org-build/coordinator-org-build ref=740ed0 via=orca
+2026-10-24T13:17:37+09:00 367865 p6-org-build/coordinator-org-build notify_recv - ref=740ed0 misdelivered=0 latency=5
+2026-10-24T13:17:37+09:00 5ca7ff p6-org-build/coordinator-org-build ack - ref=740ed0 via=notify latency=5
+2026-10-24T13:17:39+09:00 35175b p6-org-build/coordinator-uiux-research notify_recv - ref=11bdf9 misdelivered=0 latency=7
+2026-10-24T13:17:39+09:00 56ed36 p6-org-build/coordinator-uiux-research ack - ref=11bdf9 via=notify latency=7
+2026-10-24T13:19:21+09:00 784785 p6-org-build/coordinator-uiux-research report p6-org-build/pm msg=log/msgs/784785.md
+2026-10-24T13:19:21+09:00 146c96 p6-org-build/coordinator-uiux-research notify_skipped p6-org-build/pm ref=784785 reason=waiting
+2026-10-24T13:19:25+09:00 e2b98e p6-org-build/pm ack - ref=784785 via=poll latency=4
+2026-10-24T13:19:31+09:00 6efb2b p6-org-build/pm wrap_up p6-org-build/coordinator-uiux-research msg=log/msgs/6efb2b.md
+2026-10-24T13:19:31+09:00 a42de0 p6-org-build/pm notify_skipped p6-org-build/coordinator-uiux-research ref=6efb2b reason=waiting
+2026-10-24T13:19:31+09:00 ad3295 p6-org-build/pm assign - p6-org-build/teams/uiux-research/leader position=leader occupation=- model=opus
+2026-10-24T13:19:31+09:00 23927d p6-org-build/pm launch - p6-org-build/teams/uiux-research/leader session=00fa4e8f-c67a-4a99-9dbe-38bbf87f67d8 model=opus
+2026-10-24T13:19:35+09:00 793a5a p6-org-build/coordinator-uiux-research ack - ref=6efb2b via=poll latency=4
+2026-10-24T13:19:42+09:00 5959b9 p6-org-build/pm start p6-org-build/teams/uiux-research/leader msg=log/msgs/5959b9.md
+2026-10-24T13:19:42+09:00 37be48 p6-org-build/pm notify_sent p6-org-build/teams/uiux-research/leader ref=5959b9 via=orca
+2026-10-24T13:19:49+09:00 2272b2 p6-org-build/coordinator-uiux-research done p6-org-build/pm -
+2026-10-24T13:19:49+09:00 e87da7 p6-org-build/coordinator-uiux-research notify_sent p6-org-build/pm ref=2272b2 via=orca
+2026-10-24T13:19:55+09:00 607a75 p6-org-build/teams/uiux-research/leader ack - ref=5959b9 via=poll latency=13
+2026-10-24T13:19:59+09:00 933230 p6-org-build/coordinator-org-build report p6-org-build/pm msg=log/msgs/933230.md
+2026-10-24T13:19:59+09:00 eb7d71 p6-org-build/coordinator-org-build notify_sent p6-org-build/pm ref=933230 via=orca
+2026-10-24T13:20:00+09:00 46c27d p6-org-build/teams/uiux-research/leader notify_recv - ref=5959b9 misdelivered=0 latency=18
+2026-10-24T13:20:16+09:00 c41840 p6-org-build/pm notify_recv - ref=2272b2 misdelivered=0 latency=27
+2026-10-24T13:20:16+09:00 f4bb31 p6-org-build/pm ack - ref=2272b2 via=notify latency=27
+2026-10-24T13:20:16+09:00 cd7183 p6-org-build/pm ack - ref=933230 via=inbox latency=17
+2026-10-24T13:20:16+09:00 030358 p6-org-build/pm teardown p6-org-build/coordinator-uiux-research report=reports/sessions/p6-org-build__coordinator-uiux-research-057eafed.yaml
+2026-10-24T13:20:23+09:00 24cd7c p6-org-build/pm wrap_up p6-org-build/coordinator-org-build msg=log/msgs/24cd7c.md
+2026-10-24T13:20:23+09:00 1b7a03 p6-org-build/pm notify_sent p6-org-build/coordinator-org-build ref=24cd7c via=orca
+2026-10-24T13:20:23+09:00 82d63e p6-org-build/pm assign - p6-org-build/teams/org-build/leader position=leader occupation=engineer model=opus
+2026-10-24T13:20:23+09:00 8cd5e3 p6-org-build/pm launch - p6-org-build/teams/org-build/leader session=15cbc271-3291-4e70-a9e6-a1491e0ecdda model=opus
+2026-10-24T13:20:30+09:00 a49db8 p6-org-build/teams/uiux-research/leader assign - p6-org-build/teams/uiux-research/worker-1 position=worker occupation=strategy model=opus
+2026-10-24T13:20:30+09:00 59ac98 p6-org-build/teams/uiux-research/leader assign - p6-org-build/teams/uiux-research/reviewer position=reviewer occupation=strategy model=sonnet
+2026-10-24T13:20:30+09:00 9fddc9 p6-org-build/teams/uiux-research/leader launch - p6-org-build/teams/uiux-research/worker-1 session=833d6b72-e69e-4e37-b075-4abf2b3b34f4 model=opus
+2026-10-24T13:20:42+09:00 c5c370 p6-org-build/teams/uiux-research/leader start p6-org-build/teams/uiux-research/worker-1 msg=log/msgs/c5c370.md
+2026-10-24T13:20:42+09:00 d77e60 p6-org-build/teams/uiux-research/leader notify_sent p6-org-build/teams/uiux-research/worker-1 ref=c5c370 via=orca
+2026-10-24T13:20:44+09:00 84dfb5 p6-org-build/teams/uiux-research/worker-1 ack - ref=c5c370 via=poll latency=2
+2026-10-24T13:20:52+09:00 b20488 p6-org-build/coordinator-org-build notify_recv - ref=24cd7c misdelivered=0 latency=29
+2026-10-24T13:20:52+09:00 9dfd44 p6-org-build/coordinator-org-build ack - ref=24cd7c via=notify latency=29
+2026-10-24T13:21:02+09:00 fdf945 p6-org-build/pm notify_recv - ref=933230 misdelivered=0 latency=63
+2026-10-24T13:21:02+09:00 450931 p6-org-build/pm start p6-org-build/teams/org-build/leader msg=log/msgs/450931.md
+2026-10-24T13:21:02+09:00 f0e8cf p6-org-build/pm notify_sent p6-org-build/teams/org-build/leader ref=450931 via=orca
+2026-10-24T13:21:08+09:00 9f1220 p6-org-build/coordinator-org-build done p6-org-build/pm -
+2026-10-24T13:21:08+09:00 0ab284 p6-org-build/coordinator-org-build notify_sent p6-org-build/pm ref=9f1220 via=orca
+2026-10-24T13:21:12+09:00 7b7992 p6-org-build/teams/uiux-research/worker-1 notify_recv - ref=c5c370 misdelivered=0 latency=30
+2026-10-24T13:21:13+09:00 692a9b p6-org-build/teams/org-build/leader ack - ref=450931 via=poll latency=11
+2026-10-24T13:21:23+09:00 12fb3c p6-org-build/teams/org-build/leader notify_recv - ref=450931 misdelivered=0 latency=21
+2026-10-24T13:21:37+09:00 458e5c p6-org-build/pm notify_recv - ref=9f1220 misdelivered=0 latency=29
+2026-10-24T13:21:37+09:00 3a5a89 p6-org-build/pm ack - ref=9f1220 via=notify latency=29
+2026-10-24T13:21:37+09:00 185f76 p6-org-build/pm teardown p6-org-build/coordinator-org-build report=reports/sessions/p6-org-build__coordinator-org-build-b422e51c.yaml
+2026-10-24T13:21:59+09:00 307989 p6-org-build/teams/org-build/leader assign - p6-org-build/teams/org-build/worker-orgctl position=worker occupation=engineer model=sonnet
+2026-10-24T13:21:59+09:00 a49844 p6-org-build/teams/org-build/leader assign - p6-org-build/teams/org-build/worker-norms position=worker occupation=engineer model=opus
+2026-10-24T13:22:00+09:00 232b3b p6-org-build/teams/org-build/leader assign - p6-org-build/teams/org-build/reviewer position=reviewer occupation=engineer model=sonnet
+2026-10-24T13:22:00+09:00 b14ff0 p6-org-build/teams/org-build/leader launch - p6-org-build/teams/org-build/worker-orgctl session=34b67ded-ea79-4ded-9c05-4780d5d284b9 model=sonnet
+2026-10-24T13:22:00+09:00 8ecd13 p6-org-build/teams/org-build/leader launch - p6-org-build/teams/org-build/worker-norms session=7bbd0aab-b818-44ec-ab9b-b564ed2aefb9 model=opus
+2026-10-24T13:22:18+09:00 21efce p6-org-build/teams/org-build/leader start p6-org-build/teams/org-build/worker-orgctl msg=log/msgs/21efce.md
+2026-10-24T13:22:18+09:00 16c2fd p6-org-build/teams/org-build/leader notify_sent p6-org-build/teams/org-build/worker-orgctl ref=21efce via=orca
+2026-10-24T13:22:18+09:00 7a426d p6-org-build/teams/org-build/leader start p6-org-build/teams/org-build/worker-norms msg=log/msgs/7a426d.md
+2026-10-24T13:22:18+09:00 d40418 p6-org-build/teams/org-build/leader notify_sent p6-org-build/teams/org-build/worker-norms ref=7a426d via=orca
+2026-10-24T13:22:33+09:00 2dce70 p6-org-build/teams/org-build/worker-orgctl notify_recv - ref=21efce misdelivered=0 latency=15
+2026-10-24T13:22:33+09:00 9cda30 p6-org-build/teams/org-build/worker-orgctl ack - ref=21efce via=notify latency=15
+2026-10-24T13:23:17+09:00 da3bd8 p6-org-build/teams/org-build/worker-norms notify_recv - ref=7a426d misdelivered=0 latency=59
+2026-10-24T13:23:17+09:00 e92f7b p6-org-build/teams/org-build/worker-norms ack - ref=7a426d via=notify latency=59
+2026-10-24T13:23:42+09:00 c4cc0d p6-org-build/teams/org-build/worker-orgctl review_request p6-org-build/teams/org-build/reviewer msg=log/msgs/c4cc0d.md
+2026-10-24T13:23:45+09:00 9232e0 p6-org-build/teams/org-build/worker-orgctl report p6-org-build/teams/org-build/worker-norms msg=log/msgs/9232e0.md
+2026-10-24T13:23:45+09:00 72f1f7 p6-org-build/teams/org-build/worker-orgctl notify_sent p6-org-build/teams/org-build/worker-norms ref=9232e0 via=orca
+2026-10-24T13:23:52+09:00 b86d65 p6-org-build/teams/org-build/leader launch - p6-org-build/teams/org-build/reviewer session=b8082b46-230b-4c85-91c8-9f44d33a5bb6 model=sonnet
+2026-10-24T13:24:03+09:00 9878b5 p6-org-build/teams/org-build/worker-norms notify_recv - ref=9232e0 misdelivered=0 latency=18
+2026-10-24T13:24:03+09:00 021c99 p6-org-build/teams/org-build/worker-norms ack - ref=9232e0 via=notify latency=18
+2026-10-24T13:24:04+09:00 969ae8 p6-org-build/teams/org-build/leader start p6-org-build/teams/org-build/reviewer msg=log/msgs/969ae8.md
+2026-10-24T13:24:04+09:00 ecd5f8 p6-org-build/teams/org-build/leader notify_sent p6-org-build/teams/org-build/reviewer ref=969ae8 via=orca
+2026-10-24T13:24:06+09:00 18e7ac p6-org-build/teams/org-build/reviewer ack - ref=c4cc0d via=poll latency=24
+2026-10-24T13:24:06+09:00 21e2dd p6-org-build/teams/org-build/reviewer ack - ref=969ae8 via=poll latency=2
+2026-10-24T13:24:22+09:00 300ece p6-org-build/teams/org-build/reviewer notify_recv - ref=969ae8 misdelivered=0 latency=18
+2026-10-24T13:24:40+09:00 5b4d3b p6-org-build/teams/org-build/reviewer review_ok p6-org-build/teams/org-build/leader msg=log/msgs/5b4d3b.md
+2026-10-24T13:24:40+09:00 f169ba p6-org-build/teams/org-build/reviewer notify_sent p6-org-build/teams/org-build/leader ref=5b4d3b via=orca
+2026-10-24T13:24:40+09:00 7273ce p6-org-build/teams/org-build/leader ack - ref=5b4d3b via=poll latency=0
+2026-10-24T13:25:03+09:00 7f1a9e p6-org-build/teams/org-build/leader notify_recv - ref=5b4d3b misdelivered=0 latency=23
+2026-10-24T13:25:17+09:00 82e016 p6-org-build/teams/org-build/worker-norms review_request p6-org-build/teams/org-build/reviewer msg=log/msgs/82e016.md
+2026-10-24T13:25:17+09:00 aa3d89 p6-org-build/teams/org-build/worker-norms notify_skipped p6-org-build/teams/org-build/reviewer ref=82e016 reason=waiting
+2026-10-24T13:25:25+09:00 a117ab p6-org-build/teams/org-build/reviewer ack - ref=82e016 via=poll latency=8
+2026-10-24T13:25:49+09:00 867029 p6-org-build/teams/org-build/reviewer review_ok p6-org-build/teams/org-build/leader msg=log/msgs/867029.md
+2026-10-24T13:25:49+09:00 185512 p6-org-build/teams/org-build/reviewer notify_skipped p6-org-build/teams/org-build/leader ref=867029 reason=waiting
+2026-10-24T13:25:58+09:00 d4a854 p6-org-build/teams/org-build/leader ack - ref=867029 via=poll latency=9
+2026-10-24T13:26:12+09:00 cc3a09 p6-org-build/teams/org-build/leader report p6-org-build/pm msg=log/msgs/cc3a09.md
+2026-10-24T13:26:12+09:00 b60ca1 p6-org-build/teams/org-build/leader notify_skipped p6-org-build/pm ref=cc3a09 reason=waiting
+2026-10-24T13:26:21+09:00 5e9547 p6-org-build/pm ack - ref=cc3a09 via=poll latency=9
+2026-10-24T13:32:08+09:00 ba8378 p6-org-build/teams/uiux-research/worker-1 review_request p6-org-build/teams/uiux-research/reviewer msg=log/msgs/ba8378.md
+2026-10-24T13:32:13+09:00 7c7ff7 p6-org-build/teams/uiux-research/leader launch - p6-org-build/teams/uiux-research/reviewer session=77f133a5-597c-4fce-8e5a-c3963470501a model=sonnet
+2026-10-24T13:32:25+09:00 bd37ff p6-org-build/teams/uiux-research/leader start p6-org-build/teams/uiux-research/reviewer msg=log/msgs/bd37ff.md
+2026-10-24T13:32:25+09:00 991c2a p6-org-build/teams/uiux-research/leader notify_sent p6-org-build/teams/uiux-research/reviewer ref=bd37ff via=orca
+2026-10-24T13:32:25+09:00 4ae73b p6-org-build/teams/uiux-research/reviewer ack - ref=ba8378 via=poll latency=17
+2026-10-24T13:32:25+09:00 c6dcb1 p6-org-build/teams/uiux-research/reviewer ack - ref=bd37ff via=poll latency=0
+2026-10-24T13:32:59+09:00 3c47b9 p6-org-build/teams/uiux-research/reviewer notify_recv - ref=bd37ff misdelivered=0 latency=34
+2026-10-24T13:34:09+09:00 d0cb32 p6-org-build/teams/uiux-research/reviewer review_ok p6-org-build/teams/uiux-research/leader msg=log/msgs/d0cb32.md
+2026-10-24T13:34:09+09:00 192a34 p6-org-build/teams/uiux-research/reviewer notify_skipped p6-org-build/teams/uiux-research/leader ref=d0cb32 reason=waiting
+2026-10-24T13:34:12+09:00 d59581 p6-org-build/teams/uiux-research/leader ack - ref=d0cb32 via=poll latency=3
+2026-10-24T13:34:49+09:00 7e496b p6-org-build/teams/uiux-research/leader wrap_up p6-org-build/teams/uiux-research/worker-1 msg=log/msgs/7e496b.md
+2026-10-24T13:34:49+09:00 7565a3 p6-org-build/teams/uiux-research/leader notify_skipped p6-org-build/teams/uiux-research/worker-1 ref=7e496b reason=waiting
+2026-10-24T13:34:49+09:00 857958 p6-org-build/teams/uiux-research/leader wrap_up p6-org-build/teams/uiux-research/reviewer msg=log/msgs/857958.md
+2026-10-24T13:34:49+09:00 39d186 p6-org-build/teams/uiux-research/leader notify_skipped p6-org-build/teams/uiux-research/reviewer ref=857958 reason=waiting
+2026-10-24T13:34:53+09:00 945711 p6-org-build/teams/uiux-research/reviewer ack - ref=857958 via=poll latency=4
+2026-10-24T13:34:55+09:00 e75c28 p6-org-build/teams/uiux-research/worker-1 ack - ref=7e496b via=poll latency=6
+2026-10-24T13:35:00+09:00 ff3790 p6-org-build/teams/uiux-research/reviewer done p6-org-build/teams/uiux-research/leader -
+2026-10-24T13:35:00+09:00 edcab8 p6-org-build/teams/uiux-research/reviewer notify_sent p6-org-build/teams/uiux-research/leader ref=ff3790 via=orca
+2026-10-24T13:35:13+09:00 8d5621 p6-org-build/teams/uiux-research/leader ack - ref=ff3790 via=poll latency=13
+2026-10-24T13:35:15+09:00 b3d3ae p6-org-build/teams/uiux-research/worker-1 done p6-org-build/teams/uiux-research/leader -
+2026-10-24T13:35:15+09:00 f41e9b p6-org-build/teams/uiux-research/worker-1 notify_sent p6-org-build/teams/uiux-research/leader ref=b3d3ae via=orca
+2026-10-24T13:35:17+09:00 4f09f7 p6-org-build/teams/uiux-research/leader notify_recv - ref=ff3790 misdelivered=0 latency=17
+2026-10-24T13:35:17+09:00 ef8837 p6-org-build/teams/uiux-research/leader ack - ref=b3d3ae via=inbox latency=2
+2026-10-24T13:44:22+09:00 6c0527 p6-org-build/teams/uiux-research/leader notify_recv - ref=b3d3ae misdelivered=0 latency=547
+2026-10-24T13:44:22+09:00 30601e p6-org-build/teams/uiux-research/leader teardown p6-org-build/teams/uiux-research/worker-1 report=reports/sessions/p6-org-build__teams__uiux-research__worker-1-833d6b72.yaml
+2026-10-24T13:44:22+09:00 743bcb p6-org-build/teams/uiux-research/leader teardown p6-org-build/teams/uiux-research/reviewer report=reports/sessions/p6-org-build__teams__uiux-research__reviewer-77f133a5.yaml
+2026-10-24T13:44:33+09:00 dd1184 p6-org-build/teams/uiux-research/leader report p6-org-build/pm msg=log/msgs/dd1184.md
+2026-10-24T13:44:33+09:00 67e39d p6-org-build/teams/uiux-research/leader notify_skipped p6-org-build/pm ref=dd1184 reason=waiting
+2026-10-24T13:44:38+09:00 9dbabe p6-org-build/pm ack - ref=dd1184 via=poll latency=5
+2026-10-24T13:44:53+09:00 8561b1 p6-org-build/pm wrap_up p6-org-build/teams/uiux-research/leader msg=log/msgs/8561b1.md
+2026-10-24T13:44:53+09:00 57710f p6-org-build/pm notify_skipped p6-org-build/teams/uiux-research/leader ref=8561b1 reason=waiting
+2026-10-24T13:44:53+09:00 e2c4e2 p6-org-build/pm report p6-org-build/teams/org-build/leader msg=log/msgs/e2c4e2.md
+2026-10-24T13:44:53+09:00 638b66 p6-org-build/pm notify_skipped p6-org-build/teams/org-build/leader ref=e2c4e2 reason=waiting
+2026-10-24T13:44:55+09:00 03344d p6-org-build/teams/org-build/leader ack - ref=e2c4e2 via=poll latency=2
+2026-10-24T13:44:56+09:00 136110 p6-org-build/teams/uiux-research/leader ack - ref=8561b1 via=poll latency=3
+2026-10-24T13:45:03+09:00 46481e p6-org-build/pm report p6-org-build/teams/org-build/leader msg=log/msgs/46481e.md
+2026-10-24T13:45:03+09:00 00bb18 p6-org-build/pm notify_sent p6-org-build/teams/org-build/leader ref=46481e via=orca
+2026-10-24T13:45:09+09:00 165061 p6-org-build/teams/uiux-research/leader done p6-org-build/pm -
+2026-10-24T13:45:09+09:00 7f685c p6-org-build/teams/uiux-research/leader notify_sent p6-org-build/pm ref=165061 via=orca
+2026-10-24T13:45:27+09:00 27408a p6-org-build/teams/org-build/leader notify_recv - ref=46481e misdelivered=0 latency=24
+2026-10-24T13:45:27+09:00 dc4e73 p6-org-build/teams/org-build/leader ack - ref=46481e via=notify latency=24
+2026-10-24T13:45:36+09:00 737b25 p6-org-build/teams/org-build/leader start p6-org-build/teams/org-build/worker-norms msg=log/msgs/737b25.md
+2026-10-24T13:45:36+09:00 fe2e8b p6-org-build/teams/org-build/leader notify_skipped p6-org-build/teams/org-build/worker-norms ref=737b25 reason=waiting
+2026-10-24T13:45:37+09:00 ecb25e p6-org-build/pm ack - ref=165061 via=poll latency=28
+2026-10-24T13:45:40+09:00 321ddf p6-org-build/teams/org-build/worker-norms ack - ref=737b25 via=poll latency=4
+2026-10-24T13:45:42+09:00 c7b24e p6-org-build/pm notify_recv - ref=165061 misdelivered=0 latency=33
+2026-10-24T13:45:42+09:00 6edf21 p6-org-build/pm teardown p6-org-build/teams/uiux-research/leader report=reports/sessions/p6-org-build__teams__uiux-research__leader-00fa4e8f.yaml
+2026-10-24T13:45:42+09:00 d590e2 p6-org-build/pm component_closed - p6-org-build/teams/uiux-research
+2026-10-24T13:45:43+09:00 875f9d p6-org-build/teams/org-build/leader report p6-org-build/teams/org-build/reviewer msg=log/msgs/875f9d.md
+2026-10-24T13:45:43+09:00 f628e6 p6-org-build/teams/org-build/leader notify_skipped p6-org-build/teams/org-build/reviewer ref=875f9d reason=waiting
+2026-10-24T13:45:49+09:00 53cd44 p6-org-build/teams/org-build/reviewer ack - ref=875f9d via=poll latency=6
+2026-10-24T13:50:02+09:00 1b9273 p6-org-build/teams/org-build/worker-norms report p6-org-build/teams/org-build/worker-orgctl msg=log/msgs/1b9273.md
+2026-10-24T13:50:02+09:00 1e399a p6-org-build/teams/org-build/worker-norms notify_skipped p6-org-build/teams/org-build/worker-orgctl ref=1b9273 reason=waiting
+2026-10-24T13:50:04+09:00 ee7f22 p6-org-build/teams/org-build/worker-orgctl ack - ref=1b9273 via=poll latency=2
+2026-10-24T13:50:18+09:00 6e7f5c p6-org-build/teams/org-build/worker-orgctl review_request p6-org-build/teams/org-build/reviewer msg=log/msgs/6e7f5c.md
+2026-10-24T13:50:18+09:00 a16959 p6-org-build/teams/org-build/worker-orgctl notify_skipped p6-org-build/teams/org-build/reviewer ref=6e7f5c reason=waiting
+2026-10-24T13:50:23+09:00 d7bd98 p6-org-build/teams/org-build/reviewer ack - ref=6e7f5c via=poll latency=5
+2026-10-24T13:51:53+09:00 1dadf6 p6-org-build/teams/org-build/worker-norms review_request p6-org-build/teams/org-build/reviewer msg=log/msgs/1dadf6.md
+2026-10-24T13:51:53+09:00 2eac56 p6-org-build/teams/org-build/worker-norms notify_skipped p6-org-build/teams/org-build/reviewer ref=1dadf6 reason=waiting
+2026-10-24T13:51:56+09:00 94d9ec p6-org-build/teams/org-build/reviewer ack - ref=1dadf6 via=poll latency=3
+2026-10-24T13:52:33+09:00 d9cfb4 p6-org-build/teams/org-build/reviewer review_ok p6-org-build/teams/org-build/leader msg=log/msgs/d9cfb4.md
+2026-10-24T13:52:33+09:00 e1a1a6 p6-org-build/teams/org-build/reviewer notify_skipped p6-org-build/teams/org-build/leader ref=d9cfb4 reason=waiting
+2026-10-24T13:52:40+09:00 c745a8 p6-org-build/teams/org-build/leader ack - ref=d9cfb4 via=poll latency=7
+2026-10-24T13:53:05+09:00 c0cf5d p6-org-build/teams/org-build/leader wrap_up p6-org-build/teams/org-build/worker-orgctl msg=log/msgs/c0cf5d.md
+2026-10-24T13:53:05+09:00 600926 p6-org-build/teams/org-build/leader notify_skipped p6-org-build/teams/org-build/worker-orgctl ref=c0cf5d reason=waiting
+2026-10-24T13:53:05+09:00 f4b2dc p6-org-build/teams/org-build/leader wrap_up p6-org-build/teams/org-build/worker-norms msg=log/msgs/f4b2dc.md
+2026-10-24T13:53:05+09:00 5d8416 p6-org-build/teams/org-build/leader notify_skipped p6-org-build/teams/org-build/worker-norms ref=f4b2dc reason=waiting
+2026-10-24T13:53:05+09:00 2f70ca p6-org-build/teams/org-build/leader wrap_up p6-org-build/teams/org-build/reviewer msg=log/msgs/2f70ca.md
+2026-10-24T13:53:05+09:00 6c986a p6-org-build/teams/org-build/leader notify_skipped p6-org-build/teams/org-build/reviewer ref=2f70ca reason=waiting
+2026-10-24T13:53:06+09:00 0e3bd0 p6-org-build/teams/org-build/reviewer ack - ref=2f70ca via=poll latency=1
+2026-10-24T13:53:07+09:00 c17801 p6-org-build/teams/org-build/worker-norms ack - ref=f4b2dc via=poll latency=2
+2026-10-24T13:53:09+09:00 0b5724 p6-org-build/teams/org-build/worker-orgctl ack - ref=c0cf5d via=poll latency=4
+2026-10-24T13:53:12+09:00 fbacff p6-org-build/teams/org-build/reviewer done p6-org-build/teams/org-build/leader -
+2026-10-24T13:53:12+09:00 12cf5c p6-org-build/teams/org-build/reviewer notify_skipped p6-org-build/teams/org-build/leader ref=fbacff reason=waiting
+2026-10-24T13:53:13+09:00 63499c p6-org-build/teams/org-build/worker-orgctl done p6-org-build/teams/org-build/leader -
+2026-10-24T13:53:13+09:00 195925 p6-org-build/teams/org-build/worker-orgctl notify_skipped p6-org-build/teams/org-build/leader ref=63499c reason=waiting
+2026-10-24T13:53:19+09:00 58a9ac p6-org-build/teams/org-build/leader ack - ref=fbacff via=poll latency=7
+2026-10-24T13:53:19+09:00 c27eb4 p6-org-build/teams/org-build/leader ack - ref=63499c via=poll latency=6
+2026-10-24T13:53:25+09:00 77526f p6-org-build/teams/org-build/worker-norms done p6-org-build/teams/org-build/leader -
+2026-10-24T13:53:25+09:00 e4d260 p6-org-build/teams/org-build/worker-norms notify_skipped p6-org-build/teams/org-build/leader ref=77526f reason=waiting
+2026-10-24T13:53:33+09:00 c47df1 p6-org-build/teams/org-build/leader ack - ref=77526f via=poll latency=8
+2026-10-24T13:53:37+09:00 5cd2d1 p6-org-build/teams/org-build/leader teardown p6-org-build/teams/org-build/worker-orgctl report=reports/sessions/p6-org-build__teams__org-build__worker-orgctl-34b67ded.yaml
+2026-10-24T13:53:38+09:00 631063 p6-org-build/teams/org-build/leader teardown p6-org-build/teams/org-build/worker-norms report=reports/sessions/p6-org-build__teams__org-build__worker-norms-7bbd0aab.yaml
+2026-10-24T13:53:38+09:00 97d800 p6-org-build/teams/org-build/leader teardown p6-org-build/teams/org-build/reviewer report=reports/sessions/p6-org-build__teams__org-build__reviewer-b8082b46.yaml
+2026-10-24T13:54:26+09:00 25786e p6-org-build/teams/org-build/leader report p6-org-build/pm msg=log/msgs/25786e.md
+2026-10-24T13:54:26+09:00 0d701c p6-org-build/teams/org-build/leader notify_skipped p6-org-build/pm ref=25786e reason=waiting
+2026-10-24T13:54:28+09:00 a5b415 p6-org-build/pm ack - ref=25786e via=poll latency=2
+2026-10-24T13:54:51+09:00 e279bd p6-org-build/pm wrap_up p6-org-build/teams/org-build/leader msg=log/msgs/e279bd.md
+2026-10-24T13:54:51+09:00 0f5e86 p6-org-build/pm notify_skipped p6-org-build/teams/org-build/leader ref=e279bd reason=waiting
+2026-10-24T13:55:00+09:00 45e59a p6-org-build/teams/org-build/leader ack - ref=e279bd via=poll latency=9
+2026-10-24T13:55:14+09:00 794ecd p6-org-build/teams/org-build/leader done p6-org-build/pm -
+2026-10-24T13:55:14+09:00 f390e1 p6-org-build/teams/org-build/leader notify_sent p6-org-build/pm ref=794ecd via=orca
+2026-10-24T13:55:22+09:00 1e96d9 p6-org-build/pm ack - ref=794ecd via=poll latency=8
+2026-10-24T13:55:26+09:00 72ad6c p6-org-build/pm teardown p6-org-build/teams/org-build/leader report=reports/sessions/p6-org-build__teams__org-build__leader-15cbc271.yaml
+2026-10-24T13:55:26+09:00 6df581 p6-org-build/pm component_closed - p6-org-build/teams/org-build
+2026-10-24T13:55:33+09:00 bd9d86 p6-org-build/pm notify_recv - ref=794ecd misdelivered=0 latency=19
+2026-10-24T13:55:34+09:00 4d8609 p6-org-build/pm report user msg=log/msgs/4d8609.md
+2026-10-24T13:55:36+09:00 fb29b7 patrol patrol user sent=1 via=sent
+2026-10-24T13:55:36+09:00 0ea9aa user ack - ref=4d8609 via=poll latency=2
+2026-10-24T13:55:47+09:00 915ebb user wrap_up p6-org-build/pm msg=log/msgs/915ebb.md
+2026-10-24T13:55:47+09:00 3a730f user notify_skipped p6-org-build/pm ref=915ebb reason=waiting
+2026-10-24T13:55:47+09:00 d63bf9 p6-org-build/pm ack - ref=915ebb via=poll latency=0
+2026-10-24T13:56:02+09:00 bbd620 p6-org-build/pm done user -
+2026-10-24T13:56:02+09:00 84ef2b user ack - ref=bbd620 via=poll latency=0
+2026-10-24T13:56:05+09:00 01c534 user teardown p6-org-build/pm report=reports/sessions/p6-org-build__pm-16bc79bc.yaml
+2026-10-24T13:56:05+09:00 b3d07b user component_closed - p6-org-build

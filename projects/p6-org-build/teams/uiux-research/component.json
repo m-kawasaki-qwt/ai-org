@@ -1,0 +1,16 @@
+{
+  "kind": "team",
+  "id": "p6-org-build/teams/uiux-research",
+  "title": null,
+  "parent": "p6-org-build",
+  "root": false,
+  "created_at": "2026-10-24T13:17:13+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p6-org-build/teams/uiux-research/leader",
+    "worker-1": "p6-org-build/teams/uiux-research/worker-1",
+    "reviewer": "p6-org-build/teams/uiux-research/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T13:45:42+09:00"
+}
