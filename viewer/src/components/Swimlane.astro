@@ -1,0 +1,61 @@
+---
+// 時系列の図: メンバーごとの横の帯に、送った報告を時刻の位置に点で置き、宛先の帯へ線を引く。
+// 点をクリックすると、下の一覧のその報告へ飛ぶ。
+import { allMembers, POS_COLOR, kindColor, when, leaf } from '../lib/snap';
+const { p } = Astro.props;
+const msgs = p.timeline.filter((e: any) => e.group === 'message' && e.from && e.to && e.to !== '-');
+const members = allMembers(p.tree);
+const lanes: { id: string; label: string; pos: string; team: string }[] = [
+  { id: 'user', label: '川崎さん（user）', pos: 'user', team: '' },
+  ...members.map((m: any) => ({ id: m.id, label: m.name, pos: m.position, team: m.comp.kind === 'team' ? m.comp.title : '' })),
+];
+const idx = new Map(lanes.map((l, i) => [l.id, i]));
+const t0 = Date.parse(p.created_at);
+const t1 = Math.max(t0 + 60_000, ...p.timeline.map((e: any) => Date.parse(e.ts)));
+const LW = 190, W = 1000, LH = 30, TOP = 26;
+const H = TOP + lanes.length * LH + 10;
+const x = (ts: string) => LW + ((Date.parse(ts) - t0) / (t1 - t0)) * (W - LW - 16);
+const y = (id: string) => TOP + (idx.get(id) ?? 0) * LH + LH / 2;
+const ticks = Array.from({ length: 6 }, (_, i) => t0 + ((t1 - t0) * i) / 5);
+const fmt = (ms: number) => new Date(ms).toTimeString().slice(0, 5);
+---
+<div class="swim">
+  <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMinYMin meet" role="img" aria-label="時系列の図">
+    {ticks.map((t) => (
+      <g>
+        <line x1={x(new Date(t).toISOString())} x2={x(new Date(t).toISOString())} y1={TOP - 6} y2={H - 6} stroke="#232833" />
+        <text x={x(new Date(t).toISOString())} y={14} fill="#8b93a1" font-size="11" text-anchor="middle">{fmt(t)}</text>
+      </g>
+    ))}
+    {lanes.map((l, i) => (
+      <g>
+        <rect x="0" y={TOP + i * LH} width={W} height={LH} fill={i % 2 ? '#141820' : '#11141a'} />
+        <circle cx="12" cy={TOP + i * LH + LH / 2} r="5" fill={POS_COLOR[l.pos] ?? '#6b7280'} />
+        <text x="24" y={TOP + i * LH + LH / 2 + 4} fill="#e6e8ec" font-size="12">{l.label}<tspan fill="#8b93a1" font-size="10">{l.team ? `  ${l.team}` : ''}</tspan></text>
+      </g>
+    ))}
+    {msgs.map((e: any) => idx.has(e.from) && idx.has(e.to) ? (
+      <a href={`#e-${e.id}`}>
+        <title>{`${when(e.ts)} ${e.kind}  ${leaf(e.from)} → ${leaf(e.to)}\n${e.summary ?? ''}`}</title>
+        <line x1={x(e.ts)} y1={y(e.from)} x2={x(e.ts)} y2={y(e.to)} stroke={kindColor(e.kind)} stroke-width="1.5" opacity="0.55" />
+        <circle cx={x(e.ts)} cy={y(e.to)} r="2.5" fill={kindColor(e.kind)} />
+        <circle class="pt" cx={x(e.ts)} cy={y(e.from)} r="5" fill={kindColor(e.kind)} stroke="#0f1115" stroke-width="1.5" />
+      </a>
+    ) : null)}
+  </svg>
+  <div class="legend small mute">
+    <span><i style="background:#7aa2ff"></i>report</span><span><i style="background:#fb923c"></i>review_request</span>
+    <span><i style="background:#4ade80"></i>review_ok・done</span><span><i style="background:#f87171"></i>review_ng・rework・escalate</span>
+    <span><i style="background:#9ca3af"></i>start・wrap_up</span>
+    <span>点＝送った人、線の先＝受けた人。点にカーソルで中身、クリックで下の一覧へ。</span>
+  </div>
+</div>
+
+<style>
+  .swim { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px; overflow-x:auto; }
+  svg { width:100%; min-width:1000px; height:auto; display:block; }
+  svg a { cursor:pointer; }
+  svg a:hover .pt { r:7; }
+  .legend { display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .legend i { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:4px; }
+</style>
