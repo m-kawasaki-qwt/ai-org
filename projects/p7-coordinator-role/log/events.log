@@ -82,3 +82,4 @@
 2026-10-24T15:22:13+09:00 fa7c8a user ack - ref=137e1d via=poll latency=4
 2026-10-24T15:22:20+09:00 31ec4a user teardown p7-coordinator-role/pm report=reports/sessions/p7-coordinator-role__pm-1c125b2e.yaml
 2026-10-24T15:22:20+09:00 d89ade user component_closed - p7-coordinator-role
+2026-10-24T15:22:30+09:00 dfce0f patrol patrol user sent=1 via=sent

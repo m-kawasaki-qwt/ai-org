@@ -1,0 +1,2 @@
+<!-- p8-viewer-rebuild/pm → p8-viewer-rebuild/teams/viewer/leader wrap_up 2026-10-24T16:32:47+09:00 -->
+合格。PM が自分で開いて見たもの: screenshots/leader/ の L-home-900-first・L-p7-1800-full・L-p6-900-full・L-p1-900-full・L-p2-900-drawer・L-rules-1800-open。kawasaki の判定の問い 5 つに照らしてすべて はい（いちばん上に判断待ち・止まり、結論の 1 文が最大、p7 の往復 3・p6 の 2 チームと ×2・p1 の動き無し 12 分と 2 回目の起動・p2 の直し 2 回目が図から読めた、ダーク、押せるものは下線と ▶）。session-report.yaml を書いて done を出してください。

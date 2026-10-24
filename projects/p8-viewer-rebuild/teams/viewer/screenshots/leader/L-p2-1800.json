@@ -1,0 +1,19 @@
+{
+  "viewport": 1800,
+  "horizontalScroll": false,
+  "background": "rgb(21, 23, 28)",
+  "notPointer": [],
+  "small": [],
+  "overflow": [],
+  "wrapped": [
+    "差分を調査ファイルの「確認した事実」と突き合わせた。B の旧記述・D の「run",
+    "D の入口が inbox → run-show → terminal show ",
+    "Run の ID・「2 時間」・consumer_generation・run-"
+  ],
+  "opened": false,
+  "focus": {
+    "el": "▶ 本文",
+    "outline": "solid 2px rgb(138, 180, 255)",
+    "boxShadow": "none"
+  }
+}

@@ -1,0 +1,8 @@
+- kind: "report"
+  from: "p7-coordinator-role/pm"
+  ref: "be01fb"
+  msg: "log/msgs/be01fb.md"
+  summary: "# p7 チームコーディネーターの役割の改め ― 結果"
+  at: "2026-10-24T15:22:30+09:00"
+  gchat: "sent"
+  read: false

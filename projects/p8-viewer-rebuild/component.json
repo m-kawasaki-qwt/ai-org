@@ -1,0 +1,17 @@
+{
+  "kind": "project",
+  "id": "p8-viewer-rebuild",
+  "title": "ビューアの作り直し",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T15:31:48+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p8-viewer-rebuild/pm",
+    "coordinator": "p8-viewer-rebuild/coordinator"
+  },
+  "children": [
+    "p8-viewer-rebuild/teams/viewer"
+  ],
+  "closed_at": "2026-10-24T16:34:56+09:00"
+}

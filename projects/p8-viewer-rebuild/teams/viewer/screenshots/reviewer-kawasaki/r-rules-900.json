@@ -1,0 +1,15 @@
+{
+  "viewport": 900,
+  "horizontalScroll": false,
+  "background": "rgb(21, 23, 28)",
+  "notPointer": [],
+  "small": [],
+  "overflow": [],
+  "wrapped": [],
+  "opened": true,
+  "focus": {
+    "el": "PM の確かめを記録に残すpm/position.md見える化10-23▶",
+    "outline": "solid 2px rgb(138, 180, 255)",
+    "boxShadow": "none"
+  }
+}

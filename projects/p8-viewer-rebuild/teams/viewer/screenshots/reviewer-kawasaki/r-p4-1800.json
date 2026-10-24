@@ -1,0 +1,20 @@
+{
+  "viewport": 1800,
+  "horizontalScroll": false,
+  "background": "rgb(21, 23, 28)",
+  "notPointer": [],
+  "small": [],
+  "overflow": [],
+  "wrapped": [
+    "run-use.md を開いて読んだ。共通の手順は SKILL.md の見出し（",
+    "job の git HEAD の run-use.md と _archive/2",
+    "見出し「1.」〜「4.」を変えていない。manager/sources/orca",
+    "突き合わせの表は作業者の報告。前の版の食い違い 4 件（新しい端末は最初に結ぶ・"
+  ],
+  "opened": false,
+  "focus": {
+    "el": "▶ 本文",
+    "outline": "solid 2px rgb(138, 180, 255)",
+    "boxShadow": "none"
+  }
+}
