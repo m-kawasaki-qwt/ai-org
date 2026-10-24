@@ -1,86 +1,120 @@
 ---
-import { snap } from '../lib/snap';
-const { title } = Astro.props;
+import { snap, when } from '../lib/snap';
+const { title, panelInitial = '' } = Astro.props;
 const path = Astro.url.pathname;
 const nav = [
-  { href: '/', label: '一覧' },
-  { href: '/inbox', label: '受け箱', badge: snap.totals.unread_to_user },
-  { href: '/performance', label: 'パフォーマンス' },
-  { href: '/audit', label: '監査・unclear' },
+  { href: '/', label: 'いま' },
+  { href: '/rules/', label: '決まりの直し候補' },
 ];
-const active = (h: string) => (h === '/' ? path === '/' || path.startsWith('/projects') : path.startsWith(h));
+const active = (h: string) => (h === '/' ? path === '/' || path.startsWith('/p/') : path.startsWith(h));
 ---
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} — ai-org</title>
+    <title>{title} — AI 組織</title>
     <style is:global>
-      /* ダークモード（明るい画面は使わない） */
+      /* 色は役割の名前で決める（design.md の B-07）。ダークだけ */
       :root {
         color-scheme: dark;
-        --bg:#0f1115; --panel:#161a21; --panel2:#1c212a; --line:#2a303b; --fg:#e6e8ec; --mute:#8b93a1;
-        --acc:#7aa2ff; --acc-bg:#1d2a44; --ok:#4ade80; --ok-bg:#12301f; --bad:#f87171; --bad-bg:#3a1717; --warn:#fbbf24; --warn-bg:#3a2e10;
-        --lane:#1a1f27;
+        --bg: #15171c; --surface: #1e2128; --surface2: #262a33; --line: #343a45;
+        --text: #e4e7ec; --muted: #a4abb6; --accent: #8ab4ff;
+        --ok: #6fd39a; --warn: #f2c063; --danger: #f58a8a;
+        --k-start: #a9bcd8; --k-report: #7cb0ff; --k-request: #c9a8ff;
+        --fs-big: 22px; --fs-h: 17px; --fs: 14px; --fs-s: 12px;
       }
-      * { box-sizing:border-box; }
-      body { margin:0; display:flex; min-height:100vh; font:14px/1.6 -apple-system,"Hiragino Sans",sans-serif; color:var(--fg); background:var(--bg); }
-      aside { width:180px; flex:none; background:var(--panel); border-right:1px solid var(--line); padding:16px 0; position:sticky; top:0; height:100vh; }
-      aside h1 { font-size:13px; margin:0 16px 14px; color:var(--mute); letter-spacing:.04em; }
-      aside a { display:flex; justify-content:space-between; align-items:center; padding:8px 16px; color:var(--fg); text-decoration:none; }
-      aside a:hover { background:var(--panel2); }
-      aside a.on { background:var(--acc-bg); color:var(--acc); font-weight:600; box-shadow:inset 3px 0 0 var(--acc); }
-      .badge { background:var(--bad); color:#fff; border-radius:10px; padding:0 8px; font-size:12px; line-height:18px; }
-      main { flex:1; min-width:0; padding:24px clamp(16px,3vw,40px); max-width:1500px; }
-      h2 { font-size:20px; margin:0 0 4px; } h3 { font-size:15px; margin:28px 0 10px; color:var(--fg); }
-      .lead { color:var(--mute); margin:0 0 16px; }
-      a { color:var(--acc); text-decoration:none; } a:hover { text-decoration:underline; }
-      .stats { display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 8px; }
-      .stat { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 14px; min-width:110px; }
-      a.stat { color:inherit; } a.stat:hover { border-color:var(--acc); text-decoration:none; }
-      .stat b { display:block; font-size:22px; line-height:1.2; font-variant-numeric:tabular-nums; } .stat span { color:var(--mute); font-size:12px; }
-      .stat.alert b { color:var(--bad); }
-      table { border-collapse:collapse; width:100%; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
-      th,td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:middle; }
-      th { font-size:12px; color:var(--mute); font-weight:500; white-space:nowrap; background:var(--panel2); }
-      tbody tr:hover { background:var(--panel2); }
-      tr.link { cursor:pointer; }
-      td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
-      .nowrap { white-space:nowrap; }
-      .mute { color:var(--mute); } .na { color:var(--mute); font-style:italic; }
-      .small { font-size:12px; }
-      .tag { display:inline-block; font-size:12px; padding:0 8px; border-radius:4px; background:var(--panel2); border:1px solid var(--line); white-space:nowrap; }
-      .tag.open { background:var(--ok-bg); color:var(--ok); border-color:transparent; }
-      .tag.review_ng, .tag.rework, .tag.reassign, .tag.blocked, .tag.escalate { background:var(--bad-bg); color:var(--bad); border-color:transparent; }
-      .tag.review_ok, .tag.done { background:var(--ok-bg); color:var(--ok); border-color:transparent; }
-      .tag.report { background:var(--acc-bg); color:var(--acc); border-color:transparent; }
-      details { background:var(--panel); border:1px solid var(--line); border-radius:6px; margin:6px 0; }
-      details > summary { cursor:pointer; padding:8px 12px; list-style:none; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
-      details > summary::-webkit-details-marker { display:none; }
-      details > summary::before { content:'▸'; color:var(--mute); transition:transform .15s; display:inline-block; }
-      details[open] > summary::before { transform:rotate(90deg); }
-      details > summary:hover { background:var(--panel2); }
-      details > .body { padding:4px 16px 12px; border-top:1px solid var(--line); }
-      .md { line-height:1.7; } .md h1,.md h2,.md h3 { font-size:14px; margin:14px 0 6px; } .md p { margin:6px 0; }
-      .md table { font-size:13px; } .md code { background:var(--panel2); padding:0 4px; border-radius:3px; font-size:12px; }
-      .md pre { background:var(--bg); padding:10px; border-radius:4px; overflow:auto; } .md pre code { background:none; padding:0; }
-      .md ul,.md ol { padding-left:20px; margin:6px 0; }
-      .bar { background:var(--acc-bg); border:1px solid #2c4170; height:12px; border-radius:2px; min-width:1px; }
-      .unread { box-shadow:inset 3px 0 0 var(--bad); }
-      .cols { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px; }
-      .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
-      @media (max-width:1200px) { .hide-md { display:none; } }
+      * { box-sizing: border-box; }
+      html { background: var(--bg); }
+      body { margin: 0; font: var(--fs)/1.6 -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; color: var(--text); background: var(--bg); min-width: 900px; }
+      a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+      a, button, [role="button"], summary { cursor: pointer; }
+      :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      button { font: inherit; color: inherit; }
+
+      header.top { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 24px; height: 48px; padding: 0 24px; background: var(--surface); border-bottom: 1px solid var(--line); }
+      header.top .site { font-weight: 700; white-space: nowrap; }
+      header.top nav { display: flex; gap: 4px; }
+      header.top nav a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border-radius: 6px; color: var(--text); text-decoration: none; white-space: nowrap; }
+      header.top nav a:hover { background: var(--surface2); }
+      header.top nav a.on { background: var(--surface2); color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+      header.top .fresh { margin-left: auto; color: var(--muted); font-size: var(--fs-s); white-space: nowrap; }
+
+      main { padding: 20px 24px 64px; }
+      h1 { font-size: var(--fs-big); line-height: 1.4; margin: 0 0 8px; }
+      h2 { font-size: var(--fs-h); margin: 28px 0 10px; }
+      h3 { font-size: var(--fs); margin: 20px 0 8px; color: var(--muted); font-weight: 600; }
+      .muted { color: var(--muted); }
+      .nowrap { white-space: nowrap; }
+
+      /* 状態のバッジ（全画面で同じ言葉・同じ見た目） */
+      .badge { display: inline-block; padding: 0 8px; border-radius: 10px; font-size: var(--fs-s); line-height: 20px; white-space: nowrap; border: 1px solid currentColor; font-weight: 600; }
+      .badge.wait { color: var(--warn); }
+      .badge.run { color: var(--accent); }
+      .badge.done { color: var(--muted); }
+
+      /* ボタンの形 */
+      .btn { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface2); color: var(--accent); text-decoration: none; white-space: nowrap; }
+      .btn:hover { border-color: var(--accent); }
+      .btn[disabled] { display: none; }
+
+      /* 本文（Markdown を整形したもの）。1 行は全角 40 字程度 */
+      .md { max-width: 40em; overflow-wrap: anywhere; }
+      .md h1, .md h2, .md h3 { font-size: var(--fs-h); margin: 18px 0 8px; color: var(--text); }
+      .md h3, .md h4 { font-size: var(--fs); }
+      .md p, .md ul, .md ol { margin: 8px 0; }
+      .md ul, .md ol { padding-left: 1.4em; }
+      .md code { background: var(--surface2); padding: 1px 4px; border-radius: 4px; font-size: 13px; }
+      /* コードのかたまり（ファイルのツリーなど）は折り返さず、かたまりの中だけ横に流す */
+      .md pre { background: var(--surface2); border-radius: 6px; overflow: hidden; }
+      .md pre code { display: block; padding: 10px; overflow-x: auto; white-space: pre; overflow-wrap: normal; }
+      .md table { border-collapse: collapse; max-width: 100%; font-size: 13px; }
+      .md td.nw, .md th.nw { white-space: nowrap; }
+      .md th, .md td { border: 1px solid var(--line); padding: 4px 8px; vertical-align: top; min-width: 4.5em; }
+      .md blockquote { margin: 8px 0; padding-left: 12px; border-left: 3px solid var(--line); color: var(--muted); }
+
+      /* 本文のパネル: 1400px 以上は横に張り付く、それ未満は図に重なる引き出し */
+      .with-panel { display: block; }
+      .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; overflow-y: auto; }
+      .panel .p-head { display: flex; align-items: flex-start; gap: 12px; }
+      .panel .p-head .p-title { flex: 1; }
+      .panel .p-title h2 { margin: 0; font-size: var(--fs-h); }
+      .panel .p-meta { color: var(--muted); font-size: var(--fs-s); margin: 4px 0 12px; }
+      .panel .p-nav .p-next { margin-left: auto; }
+      .panel .p-nav[hidden] { display: none; }
+      .panel .p-nav { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
+      .panel .p-src { color: var(--muted); font-size: var(--fs-s); margin-top: 8px; overflow-wrap: anywhere; }
+      .panel .p-empty { color: var(--muted); }
+      .panel .p-close { min-width: 28px; justify-content: center; }
+      @media (min-width: 1400px) {
+        .with-panel { display: grid; grid-template-columns: minmax(0, 1fr) 600px; gap: 24px; align-items: start; }
+        .panel { position: sticky; top: 64px; max-height: calc(100vh - 80px); }
+        .panel[data-empty] .p-close { display: none; }
+      }
+      @media (max-width: 1399px) {
+        .panel { position: fixed; top: 48px; bottom: 0; right: 0; width: min(560px, 60%); z-index: 25; border-radius: 0; box-shadow: 0 0 0 1px var(--line), -12px 0 32px rgba(0, 0, 0, .5); }
+        .panel.left { right: auto; left: 0; box-shadow: 0 0 0 1px var(--line), 12px 0 32px rgba(0, 0, 0, .5); }
+        .panel:not(.open) { display: none; }
+      }
     </style>
   </head>
   <body>
-    <aside>
-      <h1>ai-org ビューア</h1>
-      {nav.map((n) => (
-        <a href={n.href} class={active(n.href) ? 'on' : ''}>
-          <span>{n.label}</span>{n.badge ? <span class="badge">{n.badge}</span> : null}
-        </a>
-      ))}
-    </aside>
-    <main><slot /></main>
+    <header class="top">
+      <span class="site">AI 組織</span>
+      <nav>
+        {nav.map((n) => <a href={n.href} class={active(n.href) ? 'on' : ''}>{n.label}</a>)}
+      </nav>
+      <span class="fresh" id="fresh" data-ts={snap.generated_at}>{when(snap.generated_at)} 時点の写し</span>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <script>
+      import '../scripts/panel.ts';
+      const f = document.getElementById('fresh');
+      if (f) {
+        const m = Math.round((Date.now() - new Date(f.dataset.ts!).getTime()) / 60000);
+        f.textContent = `${f.textContent}（${m < 60 ? m + ' 分' : Math.round(m / 60) + ' 時間'}前に書き出し）`;
+      }
+    </script>
   </body>
 </html>

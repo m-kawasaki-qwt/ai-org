@@ -71,7 +71,7 @@ ORG_ROOT=<ai-org>/projects/<slug> ORG_MEMBER=user orgctl wait
 
 Astro の静的サイト。`viewer/data/snapshot.json` だけを読む（記録は読まない）。一覧・プロジェクトの中・受け箱・パフォーマンス・監査と unclear の 5 画面。読むだけ。コマンドは 1 行ずつ単独で打つ。`<dev-tools>` は dev-tools の repo。
 
-1. 記録を `snapshot.json` に書き出す（`<ai-org>` で）。
+1. 記録を `snapshot.json` に書き出す（`<ai-org>` で）。`snapshot.json` は生成物で git に入れない（`.gitignore`）。無いとビューアは起動できないので、起動の前に必ず書き出す。
 
 ```
 python3 <dev-tools>/org/scripts/orgctl.py export --projects projects --out viewer/data/snapshot.json

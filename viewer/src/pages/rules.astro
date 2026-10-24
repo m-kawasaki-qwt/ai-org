@@ -1,0 +1,115 @@
+---
+// 決まりの直し候補: 監査役の改訂案と、メンバーが迷った点（design.md の画面 3）
+import Layout from '../layouts/Layout.astro';
+import Panel from '../components/Panel.astro';
+import { snap, md, mdInline, day, when, min, tok } from '../lib/snap';
+import { who, POS_LABEL, posOf, ms } from '../lib/model';
+
+const title = (pid: string) => snap.projects.find((p: any) => p.id === pid)?.title ?? pid;
+const proposals = snap.audit_proposals.flatMap((a: any) => a.proposals.map((x: any, i: number) => ({ a, x, tpl: `tpl-a-${a.ref}-${i}` })));
+// 直す所は、最初のバッククォートの中のファイル名だけ
+const target = (t: string | null) => {
+  const m = t?.match(/`([^`]+)`/);
+  return m ? m[1].split('/').slice(-2).join('/') : t ?? '—';
+};
+const sources = [...new Set(snap.audit_proposals.map((a: any) => title(a.project)))];
+
+const byProject = snap.projects
+  .map((p: any) => ({ p, items: snap.unclear.filter((u: any) => u.project === p.id) }))
+  .filter((g: any) => g.items.length)
+  .sort((a: any, b: any) => ms(b.p.created_at) - ms(a.p.created_at));
+const sessions = new Map(snap.performance.sessions.map((s: any) => [s.report, s]));
+const sesTpl = new Map<string, string>();
+for (const u of snap.unclear) if (!sesTpl.has(u.report)) sesTpl.set(u.report, `tpl-s-${sesTpl.size}`);
+---
+<Layout title="決まりの直し候補">
+  <div class="with-panel">
+    <div class="main-col">
+      <h1>改訂案 {proposals.length} 件<span class="h-sub">（{sources.join('・')} の監査から）</span></h1>
+      <p class="muted lead">監査役が出した、雛形の決まりの直し方です。押すと、変える中身と根拠が出ます。</p>
+      <div class="arow ahead" aria-hidden="true"><span>表題</span><span>直す所</span><span>出したプロジェクト</span><span>日付</span><span></span></div>
+      {proposals.map(({ a, x, tpl }: any) => (
+        <button type="button" class="arow" data-panel={tpl}>
+          <span class="c-t"><span class="u">{x.title}</span></span>
+          <span class="c-f">{target(x.target)}</span>
+          <span class="c-p">{title(a.project)}</span>
+          <span class="c-d">{day(a.ts)}</span>
+          <span class="c-go" aria-hidden="true">▶</span>
+        </button>
+      ))}
+
+      <h2>メンバーが迷った点 {snap.unclear.length} 件<span class="h-sub">（{byProject.length} プロジェクトのセッション報告から）</span></h2>
+      <p class="muted lead">同じ迷いが繰り返されていれば、決まりを直す候補です。プロジェクトを開くと 1 件ずつ読めます。</p>
+      {byProject.map((g: any) => (
+        <details class="ugroup">
+          <summary><span class="tw" aria-hidden="true"></span><span class="u">{g.p.title ?? g.p.id}</span><span class="cnt">迷った点 {g.items.length} 件</span></summary>
+          <ul class="ulist">
+            {g.items.map((u: any) => (
+              <li>
+                <span class="who">{who(u.member_id)}</span>
+                <span class="txt" set:html={mdInline(u.text)} />
+                <button type="button" class="btn src" data-panel={sesTpl.get(u.report)}>報告 ▶</button>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </div>
+    <Panel empty="改訂案・報告を押すと、ここに本文が出ます。" />
+  </div>
+
+  {proposals.map(({ a, x, tpl }: any) => (
+    <template id={tpl}>
+      <div class="t-title"><h2>{x.title}</h2></div>
+      <div class="t-body">
+        <p class="p-meta">改訂案 {x.number ?? ''}・{title(a.project)} の監査（{when(a.ts)}）</p>
+        {x.target && <p><span class="muted">直す所:</span> <span set:html={mdInline(x.target)} /></p>}
+        <div class="md" set:html={md(x.body)} />
+        {a.msg && <p class="p-src">元の記録: {a.msg}</p>}
+      </div>
+    </template>
+  ))}
+  {[...sesTpl].map(([rep, tpl]) => {
+    const s: any = sessions.get(rep);
+    const self = s?.self;
+    return (
+      <template id={tpl}>
+        <div class="t-title"><h2>{s ? who(s.member_id) : 'セッション報告'}</h2></div>
+        <div class="t-body">
+          {s && <p class="p-meta">{title(s.project)}・{POS_LABEL[posOf(s.member_id)] ?? s.position}・{s.model}・{min(s.span_min)}・トークン {tok(s.tokens_total)}</p>}
+          {self?.asked && <><h3>受けた依頼</h3><div class="md"><p set:html={mdInline(self.asked)} /></div></>}
+          {self?.unclear?.length > 0 && <><h3>迷った点（{self.unclear.length}）</h3><ul class="md">{self.unclear.map((u: string) => <li set:html={mdInline(u)} />)}</ul></>}
+          {self?.escalated?.length > 0 && <><h3>上げたこと</h3><ul class="md">{self.escalated.map((u: string) => <li set:html={mdInline(u)} />)}</ul></>}
+          {self?.not_done?.length > 0 && <><h3>やらなかったこと</h3><ul class="md">{self.not_done.map((u: string) => <li set:html={mdInline(u)} />)}</ul></>}
+          <p class="p-src">元の記録: {rep}</p>
+        </div>
+      </template>
+    );
+  })}
+</Layout>
+
+<style>
+  h1 .h-sub, h2 .h-sub { font-size: var(--fs); font-weight: 400; color: var(--muted); margin-left: 8px; }
+  .lead { margin: 0 0 12px; max-width: 40em; }
+  .arow { display: grid; grid-template-columns: minmax(0, 1fr) 13em 9em 4em 16px; gap: 16px; align-items: center; width: 100%; max-width: 1100px; min-height: 40px; padding: 4px 12px; border: 0; border-bottom: 1px solid var(--line); background: none; color: var(--text); text-align: left; }
+  button.arow:hover { background: var(--surface); }
+  .arow > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .arow .u, .ugroup .u { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .ahead { min-height: 28px; color: var(--muted); font-size: var(--fs-s); }
+  .c-f, .c-p, .c-d { color: var(--muted); }
+  .c-d { text-align: right; font-variant-numeric: tabular-nums; }
+  .c-go { color: var(--accent); }
+
+  .ugroup { max-width: 1100px; border: 1px solid var(--line); border-radius: 6px; margin: 6px 0; background: var(--surface); }
+  .ugroup summary { display: flex; align-items: center; gap: 12px; min-height: 40px; padding: 4px 12px; list-style: none; }
+  .ugroup summary::-webkit-details-marker { display: none; }
+  .ugroup summary:hover { background: var(--surface2); }
+  .ugroup .tw::before { content: '▶'; color: var(--accent); }
+  .ugroup[open] .tw::before { content: '▼'; }
+  .ugroup .cnt { color: var(--muted); white-space: nowrap; }
+  .ulist { list-style: none; margin: 0; padding: 0 12px 8px; }
+  .ulist li { display: grid; grid-template-columns: 10em minmax(0, 40em) auto; gap: 12px; align-items: start; padding: 8px 0; border-top: 1px solid var(--line); }
+  .ulist .src { justify-self: start; }
+  .ulist .who { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ulist .txt :global(code) { background: var(--surface2); padding: 1px 4px; border-radius: 4px; font-size: 13px; }
+</style>

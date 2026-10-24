@@ -1,0 +1,15 @@
+---
+// 本文のパネル。中身は <template id="tpl-…"> を押したときに差し替える（scripts/panel.ts）
+const { initial = '', empty = '左の印・行を押すと、ここに本文が出ます。' } = Astro.props;
+---
+<aside class="panel" id="panel" data-initial={initial} data-empty tabindex="-1" aria-label="本文">
+  <div class="p-head">
+    <div class="p-title"><p class="p-empty">{empty}</p></div>
+    <button type="button" class="btn p-close" aria-label="閉じる">✕ 閉じる</button>
+  </div>
+  <div class="p-content"></div>
+  <div class="p-nav" hidden>
+    <button type="button" class="btn p-prev">← 前のやりとり</button>
+    <button type="button" class="btn p-next">次のやりとり →</button>
+  </div>
+</aside>

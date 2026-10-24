@@ -13,3 +13,6 @@ __pycache__/
 .patrol.json
 .secrets/
 log/notify-outbox.log
+
+# ビューアのデータ（orgctl export が記録から書き出す生成物。起動の前に毎回書き出す）
+viewer/data/snapshot.json
