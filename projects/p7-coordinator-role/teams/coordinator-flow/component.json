@@ -1,0 +1,16 @@
+{
+  "kind": "team",
+  "id": "p7-coordinator-role/teams/coordinator-flow",
+  "title": null,
+  "parent": "p7-coordinator-role",
+  "root": false,
+  "created_at": "2026-10-24T15:11:13+09:00",
+  "status": "closed",
+  "members": {
+    "leader": "p7-coordinator-role/teams/coordinator-flow/leader",
+    "worker-1": "p7-coordinator-role/teams/coordinator-flow/worker-1",
+    "reviewer": "p7-coordinator-role/teams/coordinator-flow/reviewer"
+  },
+  "children": [],
+  "closed_at": "2026-10-24T15:20:59+09:00"
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "project",
+  "id": "p7-coordinator-role",
+  "title": "チームコーディネーターの役割の改め",
+  "parent": "user",
+  "root": true,
+  "created_at": "2026-10-24T15:06:36+09:00",
+  "status": "closed",
+  "members": {
+    "pm": "p7-coordinator-role/pm",
+    "coordinator": "p7-coordinator-role/coordinator"
+  },
+  "children": [
+    "p7-coordinator-role/teams/coordinator-flow"
+  ],
+  "closed_at": "2026-10-24T15:22:20+09:00"
+}
