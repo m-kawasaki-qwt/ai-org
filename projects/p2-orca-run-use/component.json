@@ -11,5 +11,6 @@
   "children": [
     "p2-orca-run-use/teams/run-use-fix"
   ],
-  "closed_at": "2026-10-23T12:30:34+09:00"
+  "closed_at": "2026-10-23T12:30:34+09:00",
+  "title": "run-use の直し"
 }

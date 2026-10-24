@@ -11,5 +11,6 @@
     "reviewer": "p1-org-status/teams/status-tool/reviewer"
   },
   "children": [],
-  "closed_at": "2026-10-23T12:03:43+09:00"
+  "closed_at": "2026-10-23T12:03:43+09:00",
+  "title": "状態一覧ツール"
 }

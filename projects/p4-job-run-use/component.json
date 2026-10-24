@@ -12,5 +12,6 @@
   "children": [
     "p4-job-run-use/teams/run-use-thin"
   ],
-  "closed_at": "2026-10-24T00:43:05+09:00"
+  "closed_at": "2026-10-24T00:43:05+09:00",
+  "title": "job の run-use 整理"
 }

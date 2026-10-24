@@ -11,5 +11,6 @@
   "children": [
     "p1-org-status/teams/status-tool"
   ],
-  "closed_at": "2026-10-23T12:05:18+09:00"
+  "closed_at": "2026-10-23T12:05:18+09:00",
+  "title": "最初の試走"
 }
