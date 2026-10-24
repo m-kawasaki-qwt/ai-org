@@ -1,0 +1,16 @@
+- kind: "stuck"
+  from: "p8-viewer-rebuild/pm"
+  ref: null
+  msg: null
+  summary: "ループ?（出力はあるが状態が変わらない）のまま 20 分"
+  at: "2026-10-24T16:29:37+09:00"
+  gchat: "sent"
+  read: false
+- kind: "report"
+  from: "p8-viewer-rebuild/pm"
+  ref: "b20186"
+  msg: "log/msgs/b20186.md"
+  summary: "# p8-viewer-rebuild の結果（PM → 川崎さん）"
+  at: "2026-10-24T16:34:38+09:00"
+  gchat: "sent"
+  read: false

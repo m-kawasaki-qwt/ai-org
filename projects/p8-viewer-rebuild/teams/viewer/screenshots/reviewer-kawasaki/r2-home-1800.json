@@ -1,0 +1,15 @@
+{
+  "viewport": 1800,
+  "horizontalScroll": false,
+  "background": "rgb(21, 23, 28)",
+  "notPointer": [],
+  "small": [],
+  "overflow": [],
+  "wrapped": [],
+  "opened": false,
+  "focus": {
+    "el": "ビューアの作り直し動いている直し 1 回10-24▶",
+    "outline": "solid 2px rgb(138, 180, 255)",
+    "boxShadow": "none"
+  }
+}

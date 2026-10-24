@@ -1,0 +1,25 @@
+{
+  "viewport": 1800,
+  "horizontalScroll": false,
+  "background": "rgb(21, 23, 28)",
+  "notPointer": [],
+  "small": [],
+  "overflow": [],
+  "wrapped": [
+    "UI・UX のセオリーを調べ、チェックリスト・原則・フィードバックとの対応表を作",
+    "leader・worker（strategy・opus）・reviewer（st",
+    "雛形と orgctl に組み込む（前半はペルソナと --persona、後半は ",
+    "leader（engineer）・worker-orgctl（sonnet）・w",
+    "満たした。research の 4 ファイル。UI デザイナーの規範と scre",
+    "grep で数えて、番号付きの項目が 45・B が 9・C が 27 で、報告と",
+    "満たした。対応表は全 24 行。防げる 17・一部 3・項目に分けて拾う 2・防",
+    "scratchpad の仮の repo で worktree の orgctl ",
+    "README に --persona があること、プランの「立場と職種」に 3 "
+  ],
+  "opened": false,
+  "focus": {
+    "el": "▶ 本文",
+    "outline": "solid 2px rgb(138, 180, 255)",
+    "boxShadow": "none"
+  }
+}

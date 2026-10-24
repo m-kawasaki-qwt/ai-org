@@ -1,0 +1,153 @@
+2026-10-24T15:31:48+09:00 96f7a1 user component_new - p8-viewer-rebuild
+2026-10-24T15:31:48+09:00 564212 user assign - p8-viewer-rebuild/pm position=pm occupation=- model=opus
+2026-10-24T15:31:48+09:00 9dd0f4 user launch - p8-viewer-rebuild/pm session=129ad682-9ebf-4bcf-9ce7-b603f38a25e6 model=opus
+2026-10-24T15:31:59+09:00 b02ec2 user start p8-viewer-rebuild/pm msg=log/msgs/b02ec2.md
+2026-10-24T15:31:59+09:00 760537 user notify_sent p8-viewer-rebuild/pm ref=b02ec2 via=orca
+2026-10-24T15:32:17+09:00 744af9 p8-viewer-rebuild/pm assign - p8-viewer-rebuild/coordinator position=coordinator occupation=- model=opus
+2026-10-24T15:32:17+09:00 d92e61 p8-viewer-rebuild/pm launch - p8-viewer-rebuild/coordinator session=087f6e79-89d4-4b06-91ad-f5c54de850ad model=opus
+2026-10-24T15:32:20+09:00 2a8092 p8-viewer-rebuild/pm notify_recv - ref=b02ec2 misdelivered=0 latency=21
+2026-10-24T15:32:20+09:00 f5bee6 p8-viewer-rebuild/pm ack - ref=b02ec2 via=notify latency=21
+2026-10-24T15:32:55+09:00 fabde3 p8-viewer-rebuild/pm start p8-viewer-rebuild/coordinator msg=log/msgs/fabde3.md
+2026-10-24T15:32:55+09:00 f14b6a p8-viewer-rebuild/pm notify_skipped p8-viewer-rebuild/coordinator ref=fabde3 reason=waiting
+2026-10-24T15:32:56+09:00 2c8697 p8-viewer-rebuild/coordinator ack - ref=fabde3 via=poll latency=1
+2026-10-24T15:36:50+09:00 014808 p8-viewer-rebuild/coordinator report p8-viewer-rebuild/pm msg=log/msgs/014808.md
+2026-10-24T15:36:50+09:00 b7cbb0 p8-viewer-rebuild/coordinator notify_skipped p8-viewer-rebuild/pm ref=014808 reason=waiting
+2026-10-24T15:36:59+09:00 52e6a3 p8-viewer-rebuild/pm ack - ref=014808 via=poll latency=9
+2026-10-24T15:37:07+09:00 c03dcf p8-viewer-rebuild/pm report p8-viewer-rebuild/coordinator msg=log/msgs/c03dcf.md
+2026-10-24T15:37:07+09:00 98155d p8-viewer-rebuild/pm notify_skipped p8-viewer-rebuild/coordinator ref=c03dcf reason=waiting
+2026-10-24T15:37:12+09:00 35bb2a p8-viewer-rebuild/coordinator ack - ref=c03dcf via=poll latency=5
+2026-10-24T15:37:35+09:00 3cf50c p8-viewer-rebuild/pm component_new - p8-viewer-rebuild/teams/viewer
+2026-10-24T15:37:35+09:00 0ee35d p8-viewer-rebuild/pm assign - p8-viewer-rebuild/teams/viewer/leader position=leader occupation=- model=opus
+2026-10-24T15:37:35+09:00 7594d2 p8-viewer-rebuild/pm launch - p8-viewer-rebuild/teams/viewer/leader session=18b4f46a-7907-43f5-a65a-6ff835d2437e model=opus
+2026-10-24T15:37:51+09:00 deddba p8-viewer-rebuild/pm start p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/deddba.md
+2026-10-24T15:37:51+09:00 389a17 p8-viewer-rebuild/pm notify_sent p8-viewer-rebuild/teams/viewer/leader ref=deddba via=orca
+2026-10-24T15:38:09+09:00 845ba3 p8-viewer-rebuild/teams/viewer/leader notify_recv - ref=deddba misdelivered=0 latency=18
+2026-10-24T15:38:09+09:00 e5d93b p8-viewer-rebuild/teams/viewer/leader ack - ref=deddba via=notify latency=18
+2026-10-24T15:38:25+09:00 c60113 p8-viewer-rebuild/pm wrap_up p8-viewer-rebuild/coordinator msg=log/msgs/c60113.md
+2026-10-24T15:38:25+09:00 29dbbe p8-viewer-rebuild/pm notify_skipped p8-viewer-rebuild/coordinator ref=c60113 reason=waiting
+2026-10-24T15:38:26+09:00 3946d5 p8-viewer-rebuild/coordinator ack - ref=c60113 via=poll latency=1
+2026-10-24T15:38:36+09:00 340f08 p8-viewer-rebuild/teams/viewer/leader assign - p8-viewer-rebuild/teams/viewer/worker-ui position=worker occupation=ui-designer model=opus
+2026-10-24T15:38:36+09:00 ee3792 p8-viewer-rebuild/teams/viewer/leader assign - p8-viewer-rebuild/teams/viewer/worker-export position=worker occupation=engineer model=sonnet
+2026-10-24T15:38:36+09:00 f5a32e p8-viewer-rebuild/teams/viewer/leader assign - p8-viewer-rebuild/teams/viewer/reviewer-kawasaki position=reviewer occupation=ui-designer model=opus personas=kawasaki
+2026-10-24T15:38:36+09:00 4e1acf p8-viewer-rebuild/teams/viewer/leader assign - p8-viewer-rebuild/teams/viewer/reviewer-export position=reviewer occupation=engineer model=sonnet
+2026-10-24T15:38:39+09:00 3255ab p8-viewer-rebuild/teams/viewer/leader launch - p8-viewer-rebuild/teams/viewer/worker-ui session=6155b5d5-e050-4db6-baf9-885f16c62228 model=opus
+2026-10-24T15:38:39+09:00 7c8959 p8-viewer-rebuild/coordinator done p8-viewer-rebuild/pm -
+2026-10-24T15:38:39+09:00 3282ab p8-viewer-rebuild/coordinator notify_skipped p8-viewer-rebuild/pm ref=7c8959 reason=waiting
+2026-10-24T15:38:39+09:00 3c9348 p8-viewer-rebuild/pm ack - ref=7c8959 via=poll latency=0
+2026-10-24T15:38:44+09:00 9df8ca p8-viewer-rebuild/pm teardown p8-viewer-rebuild/coordinator report=reports/sessions/p8-viewer-rebuild__coordinator-087f6e79.yaml
+2026-10-24T15:38:49+09:00 da865f p8-viewer-rebuild/teams/viewer/leader launch - p8-viewer-rebuild/teams/viewer/worker-export session=fff11e32-bf02-4c8b-bae3-0689ac016098 model=sonnet
+2026-10-24T15:39:01+09:00 d447f3 p8-viewer-rebuild/teams/viewer/leader start p8-viewer-rebuild/teams/viewer/worker-ui msg=log/msgs/d447f3.md
+2026-10-24T15:39:01+09:00 daf7d8 p8-viewer-rebuild/teams/viewer/leader notify_sent p8-viewer-rebuild/teams/viewer/worker-ui ref=d447f3 via=orca
+2026-10-24T15:39:01+09:00 b43bfd p8-viewer-rebuild/teams/viewer/leader start p8-viewer-rebuild/teams/viewer/worker-export msg=log/msgs/b43bfd.md
+2026-10-24T15:39:01+09:00 1f1fe4 p8-viewer-rebuild/teams/viewer/leader notify_sent p8-viewer-rebuild/teams/viewer/worker-export ref=b43bfd via=orca
+2026-10-24T15:39:19+09:00 daf015 p8-viewer-rebuild/teams/viewer/worker-ui notify_recv - ref=d447f3 misdelivered=0 latency=18
+2026-10-24T15:39:19+09:00 80146d p8-viewer-rebuild/teams/viewer/worker-ui ack - ref=d447f3 via=notify latency=18
+2026-10-24T15:39:46+09:00 3de05e p8-viewer-rebuild/teams/viewer/worker-export notify_recv - ref=b43bfd misdelivered=0 latency=45
+2026-10-24T15:39:46+09:00 588cf3 p8-viewer-rebuild/teams/viewer/worker-export ack - ref=b43bfd via=notify latency=45
+2026-10-24T15:39:48+09:00 071fa5 p8-viewer-rebuild/teams/viewer/worker-export report p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/071fa5.md
+2026-10-24T15:39:48+09:00 239c7b p8-viewer-rebuild/teams/viewer/worker-export notify_sent p8-viewer-rebuild/teams/viewer/leader ref=071fa5 via=orca
+2026-10-24T15:40:05+09:00 c07d45 p8-viewer-rebuild/teams/viewer/leader notify_recv - ref=071fa5 misdelivered=0 latency=17
+2026-10-24T15:40:05+09:00 784a19 p8-viewer-rebuild/teams/viewer/leader ack - ref=071fa5 via=notify latency=17
+2026-10-24T15:44:17+09:00 8867ac p8-viewer-rebuild/teams/viewer/worker-ui review_request p8-viewer-rebuild/teams/viewer/reviewer-kawasaki msg=log/msgs/8867ac.md
+2026-10-24T15:44:22+09:00 877197 p8-viewer-rebuild/teams/viewer/leader launch - p8-viewer-rebuild/teams/viewer/reviewer-kawasaki session=d30b4812-44c4-49eb-97d9-81b19e1a5107 model=opus
+2026-10-24T15:44:33+09:00 cf0670 p8-viewer-rebuild/teams/viewer/leader start p8-viewer-rebuild/teams/viewer/reviewer-kawasaki msg=log/msgs/cf0670.md
+2026-10-24T15:44:33+09:00 74b551 p8-viewer-rebuild/teams/viewer/leader notify_sent p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ref=cf0670 via=orca
+2026-10-24T15:44:37+09:00 8dafc5 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ack - ref=8867ac via=poll latency=20
+2026-10-24T15:44:37+09:00 8b0273 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ack - ref=cf0670 via=poll latency=4
+2026-10-24T15:44:53+09:00 9eb320 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki notify_recv - ref=cf0670 misdelivered=0 latency=20
+2026-10-24T15:47:30+09:00 5f8f8f p8-viewer-rebuild/teams/viewer/reviewer-kawasaki review_ng p8-viewer-rebuild/teams/viewer/worker-ui msg=log/msgs/5f8f8f.md
+2026-10-24T15:47:30+09:00 34d725 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki notify_skipped p8-viewer-rebuild/teams/viewer/worker-ui ref=5f8f8f reason=waiting
+2026-10-24T15:47:31+09:00 d54159 p8-viewer-rebuild/teams/viewer/worker-ui ack - ref=5f8f8f via=poll latency=1
+2026-10-24T15:51:21+09:00 1ec60a p8-viewer-rebuild/teams/viewer/worker-ui review_request p8-viewer-rebuild/teams/viewer/reviewer-kawasaki msg=log/msgs/1ec60a.md
+2026-10-24T15:51:21+09:00 5840d8 p8-viewer-rebuild/teams/viewer/worker-ui notify_skipped p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ref=1ec60a reason=waiting
+2026-10-24T15:51:25+09:00 755a73 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ack - ref=1ec60a via=poll latency=4
+2026-10-24T15:52:08+09:00 b87e1b p8-viewer-rebuild/teams/viewer/reviewer-kawasaki review_ok p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/b87e1b.md
+2026-10-24T15:52:08+09:00 df754c p8-viewer-rebuild/teams/viewer/reviewer-kawasaki notify_skipped p8-viewer-rebuild/teams/viewer/leader ref=b87e1b reason=waiting
+2026-10-24T15:52:13+09:00 bd0689 p8-viewer-rebuild/teams/viewer/leader ack - ref=b87e1b via=poll latency=5
+2026-10-24T15:52:30+09:00 8881df p8-viewer-rebuild/teams/viewer/leader start p8-viewer-rebuild/teams/viewer/worker-export msg=log/msgs/8881df.md
+2026-10-24T15:52:30+09:00 1a88b0 p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/teams/viewer/worker-export ref=8881df reason=waiting
+2026-10-24T15:52:30+09:00 f1ff6d p8-viewer-rebuild/teams/viewer/leader start p8-viewer-rebuild/teams/viewer/worker-ui msg=log/msgs/f1ff6d.md
+2026-10-24T15:52:30+09:00 2e3287 p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/teams/viewer/worker-ui ref=f1ff6d reason=waiting
+2026-10-24T15:52:31+09:00 42edd2 p8-viewer-rebuild/teams/viewer/worker-export ack - ref=8881df via=poll latency=1
+2026-10-24T15:52:34+09:00 9a54ff p8-viewer-rebuild/teams/viewer/worker-ui ack - ref=f1ff6d via=poll latency=4
+2026-10-24T15:53:09+09:00 7f2930 p8-viewer-rebuild/teams/viewer/worker-export review_request p8-viewer-rebuild/teams/viewer/reviewer-export msg=log/msgs/7f2930.md
+2026-10-24T15:53:17+09:00 3d67dc p8-viewer-rebuild/teams/viewer/leader launch - p8-viewer-rebuild/teams/viewer/reviewer-export session=baf05c27-1ac8-41a7-90bd-a839fda7483a model=sonnet
+2026-10-24T15:53:29+09:00 b966d0 p8-viewer-rebuild/teams/viewer/leader start p8-viewer-rebuild/teams/viewer/reviewer-export msg=log/msgs/b966d0.md
+2026-10-24T15:53:29+09:00 d5d2ed p8-viewer-rebuild/teams/viewer/leader notify_sent p8-viewer-rebuild/teams/viewer/reviewer-export ref=b966d0 via=orca
+2026-10-24T15:53:49+09:00 be3428 p8-viewer-rebuild/teams/viewer/reviewer-export notify_recv - ref=b966d0 misdelivered=0 latency=20
+2026-10-24T15:53:49+09:00 760a6d p8-viewer-rebuild/teams/viewer/reviewer-export ack - ref=7f2930 via=inbox latency=40
+2026-10-24T15:53:49+09:00 1fff6f p8-viewer-rebuild/teams/viewer/reviewer-export ack - ref=b966d0 via=notify latency=20
+2026-10-24T15:54:07+09:00 94b8de p8-viewer-rebuild/teams/viewer/leader report p8-viewer-rebuild/teams/viewer/worker-ui msg=log/msgs/94b8de.md
+2026-10-24T15:54:07+09:00 4cdca1 p8-viewer-rebuild/teams/viewer/leader notify_sent p8-viewer-rebuild/teams/viewer/worker-ui ref=94b8de via=orca
+2026-10-24T15:54:14+09:00 8bed08 p8-viewer-rebuild/teams/viewer/reviewer-export review_ok p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/8bed08.md
+2026-10-24T15:54:14+09:00 395fdc p8-viewer-rebuild/teams/viewer/reviewer-export notify_sent p8-viewer-rebuild/teams/viewer/leader ref=8bed08 via=orca
+2026-10-24T15:54:42+09:00 3df1c4 p8-viewer-rebuild/teams/viewer/leader notify_recv - ref=8bed08 misdelivered=0 latency=28
+2026-10-24T15:54:42+09:00 f867c6 p8-viewer-rebuild/teams/viewer/leader ack - ref=8bed08 via=notify latency=28
+2026-10-24T15:54:51+09:00 6cb8c8 p8-viewer-rebuild/teams/viewer/worker-ui notify_recv - ref=94b8de misdelivered=0 latency=44
+2026-10-24T15:54:51+09:00 69784e p8-viewer-rebuild/teams/viewer/worker-ui ack - ref=94b8de via=notify latency=44
+2026-10-24T16:09:51+09:00 56ab10 p8-viewer-rebuild/teams/viewer/worker-ui review_request p8-viewer-rebuild/teams/viewer/reviewer-kawasaki msg=log/msgs/56ab10.md
+2026-10-24T16:09:51+09:00 859553 p8-viewer-rebuild/teams/viewer/worker-ui notify_skipped p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ref=56ab10 reason=waiting
+2026-10-24T16:09:57+09:00 0b63c1 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ack - ref=56ab10 via=poll latency=6
+2026-10-24T16:15:07+09:00 931330 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki review_ng p8-viewer-rebuild/teams/viewer/worker-ui msg=log/msgs/931330.md
+2026-10-24T16:15:07+09:00 24e3f4 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki notify_skipped p8-viewer-rebuild/teams/viewer/worker-ui ref=931330 reason=waiting
+2026-10-24T16:15:14+09:00 ad5214 p8-viewer-rebuild/teams/viewer/worker-ui ack - ref=931330 via=poll latency=7
+2026-10-24T16:22:23+09:00 67a7f5 p8-viewer-rebuild/teams/viewer/worker-ui review_request p8-viewer-rebuild/teams/viewer/reviewer-kawasaki msg=log/msgs/67a7f5.md
+2026-10-24T16:22:23+09:00 6da8a9 p8-viewer-rebuild/teams/viewer/worker-ui notify_skipped p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ref=67a7f5 reason=waiting
+2026-10-24T16:22:31+09:00 387d46 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ack - ref=67a7f5 via=poll latency=8
+2026-10-24T16:24:17+09:00 a5676d p8-viewer-rebuild/teams/viewer/reviewer-kawasaki review_ok p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/a5676d.md
+2026-10-24T16:24:17+09:00 70a46a p8-viewer-rebuild/teams/viewer/reviewer-kawasaki notify_skipped p8-viewer-rebuild/teams/viewer/leader ref=a5676d reason=waiting
+2026-10-24T16:24:26+09:00 cfaa40 p8-viewer-rebuild/teams/viewer/leader ack - ref=a5676d via=poll latency=9
+2026-10-24T16:25:33+09:00 76d8da p8-viewer-rebuild/teams/viewer/leader wrap_up p8-viewer-rebuild/teams/viewer/worker-ui msg=log/msgs/76d8da.md
+2026-10-24T16:25:33+09:00 03afc9 p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/teams/viewer/worker-ui ref=76d8da reason=waiting
+2026-10-24T16:25:33+09:00 9e9875 p8-viewer-rebuild/teams/viewer/leader wrap_up p8-viewer-rebuild/teams/viewer/worker-export msg=log/msgs/9e9875.md
+2026-10-24T16:25:33+09:00 9830fd p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/teams/viewer/worker-export ref=9e9875 reason=waiting
+2026-10-24T16:25:33+09:00 ca626b p8-viewer-rebuild/teams/viewer/leader wrap_up p8-viewer-rebuild/teams/viewer/reviewer-kawasaki msg=log/msgs/ca626b.md
+2026-10-24T16:25:33+09:00 f873bf p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ref=ca626b reason=waiting
+2026-10-24T16:25:33+09:00 e4168a p8-viewer-rebuild/teams/viewer/leader wrap_up p8-viewer-rebuild/teams/viewer/reviewer-export msg=log/msgs/e4168a.md
+2026-10-24T16:25:33+09:00 976506 p8-viewer-rebuild/teams/viewer/leader notify_sent p8-viewer-rebuild/teams/viewer/reviewer-export ref=e4168a via=orca
+2026-10-24T16:25:35+09:00 97de19 p8-viewer-rebuild/teams/viewer/worker-ui ack - ref=76d8da via=poll latency=2
+2026-10-24T16:25:40+09:00 27e17e p8-viewer-rebuild/teams/viewer/reviewer-kawasaki ack - ref=ca626b via=poll latency=7
+2026-10-24T16:25:40+09:00 de6cc4 p8-viewer-rebuild/teams/viewer/worker-export ack - ref=9e9875 via=poll latency=7
+2026-10-24T16:25:45+09:00 bc3e32 p8-viewer-rebuild/teams/viewer/reviewer-export notify_recv - ref=e4168a misdelivered=0 latency=12
+2026-10-24T16:25:45+09:00 3808cd p8-viewer-rebuild/teams/viewer/reviewer-export ack - ref=e4168a via=notify latency=12
+2026-10-24T16:25:45+09:00 c3be67 p8-viewer-rebuild/teams/viewer/reviewer-export done p8-viewer-rebuild/teams/viewer/leader -
+2026-10-24T16:25:45+09:00 b52152 p8-viewer-rebuild/teams/viewer/reviewer-export notify_sent p8-viewer-rebuild/teams/viewer/leader ref=c3be67 via=orca
+2026-10-24T16:25:48+09:00 10b736 p8-viewer-rebuild/teams/viewer/worker-export done p8-viewer-rebuild/teams/viewer/leader -
+2026-10-24T16:25:48+09:00 2e0049 p8-viewer-rebuild/teams/viewer/worker-export notify_sent p8-viewer-rebuild/teams/viewer/leader ref=10b736 via=orca
+2026-10-24T16:25:57+09:00 260b47 p8-viewer-rebuild/teams/viewer/worker-ui done p8-viewer-rebuild/teams/viewer/leader -
+2026-10-24T16:25:57+09:00 754753 p8-viewer-rebuild/teams/viewer/worker-ui notify_sent p8-viewer-rebuild/teams/viewer/leader ref=260b47 via=orca
+2026-10-24T16:25:58+09:00 f4cb58 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki done p8-viewer-rebuild/teams/viewer/leader -
+2026-10-24T16:25:58+09:00 bfa1f5 p8-viewer-rebuild/teams/viewer/reviewer-kawasaki notify_sent p8-viewer-rebuild/teams/viewer/leader ref=f4cb58 via=orca
+2026-10-24T16:26:03+09:00 4722f9 p8-viewer-rebuild/teams/viewer/leader notify_recv - ref=c3be67 misdelivered=0 latency=18
+2026-10-24T16:26:03+09:00 a9c551 p8-viewer-rebuild/teams/viewer/leader ack - ref=c3be67 via=notify latency=18
+2026-10-24T16:26:03+09:00 25710b p8-viewer-rebuild/teams/viewer/leader ack - ref=10b736 via=inbox latency=15
+2026-10-24T16:26:03+09:00 0f793d p8-viewer-rebuild/teams/viewer/leader ack - ref=260b47 via=inbox latency=6
+2026-10-24T16:26:03+09:00 2a0c86 p8-viewer-rebuild/teams/viewer/leader ack - ref=f4cb58 via=inbox latency=5
+2026-10-24T16:29:37+09:00 321eae patrol patrol user sent=1 via=sent
+2026-10-24T16:30:56+09:00 176526 user nudge p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/176526.md
+2026-10-24T16:30:56+09:00 263274 user notify_skipped p8-viewer-rebuild/teams/viewer/leader ref=176526 reason=waiting
+2026-10-24T16:31:06+09:00 a6eb54 p8-viewer-rebuild/teams/viewer/leader ack - ref=176526 via=poll latency=10
+2026-10-24T16:31:10+09:00 dd6c22 p8-viewer-rebuild/teams/viewer/leader teardown p8-viewer-rebuild/teams/viewer/worker-ui report=reports/sessions/p8-viewer-rebuild__teams__viewer__worker-ui-6155b5d5.yaml
+2026-10-24T16:31:10+09:00 1e6757 p8-viewer-rebuild/teams/viewer/leader teardown p8-viewer-rebuild/teams/viewer/worker-export report=reports/sessions/p8-viewer-rebuild__teams__viewer__worker-export-fff11e32.yaml
+2026-10-24T16:31:10+09:00 a0b962 p8-viewer-rebuild/teams/viewer/leader teardown p8-viewer-rebuild/teams/viewer/reviewer-kawasaki report=reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-kawasaki-d30b4812.yaml
+2026-10-24T16:31:11+09:00 2e57b5 p8-viewer-rebuild/teams/viewer/leader teardown p8-viewer-rebuild/teams/viewer/reviewer-export report=reports/sessions/p8-viewer-rebuild__teams__viewer__reviewer-export-baf05c27.yaml
+2026-10-24T16:32:19+09:00 3df696 p8-viewer-rebuild/teams/viewer/leader report p8-viewer-rebuild/pm msg=log/msgs/3df696.md
+2026-10-24T16:32:19+09:00 91c17f p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/pm ref=3df696 reason=waiting
+2026-10-24T16:32:19+09:00 b1cbb0 p8-viewer-rebuild/pm ack - ref=3df696 via=poll latency=0
+2026-10-24T16:32:47+09:00 f2caba p8-viewer-rebuild/pm wrap_up p8-viewer-rebuild/teams/viewer/leader msg=log/msgs/f2caba.md
+2026-10-24T16:32:47+09:00 116b86 p8-viewer-rebuild/pm notify_skipped p8-viewer-rebuild/teams/viewer/leader ref=f2caba reason=waiting
+2026-10-24T16:32:53+09:00 80cb96 p8-viewer-rebuild/teams/viewer/leader ack - ref=f2caba via=poll latency=6
+2026-10-24T16:33:09+09:00 beb4a6 p8-viewer-rebuild/teams/viewer/leader done p8-viewer-rebuild/pm -
+2026-10-24T16:33:09+09:00 745bc2 p8-viewer-rebuild/teams/viewer/leader notify_skipped p8-viewer-rebuild/pm ref=beb4a6 reason=waiting
+2026-10-24T16:33:10+09:00 7bf2d5 p8-viewer-rebuild/pm ack - ref=beb4a6 via=poll latency=1
+2026-10-24T16:33:14+09:00 3b0ff1 p8-viewer-rebuild/pm teardown p8-viewer-rebuild/teams/viewer/leader report=reports/sessions/p8-viewer-rebuild__teams__viewer__leader-18b4f46a.yaml
+2026-10-24T16:33:14+09:00 3b30d5 p8-viewer-rebuild/pm component_closed - p8-viewer-rebuild/teams/viewer
+2026-10-24T16:33:51+09:00 b20186 p8-viewer-rebuild/pm report user msg=log/msgs/b20186.md
+2026-10-24T16:34:01+09:00 0cf993 user ack - ref=b20186 via=poll latency=10
+2026-10-24T16:34:16+09:00 83f7ad user wrap_up p8-viewer-rebuild/pm msg=log/msgs/83f7ad.md
+2026-10-24T16:34:16+09:00 f8af40 user notify_skipped p8-viewer-rebuild/pm ref=83f7ad reason=waiting
+2026-10-24T16:34:17+09:00 f6ab8d p8-viewer-rebuild/pm ack - ref=83f7ad via=poll latency=1
+2026-10-24T16:34:31+09:00 d3162c p8-viewer-rebuild/pm done user -
+2026-10-24T16:34:38+09:00 679726 patrol patrol user sent=1 via=sent
+2026-10-24T16:34:56+09:00 2fb101 user teardown p8-viewer-rebuild/pm report=reports/sessions/p8-viewer-rebuild__pm-129ad682.yaml
+2026-10-24T16:34:56+09:00 ad2266 user component_closed - p8-viewer-rebuild
