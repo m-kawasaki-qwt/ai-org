@@ -67,6 +67,41 @@ ORG_ROOT=<ai-org>/projects/<slug> ORG_MEMBER=user orgctl wait
   ```
   - 試すときは `--once`（1 回だけ）と `--dry`（Google Chat へは送らず、受け箱 `log/user-inbox.yaml` にだけ残す）。
 
+### ビューア（全プロジェクトを 1 か所で見る。`viewer/`）
+
+Astro の静的サイト。`viewer/data/snapshot.json` だけを読む（記録は読まない）。一覧・プロジェクトの中・受け箱・パフォーマンス・監査と unclear の 5 画面。読むだけ。コマンドは 1 行ずつ単独で打つ。`<dev-tools>` は dev-tools の repo。
+
+1. 記録を `snapshot.json` に書き出す（`<ai-org>` で）。
+
+```
+python3 <dev-tools>/org/scripts/orgctl.py export --projects projects --out viewer/data/snapshot.json
+```
+
+2. 依存を入れる（初回だけ）。
+
+```
+npm install --prefix viewer
+```
+
+3. 開発サーバーで見る（`http://localhost:4321`）。
+
+```
+npm run dev --prefix viewer
+```
+
+静的に書き出して見るなら、次の 2 行（出力は `viewer/dist/`。`preview` の URL は起動時に出る）。
+
+```
+npm run build --prefix viewer
+```
+
+```
+npm run preview --prefix viewer
+```
+
+- 記録が増えたら 1 の `export` をやり直す。画面を見直すだけなら 3 から。
+- `snapshot.json` の形は export とビューアの共通の約束。形を変えるときは両方を揃える。
+
 ## 4. 記録の在り処
 
 根っこのプロジェクト `projects/<slug>/` の下に残る。後から `grep` で調べられる形が方針（[policy.md](policy.md) の 5）。
